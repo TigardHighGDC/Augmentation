@@ -1,0 +1,10 @@
+# Copyright (c) TigardHighGDC
+# SPDX-License SPDX-License-Identifier: Apache-2.0
+
+---
+Language: CSharp
+BasedOnStyle: Microsoft
+IndentWidth: 4
+AccessModifierOffset: -4
+ColumnLimit: 120
+AllowShortFunctionsOnASingleLine: None
