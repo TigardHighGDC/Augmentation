@@ -11,6 +11,6 @@ assignees: ''
 Concisely describe the bug and answer the following questions.
 
 - How can you reproduce it?
-- How sever is it?
+- How severe is it?
 - Can you get it to appear on other computers?
 -->
