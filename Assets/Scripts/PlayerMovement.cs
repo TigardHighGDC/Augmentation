@@ -19,8 +19,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             return new Vector2(x/combine, y/combine); 
-        }
-        
+        }  
     }
     void Start()
     {
@@ -29,14 +28,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called with frequency of physics engine
     void FixedUpdate()
     {
-        // Set velocity to current input
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
-        //rb.velocity = NormalizeSum(x, y) * speed;
+        x = Input.GetAxisRaw("Horizontal");
+        y = Input.GetAxisRaw("Vertical");
         direction = new Vector2(x, y);
-        //Debug.Log(direction);
         direction.Normalize();
-        Debug.Log(direction);
         rb.velocity = direction * speed;
     }
 }
