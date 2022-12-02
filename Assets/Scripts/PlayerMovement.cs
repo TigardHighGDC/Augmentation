@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float speed;
+    
     private float x;
     private float y;
-    public float speed;
     private Rigidbody2D rb;
     private Vector2 direction;
 
