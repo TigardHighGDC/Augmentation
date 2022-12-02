@@ -10,6 +10,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/[Uu]serSettings/
 
 !/[Aa]ssets/**/*.meta
 [Aa]ssets/Plugins/Editor/JetBrains*
