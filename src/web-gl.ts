@@ -1,12 +1,12 @@
 // Copyright (c) TigardHighGDC
 // SPDX-License SPDX-License-Identifier: Apache-2.0
 
-let container = document.querySelector("#unity-container");
-let canvas = document.querySelector("#unity-canvas");
-let loadingBar = document.querySelector("#unity-loading-bar");
-let progressBarFull = document.querySelector("#unity-progress-bar-full");
-let fullscreenButton = document.querySelector("#unity-fullscreen-button");
-let warningBanner = document.querySelector<HTMLElement>("#unity-warning");
+const container = document.querySelector<HTMLElement>("#unity-container");
+const canvas = document.querySelector<HTMLElement>("#unity-canvas");
+const loadingBar = document.querySelector<HTMLElement>("#unity-loading-bar");
+const progressBarFull = document.querySelector<HTMLElement>("#unity-progress-bar-full");
+const fullscreenButton = document.querySelector<HTMLElement>("#unity-fullscreen-button");
+const warningBanner = document.querySelector<HTMLElement>("#unity-warning");
 
 // Shows a temporary message banner/ribbon for a few seconds, or
 // a permanent error message on top of the canvas if type=='error'.
@@ -19,15 +19,15 @@ function unityShowBanner(msg, type) {
     warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
   }
 
-  let div = document.createElement('div');
+  const div = document.createElement('div');
   div.innerHTML = msg;
   warningBanner.appendChild(div);
 
   if (type == 'error') {
-    div.style = 'background: red; padding: 10px;';
+    div.setAttribute('style', 'background: red; padding: 10px;');
   } else {
     if (type == 'warning') {
-      div.style = 'background: yellow; padding: 10px;';
+      div.setAttribute('style', 'background: yellow; padding: 10px;');
     }
 
     setTimeout(function() {
@@ -39,9 +39,9 @@ function unityShowBanner(msg, type) {
   updateBannerVisibility();
 }
 
-let buildUrl = "Build";
-let loaderUrl = buildUrl + "/WebGLFlappyBird.loader.js";
-let config = {
+const buildUrl = "Build";
+const loaderUrl = buildUrl + "/WebGLFlappyBird.loader.js";
+const config = {
   dataUrl: buildUrl + "/WebGLFlappyBird.data",
   frameworkUrl: buildUrl + "/WebGLFlappyBird.framework.js",
   codeUrl: buildUrl + "/WebGLFlappyBird.wasm",
@@ -62,7 +62,7 @@ let config = {
 if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
   // Mobile device style: fill the whole browser client area with the game canvas:
 
-  let meta = document.createElement('meta');
+  const meta = document.createElement('meta');
   meta.name = 'viewport';
   meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
   document.getElementsByTagName('head')[0].appendChild(meta);
@@ -83,7 +83,7 @@ if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
 
 loadingBar.style.display = "block";
 
-let script = document.createElement("script");
+const script = document.createElement("script");
 script.src = loaderUrl;
 script.onload = () => {
   createUnityInstance(canvas, config, (progress) => {

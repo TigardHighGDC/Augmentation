@@ -20,6 +20,6 @@ jobs:
       - name: Install Packages
         run: |
           npm ci
-      - name: All .ts files to .js using tsc
+      - name: Compile TypeScript
         run: |
-          tsc --build tsconfig.json
+          npx tsc --noEmit
