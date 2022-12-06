@@ -24,6 +24,6 @@ public class PlayerMovement : MonoBehaviour
 
         direction = new Vector2(x, y);
         direction.Normalize();
-        rb.velocity = direction * speed;
+        rb.velocity = direction * Speed;
     }
 }
