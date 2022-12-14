@@ -19,7 +19,6 @@ public class Gun : MonoBehaviour
     void Update()
     {
         Controller();
-        
     }
 
     private void Controller()
@@ -28,11 +27,11 @@ public class Gun : MonoBehaviour
         {
             StartCoroutine((Reload()));
         }
-        if(!reloading && !shotDelay && ammoAmount > 0 && Input.GetButton("Fire1"))
+        if (!reloading && !shotDelay && ammoAmount > 0 && Input.GetButton("Fire1"))
         {
             StartCoroutine(CanShoot());
             Debug.Log(ammoAmount);
-        }  
+        }
     }
 
     private void Fire()
@@ -41,7 +40,7 @@ public class Gun : MonoBehaviour
         GameObject bullet = Instantiate(Bullet, transform.position, look);
     }
 
-    IEnumerator Reload() 
+    IEnumerator Reload()
     {
         reloading = true;
         Debug.Log("Reloading");
@@ -50,7 +49,7 @@ public class Gun : MonoBehaviour
         reloading = false;
     }
 
-    IEnumerator CanShoot() 
+    IEnumerator CanShoot()
     {
         shotDelay = true;
         ammoAmount -= Data.BulletPerTrigger;

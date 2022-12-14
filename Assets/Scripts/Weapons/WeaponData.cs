@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName="New Weapon", menuName="ScriptableObject/WeaponData")]
+[CreateAssetMenu(fileName = "New Weapon", menuName = "ScriptableObject/WeaponData")]
 public class WeaponData : ScriptableObject
-{   
+{
     [Header("Stats")]
     public float ReloadSpeed;
     public float BulletPerSecond;
@@ -11,5 +11,4 @@ public class WeaponData : ScriptableObject
     public int AmmoCapacity;
     public float Spread;
     public float Knockback;
-
 }
