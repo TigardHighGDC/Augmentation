@@ -39,7 +39,7 @@ function unityShowBanner(msg, type) {
   updateBannerVisibility();
 }
 
-const buildUrl = "../Build";
+const buildUrl = "Build";
 const loaderUrl = buildUrl + "/WebGLFlappyBird.loader.js";
 const config = {
   dataUrl: buildUrl + "/WebGLFlappyBird.data",
