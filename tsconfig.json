@@ -6,6 +6,6 @@
         "target": "esnext",
         "lib": ["dom", "es2017"],
     },
-    "include": ["src/**/*"],
+    "include": ["Source/**/*"],
     "exclude": ["node_modules"]
 }
