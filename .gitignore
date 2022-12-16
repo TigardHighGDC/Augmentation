@@ -8,7 +8,7 @@
 .vscode/
 
 # Ignore javascript files, we are using typescript
-*.js
+Source/*.js
 
 # Node Modules
 node_modules/

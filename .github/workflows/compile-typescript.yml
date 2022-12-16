@@ -1,28 +1,25 @@
-# Copyright (c) TigardHighGDC
-# SPDX-License SPDX-License-Identifier: Apache-2.0
+# # Copyright (c) TigardHighGDC
+# # SPDX-License SPDX-License-Identifier: Apache-2.0
 
-name: Compile TypeScript
-on:
-  pull_request:
-  push:
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Commit
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.sha }}
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ">=19.0.0"
-      - name: Install Packages
-        run: |
-          npm ci
-      - name: Compile TypeScript
-        run: |
-          npx tsc
-      - name: Show files in Source/ verifying the compiled js file is where it was expected
-        run: |
-          ls -R Source/
+# name: Compile TypeScript
+# on:
+#   pull_request:
+#   push:
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout Commit
+#         uses: actions/checkout@v3
+#         with:
+#           ref: ${{ github.sha }}
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: ">=19.0.0"
+#       - name: Install Packages
+#         run: |
+#           npm ci
+#       - name: Compile TypeScript
+#         run: |
+#           npx tsc
