@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,17 +11,17 @@ public class Gun : MonoBehaviour
     public GameObject Bullet;
     public Camera Camera;
     public Transform SpawnPoint;
+
     private bool reloading = false;
     private bool shotDelay = false;
     private int ammoAmount;
 
-    void Start()
+    private void Start()
     {
         ammoAmount = Data.AmmoCapacity;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Controller();
     }
@@ -38,12 +41,12 @@ public class Gun : MonoBehaviour
 
     private void Fire()
     {
-        //Get player angle relative to mouse
+        // Get player angle relative to mouse.
         var mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
         var relativePoint = transform.position - mousePosition;
         var rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
 
-        //Spawn bullets
+        // Spawn bullets.
         for (int i = 0; i < Data.BulletPerTrigger; i++)
         {
             var eulerAngle = Quaternion.Euler(0, 0, rotation + Random.Range(-Data.Spread, Data.Spread));
@@ -52,7 +55,7 @@ public class Gun : MonoBehaviour
             rb.velocity = bullet.transform.up * Data.BulletSpeed;
         }
     }
-    
+
     private IEnumerator Reload()
     {
         reloading = true;
