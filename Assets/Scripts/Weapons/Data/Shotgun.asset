@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0105a0956d55806448d62a1d87062f14, type: 3}
-  m_Name: Pistol
+  m_Name: Shotgun
   m_EditorClassIdentifier: 
-  ReloadSpeed: 1
+  ReloadSpeed: 1.5
   BulletSpeed: 10
-  BulletPerSecond: 0.3
-  BulletPerTrigger: 1
-  AmmoCapacity: 6
-  Spread: 10
-  Knockback: 0
+  BulletPerSecond: 0.5
+  BulletPerTrigger: 8
+  AmmoCapacity: 24
+  Spread: 40
+  Knockback: 10
