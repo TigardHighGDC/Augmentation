@@ -1,6 +1,6 @@
 # Augmentation Pages
 
-This branch generates the [Flappy Bird website](https://TigardHighGDC.github.io/Augmentation/) maintained by our team.
+This branch generates the [Augmentation website](https://TigardHighGDC.github.io/Augmentation/) maintained by our team.
 
 ## Getting Started
 
