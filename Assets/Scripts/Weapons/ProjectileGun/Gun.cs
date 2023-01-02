@@ -60,6 +60,8 @@ public class Gun : MonoBehaviour
     {
         reloading = true;
         Debug.Log("Reloading");
+
+        // Yield is required to pause the function.
         yield return new WaitForSeconds(Data.ReloadSpeed);
         Debug.Log("Done");
         ammoAmount = Data.AmmoCapacity;
@@ -70,6 +72,8 @@ public class Gun : MonoBehaviour
     {
         shotDelay = true;
         ammoAmount -= Data.BulletPerTrigger;
+
+        // Yield is required to pause the function.
         yield return new WaitForSeconds(Data.BulletPerSecond);
         shotDelay = false;
     }
