@@ -11,8 +11,8 @@ public class LookAtMouse : MonoBehaviour
 
     private void Update()
     {
-        var mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
-        var relativePoint = transform.position - mousePosition;
+        Vector3 mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 relativePoint = transform.position - mousePosition;
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90);
     }
 }

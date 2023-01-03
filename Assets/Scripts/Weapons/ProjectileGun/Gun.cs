@@ -42,14 +42,14 @@ public class Gun : MonoBehaviour
     private void Fire()
     {
         // Get player angle relative to mouse.
-        var mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
-        var relativePoint = transform.position - mousePosition;
-        var rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
+        Vector3 mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 relativePoint = transform.position - mousePosition;
+        float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
 
         // Spawn bullets.
         for (int i = 0; i < Data.BulletPerTrigger; i++)
         {
-            var eulerAngle = Quaternion.Euler(0, 0, rotation + Random.Range(-Data.Spread, Data.Spread));
+            Quaternion eulerAngle = Quaternion.Euler(0, 0, rotation + Random.Range(-Data.Spread, Data.Spread));
             GameObject bullet = Instantiate(Bullet, SpawnPoint.position, eulerAngle);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.velocity = bullet.transform.up * Data.BulletSpeed;
@@ -59,11 +59,11 @@ public class Gun : MonoBehaviour
     private IEnumerator Reload()
     {
         reloading = true;
-        Debug.Log("Reloading");
+        Debug.Log("Reloading"); // TODO: Remove Debug.Log() when we have a working interface.
 
         // Yield is required to pause the function.
         yield return new WaitForSeconds(Data.ReloadSpeed);
-        Debug.Log("Done");
+        Debug.Log("Done"); // TODO: Remove Debug.Log() when we have a working interface.
         ammoAmount = Data.AmmoCapacity;
         reloading = false;
     }
