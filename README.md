@@ -23,4 +23,4 @@ Note that GitHub will do this automatically in some cases.
 
 Copyright (c) TigardHighGDC
 
-SPDX-License SPDX-License-Identifier: Apache-2.0
+SPDX-License-Identifier: Apache-2.0
