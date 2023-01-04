@@ -7,9 +7,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [HideInInspector]
+    public WeaponData Data;
+    
     private void Start()
     {
-        Invoke("DestroyBullet", 10.0f);
+        Invoke("DestroyBullet", Data.BulletDespawn);
     }
 
     private void OnTriggerEnter2D(Collider2D collide)

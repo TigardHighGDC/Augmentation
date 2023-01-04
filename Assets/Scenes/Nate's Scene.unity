@@ -214,26 +214,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1311548595, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1311548595, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1311548595, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1311548596, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
       propertyPath: Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 9112608306668578418, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
-      propertyPath: Speed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 9112608306668578419, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -252,11 +236,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9112608306668578419, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9112608306668578419, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9112608306668578419, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
       propertyPath: m_LocalRotation.y
@@ -264,7 +248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9112608306668578419, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9112608306668578419, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -276,16 +260,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9112608306668578419, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 999090
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9112608306668578430, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9112608306821915246, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
-      propertyPath: Data
-      value: 
-      objectReference: {fileID: 11400000, guid: c3111fb56c038cf4890b61ab799989e5, type: 2}
     - target: {fileID: 9112608306821915246, guid: 279a7965d2505e040be986e0394f9b27, type: 3}
       propertyPath: Camera
       value: 
