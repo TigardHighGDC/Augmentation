@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
 {
     [HideInInspector]
     public WeaponData Data;
-    
+
     private void Start()
     {
         Invoke("DestroyBullet", Data.BulletDespawn);
