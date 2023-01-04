@@ -37,6 +37,10 @@ public class Gun : MonoBehaviour
             Fire();
             StartCoroutine(CanShoot());
         }
+        else if (Data.AutoReload && !reloading && ammoAmount <= 0)
+        {
+            StartCoroutine((Reload()));
+        }
     }
 
     private void Fire()
