@@ -19,5 +19,5 @@ MonoBehaviour:
   AmmoCapacity: 24
   Spread: 40
   Knockback: 10
-  BulletDespawn: 0.5
+  DespawnTime: 1
   AutoReload: 1

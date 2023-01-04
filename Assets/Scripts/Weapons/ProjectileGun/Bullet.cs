@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        Invoke("DestroyBullet", Data.BulletDespawn);
+        Invoke("DestroyBullet", Data.DespawnTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collide)
