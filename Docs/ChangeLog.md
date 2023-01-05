@@ -8,6 +8,11 @@ A bi-weekly log of project changes separated by two week sprints.
 | - | - |
 | [12/6/2022 - 1/3/2023](#12062022---1032023) | 1 |
 
+## 1/4/2023 - 1/16/2023 (Sprint #2)
+
+- New Features:
+  - Expanded Gun class with auto reload and bullet despawn times [#18](https://github.com/TigardHighGDC/Augmentation/pull/18).
+
 ## 12/6/2022 - 1/3/2023 (Sprint #1)
 
 - New Features:
