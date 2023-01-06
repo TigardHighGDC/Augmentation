@@ -12,6 +12,7 @@ A bi-weekly log of project changes separated by two week sprints.
 
 - New Features:
   - Expanded Gun class with auto reload and bullet despawn times [#18](https://github.com/TigardHighGDC/Augmentation/pull/18).
+  - Updated Unity to version `2021.3.16f1` [#34](https://github.com/TigardHighGDC/Augmentation/pull/34).
 
 ## 12/6/2022 - 1/3/2023 (Sprint #1)
 
