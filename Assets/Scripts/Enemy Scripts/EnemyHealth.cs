@@ -1,28 +1,29 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float health;
-    public float maxTimer;
+    public float Health;
+    public float MaxTimer;
+    
     private float timer;
 
-
-    void Start()
+    private void Start()
     {
         timer = maxTimer;
     }
 
-
-    void Update()
+    private void Update()
     {
         if(timer <= maxTimer && timer > 0)
         {
             timer -= Time.deltaTime;
         }
     }
-
 
     public void Damage(float damageAmount)
     {

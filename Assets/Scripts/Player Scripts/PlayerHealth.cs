@@ -1,21 +1,24 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float health;
-    public float maxTimer;
+    public float Health;
+    public float MaxTimer;
+
     private float timer;
 
-// set timer to timer :P
-    void Start()
+    private void Start()
     {
         timer = maxTimer;
     }
 
-// Timer for a little invicability before taking damage again
-    void Update()
+    // Invincibility frames (i-frames).
+    private void Update()
     {
         if(timer <= maxTimer && timer > 0)
         {
@@ -23,7 +26,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-// Taking damage
     public void Damage(float damageAmount)
     {
         if (timer <= 0)
