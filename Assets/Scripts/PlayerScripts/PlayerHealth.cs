@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     // Invincibility frames (i-frames).
     private void Update()
     {
-        if(timer <= maxTimer && timer > 0)
+        if (timer <= maxTimer && timer > 0)
         {
             timer -= Time.deltaTime;
         }

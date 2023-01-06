@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public float Health;
     public float MaxTimer;
-    
+
     private float timer;
 
     private void Start()
@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Update()
     {
-        if(timer <= maxTimer && timer > 0)
+        if (timer <= maxTimer && timer > 0)
         {
             timer -= Time.deltaTime;
         }

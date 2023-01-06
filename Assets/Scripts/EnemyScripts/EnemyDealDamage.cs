@@ -13,7 +13,7 @@ public class EnemyDealDamage : MonoBehaviour
     // Player takes damage.
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             var player = collision.gameObject.GetComponent<PlayerHealth>();
             player.Damage(damage);
