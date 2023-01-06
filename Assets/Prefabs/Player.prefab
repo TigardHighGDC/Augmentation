@@ -175,9 +175,11 @@ GameObject:
   - component: {fileID: 9112608306668578418}
   - component: {fileID: 9112608306668578417}
   - component: {fileID: 9112608306821915246}
+  - component: {fileID: 7863546378243996305}
+  - component: {fileID: 1242500522}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -262,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd87ece3e488cfa4e85350deff3460a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  Speed: 5
 --- !u!50 &9112608306668578417
 Rigidbody2D:
   serializedVersion: 4
@@ -296,7 +298,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e7aeb4067dcbe42948422ad544af34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 622b6880c4f9bf84684f20474f0c599a, type: 2}
+  Data: {fileID: 11400000, guid: c3111fb56c038cf4890b61ab799989e5, type: 2}
   Bullet: {fileID: 6900885866568021340, guid: 1af50cc5c9111d945b0a1c65d080fecd, type: 3}
   Camera: {fileID: 0}
   SpawnPoint: {fileID: 1070268457}
+--- !u!114 &7863546378243996305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9112608306668578430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dff06b24fdfd94b86032794fb5d1db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  maxTimer: 1
+--- !u!58 &1242500522
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9112608306668578430}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.55

@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float damage;
+
     private void Start()
     {
         Invoke("DestroyBullet", 10.0f);
@@ -16,9 +18,22 @@ public class Bullet : MonoBehaviour
     {
         if (collide.gameObject.tag != "Bullet")
         {
-            Destroy(collide.gameObject);
+            //Destroy(collide.gameObject);
+
+            var enemy = collide.gameObject.GetComponent<EnemyHealth>();
+            enemy.Damage(damage);
         }
     }
+
+
+    // private void OnTriggerEnter2D(Collider2D collide)
+    // {
+    //     if(collide.gameObject.tag == "Player")
+    //     {
+    //         var player = collision.gameObject.GetComponent<PlayerHealth>();
+    //         player.Damage(damage);
+    //     }
+    // }
 
     // DestroyBullet() is called in the invoke function.
     private void DestroyBullet()
