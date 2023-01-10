@@ -12,7 +12,7 @@ public class EnemyDealDamage : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            var player = collision.gameObject.GetComponent<PlayerHealth>();
+            PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
             player.Damage(damage);
         }
     }
