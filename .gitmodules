@@ -1,0 +1,6 @@
+# Copyright (c) TigardHighGDC
+# SPDX-License SPDX-License-Identifier: Apache-2.0
+
+[submodule "Assets/AstarPathfindingProject"]
+	path = Assets/AstarPathfindingProject
+	url = https://github.com/TigardHighGDC/AstarPathfindingProject.git
