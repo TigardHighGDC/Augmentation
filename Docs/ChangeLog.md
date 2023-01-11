@@ -13,6 +13,8 @@ A bi-weekly log of project changes separated by two week sprints.
 - New Features:
   - Expanded Gun class with auto reload and bullet despawn times [#18](https://github.com/TigardHighGDC/Augmentation/pull/18).
   - Updated Unity to version `2021.3.16f1` [#34](https://github.com/TigardHighGDC/Augmentation/pull/34).
+  - Linked the A* Pathfinding project to the repository [#41](https://github.com/TigardHighGDC/Augmentation/pull/41).
+  - Created a basic template enemy class [#38](https://github.com/TigardHighGDC/Augmentation/pull/38).
 - Documentation:
   - Fixed typos in `CONTRIBUTING.md` [#36](https://github.com/TigardHighGDC/Augmentation/pull/36).
 
