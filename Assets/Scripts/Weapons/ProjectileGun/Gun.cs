@@ -52,7 +52,7 @@ public class Gun : MonoBehaviour
         Vector3 relativePoint = transform.position - mousePosition;
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
 
-        //Plays sound effect
+        // Plays sound effect
         audioPlayer.PlayOneShot(Data.SoundEffect, Data.SoundLoudness);
 
         // Spawn bullets.
