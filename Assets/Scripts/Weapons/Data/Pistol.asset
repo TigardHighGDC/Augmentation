@@ -21,3 +21,5 @@ MonoBehaviour:
   Knockback: 0
   DespawnTime: 2
   AutoReload: 1
+  SoundEffect: {fileID: 8300000, guid: 56acccf981ef4664aa444778b40b61b3, type: 3}
+  SoundLoudness: 1
