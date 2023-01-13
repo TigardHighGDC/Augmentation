@@ -1,6 +1,6 @@
-# Game Dev Template
+# Augmentation
 
-Repository template for Unity game development
+A 2D roguelike designed around leveling is bad. (Incomplete)
 
 ## Getting Started
 
