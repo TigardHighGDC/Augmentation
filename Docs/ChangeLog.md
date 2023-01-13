@@ -16,6 +16,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Linked the A* Pathfinding project to the repository [#41](https://github.com/TigardHighGDC/Augmentation/pull/41).
   - Created a basic template enemy class [#38](https://github.com/TigardHighGDC/Augmentation/pull/38).
   - Added the ability to play sound effects with guns [#44](https://github.com/TigardHighGDC/Augmentation/pull/44).
+  - Added gun damage & tracking of entity health [#32](https://github.com/TigardHighGDC/Augmentation/pull/32).
 - Documentation:
   - Fixed typos in `CONTRIBUTING.md` [#36](https://github.com/TigardHighGDC/Augmentation/pull/36).
   - Added game title to the `README.md` [#45](https://github.com/TigardHighGDC/Augmentation/pull/45).
