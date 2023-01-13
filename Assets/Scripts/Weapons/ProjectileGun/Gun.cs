@@ -53,7 +53,7 @@ public class Gun : MonoBehaviour
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
 
         // Plays sound effect.
-        audioPlayer.PlayOneShot(Data.SoundEffect, Data.SoundLoudness);
+        audioPlayer.PlayOneShot(Data.SoundEffect, Data.SoundVolume);
 
         // Spawn bullets.
         for (int i = 0; i < Data.BulletPerTrigger; i++)
