@@ -1,32 +1,38 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float health;
-    public float maxTimer;
-    private float timer;
+    public float Health;
+    public float InvincibilityTimer;
 
-    void Start()
+    private float remainingInvincibilityTime;
+
+    // set timer to timer :P
+    private void Start()
     {
-        timer = maxTimer;
+        remainingInvincibilityTime = InvincibilityTimer;
     }
 
-    void Update()
+    private void Update()
     {
-        if (timer <= maxTimer && timer > 0)
+        // Update remaining invincibility time.
+        if (remainingInvincibilityTime <= InvincibilityTimer && remainingInvincibilityTime > 0)
         {
-            timer -= Time.deltaTime;
+            remainingInvincibilityTime -= Time.deltaTime;
         }
     }
 
     public void Damage(float damageAmount)
     {
-        if (timer <= 0)
+        if (remainingInvincibilityTime <= 0)
         {
             health = health - damageAmount;
-            timer = maxTimer;
+            remainingInvincibilityTime = InvincibilityTimer;
         }
     }
 }
