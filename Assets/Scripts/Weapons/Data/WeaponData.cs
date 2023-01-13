@@ -16,4 +16,6 @@ public class WeaponData : ScriptableObject
     public int AmmoCapacity;
     public float Spread;
     public float Knockback;
+    public float DespawnTime;
+    public bool AutoReload;
 }

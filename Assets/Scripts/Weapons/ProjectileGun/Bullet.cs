@@ -7,11 +7,14 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float damage;
+    public float Damage;
+    
+    [HideInInspector]
+    public WeaponData Data;
 
     private void Start()
     {
-        Invoke("DestroyBullet", 10.0f);
+        Invoke("DestroyBullet", Data.DespawnTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collide)
@@ -20,6 +23,7 @@ public class Bullet : MonoBehaviour
         {
             var enemy = collide.gameObject.GetComponent<EnemyHealth>();
             enemy.Damage(damage);
+            Destroy(collide.gameObject);
         }
     }
 

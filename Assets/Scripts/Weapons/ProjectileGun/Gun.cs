@@ -37,6 +37,10 @@ public class Gun : MonoBehaviour
             Fire();
             StartCoroutine(CanShoot());
         }
+        else if (Data.AutoReload && !reloading && ammoAmount <= 0)
+        {
+            StartCoroutine((Reload()));
+        }
     }
 
     private void Fire()
@@ -52,6 +56,7 @@ public class Gun : MonoBehaviour
             Quaternion eulerAngle = Quaternion.Euler(0, 0, rotation + Random.Range(-Data.Spread, Data.Spread));
             GameObject bullet = Instantiate(Bullet, SpawnPoint.position, eulerAngle);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            bullet.GetComponent<Bullet>().Data = Data;
             rb.velocity = bullet.transform.up * Data.BulletSpeed;
         }
     }
