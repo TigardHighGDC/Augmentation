@@ -8,22 +8,22 @@ public class PlayerHealth : MonoBehaviour
     public float maxTimer;
     private float timer;
 
-// set timer to timer :P
+    // set timer to timer :P
     void Start()
     {
         timer = maxTimer;
     }
 
-// Timer for a little invicability before taking damage again
+    // Timer for a little invicability before taking damage again
     void Update()
     {
-        if(timer <= maxTimer && timer > 0)
+        if (timer <= maxTimer && timer > 0)
         {
             timer -= Time.deltaTime;
         }
     }
 
-// Taking damage
+    // Taking damage
     public void Damage(float damageAmount)
     {
         if (timer <= 0)

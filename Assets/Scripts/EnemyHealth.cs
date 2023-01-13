@@ -8,21 +8,18 @@ public class EnemyHealth : MonoBehaviour
     public float maxTimer;
     private float timer;
 
-
     void Start()
     {
         timer = maxTimer;
     }
 
-
     void Update()
     {
-        if(timer <= maxTimer && timer > 0)
+        if (timer <= maxTimer && timer > 0)
         {
             timer -= Time.deltaTime;
         }
     }
-
 
     public void Damage(float damageAmount)
     {

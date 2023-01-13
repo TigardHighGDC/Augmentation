@@ -8,7 +8,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float Damage;
-    
+
     [HideInInspector]
     public WeaponData Data;
 
