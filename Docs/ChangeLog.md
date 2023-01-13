@@ -17,6 +17,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Created a basic template enemy class [#38](https://github.com/TigardHighGDC/Augmentation/pull/38).
 - Documentation:
   - Fixed typos in `CONTRIBUTING.md` [#36](https://github.com/TigardHighGDC/Augmentation/pull/36).
+  - Added game title to the `README.md` [#45](https://github.com/TigardHighGDC/Augmentation/pull/45).
 
 ## 12/6/2022 - 1/3/2023 (Sprint #1)
 
