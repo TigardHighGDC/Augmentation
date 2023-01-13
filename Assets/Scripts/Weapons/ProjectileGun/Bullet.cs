@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
         if (collide.gameObject.tag != "Bullet")
         {
             EnemyHealth enemyHealth = collide.gameObject.GetComponent<EnemyHealth>();
-            enemyHealth.Damage(damage);
+            enemyHealth.Damage(Damage);
             Destroy(collide.gameObject);
         }
     }

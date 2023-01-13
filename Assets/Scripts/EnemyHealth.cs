@@ -31,7 +31,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (remainingInvincibilityTime <= 0)
         {
-            health = health - damageAmount;
+            Health = Health - damageAmount;
             remainingInvincibilityTime = InvincibilityTimer;
         }
     }
