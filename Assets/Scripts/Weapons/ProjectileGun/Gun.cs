@@ -15,10 +15,12 @@ public class Gun : MonoBehaviour
     private bool reloading = false;
     private bool shotDelay = false;
     private int ammoAmount;
+    private AudioSource audioPlayer;
 
     private void Start()
     {
         ammoAmount = Data.AmmoCapacity;
+        audioPlayer = gameObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -49,6 +51,9 @@ public class Gun : MonoBehaviour
         Vector3 mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
         Vector3 relativePoint = transform.position - mousePosition;
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
+
+        // Plays sound effect.
+        audioPlayer.PlayOneShot(Data.SoundEffect, Data.SoundVolume);
 
         // Spawn bullets.
         for (int i = 0; i < Data.BulletPerTrigger; i++)

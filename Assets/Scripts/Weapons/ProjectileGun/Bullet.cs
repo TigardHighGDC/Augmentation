@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float Damage;
+
     [HideInInspector]
     public WeaponData Data;
 
@@ -19,6 +21,8 @@ public class Bullet : MonoBehaviour
     {
         if (collide.gameObject.tag != "Bullet")
         {
+            EnemyHealth enemyHealth = collide.gameObject.GetComponent<EnemyHealth>();
+            enemyHealth.Damage(Damage);
             Destroy(collide.gameObject);
         }
     }

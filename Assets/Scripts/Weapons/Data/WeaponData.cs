@@ -18,4 +18,6 @@ public class WeaponData : ScriptableObject
     public float Knockback;
     public float DespawnTime;
     public bool AutoReload;
+    public AudioClip SoundEffect;
+    public float SoundVolume;
 }
