@@ -8,6 +8,19 @@ A bi-weekly log of project changes separated by two week sprints.
 | - | - |
 | [12/6/2022 - 1/3/2023](#12062022---1032023) | 1 |
 
+## 1/4/2023 - 1/16/2023 (Sprint #2)
+
+- New Features:
+  - Expanded Gun class with auto reload and bullet despawn times [#18](https://github.com/TigardHighGDC/Augmentation/pull/18).
+  - Updated Unity to version `2021.3.16f1` [#34](https://github.com/TigardHighGDC/Augmentation/pull/34).
+  - Linked the A* Pathfinding project to the repository [#41](https://github.com/TigardHighGDC/Augmentation/pull/41).
+  - Created a basic template enemy class [#38](https://github.com/TigardHighGDC/Augmentation/pull/38).
+  - Added the ability to play sound effects with guns [#44](https://github.com/TigardHighGDC/Augmentation/pull/44).
+  - Added gun damage & tracking of entity health [#32](https://github.com/TigardHighGDC/Augmentation/pull/32).
+- Documentation:
+  - Fixed typos in `CONTRIBUTING.md` [#36](https://github.com/TigardHighGDC/Augmentation/pull/36).
+  - Added game title to the `README.md` [#45](https://github.com/TigardHighGDC/Augmentation/pull/45).
+
 ## 12/6/2022 - 1/3/2023 (Sprint #1)
 
 - New Features:
