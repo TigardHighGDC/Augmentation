@@ -14,6 +14,7 @@ A bi-weekly log of project changes separated by two week sprints.
 
 - New Features:
   - Basic usage of the A* Pathfinding project [#47](https://github.com/TigardHighGDC/Augmentation/pull/47).
+  - Added `Circle Collider 2d` to player object [#51](https://github.com/TigardHighGDC/Augmentation/pull/51).
 
 ## 1/4/2023 - 1/16/2023 (Sprint #2)
 
