@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 15184874389256762}
   - component: {fileID: 15184874389256763}
   - component: {fileID: 15184874389256760}
+  - component: {fileID: 1147875555}
+  - component: {fileID: 1147875556}
   m_Layer: 0
   m_Name: LaptopGoon
   m_TagString: Untagged
@@ -170,5 +172,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  followDistance: 12
+  followDistance: 14
   dangerDistance: 8
+  runAwayDistance: 12
+--- !u!58 &1147875555
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15184874389256742}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &1147875556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15184874389256742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b471242aed005344e9f26e6bb910160d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 3
+  InvincibilityTimer: 0

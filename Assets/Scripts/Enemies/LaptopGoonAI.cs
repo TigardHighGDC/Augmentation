@@ -10,6 +10,7 @@ public class LaptopGoonAI : MonoBehaviour
     public GameObject Player;
     public float followDistance;
     public float dangerDistance;
+    public float runAwayDistance;
     Seeker seeker;
     bool runAway = false;
     // Start is called before the first frame update
@@ -31,7 +32,7 @@ public class LaptopGoonAI : MonoBehaviour
     {
         aiPath.isStopped = false;
         float distance = DistanceBetweenPlayer(Player);
-        if (runAway && followDistance <= distance)
+        if (runAway && runAwayDistance <= distance)
         {
             runAway = false;
         }
@@ -68,13 +69,25 @@ public class LaptopGoonAI : MonoBehaviour
 
     void LookTowardsMovement()
     {
-        if (aiPath.desiredVelocity.x >= 0.15f)
+        if (aiPath.isStopped)
         {
-            transform.localScale = new Vector3(1,1,1);
+            Debug.Log("Stop");
+            if (transform.position[0] < Player.transform.position[0])
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+        }
+        else if (aiPath.desiredVelocity.x >= 0.15f)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else if (aiPath.desiredVelocity.y <= 0.15f)
         {
-            transform.localScale = new Vector3(-1,1,1);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 }
