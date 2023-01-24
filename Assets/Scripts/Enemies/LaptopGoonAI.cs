@@ -71,7 +71,6 @@ public class LaptopGoonAI : MonoBehaviour
     {
         if (aiPath.isStopped)
         {
-            Debug.Log("Stop");
             if (transform.position[0] < Player.transform.position[0])
             {
                 transform.localScale = new Vector3(1, 1, 1);
