@@ -48,6 +48,7 @@ public class LaptopGoonAI : BasicEnemy
 
         if (runAway)
         {
+            // Goes opposite direction of player
             seeker.StartPath(transform.position, (2 * transform.position) - Player.transform.position);
         }
         else
