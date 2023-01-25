@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0105a0956d55806448d62a1d87062f14, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
+  Damage: 1
   ReloadSpeed: 1
   BulletSpeed: 10
   BulletPerSecond: 0.3

@@ -33,6 +33,16 @@ public class PlayerHealth : MonoBehaviour
         {
             Health = Health - damageAmount;
             remainingInvincibilityTime = InvincibilityTimer;
+            
         }
+        if (Health <= 0)
+        {
+            Death();
+        }
+    }
+    // Handles changes when the player dies
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 }
