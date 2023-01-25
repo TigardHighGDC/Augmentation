@@ -6,7 +6,7 @@ public class LaptopGoonBullet : MonoBehaviour
 {
     [HideInInspector]
     public float Damage;
-    
+
     private void Start()
     {
         Invoke("DestroyBullet", 10f);

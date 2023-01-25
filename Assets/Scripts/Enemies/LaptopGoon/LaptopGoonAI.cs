@@ -75,7 +75,7 @@ public class LaptopGoonAI : BasicEnemy
 
     void LookTowardsMovement()
     {
-        //Look towards the player if stopped and if not look towards the direction it is following.
+        // Look towards the player if stopped and if not look towards the direction it is following.
         if (aiPath.isStopped)
         {
             if (transform.position[0] < Player.transform.position[0])
@@ -98,9 +98,9 @@ public class LaptopGoonAI : BasicEnemy
     }
 
     private IEnumerator Fire()
-    {   
+    {
         canFire = false;
-        //Get angle to fire at player and convert to euler
+        // Get angle to fire at player and convert to euler
         Vector3 relativePoint = transform.position - Player.transform.position;
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
         Quaternion eulerAngle = Quaternion.Euler(0, 0, rotation);

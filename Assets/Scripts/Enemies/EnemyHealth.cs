@@ -39,7 +39,7 @@ public class EnemyHealth : MonoBehaviour
             Death();
         }
     }
-    //Handles changes when enemy dies
+    // Handles changes when enemy dies
     private void Death()
     {
         Destroy(gameObject);
