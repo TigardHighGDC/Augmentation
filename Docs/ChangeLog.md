@@ -17,6 +17,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Added `Circle Collider 2d` to player object [#51](https://github.com/TigardHighGDC/Augmentation/pull/51).
   - New breakable item type with random drops [#53](https://github.com/TigardHighGDC/Augmentation/pull/53).
   - New range based enemy type with dynamic pathing [#58](https://github.com/TigardHighGDC/Augmentation/pull/58).
+  - Updated Unity to version `2021.3.17f1` [#62](https://github.com/TigardHighGDC/Augmentation/pull/34).
 - Enhancements:
   - Moved `Damage` for `Bullet.cs` to `WeaponData.cs` [#58](https://github.com/TigardHighGDC/Augmentation/pull/58).
 
