@@ -7,29 +7,26 @@ using UnityEngine;
 
 public class RandomItemDrop : MonoBehaviour
 {
-    // you will probably want to move things around I just have it how I learned / how I stole it from a different
-    // project
+    public List<GameObject> SpawnPool;
 
-    public List<GameObject> spawnPool;
-
-    private NonPlayerHealth PotHealth;
+    private NonPlayerHealth potHealth;
 
     private void Start()
     {
-        PotHealth = GetComponent<NonPlayerHealth>();
+        potHealth = GetComponent<NonPlayerHealth>();
     }
 
     private void Update()
     {
-        // health to make it "break"
-        if (PotHealth.Health <= 0)
+        // Zero health makes it "break".
+        if (potHealth.Health <= 0)
         {
             GameObject toSpawn;
             int randomItem = 0;
 
-            // random item from the list
-            randomItem = Random.Range(0, spawnPool.Count);
-            toSpawn = spawnPool[randomItem];
+            // Random item dropped from the public list.
+            randomItem = Random.Range(0, SpawnPool.Count);
+            toSpawn = SpawnPool[randomItem];
 
             Instantiate(toSpawn, transform.position, transform.rotation);
             Destroy(gameObject);
@@ -38,6 +35,6 @@ public class RandomItemDrop : MonoBehaviour
 
     public void Damage(float damageAmount)
     {
-        PotHealth.Health = PotHealth.Health - damageAmount;
+        potHealth.Health = potHealth.Health - damageAmount;
     }
 }
