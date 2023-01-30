@@ -16,6 +16,9 @@ A bi-weekly log of project changes separated by two week sprints.
   - Basic usage of the A* Pathfinding project [#47](https://github.com/TigardHighGDC/Augmentation/pull/47).
   - Added `Circle Collider 2d` to player object [#51](https://github.com/TigardHighGDC/Augmentation/pull/51).
   - New breakable item type with random drops [#53](https://github.com/TigardHighGDC/Augmentation/pull/53).
+  - New range based enemy type with dynamic pathing [#58](https://github.com/TigardHighGDC/Augmentation/pull/58).
+- Enhancements:
+  - Moved `Damage` for `Bullet.cs` to `WeaponData.cs` [#58](https://github.com/TigardHighGDC/Augmentation/pull/58).
 
 ## 1/4/2023 - 1/16/2023 (Sprint #2)
 
