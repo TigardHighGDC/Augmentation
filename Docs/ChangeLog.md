@@ -6,11 +6,11 @@ A bi-weekly log of project changes separated by two week sprints.
 
 | Date | Sprint |
 | - | - |
-| [1/17/2023 - 1/30/2023](#1172023---1302023) | 3 |
+| [1/17/2023 - 2/7/2023](#1172023---2072023) | 3 |
 | [1/4/2023 - 1/16/2023](#1042023---1162023) | 2 |
 | [12/6/2022 - 1/3/2023](#12062022---1032023) | 1 |
 
-## 1/17/2023 - 1/30/2023 (Sprint #3)
+## 1/17/2023 - 2/7/2023 (Sprint #3)
 
 - New Features:
   - Basic usage of the A* Pathfinding project [#47](https://github.com/TigardHighGDC/Augmentation/pull/47).
