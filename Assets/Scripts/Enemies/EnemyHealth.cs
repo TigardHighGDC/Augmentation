@@ -34,11 +34,13 @@ public class EnemyHealth : MonoBehaviour
             Health = Health - damageAmount;
             remainingInvincibilityTime = InvincibilityTimer;
         }
+
         if (Health <= 0f)
         {
             Death();
         }
     }
+
     // Handles changes when enemy dies
     private void Death()
     {
