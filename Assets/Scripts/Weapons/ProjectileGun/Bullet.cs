@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
         if (collide.gameObject.tag != "Bullet")
         {
             NonPlayerHealth nonPlayerHealth = collide.gameObject.GetComponent<NonPlayerHealth>();
-            nonPlayerHealth.Damage(Damage);
+            nonPlayerHealth.Damage(Data.Damage);
             DestroyBullet();
         }
     }
