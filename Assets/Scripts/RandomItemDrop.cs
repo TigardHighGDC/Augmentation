@@ -10,12 +10,7 @@ public class RandomItemDrop : NonPlayerHealth
     public List<GameObject> SpawnPool;
 
     private NonPlayerHealth potHealth;
-
-    private void Start()
-    {
-        potHealth = GetComponent<NonPlayerHealth>();
-    }
-
+    
     public override void Death()
     {
         GameObject toSpawn;
