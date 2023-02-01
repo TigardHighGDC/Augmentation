@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 85116921549280296}
   - component: {fileID: 85116921549280298}
   - component: {fileID: 219141164}
-  - component: {fileID: 219141168}
   m_Layer: 0
   m_Name: Pot
   m_TagString: Untagged
@@ -99,7 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b6366552aa0804b90777ec4028b0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPool: []
+  Health: 1
+  InvincibilityTimer: 0
+  SpawnPool:
+  - {fileID: 15184874389256742, guid: 6f95ff7e446630b46b109e529511b67d, type: 3}
 --- !u!58 &219141164
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -116,17 +118,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &219141168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85116921549280279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b471242aed005344e9f26e6bb910160d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 1
-  InvincibilityTimer: 0

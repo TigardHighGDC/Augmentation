@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomItemDrop : MonoBehaviour
+public class RandomItemDrop : NonPlayerHealth
 {
     public List<GameObject> SpawnPool;
 
@@ -16,7 +16,7 @@ public class RandomItemDrop : MonoBehaviour
         potHealth = GetComponent<NonPlayerHealth>();
     }
 
-    private void Update()
+    public override void Death()
     {
         // Zero health makes it "break".
         if (potHealth.Health <= 0)
@@ -31,10 +31,5 @@ public class RandomItemDrop : MonoBehaviour
             Instantiate(toSpawn, transform.position, transform.rotation);
             Destroy(gameObject);
         }
-    }
-
-    public void Damage(float damageAmount)
-    {
-        potHealth.Health = potHealth.Health - damageAmount;
     }
 }

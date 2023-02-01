@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 15184874389256763}
   - component: {fileID: 15184874389256760}
   - component: {fileID: 1147875555}
-  - component: {fileID: 1147875556}
   - component: {fileID: 944256820}
+  - component: {fileID: 8638822979669098814}
   m_Layer: 0
   m_Name: LaptopGoon
   m_TagString: Enemy
@@ -174,12 +174,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   Damage: 1
-  followDistance: 14
-  dangerDistance: 8
-  runAwayDistance: 12
-  BulletSpeed: 5
   Bullet: {fileID: 6900885866568021340, guid: 3ba2d1017b8fffb40b4af2b7756c61a5, type: 3}
   BulletPerSecond: 2
+  BulletSpeed: 5
+  DangerDistance: 0
+  FollowDistance: 0
+  RunAwayDistance: 0
 --- !u!58 &1147875555
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -196,20 +196,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!114 &1147875556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15184874389256742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b471242aed005344e9f26e6bb910160d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 3
-  InvincibilityTimer: 0
 --- !u!50 &944256820
 Rigidbody2D:
   serializedVersion: 4
@@ -231,3 +217,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8638822979669098814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15184874389256742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6cc37bb2c5788a45b2279457cc0d6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 3
+  InvincibilityTimer: 0

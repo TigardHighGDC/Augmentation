@@ -34,5 +34,14 @@ public class NonPlayerHealth : MonoBehaviour
             Health = Health - damageAmount;
             remainingInvincibilityTime = InvincibilityTimer;
         }
+        if (Health <= 0f)
+        {
+            Death();
+        }
+    }
+
+    public virtual void Death()
+    {
+        Destroy(gameObject);
     }
 }
