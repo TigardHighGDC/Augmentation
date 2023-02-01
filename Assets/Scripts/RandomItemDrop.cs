@@ -18,18 +18,14 @@ public class RandomItemDrop : NonPlayerHealth
 
     public override void Death()
     {
-        // Zero health makes it "break".
-        if (potHealth.Health <= 0)
-        {
-            GameObject toSpawn;
-            int randomItem = 0;
+        GameObject toSpawn;
+        int randomItem = 0;
 
-            // Random item dropped from the public list.
-            randomItem = Random.Range(0, SpawnPool.Count);
-            toSpawn = SpawnPool[randomItem];
+        // Random item dropped from the public list.
+        randomItem = Random.Range(0, SpawnPool.Count);
+        toSpawn = SpawnPool[randomItem];
 
-            Instantiate(toSpawn, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
+        Instantiate(toSpawn, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }
