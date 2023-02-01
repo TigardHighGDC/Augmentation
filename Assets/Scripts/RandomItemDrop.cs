@@ -11,12 +11,9 @@ public class RandomItemDrop : NonPlayerHealth
 
     public override void Death()
     {
-        GameObject toSpawn;
-        int randomItem = 0;
-
         // Random item dropped from the public list.
-        randomItem = Random.Range(0, SpawnPool.Count);
-        toSpawn = SpawnPool[randomItem];
+        int randomItem = Random.Range(0, SpawnPool.Count);
+        GameObject toSpawn = SpawnPool[randomItem];
 
         Instantiate(toSpawn, transform.position, transform.rotation);
         Destroy(gameObject);
