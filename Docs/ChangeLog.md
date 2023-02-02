@@ -20,6 +20,9 @@ A bi-weekly log of project changes separated by two week sprints.
   - Updated Unity to version `2021.3.17f1` [#62](https://github.com/TigardHighGDC/Augmentation/pull/34).
 - Enhancements:
   - Moved `Damage` for `Bullet.cs` to `WeaponData.cs` [#58](https://github.com/TigardHighGDC/Augmentation/pull/58).
+  - Started Polymorphic structure of `NonPlayerHealth.cs` [#64](https://github.com/TigardHighGDC/Augmentation/pull/64).
+- Bug Fixes:
+  - Removed `EnemyHealth.cs` as it was renamed to `NonPlayerHealth.cs` [#64](https://github.com/TigardHighGDC/Augmentation/pull/64).
 
 ## 1/4/2023 - 1/16/2023 (Sprint #2)
 
