@@ -23,6 +23,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Started Polymorphic structure of `NonPlayerHealth.cs` [#64](https://github.com/TigardHighGDC/Augmentation/pull/64).
 - Bug Fixes:
   - Removed `EnemyHealth.cs` as it was renamed to `NonPlayerHealth.cs` [#64](https://github.com/TigardHighGDC/Augmentation/pull/64).
+  - Fixed a branch merge issue where prefab data was lossed in `LaptopGoon.prefab` [#68](https://github.com/TigardHighGDC/Augmentation/pull/64).
 
 ## 1/4/2023 - 1/16/2023 (Sprint #2)
 
