@@ -177,9 +177,9 @@ MonoBehaviour:
   Bullet: {fileID: 6900885866568021340, guid: 3ba2d1017b8fffb40b4af2b7756c61a5, type: 3}
   BulletPerSecond: 2
   BulletSpeed: 5
-  DangerDistance: 0
-  FollowDistance: 0
-  RunAwayDistance: 0
+  DangerDistance: 8
+  FollowDistance: 14
+  RunAwayDistance: 12
 --- !u!58 &1147875555
 CircleCollider2D:
   m_ObjectHideFlags: 0
