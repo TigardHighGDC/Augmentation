@@ -9,5 +9,4 @@ using UnityEngine;
 public class BasicEnemy : MonoBehaviour
 {
     public GameObject Player;
-    public float Damage;
 }
