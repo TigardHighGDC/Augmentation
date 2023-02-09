@@ -9,7 +9,7 @@ public abstract class SceneLoader : MonoBehaviour
 {
     public string SceneName;
 
-    private IEnumerator LoadSceneAsync()
+    public IEnumerator LoadSceneAsync()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneName);
 
