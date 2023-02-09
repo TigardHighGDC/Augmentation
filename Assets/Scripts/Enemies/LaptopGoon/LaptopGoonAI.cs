@@ -15,6 +15,7 @@ public class LaptopGoonAI : BasicEnemy
     public float FollowDistance;
     public float RunAwayDistance;
     public float Damage;
+
     private AIPath aiPath;
     private AIDestinationSetter locationSetter;
     private Seeker seeker;
