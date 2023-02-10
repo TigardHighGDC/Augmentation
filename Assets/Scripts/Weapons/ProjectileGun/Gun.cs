@@ -54,6 +54,7 @@ public class Gun : MonoBehaviour
 
         // Plays sound effect.
         // Test Use AudioManipulation.BitCrusher(Data.SoundEffect, 11);
+        AudioManipulation.BitCrusher(Data.SoundEffect, 20);
         audioPlayer.PlayOneShot(Data.SoundEffect, Data.SoundVolume);
 
         // Spawn bullets.
