@@ -18,12 +18,13 @@ A bi-weekly log of project changes separated by two week sprints.
   - New breakable item type with random drops [#53](https://github.com/TigardHighGDC/Augmentation/pull/53).
   - New range based enemy type with dynamic pathing [#58](https://github.com/TigardHighGDC/Augmentation/pull/58).
   - Updated Unity to version `2021.3.17f1` [#62](https://github.com/TigardHighGDC/Augmentation/pull/34).
+  - Player stat added that tracks level corruption level [#76](https://github.com/TigardHighGDC/Augmentation/pull/76).
 - Enhancements:
   - Moved `Damage` for `Bullet.cs` to `WeaponData.cs` [#58](https://github.com/TigardHighGDC/Augmentation/pull/58).
   - Started Polymorphic structure of `NonPlayerHealth.cs` [#64](https://github.com/TigardHighGDC/Augmentation/pull/64).
 - Bug Fixes:
   - Removed `EnemyHealth.cs` as it was renamed to `NonPlayerHealth.cs` [#64](https://github.com/TigardHighGDC/Augmentation/pull/64).
-  - Fixed a branch merge issue where prefab data was lossed in `LaptopGoon.prefab` [#68](https://github.com/TigardHighGDC/Augmentation/pull/64).
+  - Fixed a branch merge issue where prefab data was lost in `LaptopGoon.prefab` [#68](https://github.com/TigardHighGDC/Augmentation/pull/64).
 
 ## 1/4/2023 - 1/16/2023 (Sprint #2)
 
