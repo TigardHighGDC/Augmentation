@@ -62,6 +62,7 @@ public class Gun : MonoBehaviour
             GameObject bullet = Instantiate(Bullet, SpawnPoint.position, eulerAngle);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             bullet.GetComponent<Bullet>().Data = Data;
+            bullet.transform.localScale = new Vector3(Data.Size, Data.Size, 1);
             rb.velocity = bullet.transform.up * Data.BulletSpeed;
         }
     }
@@ -82,7 +83,7 @@ public class Gun : MonoBehaviour
     private IEnumerator CanShoot()
     {
         shotDelay = true;
-        ammoAmount -= Data.BulletPerTrigger;
+        ammoAmount -= 1;
 
         // Yield is required to pause the function.
         yield return new WaitForSeconds(Data.BulletPerSecond);

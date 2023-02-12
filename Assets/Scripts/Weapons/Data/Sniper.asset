@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0105a0956d55806448d62a1d87062f14, type: 3}
-  m_Name: Pistol
+  m_Name: Sniper
   m_EditorClassIdentifier: 
-  Damage: 10
+  Damage: 50
   Size: 1
-  ReloadSpeed: 1
-  BulletSpeed: 12
-  BulletPerSecond: 0.5
+  ReloadSpeed: 2
+  BulletSpeed: 25
+  BulletPerSecond: 1.5
   BulletPerTrigger: 1
   AmmoCapacity: 6
-  Spread: 10
-  Knockback: 0
-  DespawnTime: 2
-  AutoReload: 1
-  GunShotSound: {fileID: 8300000, guid: 56acccf981ef4664aa444778b40b61b3, type: 3}
+  Spread: 5
+  Knockback: 20
+  DespawnTime: 20
+  AutoReload: 0
+  GunShotSound: {fileID: 8300000, guid: bc5110c9770ed9d4baf0a16ba0653044, type: 3}
   GunShotVolume: 1
-  ReloadSound: {fileID: 8300000, guid: 0a1c588072789af42920dc10aa6d1b04, type: 3}
-  ReloadVolume: 1
+  ReloadSound: {fileID: 0}
+  ReloadVolume: 0
