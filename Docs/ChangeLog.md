@@ -15,6 +15,9 @@ A bi-weekly log of project changes separated by two week sprints.
 
 - New Features:
   - Updated Unity to version `2021.3.18f1` [#88](https://github.com/TigardHighGDC/Augmentation/pull/88).
+- Bug Fixes:
+  - Added a file to the `AStartPathfindingProject` submodule that removes a untracked commit message [#78](https://github.com/TigardHighGDC/Augmentation/pull/78).
+
 
 ## 1/17/2023 - 2/7/2023 (Sprint #3)
 
