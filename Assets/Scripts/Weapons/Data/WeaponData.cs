@@ -19,6 +19,10 @@ public class WeaponData : ScriptableObject
     public float Knockback;
     public float DespawnTime;
     public bool AutoReload;
-    public AudioClip SoundEffect;
-    public float SoundVolume;
+
+    [Header("SoundFX")]
+    public AudioClip GunShotSound;
+    public float GunShotVolume;
+    public AudioClip ReloadSound;
+    public float ReloadVolume;
 }

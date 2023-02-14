@@ -53,7 +53,7 @@ public class Gun : MonoBehaviour
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
 
         // Plays sound effect.
-        audioPlayer.PlayOneShot(Data.SoundEffect, Data.SoundVolume);
+        audioPlayer.PlayOneShot(Data.GunShotSound, Data.GunShotVolume);
 
         // Spawn bullets.
         for (int i = 0; i < Data.BulletPerTrigger; i++)
@@ -69,6 +69,7 @@ public class Gun : MonoBehaviour
     private IEnumerator Reload()
     {
         reloading = true;
+        audioPlayer.PlayOneShot(Data.ReloadSound, Data.ReloadVolume);
         Debug.Log("Reloading"); // TODO: Remove Debug.Log() when we have a working interface.
 
         // Yield is required to pause the function.
