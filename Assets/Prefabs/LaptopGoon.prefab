@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 15184874389256760}
   - component: {fileID: 1147875555}
   - component: {fileID: 944256820}
-  - component: {fileID: 8638822979669098814}
+  - component: {fileID: 70099399}
   m_Layer: 0
   m_Name: LaptopGoon
   m_TagString: Enemy
@@ -173,13 +173,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  Damage: 1
   Bullet: {fileID: 6900885866568021340, guid: 3ba2d1017b8fffb40b4af2b7756c61a5, type: 3}
   BulletPerSecond: 2
   BulletSpeed: 5
   DangerDistance: 8
   FollowDistance: 14
   RunAwayDistance: 12
+  Damage: 1
 --- !u!58 &1147875555
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -217,7 +217,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8638822979669098814
+--- !u!114 &70099399
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,8 +226,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 15184874389256742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6cc37bb2c5788a45b2279457cc0d6d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cb34f301f3b77f4da66796c47164bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 3
   InvincibilityTimer: 0
+  corruptionStrength: 1
