@@ -12,12 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0105a0956d55806448d62a1d87062f14, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
+  Damage: 3
+  Size: 1
   ReloadSpeed: 1.5
-  BulletSpeed: 10
-  BulletPerSecond: 0.5
-  BulletPerTrigger: 8
-  AmmoCapacity: 24
-  Spread: 40
+  BulletSpeed: 12
+  BulletPerSecond: 0.8
+  BulletPerTrigger: 12
+  AmmoCapacity: 4
+  Spread: 20
   Knockback: 10
   DespawnTime: 1
   AutoReload: 1
+  GunShotSound: {fileID: 8300000, guid: 67e75d93ebc078141b4500b439026373, type: 3}
+  GunShotVolume: 1
+  ReloadSound: {fileID: 0}
+  ReloadVolume: 1
