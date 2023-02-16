@@ -9,6 +9,7 @@ public class AudioManipulation : MonoBehaviour
 {
     public static void BitCrusher(AudioClip original, int compression)
     {
+        // Acts as a fake audio compressor. Compression is the power of 2 Hz.
         float[] samples = new float[original.samples * original.channels];
         original.GetData(samples, 0);
         int chunk = original.samples / (int)Mathf.Pow(2, compression);
