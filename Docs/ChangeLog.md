@@ -18,6 +18,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Added audio crusher to distort sounds [#69](https://github.com/TigardHighGDC/Augmentation/pull/88).
 - Enhancements:
   - Added reloading sound to guns [#89](https://github.com/TigardHighGDC/Augmentation/pull/88).
+  - Upload of sounds & added volume control [#91](https://github.com/TigardHighGDC/Augmentation/pull/91).
 - Bug Fixes:
   - Added a file to the `AStartPathfindingProject` submodule that removes a untracked commit message [#78](https://github.com/TigardHighGDC/Augmentation/pull/78).
 
