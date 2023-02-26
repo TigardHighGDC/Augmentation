@@ -229,6 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb34f301f3b77f4da66796c47164bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 20
   InvincibilityTimer: 0
   corruptionStrength: 1
