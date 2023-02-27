@@ -20,7 +20,7 @@ MonoBehaviour:
   BulletPerTrigger: 1
   AmmoCapacity: 6
   Spread: 10
-  Knockback: 30
+  Knockback: 20
   DespawnTime: 2
   AutoReload: 1
   GunShotSound: {fileID: 8300000, guid: 56acccf981ef4664aa444778b40b61b3, type: 3}

@@ -4,9 +4,9 @@ using UnityEngine;
 using Pathfinding;
 
 public class AIPhysics : MonoBehaviour
-{   
-    public float MaxSpeed = 1f;
-    public float Brake = 2f;
+{
+    public float MaxSpeed = 4f;
+    public float Brake = 0.8f;
     public float nextWaypointDistance = 3f;
     public bool isStopped = false;
 
@@ -17,17 +17,16 @@ public class AIPhysics : MonoBehaviour
     private int currentWaypoint = 0;
     private bool reachedEndOfPath = false;
 
-    
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0f, 0.5f);
+        InvokeRepeating("UpdatePath", 0f, 0.1f);
     }
 
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
         if (path != null)
         {
@@ -51,6 +50,10 @@ public class AIPhysics : MonoBehaviour
             {
                 BrakeSpeed();
             }
+            else
+            {
+                Stopped();
+            }
         }
     }
 
@@ -72,19 +75,33 @@ public class AIPhysics : MonoBehaviour
 
     private void BrakeSpeed()
     {
-        path.vectorPath.ForEach(p => Debug.Log(p));
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 directionChange = new Vector2(0, 0);
 
-        float distance = (direction[0] * MaxSpeed) - rb.velocity[0]; 
+        float distance = (direction[0] * MaxSpeed) - rb.velocity[0];
         float max = Mathf.Min(Mathf.Abs((direction[0] * Brake) / distance), 1);
         directionChange[0] = Mathf.Lerp(rb.velocity[0], direction[0] * MaxSpeed, max);
 
-        distance = (direction[1] * MaxSpeed) - rb.velocity[1]; 
+        distance = (direction[1] * MaxSpeed) - rb.velocity[1];
         max = Mathf.Min(Mathf.Abs((direction[1] * Brake) / distance), 1);
         directionChange[1] = Mathf.Lerp(rb.velocity[1], direction[1] * MaxSpeed, max);
 
         rb.velocity = directionChange;
     }
 
+    private void Stopped()
+    {
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector2 directionChange = new Vector2(0, 0);
+
+        float distance = (direction[0] * MaxSpeed) - rb.velocity[0];
+        float max = Mathf.Min(Mathf.Abs((direction[0] * Brake) / distance), 1);
+        directionChange[0] = Mathf.Lerp(rb.velocity[0], 0, max);
+
+        distance = (direction[1] * MaxSpeed) - rb.velocity[1];
+        max = Mathf.Min(Mathf.Abs((direction[1] * Brake) / distance), 1);
+        directionChange[1] = Mathf.Lerp(rb.velocity[1], 0, max);
+
+        rb.velocity = directionChange;
+    }
 }
