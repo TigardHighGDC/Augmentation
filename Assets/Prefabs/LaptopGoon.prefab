@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 15184874389256740}
   - component: {fileID: 15184874389256741}
   - component: {fileID: 15184874389256762}
-  - component: {fileID: 15184874389256763}
   - component: {fileID: 15184874389256760}
   - component: {fileID: 1147875555}
   - component: {fileID: 944256820}
   - component: {fileID: 70099399}
+  - component: {fileID: -1119845651491644574}
   m_Layer: 0
   m_Name: LaptopGoon
   m_TagString: Enemy
@@ -118,48 +118,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &15184874389256763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15184874389256742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
-  radius: 0.5
-  height: 1
-  canMove: 1
-  maxSpeed: 3
-  gravity: {x: 0, y: 0, z: 0}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  centerOffsetCompatibility: NaN
-  repathRateCompatibility: NaN
-  canSearchCompability: 0
-  orientation: 1
-  enableRotation: 0
-  autoRepath:
-    mode: 2
-    interval: 0.5
-    sensitivity: 10
-    maximumInterval: 2
-    visualizeSensitivity: 0
-  targetCompatibility: {fileID: 0}
-  maxAcceleration: -2.5
-  rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 2
-  endReachedDistance: 0.2
-  alwaysDrawGizmos: 0
-  slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 0
-  constrainInsideGraph: 0
 --- !u!114 &15184874389256760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,3 +190,19 @@ MonoBehaviour:
   Health: 20
   InvincibilityTimer: 0
   corruptionStrength: 1
+--- !u!114 &-1119845651491644574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15184874389256742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831e1ef0f4b39e544aba90ca518fc269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxSpeed: 3
+  Brake: 0.8
+  NextWaypointDistance: 3
+  IsStopped: 0

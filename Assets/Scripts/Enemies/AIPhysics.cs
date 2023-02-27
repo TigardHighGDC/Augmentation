@@ -7,8 +7,10 @@ public class AIPhysics : MonoBehaviour
 {
     public float MaxSpeed = 4f;
     public float Brake = 0.8f;
-    public float nextWaypointDistance = 3f;
-    public bool isStopped = false;
+    public float NextWaypointDistance = 3f;
+    public bool IsStopped = false;
+    public Vector3 DesiredLocation;
+    public bool PauseScript = false;
 
     private GameObject player;
     private Seeker seeker;
@@ -28,7 +30,7 @@ public class AIPhysics : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (path != null)
+        if (path != null && !PauseScript)
         {
             if (currentWaypoint >= path.vectorPath.Count)
             {
@@ -41,12 +43,12 @@ public class AIPhysics : MonoBehaviour
             }
 
             float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-            if (distance < nextWaypointDistance && currentWaypoint < path.vectorPath.Count - 1)
+            if (distance < NextWaypointDistance && currentWaypoint < path.vectorPath.Count - 1)
             {
                 currentWaypoint += 1;
             }
 
-            if (!isStopped)
+            if (!IsStopped)
             {
                 BrakeSpeed();
             }
@@ -61,7 +63,7 @@ public class AIPhysics : MonoBehaviour
     {
         if (seeker.IsDone())
         {
-            seeker.StartPath(rb.position, player.transform.position, OnPathComplete);
+            seeker.StartPath(rb.position, DesiredLocation, OnPathComplete);
         }
     }
     private void OnPathComplete(Path p)
