@@ -11,6 +11,7 @@ public class AIPhysics : MonoBehaviour
     public bool IsStopped = false;
     public Vector3 DesiredLocation;
     public bool PauseScript = false;
+    public float UpdatePathRate = 0.1f;
 
     private GameObject player;
     private Seeker seeker;
@@ -25,7 +26,7 @@ public class AIPhysics : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0f, 0.1f);
+        InvokeRepeating("UpdatePath", 0f, UpdatePathRate);
     }
 
     private void FixedUpdate()
