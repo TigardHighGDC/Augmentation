@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,49 +34,57 @@ public class AIPhysics : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (path != null && !PauseScript)
+        if (path == null || PauseScript)
         {
-            if (currentWaypoint >= path.vectorPath.Count)
-            {
-                reachedEndOfPath = true;
-                return;
-            }
-            else
-            {
-                reachedEndOfPath = false;
-            }
+            return;
+        }
 
-            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-            if (distance < NextWaypointDistance && currentWaypoint < path.vectorPath.Count - 1)
-            {
-                currentWaypoint += 1;
-            }
+        if (currentWaypoint >= path.vectorPath.Count)
+        {
+            reachedEndOfPath = true;
+            return;
+        }
+        else
+        {
+            reachedEndOfPath = false;
+        }
 
-            if (!IsStopped)
-            {
-                BrakeSpeed();
-            }
-            else
-            {
-                Stopped();
-            }
+        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+
+        if (distance < NextWaypointDistance && currentWaypoint < path.vectorPath.Count - 1)
+        {
+            currentWaypoint += 1;
+        }
+
+        if (!IsStopped)
+        {
+            BrakeSpeed();
+        }
+        else
+        {
+            Stopped();
         }
     }
 
     private void UpdatePath()
     {
-        if (seeker.IsDone())
+        if (!seeker.IsDone())
         {
-            seeker.StartPath(rb.position, DesiredLocation, OnPathComplete);
+            return;
         }
+
+        seeker.StartPath(rb.position, DesiredLocation, OnPathComplete);
     }
+
     private void OnPathComplete(Path p)
     {
-        if (!p.error)
+        if (p.error)
         {
-            path = p;
-            currentWaypoint = 0;
+            return;
         }
+
+        path = p;
+        currentWaypoint = 0;
     }
 
     private void BrakeSpeed()
