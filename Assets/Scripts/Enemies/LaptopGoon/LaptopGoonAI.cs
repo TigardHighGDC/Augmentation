@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class LaptopGoonAI : MonoBehaviour
+public class LaptopGoonAI : EnemyAI
 {
     public GameObject Bullet;
     public float BulletPerSecond;
@@ -16,22 +16,8 @@ public class LaptopGoonAI : MonoBehaviour
     public float RunAwayDistance;
     public float Damage;
 
-    private GameObject player;
-    private AIPhysics aiPath;
-    private AIDestinationSetter locationSetter;
-    private Seeker seeker;
-    private Rigidbody2D rb;
-
     private bool runAway = false;
     private bool canFire = true;
-
-    private void Start()
-    {
-        player = GameObject.FindWithTag("Player");
-        seeker = GetComponent<Seeker>();
-        aiPath = GetComponent<AIPhysics>();
-        rb = GetComponent<Rigidbody2D>();
-    }
 
     private void Update()
     {
@@ -47,7 +33,7 @@ public class LaptopGoonAI : MonoBehaviour
     private void keepDistance()
     {
         aiPath.IsStopped = false;
-        float distance = DistanceBetweenPlayer(player);
+        float distance = DistanceBetweenPlayer();
 
         if (runAway && RunAwayDistance <= distance)
         {
@@ -76,16 +62,6 @@ public class LaptopGoonAI : MonoBehaviour
         }
     }
 
-    // Calculates the distance between the player and enemy.
-    private float DistanceBetweenPlayer(GameObject player)
-    {
-        float y2 = player.transform.position.y;
-        float y1 = transform.position.y;
-        float x2 = player.transform.position.x;
-        float x1 = transform.position.x;
-        return Mathf.Sqrt(Mathf.Pow(y2 - y1, 2) + Mathf.Pow(x2 - x1, 2));
-    }
-
     private void LookTowardsMovement()
     {
         // Look towards the player if stopped and if not look towards the direction it is following.
@@ -100,11 +76,11 @@ public class LaptopGoonAI : MonoBehaviour
                 transform.localScale = new Vector3(-1, 1, 1);
             }
         }
-        else if (rb.position[0] >= 0.1f)
+        else if (rb.velocity[0] >= 0.1f)
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (rb.position[0] <= -0.1f)
+        else if (rb.velocity[0] <= -0.1f)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }

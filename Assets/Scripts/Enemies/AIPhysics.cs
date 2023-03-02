@@ -12,6 +12,8 @@ public class AIPhysics : MonoBehaviour
     public Vector3 DesiredLocation;
     public bool PauseScript = false;
     public float UpdatePathRate = 0.1f;
+    [HideInInspector]
+    public Vector2 direction = new Vector2(0, 0);
 
     private GameObject player;
     private Seeker seeker;
@@ -48,7 +50,7 @@ public class AIPhysics : MonoBehaviour
             {
                 currentWaypoint += 1;
             }
-
+            direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
             if (!IsStopped)
             {
                 BrakeSpeed();
@@ -78,7 +80,6 @@ public class AIPhysics : MonoBehaviour
 
     private void BrakeSpeed()
     {
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 directionChange = new Vector2(0, 0);
 
         float distance = (direction[0] * MaxSpeed) - rb.velocity[0];
@@ -94,7 +95,6 @@ public class AIPhysics : MonoBehaviour
 
     private void Stopped()
     {
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 directionChange = new Vector2(0, 0);
 
         float distance = (direction[0] * MaxSpeed) - rb.velocity[0];
