@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class LaptopGoonAI : BasicEnemy
+public class LaptopGoonAI : MonoBehaviour
 {
     public GameObject Bullet;
     public float BulletPerSecond;
@@ -16,17 +16,21 @@ public class LaptopGoonAI : BasicEnemy
     public float RunAwayDistance;
     public float Damage;
 
-    private AIPath aiPath;
+    private GameObject player;
+    private AIPhysics aiPath;
     private AIDestinationSetter locationSetter;
     private Seeker seeker;
+    private Rigidbody2D rb;
 
     private bool runAway = false;
     private bool canFire = true;
 
     private void Start()
     {
+        player = GameObject.FindWithTag("Player");
         seeker = GetComponent<Seeker>();
-        aiPath = GetComponent<AIPath>();
+        aiPath = GetComponent<AIPhysics>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -42,8 +46,8 @@ public class LaptopGoonAI : BasicEnemy
 
     private void keepDistance()
     {
-        aiPath.isStopped = false;
-        float distance = DistanceBetweenPlayer(Player);
+        aiPath.IsStopped = false;
+        float distance = DistanceBetweenPlayer(player);
 
         if (runAway && RunAwayDistance <= distance)
         {
@@ -57,17 +61,17 @@ public class LaptopGoonAI : BasicEnemy
         if (runAway)
         {
             // Goes opposite direction of player
-            seeker.StartPath(transform.position, (2 * transform.position) - Player.transform.position);
+            aiPath.DesiredLocation = (2 * transform.position) - player.transform.position;
         }
         else
         {
             if (distance > FollowDistance)
             {
-                seeker.StartPath(transform.position, Player.transform.position);
+                aiPath.DesiredLocation = player.transform.position;
             }
             else
             {
-                aiPath.isStopped = true;
+                aiPath.IsStopped = true;
             }
         }
     }
@@ -85,9 +89,9 @@ public class LaptopGoonAI : BasicEnemy
     private void LookTowardsMovement()
     {
         // Look towards the player if stopped and if not look towards the direction it is following.
-        if (aiPath.isStopped)
+        if (aiPath.IsStopped)
         {
-            if (transform.position[0] < Player.transform.position[0])
+            if (transform.position[0] < player.transform.position[0])
             {
                 transform.localScale = new Vector3(1, 1, 1);
             }
@@ -96,11 +100,11 @@ public class LaptopGoonAI : BasicEnemy
                 transform.localScale = new Vector3(-1, 1, 1);
             }
         }
-        else if (aiPath.desiredVelocity.x >= 0.15f)
+        else if (rb.position[0] >= 0.1f)
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (aiPath.desiredVelocity.y <= 0.15f)
+        else if (rb.position[0] <= -0.1f)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
@@ -111,7 +115,7 @@ public class LaptopGoonAI : BasicEnemy
         canFire = false;
 
         // Get angle to fire at player and convert to euler.
-        Vector3 relativePoint = transform.position - Player.transform.position;
+        Vector3 relativePoint = transform.position - player.transform.position;
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
         Quaternion eulerAngle = Quaternion.Euler(0, 0, rotation);
 
