@@ -6,16 +6,17 @@ A bi-weekly log of project changes separated by two week sprints.
 
 | Date | Sprint |
 | - | - |
-| [2/8/2023 - 2/21/2023](#2082023---2212023) | 4 |
+| [2/8/2023 3/2/2023](#2082023---3022023) | 4 |
 | [1/17/2023 - 2/7/2023](#1172023---2072023) | 3 |
 | [1/4/2023 - 1/16/2023](#1042023---1162023) | 2 |
 | [12/6/2022 - 1/3/2023](#12062022---1032023) | 1 |
 
-## 2/8/2023 - 2/21/2023 (Sprint #4)
+## 2/8/2023 - 3/2/2023 (Sprint #4)
 
 - New Features:
   - Updated Unity to version `2021.3.18f1` [#88](https://github.com/TigardHighGDC/Augmentation/pull/88).
   - Added audio crusher to distort sounds [#69](https://github.com/TigardHighGDC/Augmentation/pull/88).
+  - Added enemy knockback [#92](https://github.com/TigardHighGDC/Augmentation/pull/92).
 - Enhancements:
   - Added reloading sound to guns [#89](https://github.com/TigardHighGDC/Augmentation/pull/88).
   - Upload of sounds & added volume control [#91](https://github.com/TigardHighGDC/Augmentation/pull/91).
