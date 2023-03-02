@@ -64,6 +64,4 @@ public class EY_AI : EnemyAI
             }
         }
     }
-
-
 }

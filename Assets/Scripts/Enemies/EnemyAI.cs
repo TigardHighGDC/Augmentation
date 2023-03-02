@@ -7,7 +7,7 @@ public abstract class EnemyAI : MonoBehaviour
     protected GameObject player;
     protected AIPhysics aiPath;
     protected Rigidbody2D rb;
-    
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
