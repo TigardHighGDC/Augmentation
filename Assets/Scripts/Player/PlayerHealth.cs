@@ -9,7 +9,6 @@ public class PlayerHealth : MonoBehaviour
 {
     public float Health;
     public float InvincibilityTimer;
-
     public SliderBarScript sliderBar;
 
     private float remainingInvincibilityTime;
