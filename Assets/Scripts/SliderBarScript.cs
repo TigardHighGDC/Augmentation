@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class SliderBarScript : MonoBehaviour
 {
     public Slider slider;
-    //for color
+    // for color
     public Gradient gradient;
 
     public Image fill;
 
-//at start to set the number that it considers the max
+    // at start to set the number that it considers the max
     public void SetMaxHealth(float health)
     {
         slider.maxValue = health;
@@ -20,7 +20,7 @@ public class SliderBarScript : MonoBehaviour
         fill.color = gradient.Evaluate(1f);
     }
 
-//for when you take damage it will shrink the fill
+    // for when you take damage it will shrink the fill
     public void SetHealth(float health)
     {
         slider.value = health;
