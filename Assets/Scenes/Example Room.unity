@@ -3999,7 +3999,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4038037041320961624, guid: aa83e7af0b7a0f84782cfd6eb8609c93, type: 3}
   m_PrefabInstance: {fileID: 4038037040429055871}
   m_PrefabAsset: {fileID: 0}
---- !u!120 &775661936
+--- !u!120 &775661946
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4007,7 +4007,7 @@ LineRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775661927}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -4019,7 +4019,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 0606ad15f030d5040ba93dcce79e9a59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4097,7 +4097,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_UseWorldSpace: 1
-  m_Loop: 0
+  m_Loop: 1
 --- !u!1 &1079428633
 GameObject:
   m_ObjectHideFlags: 0
@@ -4867,21 +4867,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4038037040429055874, guid: aa83e7af0b7a0f84782cfd6eb8609c93, type: 3}
-      propertyPath: EndChase
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4038037040429055874, guid: aa83e7af0b7a0f84782cfd6eb8609c93, type: 3}
-      propertyPath: BeginChase
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4038037040429055874, guid: aa83e7af0b7a0f84782cfd6eb8609c93, type: 3}
-      propertyPath: TooCloseEndChase
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4038037040429055874, guid: aa83e7af0b7a0f84782cfd6eb8609c93, type: 3}
-      propertyPath: TooCloseBeginChase
-      value: 6
+    - target: {fileID: 4038037040842379380, guid: aa83e7af0b7a0f84782cfd6eb8609c93, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4038037041320961623, guid: aa83e7af0b7a0f84782cfd6eb8609c93, type: 3}
       propertyPath: m_RootOrder

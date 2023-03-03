@@ -282,11 +282,10 @@ GameObject:
   - component: {fileID: 4038037040429055876}
   - component: {fileID: 4038037040429055877}
   - component: {fileID: 4038037040429055878}
-  - component: {fileID: 1657335703440666288}
-  - component: {fileID: 1575858580341787194}
+  - component: {fileID: 775661945}
   m_Layer: 0
   m_Name: EY Position
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,6 +319,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90babb27cc3a1514caf85affd30ce78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BeginChase: 20
+  EndChase: 15
+  TooCloseBeginChase: 6
+  TooCloseEndChase: 10
 --- !u!114 &4038037040429055875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,8 +407,8 @@ MonoBehaviour:
   Health: 100
   InvincibilityTimer: 0
   corruptionStrength: 5
---- !u!61 &1657335703440666288
-BoxCollider2D:
+--- !u!70 &775661945
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -417,42 +420,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.043439627, y: 0.15203857}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.9131207, y: 3.6932516}
-  m_EdgeRadius: 0
---- !u!61 &1575858580341787194
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4038037041320961624}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.021719694, y: 0.119458735}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.9547791, y: 1.2389174}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_Size: {x: 2, y: 3.5}
+  m_Direction: 0
