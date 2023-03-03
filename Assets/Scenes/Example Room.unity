@@ -4382,18 +4382,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaptopGoon
       objectReference: {fileID: 0}
-    - target: {fileID: 15184874389256760, guid: 6f95ff7e446630b46b109e529511b67d, type: 3}
-      propertyPath: DangerDistance
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 15184874389256760, guid: 6f95ff7e446630b46b109e529511b67d, type: 3}
-      propertyPath: FollowDistance
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 15184874389256760, guid: 6f95ff7e446630b46b109e529511b67d, type: 3}
-      propertyPath: RunAwayDistance
-      value: 14
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f95ff7e446630b46b109e529511b67d, type: 3}
 --- !u!1 &1956288694

@@ -8,11 +8,11 @@ using UnityEngine;
 public class LaptopGoonBullet : MonoBehaviour
 {
     [HideInInspector]
-    public float Damage;
+    public EnemyProjectileData Data;
 
     private void Start()
     {
-        Invoke("DestroyBullet", 10f);
+        Invoke("DestroyBullet", 20f);
     }
 
     private void OnTriggerEnter2D(Collider2D collide)
@@ -20,7 +20,7 @@ public class LaptopGoonBullet : MonoBehaviour
         if (collide.gameObject.tag == "Player")
         {
             PlayerHealth playerHealth = collide.gameObject.GetComponent<PlayerHealth>();
-            playerHealth.Damage(Damage);
+            playerHealth.Damage(Data.Damage);
             DestroyBullet();
         }
     }

@@ -130,14 +130,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e77fcc8bebbb648a33212a34d9616e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Data: {fileID: 11400000, guid: 52be6870ad0dd2f4a84138acabac9467, type: 2}
   Bullet: {fileID: 6900885866568021340, guid: 3ba2d1017b8fffb40b4af2b7756c61a5, type: 3}
-  BulletPerSecond: 2
-  BulletSpeed: 5
   DangerDistance: 8
-  FollowDistance: 14
-  RunAwayDistance: 12
-  Damage: 1
+  FollowDistance: 16
+  RunAwayDistance: 14
 --- !u!58 &1147875555
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -206,3 +203,7 @@ MonoBehaviour:
   Brake: 0.8
   NextWaypointDistance: 3
   IsStopped: 0
+  DesiredLocation: {x: 0, y: 0, z: 0}
+  PauseScript: 0
+  UpdatePathRate: 0.1
+  direction: {x: 0, y: 0}
