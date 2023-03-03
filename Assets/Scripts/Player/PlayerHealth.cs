@@ -10,12 +10,15 @@ public class PlayerHealth : MonoBehaviour
     public float Health;
     public float InvincibilityTimer;
 
+    public SliderBarScript sliderBar;
+
     private float remainingInvincibilityTime;
 
     // set timer to timer :P
     private void Start()
     {
         remainingInvincibilityTime = InvincibilityTimer;
+        sliderBar.SetMaxHealth(Health);
     }
 
     private void Update()
@@ -33,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Health = Health - damageAmount;
             remainingInvincibilityTime = InvincibilityTimer;
+            sliderBar.SetHealth(Health);
         }
 
         if (Health <= 0)
