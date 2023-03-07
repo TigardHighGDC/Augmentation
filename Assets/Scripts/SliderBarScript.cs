@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +12,7 @@ public class SliderBarScript : MonoBehaviour
     public Gradient Gradient;
     public Image Fill;
 
-    // Set the number that it considered the max
+    // Set the number that it considered the max.
     public void SetMaxHealth(float health)
     {
         Slider.maxValue = health;
@@ -18,7 +21,7 @@ public class SliderBarScript : MonoBehaviour
         Fill.color = Gradient.Evaluate(1f);
     }
 
-    // When you take damageg fill will shrink
+    // When you take damage fill will shrink.
     public void SetHealth(float health)
     {
         Slider.value = health;
