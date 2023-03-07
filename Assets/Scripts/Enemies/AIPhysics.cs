@@ -93,7 +93,11 @@ public class AIPhysics : MonoBehaviour
         Vector2 directionChange = new Vector2(0, 0);
 
         float distance = (direction[0] * MaxSpeed) - rb.velocity[0];
+
+        // Limit for lerp.
         float max = Mathf.Min(Mathf.Abs((direction[0] * Brake) / distance), 1);
+
+        // Edits velocity towards desired velocity.
         directionChange[0] = Mathf.Lerp(rb.velocity[0], direction[0] * MaxSpeed, max);
 
         distance = (direction[1] * MaxSpeed) - rb.velocity[1];
