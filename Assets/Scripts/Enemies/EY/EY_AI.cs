@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EY_AI : EnemyAI
 {
+    public LaserLine laser;
+
     public float BeginChase;
     public float EndChase;
 
@@ -13,9 +15,14 @@ public class EY_AI : EnemyAI
 
     private bool chase = false;
     private bool tooCloseChase = false;
+    private bool canShoot = true;
 
     private void Update()
     {
+        if (BeginChase + 5f > DistanceBetweenPlayer() && canShoot)
+        {
+            StartCoroutine(BeginShot());
+        }
         if (aiPath.direction[0] >= 0.5)
         {
             transform.localScale = new Vector3(-1, transform.localScale[1], transform.localScale[2]);
@@ -63,5 +70,18 @@ public class EY_AI : EnemyAI
                 aiPath.IsStopped = true;
             }
         }
+    }
+
+    private IEnumerator BeginShot()
+    {
+        // Attack seperated in phases
+        canShoot = false;
+        laser.DrawLine = false;
+        yield return new WaitForSeconds(3f);
+        laser.DrawLine = true;
+        yield return new WaitForSeconds(2f);
+        laser.DrawLine = false;
+        canShoot = true;
+        Fire();
     }
 }

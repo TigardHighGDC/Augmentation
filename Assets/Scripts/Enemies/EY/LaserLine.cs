@@ -12,6 +12,7 @@ public class LaserLine : MonoBehaviour
 
     private LineRenderer line;
     private Transform player;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -23,17 +24,15 @@ public class LaserLine : MonoBehaviour
         line.endWidth = Width;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (DrawLine)
         {
-            line.SetPositions(new Vector3[] {transform.position + ChangePosition, player.position});
+            line.SetPositions(new Vector3[] { transform.position + ChangePosition, player.position });
         }
         else
         {
-            line.SetPositions(new Vector3[] {});
+            line.SetPositions(new Vector3[] {Vector3.zero, Vector3.zero});
         }
-        
     }
 }

@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 8d625ee4c77bbf14ebdc0bb89c7d2ecc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -244,7 +244,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7d9a91f150eaf8a4687efce9669019e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -313,7 +313,7 @@ LineRenderer:
   m_SortingOrder: 5
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -368,7 +368,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_UseWorldSpace: 1
-  m_Loop: 0
+  m_Loop: 1
 --- !u!114 &1288960473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,8 +437,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90babb27cc3a1514caf85affd30ce78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 0}
-  Bullet: {fileID: 0}
+  Data: {fileID: 11400000, guid: de7feefcebd3e1946b3416cb7fda2810, type: 2}
+  Bullet: {fileID: 6900885866568021340, guid: 3ba2d1017b8fffb40b4af2b7756c61a5, type: 3}
+  BulletSpawn: {x: 0, y: 0, z: 0}
+  laser: {fileID: 1288960473}
   BeginChase: 20
   EndChase: 15
   TooCloseBeginChase: 6

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3556215575375450405}
   - component: {fileID: 3870417398945724436}
   m_Layer: 0
-  m_Name: LaptopGoonMouse
+  m_Name: EnemyBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,6 +6,7 @@ public abstract class EnemyAI : MonoBehaviour
 {
     public EnemyProjectileData Data;
     public GameObject Bullet;
+    public Vector3 BulletSpawn = new Vector3(0, 0, 0);
     protected GameObject player;
     protected AIPhysics aiPath;
     protected Rigidbody2D rb;
@@ -29,14 +30,14 @@ public abstract class EnemyAI : MonoBehaviour
     protected void Fire()
     {
         // Get angle to fire at player and convert to euler.
-        Vector3 relativePoint = transform.position - player.transform.position;
+        Vector3 relativePoint = (transform.position + BulletSpawn) - player.transform.position;
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
         Quaternion eulerAngle = Quaternion.Euler(0, 0, rotation);
 
         // Spawn bullet and provide needed values.
-        GameObject bullet = Instantiate(Bullet, transform.position, eulerAngle);
+        GameObject bullet = Instantiate(Bullet, transform.position + BulletSpawn, eulerAngle);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        bullet.GetComponent<LaptopGoonBullet>().Data = Data;
+        bullet.GetComponent<EnemyBullet>().Data = Data;
         rb.velocity = bullet.transform.up * Data.BulletSpeed;
     }
 }

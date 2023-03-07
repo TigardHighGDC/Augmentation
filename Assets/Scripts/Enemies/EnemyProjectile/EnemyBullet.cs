@@ -5,10 +5,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaptopGoonBullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     [HideInInspector]
     public EnemyProjectileData Data;
+    private bool hit = false;
 
     private void Start()
     {
@@ -17,8 +18,9 @@ public class LaptopGoonBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collide)
     {
-        if (collide.gameObject.tag == "Player")
+        if (collide.gameObject.tag == "Player" && !hit)
         {
+            hit = true;
             PlayerHealth playerHealth = collide.gameObject.GetComponent<PlayerHealth>();
             playerHealth.Damage(Data.Damage);
             DestroyBullet();

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e005e145ee6c8a34284ef73113e87003, type: 3}
-  m_Name: LaptopGoon
+  m_Name: EY
   m_EditorClassIdentifier: 
-  Damage: 20
-  BulletSpeed: 5
-  BulletPerSecond: 2
+  Damage: 50
+  BulletSpeed: 30
+  BulletPerSecond: 0
