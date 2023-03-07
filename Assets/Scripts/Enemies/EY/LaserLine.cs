@@ -32,7 +32,7 @@ public class LaserLine : MonoBehaviour
         }
         else
         {
-            line.SetPositions(new Vector3[] {Vector3.zero, Vector3.zero});
+            line.SetPositions(new Vector3[] { Vector3.zero, Vector3.zero });
         }
     }
 }
