@@ -11,6 +11,11 @@ A bi-weekly log of project changes separated by two week sprints.
 | [1/4/2023 - 1/16/2023](#1042023---1162023) | 2 |
 | [12/6/2022 - 1/3/2023](#12062022---1032023) | 1 |
 
+## 3/3/2023 - 3/16/2023 (Sprint #5)
+
+- New Features:
+  - Updated Unity to version `2021.3.20f1` [#96](https://github.com/TigardHighGDC/Augmentation/pull/96).
+
 ## 2/8/2023 - 3/2/2023 (Sprint #4)
 
 - New Features:
