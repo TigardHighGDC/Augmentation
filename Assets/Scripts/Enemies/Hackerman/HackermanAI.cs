@@ -13,7 +13,6 @@ public class HackermanAI : EnemyAI
         {
             StartCoroutine(BeginFiring());
         }
-        
     }
 
     private IEnumerator BeginFiring()
