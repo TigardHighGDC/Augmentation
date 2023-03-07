@@ -16,6 +16,7 @@ A bi-weekly log of project changes separated by two week sprints.
 
 - New Features:
   - Updated Unity to version `2021.3.20f1` [#96](https://github.com/TigardHighGDC/Augmentation/pull/96).
+  - Added health bar for both player health and corruption [#95](https://github.com/TigardHighGDC/Augmentation/pull/95).
 
 ## 2/8/2023 - 3/2/2023 (Sprint #4)
 
