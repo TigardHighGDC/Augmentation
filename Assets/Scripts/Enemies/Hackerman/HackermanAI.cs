@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HackermanAI : EnemyAI
 {
-    public EnemyProjectileData Data;
     private bool canShoot = true;
 
     private void Update()
