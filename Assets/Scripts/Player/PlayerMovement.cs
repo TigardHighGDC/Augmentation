@@ -21,7 +21,10 @@ public class PlayerMovement : MonoBehaviour
     {
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
-
+        if (x != 0)
+        {
+            transform.localScale = new Vector3(-1 * x, transform.localScale[1], transform.localScale[2]);
+        }
         direction = new Vector2(x, y);
         direction.Normalize();
         rb.velocity = direction * Speed;
