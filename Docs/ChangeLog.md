@@ -19,6 +19,8 @@ A bi-weekly log of project changes separated by two week sprints.
   - Added health bar for both player health and corruption [#95](https://github.com/TigardHighGDC/Augmentation/pull/95).
   - Added new EY enemy type [#97](https://github.com/TigardHighGDC/Augmentation/pull/97).
   - Added new Hackerman enemy type [#99](https://github.com/TigardHighGDC/Augmentation/pull/99).
+- Enhancements:
+  - Updated player image [#100](https://github.com/TigardHighGDC/Augmentation/pull/100).
 - Documentation:
   - Added comments that were previously missing in `AIPhysics.cs` [#98](https://github.com/TigardHighGDC/Augmentation/pull/98).
 
