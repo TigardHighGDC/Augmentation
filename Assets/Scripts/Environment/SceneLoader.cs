@@ -13,6 +13,9 @@ public abstract class SceneLoader : MonoBehaviour
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneName);
 
-        yield return new WaitUntil(asyncLoad.isDone);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }
