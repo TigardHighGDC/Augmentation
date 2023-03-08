@@ -15,6 +15,8 @@ public class AIPhysics : MonoBehaviour
     public Vector3 DesiredLocation;
     public bool PauseScript = false;
     public float UpdatePathRate = 0.1f;
+    [HideInInspector]
+    public Vector2 direction = new Vector2(0, 0);
 
     private GameObject player;
     private Seeker seeker;
@@ -34,57 +36,49 @@ public class AIPhysics : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (path == null || PauseScript)
+        if (path != null && !PauseScript)
         {
-            return;
-        }
+            if (currentWaypoint >= path.vectorPath.Count)
+            {
+                reachedEndOfPath = true;
+                return;
+            }
+            else
+            {
+                reachedEndOfPath = false;
+            }
 
-        if (currentWaypoint >= path.vectorPath.Count)
-        {
-            reachedEndOfPath = true;
-            return;
-        }
-        else
-        {
-            reachedEndOfPath = false;
-        }
-
-        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-
-        if (distance < NextWaypointDistance && currentWaypoint < path.vectorPath.Count - 1)
-        {
-            currentWaypoint += 1;
-        }
-
-        if (!IsStopped)
-        {
-            BrakeSpeed();
-        }
-        else
-        {
-            Stopped();
+            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+            if (distance < NextWaypointDistance && currentWaypoint < path.vectorPath.Count - 1)
+            {
+                currentWaypoint += 1;
+            }
+            direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+            if (!IsStopped)
+            {
+                BrakeSpeed();
+            }
+            else
+            {
+                Stopped();
+            }
         }
     }
 
     private void UpdatePath()
     {
-        if (!seeker.IsDone())
+        if (seeker.IsDone())
         {
-            return;
+            seeker.StartPath(rb.position, DesiredLocation, OnPathComplete);
         }
-
-        seeker.StartPath(rb.position, DesiredLocation, OnPathComplete);
     }
-
     private void OnPathComplete(Path p)
     {
-        if (p.error)
+        if (!p.error)
         {
-            return;
+            path = p;
+            currentWaypoint = 0;
         }
-
-        path = p;
-        currentWaypoint = 0;
     }
 
     private void BrakeSpeed()
