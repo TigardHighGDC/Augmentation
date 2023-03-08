@@ -54,7 +54,7 @@ public class MomentumAI : MonoBehaviour
             currentWaypoint += 1;
         }
 
-        direction = ((Vector2) path.vectorPath[currentWaypoint] - rb.position).normalized;
+        direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         rb.AddForce(direction * Speed, ForceMode2D.Impulse);
     }
 
