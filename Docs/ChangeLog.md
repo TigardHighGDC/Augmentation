@@ -25,6 +25,8 @@ A bi-weekly log of project changes separated by two week sprints.
   - Updated player image [#100](https://github.com/TigardHighGDC/Augmentation/pull/100).
 - Documentation:
   - Added comments that were previously missing in `AIPhysics.cs` [#98](https://github.com/TigardHighGDC/Augmentation/pull/98).
+- Bug Fixes:
+  - Fixed the player prefab... Again... [#103](https://github.com/TigardHighGDC/Augmentation/pull/103).
 
 ## 2/8/2023 - 3/2/2023 (Sprint #4)
 
