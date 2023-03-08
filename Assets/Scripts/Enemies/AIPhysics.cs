@@ -36,32 +36,37 @@ public class AIPhysics : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (path != null && !PauseScript)
+        if (path == null || PauseScript)
         {
-            if (currentWaypoint >= path.vectorPath.Count)
-            {
-                reachedEndOfPath = true;
-                return;
-            }
-            else
-            {
-                reachedEndOfPath = false;
-            }
+            return;
+        }
 
-            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-            if (distance < NextWaypointDistance && currentWaypoint < path.vectorPath.Count - 1)
-            {
-                currentWaypoint += 1;
-            }
-            direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-            if (!IsStopped)
-            {
-                BrakeSpeed();
-            }
-            else
-            {
-                Stopped();
-            }
+        if (currentWaypoint >= path.vectorPath.Count)
+        {
+            reachedEndOfPath = true;
+            return;
+        }
+        else
+        {
+            reachedEndOfPath = false;
+        }
+
+        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+
+        if (distance < NextWaypointDistance && currentWaypoint < path.vectorPath.Count - 1)
+        {
+            currentWaypoint += 1;
+        }
+
+        direction = ((Vector2) mpath.vectorPath[currentWaypoint] - rb.position).normalized;
+
+        if (!IsStopped)
+        {
+            BrakeSpeed();
+        }
+        else
+        {
+            Stopped();
         }
     }
 
@@ -72,6 +77,7 @@ public class AIPhysics : MonoBehaviour
             seeker.StartPath(rb.position, DesiredLocation, OnPathComplete);
         }
     }
+
     private void OnPathComplete(Path p)
     {
         if (!p.error)

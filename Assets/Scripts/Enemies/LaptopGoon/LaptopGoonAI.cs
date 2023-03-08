@@ -42,19 +42,16 @@ public class LaptopGoonAI : EnemyAI
 
         if (runAway)
         {
-            // Goes opposite direction of player
+            // Goes opposite direction of player.
             aiPath.DesiredLocation = (2 * transform.position) - player.transform.position;
+        }
+        else if (distance > FollowDistance)
+        {
+            aiPath.DesiredLocation = player.transform.position;
         }
         else
         {
-            if (distance > FollowDistance)
-            {
-                aiPath.DesiredLocation = player.transform.position;
-            }
-            else
-            {
-                aiPath.IsStopped = true;
-            }
+            aiPath.IsStopped = true;
         }
     }
 
