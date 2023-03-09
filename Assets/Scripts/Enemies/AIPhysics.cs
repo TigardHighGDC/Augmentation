@@ -58,7 +58,7 @@ public class AIPhysics : MonoBehaviour
             currentWaypoint += 1;
         }
 
-        direction = ((Vector2) path.vectorPath[currentWaypoint] - rb.position).normalized;
+        direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
 
         if (!IsStopped)
         {
