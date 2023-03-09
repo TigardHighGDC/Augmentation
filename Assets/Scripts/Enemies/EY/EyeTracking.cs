@@ -33,7 +33,7 @@ public class EyeTracking : MonoBehaviour
         // Sets max for distance that effects eye calculation
         float max = Mathf.Min(MaxDistance, Mathf.Abs(position));
 
-        // Growth rate of square root create high movement at the beginning but slows at the end.
+        // Growth rate of square root create high movement at the beginning but slows at the end
         travel[0] = body.position[0] + Mathf.Sqrt((4 / MaxDistance) * max) * sign * MaxEyeTravel;
 
         position = target[1] - body.position[1];

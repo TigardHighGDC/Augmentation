@@ -42,7 +42,7 @@ public class LaptopGoonAI : EnemyAI
 
         if (runAway)
         {
-            // Goes opposite direction of player.
+            // Goes opposite direction of player
             aiPath.DesiredLocation = (2 * transform.position) - player.transform.position;
         }
         else if (distance > FollowDistance)
@@ -57,7 +57,7 @@ public class LaptopGoonAI : EnemyAI
 
     private void LookTowardsMovement()
     {
-        // Look towards the player if stopped and if not look towards the direction it is following.
+        // Look towards the player if stopped and if not look towards the direction it is following
         if (aiPath.IsStopped)
         {
             if (transform.position[0] < player.transform.position[0])

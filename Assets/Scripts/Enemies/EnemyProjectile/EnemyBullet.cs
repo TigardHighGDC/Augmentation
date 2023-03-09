@@ -27,7 +27,7 @@ public class EnemyBullet : MonoBehaviour
         }
     }
 
-    // DestroyBullet() is called in the invoke function.
+    // DestroyBullet() is called in the invoke function
     private void DestroyBullet()
     {
         Destroy(gameObject);

@@ -58,7 +58,7 @@ public class AIPhysics : MonoBehaviour
             currentWaypoint += 1;
         }
 
-        direction = ((Vector2)mpath.vectorPath[currentWaypoint] - rb.position).normalized;
+        direction = ((Vector2) path.vectorPath[currentWaypoint] - rb.position).normalized;
 
         if (!IsStopped)
         {
@@ -94,10 +94,10 @@ public class AIPhysics : MonoBehaviour
 
         float distance = (direction[0] * MaxSpeed) - rb.velocity[0];
 
-        // Limit for lerp.
+        // Limit for lerp
         float max = Mathf.Min(Mathf.Abs((direction[0] * Brake) / distance), 1);
 
-        // Edits velocity towards desired velocity.
+        // Edits velocity towards desired velocity
         directionChange[0] = Mathf.Lerp(rb.velocity[0], direction[0] * MaxSpeed, max);
 
         distance = (direction[1] * MaxSpeed) - rb.velocity[1];

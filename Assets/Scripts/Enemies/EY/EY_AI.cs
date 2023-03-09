@@ -12,7 +12,7 @@ public class EY_AI : EnemyAI
     public float BeginChase;
     public float EndChase;
 
-    // Chase needs to be larger than to close chase.
+    // Chase needs to be larger than to close chase
     public float TooCloseBeginChase;
     public float TooCloseEndChase;
 
@@ -72,7 +72,7 @@ public class EY_AI : EnemyAI
 
     private IEnumerator BeginShot()
     {
-        // Attack separated in phases.
+        // Attack separated in phases
         canShoot = false;
         laser.DrawLine = false;
         yield return new WaitForSeconds(3f);

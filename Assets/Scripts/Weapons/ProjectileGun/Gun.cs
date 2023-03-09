@@ -48,15 +48,15 @@ public class Gun : MonoBehaviour
 
     private void Fire()
     {
-        // Get player angle relative to mouse.
+        // Get player angle relative to mouse
         Vector3 mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
         Vector3 relativePoint = transform.position - mousePosition;
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
 
-        // Plays sound effect.
+        // Plays sound effect
         audioPlayer.PlayOneShot(Data.GunShotSound, Data.GunShotVolume);
 
-        // Spawn bullets.
+        // Spawn bullets
         for (int i = 0; i < Data.BulletPerTrigger; i++)
         {
             Quaternion eulerAngle = Quaternion.Euler(0, 0, rotation + Random.Range(-Data.Spread, Data.Spread));
@@ -74,7 +74,7 @@ public class Gun : MonoBehaviour
         audioPlayer.PlayOneShot(Data.ReloadSound, Data.ReloadVolume);
         Debug.Log("Reloading"); // TODO: Remove Debug.Log() when we have a working interface.
 
-        // Yield is required to pause the function.
+        // Yield is required to pause the function
         yield return new WaitForSeconds(Data.ReloadSpeed);
         Debug.Log("Done"); // TODO: Remove Debug.Log() when we have a working interface.
         ammoAmount = Data.AmmoCapacity;
@@ -86,7 +86,7 @@ public class Gun : MonoBehaviour
         shotDelay = true;
         ammoAmount -= 1;
 
-        // Yield is required to pause the function.
+        // Yield is required to pause the function
         yield return new WaitForSeconds(Data.BulletPerSecond);
         shotDelay = false;
     }
