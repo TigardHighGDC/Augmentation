@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +11,12 @@ public class LaserLine : MonoBehaviour
     public Vector3 ChangePosition;
     public Color Color;
     public float Clear;
-    public float Width = 1f;
+    public float Width = 1.0f;
 
     private LineRenderer line;
     private Transform player;
 
-    void Start()
+    private void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
         line = GetComponent<LineRenderer>();
@@ -24,7 +27,7 @@ public class LaserLine : MonoBehaviour
         line.endWidth = Width;
     }
 
-    void Update()
+    private void Update()
     {
         if (DrawLine)
         {

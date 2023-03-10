@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,19 +40,14 @@ public class EY_AI : EnemyAI
     {
         aiPath.DesiredLocation = player.transform.position;
         float distance = DistanceBetweenPlayer();
-        if (chase)
+
+        if (chase && EndChase > distance)
         {
-            if (EndChase > distance)
-            {
-                chase = false;
-            }
+            chase = false;
         }
-        else if (tooCloseChase)
+        else if (tooCloseChase && TooCloseEndChase < distance)
         {
-            if (TooCloseEndChase < distance)
-            {
-                tooCloseChase = false;
-            }
+            tooCloseChase = false;
         }
         else
         {
@@ -74,7 +72,7 @@ public class EY_AI : EnemyAI
 
     private IEnumerator BeginShot()
     {
-        // Attack seperated in phases
+        // Attack separated in phases
         canShoot = false;
         laser.DrawLine = false;
         yield return new WaitForSeconds(3f);

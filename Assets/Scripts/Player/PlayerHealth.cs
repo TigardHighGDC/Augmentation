@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        // Update remaining invincibility time.
+        // Update remaining invincibility time
         if (remainingInvincibilityTime <= InvincibilityTimer && remainingInvincibilityTime > 0)
         {
             remainingInvincibilityTime -= Time.deltaTime;
@@ -44,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    // Handles changes when the player dies.
+    // Handles changes when the player dies
     private void Death()
     {
         Destroy(gameObject);

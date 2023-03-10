@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,12 +32,12 @@ public abstract class EnemyAI : MonoBehaviour
 
     protected void Fire()
     {
-        // Get angle to fire at player and convert to euler.
+        // Get angle to fire at player and convert to euler
         Vector3 relativePoint = (transform.position + BulletSpawn) - player.transform.position;
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
         Quaternion eulerAngle = Quaternion.Euler(0, 0, rotation);
 
-        // Spawn bullet and provide needed values.
+        // Spawn bullet and provide needed values
         GameObject bullet = Instantiate(Bullet, transform.position + BulletSpawn, eulerAngle);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         bullet.GetComponent<EnemyBullet>().Data = Data;
