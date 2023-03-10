@@ -30,11 +30,20 @@ public class WeaponInventory : MonoBehaviour
 
     private State state;
 
-    private Dictionary<int, KeyCode> weaponSwitchMap =
-        new Dictionary<int, KeyCode> { { 0, KeyCode.Alpha1 }, { 1, KeyCode.Alpha2 }, { 2, KeyCode.Alpha3 },
-                                       { 3, KeyCode.Alpha4 }, { 4, KeyCode.Alpha5 }, { 5, KeyCode.Alpha6 },
-                                       { 6, KeyCode.Alpha7 }, { 7, KeyCode.Alpha8 }, { 8, KeyCode.Alpha9 },
-                                       { 9, KeyCode.Alpha0 } };
+    // clang-format off
+    private Dictionary<int, KeyCode> weaponSwitchMap = new Dictionary<int, KeyCode> { 
+        { 0, KeyCode.Alpha1 }, 
+        { 1, KeyCode.Alpha2 }, 
+        { 2, KeyCode.Alpha3 },
+        { 3, KeyCode.Alpha4 }, 
+        { 4, KeyCode.Alpha5 }, 
+        { 5, KeyCode.Alpha6 },
+        { 6, KeyCode.Alpha7 }, 
+        { 7, KeyCode.Alpha8 }, 
+        { 8, KeyCode.Alpha9 },
+        { 9, KeyCode.Alpha0 } 
+    };
+    // clang-format on
 
     private void Start()
     {
