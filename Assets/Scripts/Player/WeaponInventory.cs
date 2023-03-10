@@ -67,7 +67,7 @@ public class WeaponInventory : MonoBehaviour
         else if (startingLoadout == StartingLoadout.ALL)
         {
             // Add all weapons to inventory.
-            // ALl being a relative term as this is only for testing.
+            // All being a relative term as this is only for testing.
             WeaponData pistol = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Pistol.asset");
             WeaponData shotgun = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Shotgun.asset");
             WeaponData sniper = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Sniper.asset");
