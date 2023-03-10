@@ -23,8 +23,10 @@ A bi-weekly log of project changes separated by two week sprints.
   - Added a way to load scenes asynchronously [#77](https://github.com/TigardHighGDC/Augmentation/pull/77).
 - Enhancements:
   - Updated player image [#100](https://github.com/TigardHighGDC/Augmentation/pull/100).
+  - General script cleanups [#105](https://github.com/TigardHighGDC/Augmentation/pull/105).
 - Documentation:
   - Added comments that were previously missing in `AIPhysics.cs` [#98](https://github.com/TigardHighGDC/Augmentation/pull/98).
+  - Added previously missing copyright notices to top of scripts [#105](https://github.com/TigardHighGDC/Augmentation/pull/105).
 - Bug Fixes:
   - Fixed the player prefab... Again... [#103](https://github.com/TigardHighGDC/Augmentation/pull/103).
   - Fixed a compiler error in the async scene loader [#104](https://github.com/TigardHighGDC/Augmentation/pull/104).
