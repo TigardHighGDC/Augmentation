@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AssaultRifle
   m_EditorClassIdentifier: 
   Damage: 0
+  Size: 0
   ReloadSpeed: 0
   BulletSpeed: 0
   BulletPerSecond: 0
