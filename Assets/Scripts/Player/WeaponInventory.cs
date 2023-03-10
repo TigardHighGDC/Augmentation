@@ -151,6 +151,11 @@ public class WeaponInventory : MonoBehaviour
         {
             return;
         }
+        else if (weaponIndex == 0)
+        {
+            Debug.Log("Cannot drop the starting weapon"); // TODO: Remove debug log
+            return;
+        }
 
         Assert.Boolean(weaponIndex == currentWeaponIndex);
 
