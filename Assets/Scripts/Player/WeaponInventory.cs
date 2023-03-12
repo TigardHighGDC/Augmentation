@@ -12,6 +12,8 @@ public class WeaponInventory : MonoBehaviour
     public int MaxWeapons = 3;
 
     private int currentWeaponIndex = -1;
+    private double lastWeaponSwitchTime = 0.0;
+    private double allowedWeaponSwitchTime = 1.0;
 
     enum StartingLoadout
     {
@@ -85,19 +87,49 @@ public class WeaponInventory : MonoBehaviour
 
     private void Update()
     {
-        if (state == State.NO_WEAPONS)
+        if (state == State.NO_WEAPONS || Time.time - lastWeaponSwitchTime < allowedWeaponSwitchTime)
         {
             return;
         }
 
-        // Switch weapons.
+        // Switch weapons with keybinds.
         for (int i = 0; i < Weapons.Count; i++)
         {
             if (Input.GetKeyDown(weaponSwitchMap[i]))
             {
                 ChangeWeapon(i);
+                lastWeaponSwitchTime = Time.time;
                 return;
             }
+        }
+
+        // Switch weapons with scroll wheel.
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        {
+            // Wrap around to the first weapon if we're at the end of the list.
+            if (currentWeaponIndex == Weapons.Count - 1)
+            {
+                ChangeWeapon(0);
+            }
+            else
+            {
+                ChangeWeapon(currentWeaponIndex + 1);
+            }
+
+            lastWeaponSwitchTime = Time.time;
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            if (currentWeaponIndex == 0)
+            {
+                ChangeWeapon(Weapons.Count - 1);
+            }
+            else
+            {
+                ChangeWeapon(currentWeaponIndex - 1);
+            }
+
+            lastWeaponSwitchTime = Time.time;
         }
 
         // Drop weapon.
