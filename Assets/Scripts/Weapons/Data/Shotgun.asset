@@ -25,5 +25,5 @@ MonoBehaviour:
   AutoReload: 1
   GunShotSound: {fileID: 8300000, guid: 67e75d93ebc078141b4500b439026373, type: 3}
   GunShotVolume: 1
-  ReloadSound: {fileID: 0}
+  ReloadSound: {fileID: 8300000, guid: 0de4b76db3e8cab448b834b47235ee2d, type: 3}
   ReloadVolume: 1
