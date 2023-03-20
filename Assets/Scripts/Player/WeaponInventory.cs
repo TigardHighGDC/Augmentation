@@ -141,11 +141,6 @@ public class WeaponInventory : MonoBehaviour
 
     private void ChangeWeapon(int newWeaponIndex)
     {
-        if (newWeaponIndex == currentWeaponIndex || state == State.NO_WEAPONS)
-        {
-            return;
-        }
-
         Assert.Boolean(newWeaponIndex < Weapons.Count);
 
         Debug.Log("Changing weapon to " + Weapons[newWeaponIndex].name); // TODO: Remove debug log
@@ -181,11 +176,6 @@ public class WeaponInventory : MonoBehaviour
     {
         if (state == State.NO_WEAPONS)
         {
-            return;
-        }
-        else if (weaponIndex == 0)
-        {
-            Debug.Log("Cannot drop the starting weapon"); // TODO: Remove debug log
             return;
         }
 
