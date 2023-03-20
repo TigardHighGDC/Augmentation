@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BugMoving
+  m_Name: Bug
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 07e70323f98907f4083a194e0bbe855a, type: 3}
+      value: {fileID: 21300000, guid: b3de4e5292673974381ffd370d2129ae, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 34fcf29928a4d44479aa800613a85adb, type: 3}
+      value: {fileID: 21300000, guid: a0391212376cfbe4d85644199c054169, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,8 +42,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 07e70323f98907f4083a194e0bbe855a, type: 3}
-    - {fileID: 21300000, guid: 34fcf29928a4d44479aa800613a85adb, type: 3}
+    - {fileID: 21300000, guid: b3de4e5292673974381ffd370d2129ae, type: 3}
+    - {fileID: 21300000, guid: a0391212376cfbe4d85644199c054169, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
