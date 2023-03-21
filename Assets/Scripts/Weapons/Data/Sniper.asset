@@ -24,6 +24,6 @@ MonoBehaviour:
   DespawnTime: 20
   AutoReload: 0
   GunShotSound: {fileID: 8300000, guid: bc5110c9770ed9d4baf0a16ba0653044, type: 3}
-  GunShotVolume: 1
-  ReloadSound: {fileID: 0}
-  ReloadVolume: 0
+  GunShotVolume: 2
+  ReloadSound: {fileID: 8300000, guid: 930b38215726cbd40be0b46ea7803370, type: 3}
+  ReloadVolume: 1.3
