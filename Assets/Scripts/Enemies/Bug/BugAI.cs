@@ -11,11 +11,11 @@ public class BugAI : EnemyAI
     {
         if (Mathf.Sign(aiPath.direction[0]) == Mathf.Sign(rb.velocity[0]))
         {
-            anim.speed = (Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) /  2;
+            anim.speed = (Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) / 2;
         }
         else
         {
-            anim.speed = ((Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) /  2) * -1;
+            anim.speed = ((Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) / 2) * -1;
         }
     }
     private void Update()
