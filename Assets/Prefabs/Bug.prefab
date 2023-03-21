@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5694345433127791797}
   - component: {fileID: 5694345433127791798}
-  - component: {fileID: 5694345433127791799}
   - component: {fileID: 5694345433127791759}
   - component: {fileID: 5694345433127791752}
   - component: {fileID: 5694345433127791753}
@@ -18,6 +17,7 @@ GameObject:
   - component: {fileID: 5694345433127791755}
   - component: {fileID: 5694345433127791796}
   - component: {fileID: 5694345433127791758}
+  - component: {fileID: 1211054356634015453}
   m_Layer: 0
   m_Name: Bug
   m_TagString: Untagged
@@ -92,27 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5694345433127791799
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5694345433127791792}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 60652312a9029824b97b9f125be3bf77, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5694345433127791759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
-  ResetHitSpeed: 1.5
+  ResetHitSpeed: 1
 --- !u!114 &5694345433127791755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,3 +231,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5477486, y: 1.018584}
   m_EdgeRadius: 0
+--- !u!111 &1211054356634015453
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5694345433127791792}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 857a20cf591a7b94889e51512ec512b3, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
