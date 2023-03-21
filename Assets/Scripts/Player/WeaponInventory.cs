@@ -139,8 +139,17 @@ public class WeaponInventory : MonoBehaviour
         }
     }
 
-    private void ChangeWeapon(int newWeaponIndex)
+    private void ChangeWeapon(int newWeaponIndex, bool force = false)
     {
+        if (state == State.NO_WEAPONS)
+        {
+            return;
+        } 
+        else if (newWeaponIndex == currentWeaponIndex && !force)
+        {
+            return;
+        }
+
         Assert.Boolean(newWeaponIndex < Weapons.Count);
 
         Debug.Log("Changing weapon to " + Weapons[newWeaponIndex].name); // TODO: Remove debug log
@@ -191,6 +200,6 @@ public class WeaponInventory : MonoBehaviour
         }
 
         Weapons.RemoveAt(weaponIndex);
-        ChangeWeapon(0);
+        ChangeWeapon(0, true);
     }
 }
