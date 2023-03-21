@@ -144,7 +144,7 @@ public class WeaponInventory : MonoBehaviour
         if (state == State.NO_WEAPONS)
         {
             return;
-        } 
+        }
         else if (newWeaponIndex == currentWeaponIndex && !force)
         {
             return;
