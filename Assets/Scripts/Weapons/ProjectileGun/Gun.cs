@@ -87,7 +87,7 @@ public class Gun : MonoBehaviour
         ammoAmount -= 1;
 
         // Yield is required to pause the function
-        yield return new WaitForSeconds(Data.BulletPerSecond);
+        yield return new WaitForSeconds(Data.CanShootInterval);
         shotDelay = false;
     }
 }

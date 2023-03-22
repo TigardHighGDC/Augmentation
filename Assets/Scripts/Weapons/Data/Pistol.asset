@@ -16,7 +16,7 @@ MonoBehaviour:
   Size: 1
   ReloadSpeed: 1
   BulletSpeed: 12
-  BulletPerSecond: 0.5
+  CanShootInterval: 0.5
   BulletPerTrigger: 1
   AmmoCapacity: 6
   Spread: 10
