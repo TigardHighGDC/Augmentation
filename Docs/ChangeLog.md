@@ -21,6 +21,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Added new Hackerman enemy type [#99](https://github.com/TigardHighGDC/Augmentation/pull/99).
   - Added new Bug enemy type [#101](https://github.com/TigardHighGDC/Augmentation/pull/101).
   - Added a way to load scenes asynchronously [#77](https://github.com/TigardHighGDC/Augmentation/pull/77).
+  - Added weapon inventory system [#107](https://github.com/TigardHighGDC/Augmentation/pull/107).
 - Enhancements:
   - Updated player image [#100](https://github.com/TigardHighGDC/Augmentation/pull/100).
   - General script cleanups [#105](https://github.com/TigardHighGDC/Augmentation/pull/105).
