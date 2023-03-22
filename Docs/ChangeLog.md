@@ -6,10 +6,33 @@ A bi-weekly log of project changes separated by two week sprints.
 
 | Date | Sprint |
 | - | - |
+| [3/3/2023 - 3/16/2023](#332023---3162023) | 5 |
 | [2/8/2023 3/2/2023](#2082023---3022023) | 4 |
 | [1/17/2023 - 2/7/2023](#1172023---2072023) | 3 |
 | [1/4/2023 - 1/16/2023](#1042023---1162023) | 2 |
 | [12/6/2022 - 1/3/2023](#12062022---1032023) | 1 |
+
+## 3/3/2023 - 3/16/2023 (Sprint #5)
+
+- New Features:
+  - Updated Unity to version `2021.3.20f1` [#96](https://github.com/TigardHighGDC/Augmentation/pull/96).
+  - Added health bar for both player health and corruption [#95](https://github.com/TigardHighGDC/Augmentation/pull/95).
+  - Added new EY enemy type [#97](https://github.com/TigardHighGDC/Augmentation/pull/97).
+  - Added new Hackerman enemy type [#99](https://github.com/TigardHighGDC/Augmentation/pull/99).
+  - Added new Bug enemy type [#101](https://github.com/TigardHighGDC/Augmentation/pull/101).
+  - Added a way to load scenes asynchronously [#77](https://github.com/TigardHighGDC/Augmentation/pull/77).
+  - Added weapon inventory system [#107](https://github.com/TigardHighGDC/Augmentation/pull/107).
+- Enhancements:
+  - Updated player image [#100](https://github.com/TigardHighGDC/Augmentation/pull/100).
+  - General script cleanups [#105](https://github.com/TigardHighGDC/Augmentation/pull/105).
+  - Updated weapon sprites, sounds and values [#112](https://github.com/TigardHighGDC/Augmentation/pull/112).
+  - Improved bug AI [#114](https://github.com/TigardHighGDC/Augmentation/pull/114).
+- Documentation:
+  - Added comments that were previously missing in `AIPhysics.cs` [#98](https://github.com/TigardHighGDC/Augmentation/pull/98).
+  - Added previously missing copyright notices to top of scripts [#105](https://github.com/TigardHighGDC/Augmentation/pull/105).
+- Bug Fixes:
+  - Fixed the player prefab... Again... [#103](https://github.com/TigardHighGDC/Augmentation/pull/103).
+  - Fixed a compiler error in the async scene loader [#104](https://github.com/TigardHighGDC/Augmentation/pull/104).
 
 ## 2/8/2023 - 3/2/2023 (Sprint #4)
 
