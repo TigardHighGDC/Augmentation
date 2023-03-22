@@ -24,7 +24,8 @@ A bi-weekly log of project changes separated by two week sprints.
 - Enhancements:
   - Updated player image [#100](https://github.com/TigardHighGDC/Augmentation/pull/100).
   - General script cleanups [#105](https://github.com/TigardHighGDC/Augmentation/pull/105).
-  - Updated weapon sprites, sounds and values [#108](https://github.com/TigardHighGDC/Augmentation/issues/108).
+  - Updated weapon sprites, sounds and values [#112](https://github.com/TigardHighGDC/Augmentation/pull/112).
+  - Improved bug AI [#114](https://github.com/TigardHighGDC/Augmentation/pull/114).
 - Documentation:
   - Added comments that were previously missing in `AIPhysics.cs` [#98](https://github.com/TigardHighGDC/Augmentation/pull/98).
   - Added previously missing copyright notices to top of scripts [#105](https://github.com/TigardHighGDC/Augmentation/pull/105).
