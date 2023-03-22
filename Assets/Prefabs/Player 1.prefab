@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e7aeb4067dcbe42948422ad544af34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 622b6880c4f9bf84684f20474f0c599a, type: 2}
+  Data: {fileID: 11400000, guid: c3111fb56c038cf4890b61ab799989e5, type: 2}
   Bullet: {fileID: 6900885866568021340, guid: 1af50cc5c9111d945b0a1c65d080fecd, type: 3}
   Camera: {fileID: 8198312400927786649}
   SpawnPoint: {fileID: 2134485480305730153}

@@ -13,12 +13,14 @@ public abstract class EnemyAI : MonoBehaviour
     protected GameObject player;
     protected AIPhysics aiPath;
     protected Rigidbody2D rb;
+    protected Animator anim;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         aiPath = GetComponent<AIPhysics>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     protected float DistanceBetweenPlayer()
