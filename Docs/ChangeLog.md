@@ -15,6 +15,8 @@ A bi-weekly log of project changes separated by two week sprints.
 
 ## 3/14/2023 - 4/4/2023 (Sprint #6)
 
+- Enhancements:
+  - Basic variable renaming for improved readability [#120](https://github.com/TigardHighGDC/Augmentation/pull/120).
 - Bug Fixes:
   - Updated `Bug.prefab`, a fix from [#114](https://github.com/TigardHighGDC/Augmentation/pull/114) [#119](https://github.com/TigardHighGDC/Augmentation/pull/119).
 
