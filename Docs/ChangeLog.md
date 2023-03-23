@@ -6,11 +6,17 @@ A bi-weekly log of project changes separated by two week sprints.
 
 | Date | Sprint |
 | - | - |
+| [4/4/2023 - 4/17/2023](#3142023---4042023) | 6 |
 | [3/3/2023 - 3/14/2023](#332023---3142023) | 5 |
 | [2/8/2023 3/2/2023](#2082023---3022023) | 4 |
 | [1/17/2023 - 2/7/2023](#1172023---2072023) | 3 |
 | [1/4/2023 - 1/16/2023](#1042023---1162023) | 2 |
 | [12/6/2022 - 1/3/2023](#12062022---1032023) | 1 |
+
+## 3/14/2023 - 4/4/2023 (Sprint #6)
+
+- Bug Fixes:
+  - Updated `Bug.prefab`, a fix from [#114](https://github.com/TigardHighGDC/Augmentation/pull/114) [#119](https://github.com/TigardHighGDC/Augmentation/pull/119).
 
 ## 3/3/2023 - 3/14/2023 (Sprint #5)
 
