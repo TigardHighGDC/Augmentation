@@ -13,7 +13,7 @@ public class WeaponData : ScriptableObject
     public float Size;
     public float ReloadSpeed;
     public float BulletSpeed;
-    public float BulletPerSecond;
+    public float CanShootInterval;
     public int BulletPerTrigger;
     public int AmmoCapacity;
     public float Spread;
