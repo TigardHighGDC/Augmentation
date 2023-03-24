@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
     public GameObject Bullet;
     public Camera Camera;
     public Transform SpawnPoint;
+    public AmmoCounter ammoCounter;
 
     private bool reloading = false;
     private bool shotDelay = false;
@@ -21,6 +22,8 @@ public class Gun : MonoBehaviour
     {
         ammoAmount = Data.AmmoCapacity;
         audioPlayer = gameObject.GetComponent<AudioSource>();
+        //Ammo counter text
+        ammoCounter.bulletText.text = ammoAmount.ToString();
     }
 
     private void Update()
@@ -78,6 +81,8 @@ public class Gun : MonoBehaviour
         yield return new WaitForSeconds(Data.ReloadSpeed);
         Debug.Log("Done"); // TODO: Remove Debug.Log() when we have a working interface.
         ammoAmount = Data.AmmoCapacity;
+        //Ammo counter text
+        ammoCounter.bulletText.text = ammoAmount.ToString();
         reloading = false;
     }
 
@@ -85,6 +90,8 @@ public class Gun : MonoBehaviour
     {
         shotDelay = true;
         ammoAmount -= 1;
+        //Ammo counter text
+        ammoCounter.bulletText.text = ammoAmount.ToString();
 
         // Yield is required to pause the function
         yield return new WaitForSeconds(Data.CanShootInterval);
