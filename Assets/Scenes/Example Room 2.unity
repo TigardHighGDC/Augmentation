@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1918439168085610199, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
       propertyPath: m_Name
-      value: HealthBar
+      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 1918439168085610283, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
       propertyPath: m_Pivot.x
