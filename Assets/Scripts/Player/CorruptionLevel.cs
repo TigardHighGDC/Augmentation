@@ -31,7 +31,7 @@ public class CorruptionLevel : MonoBehaviour
 
     private void UpdateEffects()
     {
-        KnockbackIncrease =  1.0f + PercentageIncrease(0.65f);
+        KnockbackIncrease = 1.0f + PercentageIncrease(0.65f);
         AccuracyDecrease = 1.0f + PercentageIncrease(1.2f);
         ShootIntervalDecrease = 1.0f - PercentageIncrease(0.5f);
     }
