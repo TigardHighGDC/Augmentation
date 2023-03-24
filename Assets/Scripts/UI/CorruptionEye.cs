@@ -18,13 +18,13 @@ public class CorruptionEye : MonoBehaviour
 
     void Update()
     {
-        Img.sprite = eyeList[ClosestIndex(CorruptionLevel.currentCorruption,  CorruptionLevel.corruptionMax)];
+        Img.sprite = eyeList[ClosestIndex(CorruptionLevel.currentCorruption, CorruptionLevel.corruptionMax)];
     }
 
     private int ClosestIndex(float current, float maxSize)
     {
         float percentage = current / maxSize;
-        int index = (int) Mathf.Floor(percentage * eyeList.Length);
+        int index = (int)Mathf.Floor(percentage * eyeList.Length);
         return index;
     }
 }
