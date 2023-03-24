@@ -11,6 +11,7 @@ public class BugAI : EnemyAI
     {
         anim.speed = (Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) / 2;
     }
+
     private void Update()
     {
         MovementAnimation();
