@@ -9,14 +9,7 @@ public class BugAI : EnemyAI
 {
     private void MovementAnimation()
     {
-        if (Mathf.Sign(aiPath.direction[0]) == Mathf.Sign(rb.velocity[0]))
-        {
-            anim.speed = (Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) / 2;
-        }
-        else
-        {
-            anim.speed = ((Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) / 2) * -1;
-        }
+        anim.speed = (Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) / 2;
     }
     private void Update()
     {

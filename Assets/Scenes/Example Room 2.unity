@@ -130,62 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.ctime0
-      value: 12914
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.ctime1
-      value: 37779
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.ctime2
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.key0.b
-      value: 0.03137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.key0.g
-      value: 0.03137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.key0.r
-      value: 0.69803923
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.key1.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.key1.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.key1.r
-      value: 0.9504132
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.key2.b
-      value: 0.17520213
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.key2.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.key2.r
-      value: 0.46472472
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1918439167298063817, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-      propertyPath: Gradient.m_NumColorKeys
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1918439168085610199, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
       propertyPath: m_Name
       value: HealthBar
@@ -4230,6 +4174,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5694345433127791797, guid: 72936f93b23f70a4190692bb870b5e5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6224054233382834453, guid: 72936f93b23f70a4190692bb870b5e5f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4332,6 +4280,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5694345433127791797, guid: 72936f93b23f70a4190692bb870b5e5f, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6224054233382834453, guid: 72936f93b23f70a4190692bb870b5e5f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4484,25 +4436,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1993521912 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8589533937859444998, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
-  m_PrefabInstance: {fileID: 6189127872834566190}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1993521923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993521912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 812fb073d4fd3c14593fbb378b75e090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Weapons: []
-  MaxWeapons: 3
 --- !u!1001 &2031368037
 PrefabInstance:
   m_ObjectHideFlags: 0
