@@ -15,6 +15,8 @@ A bi-weekly log of project changes separated by two week sprints.
 
 ## 3/14/2023 - 4/4/2023 (Sprint #6)
 
+- New Features:
+  - Added corruption display with new corruption eye UI [#121](https://github.com/TigardHighGDC/Augmentation/pull/121).
 - Enhancements:
   - Basic variable renaming for improved readability [#120](https://github.com/TigardHighGDC/Augmentation/pull/120).
 - Bug Fixes:
