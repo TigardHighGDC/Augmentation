@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class CorruptionLevel : MonoBehaviour
 {
-    private static float corruptionMax = 100f;
-    private static float currentCorruption = 0f;
+    public static float corruptionMax = 100f;
+    public static float currentCorruption = 0f;
 
     public void Add(float increase)
     {
