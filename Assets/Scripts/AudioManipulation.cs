@@ -7,8 +7,11 @@ using UnityEngine;
 
 public class AudioManipulation : MonoBehaviour
 {
-    public static void BitCrusher(AudioClip original, float compression)
+    public static AudioClip BitCrusher(AudioClip original, float compression)
     {
+        AudioClip newAudioClip =
+            AudioClip.Create("CorruptedGun", original.samples, original.channels, original.frequency, false);
+
         // Acts as a fake audio compressor. Compression is the power of 2 Hz.
         float[] samples = new float[original.samples * original.channels];
         original.GetData(samples, 0);
@@ -31,6 +34,7 @@ public class AudioManipulation : MonoBehaviour
             }
         }
 
-        original.SetData(samples, 0);
+        newAudioClip.SetData(samples, 0);
+        return newAudioClip;
     }
 }

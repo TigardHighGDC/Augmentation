@@ -56,11 +56,16 @@ public class Gun : MonoBehaviour
         // Plays sound effect
         if (CorruptionLevel.currentCorruption >= 50.0f)
         {
-            // 12.5 Start ->
-            float compression = 12.5f - (2.0f * ((CorruptionLevel.currentCorruption - 50f) / 50));
-            AudioManipulation.BitCrusher(Data.GunShotSound, compression);
+            // Start 12.5 -> 10.5
+            float completion = (CorruptionLevel.currentCorruption - 50.0f) / 50.0f;
+            float compression = 12f - (2f * (completion));
+            audioPlayer.PlayOneShot(AudioManipulation.BitCrusher(Data.GunShotSound, compression),
+                                    Data.GunShotVolume * (3.5f * completion + 3f));
         }
-        audioPlayer.PlayOneShot(Data.GunShotSound, Data.GunShotVolume);
+        else
+        {
+            audioPlayer.PlayOneShot(Data.GunShotSound, Data.GunShotVolume);
+        }
 
         // Spawn bullets
         for (int i = 0; i < Data.BulletPerTrigger; i++)
