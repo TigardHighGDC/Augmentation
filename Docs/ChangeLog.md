@@ -17,9 +17,12 @@ A bi-weekly log of project changes separated by two week sprints.
 
 - New Features:
   - Added corruption display with new corruption eye UI [#121](https://github.com/TigardHighGDC/Augmentation/pull/121).
+  - Implemented corruption stat changes [#125](https://github.com/TigardHighGDC/Augmentation/pull/125).
+  - Implemented corruption auto changes [#125](https://github.com/TigardHighGDC/Augmentation/pull/125).
 - Enhancements:
   - Basic variable renaming for improved readability [#120](https://github.com/TigardHighGDC/Augmentation/pull/120).
 - Bug Fixes:
+  - Changed `AudioManipulation.cs` to return a new audio file instead of modifying the original [#125](https://github.com/TigardHighGDC/Augmentation/pull/125).
   - Updated `Bug.prefab`, a fix from [#114](https://github.com/TigardHighGDC/Augmentation/pull/114) [#119](https://github.com/TigardHighGDC/Augmentation/pull/119).
 
 ## 3/3/2023 - 3/14/2023 (Sprint #5)
