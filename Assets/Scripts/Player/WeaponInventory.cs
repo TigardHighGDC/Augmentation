@@ -14,6 +14,7 @@ public class WeaponInventory : MonoBehaviour
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
     private double allowedWeaponSwitchTime = 1.0;
+    private Dictionary<string, int> weaponAmmoMap = new Map<String, int>();
 
     enum StartingLoadout
     {
@@ -63,7 +64,7 @@ public class WeaponInventory : MonoBehaviour
             // Add pistol to inventory.
             WeaponData pistol = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Pistol.asset");
 
-            AddWeapon(pistol);
+            AddWeapon(pistol, "Pistol");
             ChangeWeapon(0);
         }
         else if (startingLoadout == StartingLoadout.ALL)
@@ -74,9 +75,9 @@ public class WeaponInventory : MonoBehaviour
             WeaponData shotgun = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Shotgun.asset");
             WeaponData sniper = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Sniper.asset");
 
-            AddWeapon(pistol);
-            AddWeapon(shotgun);
-            AddWeapon(sniper);
+            AddWeapon(pistol, "Pistol");
+            AddWeapon(shotgun, "Shotgun");
+            AddWeapon(sniper, "Sniper");
             ChangeWeapon(0);
         }
         else
@@ -159,11 +160,12 @@ public class WeaponInventory : MonoBehaviour
         currentWeaponIndex = newWeaponIndex;
     }
 
-    public void AddWeapon(WeaponData weapon)
+    public void AddWeapon(WeaponData weapon, string weaponName)
     {
         if (state == State.NO_WEAPONS || state == State.HAS_WEAPONS)
         {
             Weapons.Add(weapon);
+            weaponAmmoMap.Add(weaponName, weapon.MaxAmmo);
 
             if (state == State.NO_WEAPONS)
             {
