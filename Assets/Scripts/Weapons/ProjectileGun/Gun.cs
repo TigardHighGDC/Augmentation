@@ -54,6 +54,12 @@ public class Gun : MonoBehaviour
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
 
         // Plays sound effect
+        if (CorruptionLevel.currentCorruption >= 50.0f)
+        {
+            // 12.5 Start ->
+            float compression = 12.5f - (2.0f * ((CorruptionLevel.currentCorruption - 50f) / 50));
+            AudioManipulation.BitCrusher(Data.GunShotSound, compression);
+        }
         audioPlayer.PlayOneShot(Data.GunShotSound, Data.GunShotVolume);
 
         // Spawn bullets
