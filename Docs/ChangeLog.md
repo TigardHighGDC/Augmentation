@@ -19,6 +19,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Added corruption display with new corruption eye UI [#121](https://github.com/TigardHighGDC/Augmentation/pull/121).
   - Implemented corruption stat changes [#125](https://github.com/TigardHighGDC/Augmentation/pull/125).
   - Implemented corruption auto changes [#125](https://github.com/TigardHighGDC/Augmentation/pull/125).
+  - Added `Door.cs` for cross level movement [#123](https://github.com/TigardHighGDC/Augmentation/pull/123).
 - Enhancements:
   - Basic variable renaming for improved readability [#120](https://github.com/TigardHighGDC/Augmentation/pull/120).
 - Bug Fixes:
