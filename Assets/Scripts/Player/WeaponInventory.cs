@@ -14,7 +14,7 @@ public class WeaponInventory : MonoBehaviour
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
     private double allowedWeaponSwitchTime = 1.0;
-    private Dictionary<string, int> weaponAmmoMap = new Map<String, int>();
+    private Dictionary<string, int> weaponAmmoMap = new Dictionary<string, int>();
 
     enum StartingLoadout
     {
@@ -64,7 +64,7 @@ public class WeaponInventory : MonoBehaviour
             // Add pistol to inventory.
             WeaponData pistol = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Pistol.asset");
 
-            AddWeapon(pistol, "Pistol");
+            AddWeapon(pistol);
             ChangeWeapon(0);
         }
         else if (startingLoadout == StartingLoadout.ALL)
@@ -75,9 +75,9 @@ public class WeaponInventory : MonoBehaviour
             WeaponData shotgun = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Shotgun.asset");
             WeaponData sniper = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Sniper.asset");
 
-            AddWeapon(pistol, "Pistol");
-            AddWeapon(shotgun, "Shotgun");
-            AddWeapon(sniper, "Sniper");
+            AddWeapon(pistol);
+            AddWeapon(shotgun);
+            AddWeapon(sniper);
             ChangeWeapon(0);
         }
         else
@@ -153,19 +153,20 @@ public class WeaponInventory : MonoBehaviour
 
         Assert.Boolean(newWeaponIndex < Weapons.Count);
 
-        Debug.Log("Changing weapon to " + Weapons[newWeaponIndex].name); // TODO: Remove debug log
+        Debug.Log("Changing weapon to " + Weapons[newWeaponIndex].WeaponName); // TODO: Remove debug log
 
         Gun gun = GetComponent<Gun>();
         gun.Data = Weapons[newWeaponIndex];
+        gun.AmmoAmount = weaponAmmoMap[Weapons[newWeaponIndex].WeaponName];
         currentWeaponIndex = newWeaponIndex;
     }
 
-    public void AddWeapon(WeaponData weapon, string weaponName)
+    public void AddWeapon(WeaponData weapon)
     {
         if (state == State.NO_WEAPONS || state == State.HAS_WEAPONS)
         {
             Weapons.Add(weapon);
-            weaponAmmoMap.Add(weaponName, weapon.MaxAmmo);
+            weaponAmmoMap.Add(weapon.WeaponName, weapon.AmmoCapacity);
 
             if (state == State.NO_WEAPONS)
             {
@@ -202,6 +203,7 @@ public class WeaponInventory : MonoBehaviour
         }
 
         Weapons.RemoveAt(weaponIndex);
+        weaponAmmoMap.Remove(Weapons[weaponIndex].WeaponName);
         ChangeWeapon(0, true);
     }
 }
