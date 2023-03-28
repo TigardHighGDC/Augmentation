@@ -16,6 +16,7 @@ MonoBehaviour:
   Size: 1
   ReloadSpeed: 1.5
   BulletSpeed: 12
+  BulletPierce: 1
   CanShootInterval: 0.8
   BulletPerTrigger: 12
   AmmoCapacity: 4
