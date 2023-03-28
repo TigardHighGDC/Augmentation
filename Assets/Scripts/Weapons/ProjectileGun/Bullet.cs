@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
                 transform.up * (Data.Knockback * CorruptionLevel.KnockbackIncrease), ForceMode2D.Impulse);
             nonPlayerHealth.Damage(Data.Damage);
             remainingPierce--;
-            
+
             if (remainingPierce <= 0)
             {
                 DestroyBullet();
