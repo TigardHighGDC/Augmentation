@@ -13,7 +13,7 @@ public class WeaponInventory : MonoBehaviour
 
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
-    private double allowedWeaponSwitchTime = 1.0;
+    private double allowedWeaponSwitchTime = 0.25;
     private Dictionary<string, int> weaponAmmoMap = new Dictionary<string, int>();
 
     enum StartingLoadout
