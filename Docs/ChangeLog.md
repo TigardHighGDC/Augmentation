@@ -22,6 +22,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Added `Door.cs` for cross level movement [#123](https://github.com/TigardHighGDC/Augmentation/pull/123).
 - Enhancements:
   - Basic variable renaming for improved readability [#120](https://github.com/TigardHighGDC/Augmentation/pull/120).
+  - Bullets now have the ability to pierce enemies [#127](https://github.com/TigardHighGDC/Augmentation/pull/127).
 - Bug Fixes:
   - Changed `AudioManipulation.cs` to return a new audio file instead of modifying the original [#125](https://github.com/TigardHighGDC/Augmentation/pull/125).
   - Updated `Bug.prefab`, a fix from [#114](https://github.com/TigardHighGDC/Augmentation/pull/114) [#119](https://github.com/TigardHighGDC/Augmentation/pull/119).
