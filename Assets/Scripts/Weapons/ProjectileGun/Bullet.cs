@@ -10,9 +10,12 @@ public class Bullet : MonoBehaviour
     [HideInInspector]
     public WeaponData Data;
 
+    private int remainingPierce;
+
     private void Start()
     {
         Invoke("DestroyBullet", Data.DespawnTime);
+        remainingPierce = Data.BulletPierce;
     }
 
     private void OnTriggerEnter2D(Collider2D collide)
@@ -23,7 +26,12 @@ public class Bullet : MonoBehaviour
             collide.GetComponent<Rigidbody2D>().AddForce(
                 transform.up * (Data.Knockback * CorruptionLevel.KnockbackIncrease), ForceMode2D.Impulse);
             nonPlayerHealth.Damage(Data.Damage);
-            DestroyBullet();
+            remainingPierce--;
+
+            if (remainingPierce <= 0)
+            {
+                DestroyBullet();
+            }
         }
     }
 
