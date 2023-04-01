@@ -17,13 +17,18 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collide)
     {
-        if (collide.gameObject.tag != "Bullet")
+        switch (collide.gameObject.tag)
         {
+        case "Enemy":
             NonPlayerHealth nonPlayerHealth = collide.gameObject.GetComponent<NonPlayerHealth>();
             collide.GetComponent<Rigidbody2D>().AddForce(
                 transform.up * (Data.Knockback * CorruptionLevel.KnockbackIncrease), ForceMode2D.Impulse);
             nonPlayerHealth.Damage(Data.Damage);
             DestroyBullet();
+            break;
+        case "Wall":
+            DestroyBullet();
+            break;
         }
     }
 
