@@ -6,6 +6,7 @@ public class MusicPlayer : MonoBehaviour
 {
     public string CurrentMusic;
     public float MusicEndsIn = 99999f;
+    public AudioClip EnemyTransition;
     
     private AudioSource source;
     private AudioClip[] boss;
@@ -27,7 +28,6 @@ public class MusicPlayer : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(MusicEndsIn);
         if (!source.isPlaying)
         {
             Play(CurrentMusic);
@@ -36,14 +36,43 @@ public class MusicPlayer : MonoBehaviour
         {
             MusicEndsIn = source.clip.length - source.time;
         }
-
+        
         if (MusicEndsIn <= 5.0f && !transitioning)
         {
-            StartCoroutine(FadeInTransition(5.0f));
+            FadeInTransition(CurrentMusic, 5.0f);
         }
     }
 
-    private IEnumerator FadeInTransition(float duration)
+    public void FadeInTransition(string music, float duration)
+    {
+        CurrentMusic = music;
+        if (!transitioning)
+        {
+            StartCoroutine(IFadeInTransition(duration));
+        }
+    }
+
+    public void SuddenTransition(string music, string sfxType)
+    {
+        AudioClip clip;
+        switch (sfxType.ToLower())
+        {
+            case "enemy transition":
+                clip = EnemyTransition;
+                break;
+            default:
+                Debug.LogError(sfxType + " is a invalid music type");
+                return;
+        }
+
+        CurrentMusic = music;
+        if (!transitioning)
+        {
+            StartCoroutine(ISuddenTransition(clip));
+        }
+    }
+
+    private IEnumerator IFadeInTransition(float duration)
     {
         float timePassed = 0.0f;
         transitioning = true;
@@ -60,6 +89,19 @@ public class MusicPlayer : MonoBehaviour
         transitioning = false;
     }
 
+    private IEnumerator ISuddenTransition(AudioClip clip)
+    {
+        transitioning = true;
+        source.clip = clip;
+        source.Play();
+        while (source.isPlaying)
+        {
+            yield return null;
+        }
+        Play(CurrentMusic);
+        transitioning = false;
+    }
+
     private void Play(string musicType)
     {
         AudioClip[] music;
@@ -68,7 +110,7 @@ public class MusicPlayer : MonoBehaviour
             case "boss":
                 music = boss;
                 break;
-            case "enemyroom":
+            case "enemy room":
                 music = enemyRoom;
                 break;
             case "menu":
@@ -79,8 +121,7 @@ public class MusicPlayer : MonoBehaviour
                 break;
             default:
                 Debug.LogError(musicType + " is a invalid music type");
-                music = null;
-                break;
+                return;
         }
         int random = Random.Range(0, music.Length);
         source.clip = music[random];

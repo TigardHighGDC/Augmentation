@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315d34a7b998dc04da4e397018d75396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentMusic: EnemyRoom
+  CurrentMusic: Enemy Room
   MusicEndsIn: 99999
+  EnemyTransition: {fileID: 8300000, guid: 64f437935196e4048859e7a1f8dcc6db, type: 3}
 --- !u!82 &7502580746222540348
 AudioSource:
   m_ObjectHideFlags: 0
@@ -65,7 +66,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 160
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
