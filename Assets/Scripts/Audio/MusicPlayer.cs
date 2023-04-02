@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +8,7 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     public string CurrentMusic;
-    public float MusicEndsIn = 99999f;
+    public float MusicEndsIn = 99999.0f;
     public AudioClip EnemyTransition;
 
     private AudioSource source;
@@ -26,7 +29,7 @@ public class MusicPlayer : MonoBehaviour
         peaceful = Resources.LoadAll<AudioClip>("Music/Peaceful");
     }
 
-    void Update()
+    private void Update()
     {
         if (!source.isPlaying)
         {
@@ -46,6 +49,7 @@ public class MusicPlayer : MonoBehaviour
     public void FadeInTransition(string music, float duration)
     {
         CurrentMusic = music;
+
         if (!transitioning)
         {
             StartCoroutine(IFadeInTransition(duration));
@@ -55,6 +59,7 @@ public class MusicPlayer : MonoBehaviour
     public void SuddenTransition(string music, string sfxType)
     {
         AudioClip clip;
+
         switch (sfxType.ToLower())
         {
         case "enemy transition":
@@ -66,6 +71,7 @@ public class MusicPlayer : MonoBehaviour
         }
 
         CurrentMusic = music;
+
         if (!transitioning)
         {
             StartCoroutine(ISuddenTransition(clip));
@@ -94,10 +100,12 @@ public class MusicPlayer : MonoBehaviour
         transitioning = true;
         source.clip = clip;
         source.Play();
+
         while (source.isPlaying)
         {
             yield return null;
         }
+
         Play(CurrentMusic);
         transitioning = false;
     }
@@ -105,6 +113,7 @@ public class MusicPlayer : MonoBehaviour
     private void Play(string musicType)
     {
         AudioClip[] music;
+
         switch (musicType.ToLower())
         {
         case "boss":
@@ -123,6 +132,7 @@ public class MusicPlayer : MonoBehaviour
             Debug.LogError(musicType + " is a invalid music type");
             return;
         }
+
         int random = Random.Range(0, music.Length);
         source.clip = music[random];
         source.Play();
