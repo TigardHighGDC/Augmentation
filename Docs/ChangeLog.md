@@ -21,6 +21,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Implemented corruption auto changes [#125](https://github.com/TigardHighGDC/Augmentation/pull/125).
   - Added `Door.cs` for cross level movement [#123](https://github.com/TigardHighGDC/Augmentation/pull/123).
   - Added new gun sounds [#132](https://github.com/TigardHighGDC/Augmentation/pull/132).
+  - Added music player that works with scene transitioning [#134](https://github.com/TigardHighGDC/Augmentation/pull/134).
 - Enhancements:
   - Basic variable renaming for improved readability [#120](https://github.com/TigardHighGDC/Augmentation/pull/120).
   - Bullets now have the ability to pierce enemies [#127](https://github.com/TigardHighGDC/Augmentation/pull/127).
