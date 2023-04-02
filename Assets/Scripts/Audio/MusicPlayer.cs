@@ -8,7 +8,7 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     public string CurrentMusic;
-    public float MusicEndsIn = 99999f;
+    public float MusicEndsIn = 99999.0f;
     public AudioClip EnemyTransition;
 
     private AudioSource source;
