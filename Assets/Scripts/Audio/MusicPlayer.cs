@@ -7,7 +7,7 @@ public class MusicPlayer : MonoBehaviour
     public string CurrentMusic;
     public float MusicEndsIn = 99999f;
     public AudioClip EnemyTransition;
-    
+
     private AudioSource source;
     private AudioClip[] boss;
     private AudioClip[] enemyRoom;
@@ -36,7 +36,7 @@ public class MusicPlayer : MonoBehaviour
         {
             MusicEndsIn = source.clip.length - source.time;
         }
-        
+
         if (MusicEndsIn <= 5.0f && !transitioning)
         {
             FadeInTransition(CurrentMusic, 5.0f);
@@ -57,12 +57,12 @@ public class MusicPlayer : MonoBehaviour
         AudioClip clip;
         switch (sfxType.ToLower())
         {
-            case "enemy transition":
-                clip = EnemyTransition;
-                break;
-            default:
-                Debug.LogError(sfxType + " is a invalid music type");
-                return;
+        case "enemy transition":
+            clip = EnemyTransition;
+            break;
+        default:
+            Debug.LogError(sfxType + " is a invalid music type");
+            return;
         }
 
         CurrentMusic = music;
@@ -83,7 +83,7 @@ public class MusicPlayer : MonoBehaviour
             source.volume = 1.0f - (timePassed / duration);
             yield return null;
         }
-        
+
         source.volume = 1f;
         Play(CurrentMusic);
         transitioning = false;
@@ -107,21 +107,21 @@ public class MusicPlayer : MonoBehaviour
         AudioClip[] music;
         switch (musicType.ToLower())
         {
-            case "boss":
-                music = boss;
-                break;
-            case "enemy room":
-                music = enemyRoom;
-                break;
-            case "menu":
-                music = menu;
-                break;
-            case "peaceful":
-                music = peaceful;
-                break;
-            default:
-                Debug.LogError(musicType + " is a invalid music type");
-                return;
+        case "boss":
+            music = boss;
+            break;
+        case "enemy room":
+            music = enemyRoom;
+            break;
+        case "menu":
+            music = menu;
+            break;
+        case "peaceful":
+            music = peaceful;
+            break;
+        default:
+            Debug.LogError(musicType + " is a invalid music type");
+            return;
         }
         int random = Random.Range(0, music.Length);
         source.clip = music[random];
