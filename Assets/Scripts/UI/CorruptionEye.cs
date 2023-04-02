@@ -28,7 +28,7 @@ public class CorruptionEye : MonoBehaviour
     {
         float percentage = current / maxSize;
         // TODO: Image to show max corruption
-        int index = (int)Mathf.Floor(percentage * eyeList.Length - 0.001f);
+        int index = (int)Mathf.Floor(percentage * eyeList.Length);
         return index;
     }
 }
