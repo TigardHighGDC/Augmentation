@@ -4923,6 +4923,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 86342178822363722, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5506960927809827498, guid: 6077fc2d8191678408682071159805f7, type: 2}
     - target: {fileID: 382574295197922506, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
       propertyPath: sliderBar
       value: 
