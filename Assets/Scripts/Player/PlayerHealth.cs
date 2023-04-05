@@ -4,6 +4,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -47,6 +48,6 @@ public class PlayerHealth : MonoBehaviour
     // Handles changes when the player dies
     private void Death()
     {
-        Destroy(gameObject);
+        SceneManager.LoadScene("MainMenu");
     }
 }
