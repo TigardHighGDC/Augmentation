@@ -30,7 +30,7 @@ A bi-weekly log of project changes separated by two week sprints.
 - Bug Fixes:
   - Changed `AudioManipulation.cs` to return a new audio file instead of modifying the original [#125](https://github.com/TigardHighGDC/Augmentation/pull/125).
   - Updated `Bug.prefab`, a fix from [#114](https://github.com/TigardHighGDC/Augmentation/pull/114) [#119](https://github.com/TigardHighGDC/Augmentation/pull/119).
-  - `Player.prefab` merge fix [#140](https://github.com/TigardHighGDC/Augmentation/pull/140).
+  - `LaptopGoon.prefab` merge fix [#140](https://github.com/TigardHighGDC/Augmentation/pull/140).
 
 ## 3/3/2023 - 3/14/2023 (Sprint #5)
 
