@@ -438,5 +438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4ef65732360ce41be9656e31433942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: 1f5ff8fe8b6749d4c9b8e60005649be4, type: 2}
-  view: {fileID: 863378858}
+  Config: {fileID: 11400000, guid: 1f5ff8fe8b6749d4c9b8e60005649be4, type: 2}
+  View: {fileID: 863378858}
+  GenerateNewMapOnStart: 1

@@ -7,27 +7,28 @@ using Newtonsoft.Json;
 
 public class MapManager : MonoBehaviour
 {
-    public MapConfig config;
-    public MapView view;
+    public MapConfig Config;
+    public MapView View;
+    public bool GenerateNewMapOnStart = true; // Always override the saved map
 
     public Map CurrentMap { get; private set; }
 
     private void Start()
     {
         // This prevents the generating of a new map until the player reaches the boss
-        if (PlayerPrefs.HasKey("Map"))
+        if (PlayerPrefs.HasKey("Map") && !GenerateNewMapOnStart)
         {
             var mapJson = PlayerPrefs.GetString("Map");
             var map = JsonConvert.DeserializeObject<Map>(mapJson);
 
-            if (map.Path.Any(p => p.Equals(map.GetBossNode().Point)))
+            if (map == null || map.Path.Any(p => p.Equals(map.GetBossNode().Point)))
             {
                 GenerateNewMap();
             }
             else
             {
                 CurrentMap = map;
-                view.ShowMap(map);
+                View.ShowMap(map);
             }
         }
         else
@@ -38,10 +39,10 @@ public class MapManager : MonoBehaviour
 
     public void GenerateNewMap()
     {
-        var map = MapGenerator.GetMap(config);
+        var map = MapGenerator.GetMap(Config);
         CurrentMap = map;
         Debug.Log(map.ToJson());
-        view.ShowMap(map);
+        View.ShowMap(map);
     }
 
     public void SaveMap()
