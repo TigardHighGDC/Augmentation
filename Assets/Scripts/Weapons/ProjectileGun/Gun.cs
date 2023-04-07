@@ -23,12 +23,13 @@ public class Gun : MonoBehaviour
         ammoAmount = Data.AmmoCapacity;
         audioPlayer = gameObject.GetComponent<AudioSource>();
         //Ammo counter text
-        ammoCounter.bulletText.text = ammoAmount.ToString() + " | " + Data.AmmoCapacity.ToString();
+        ammoCounterText();
     }
 
     private void Update()
     {
         Controller();
+        ammoCounterText();
     }
 
     private void Controller()
@@ -83,7 +84,7 @@ public class Gun : MonoBehaviour
         Debug.Log("Done"); // TODO: Remove Debug.Log() when we have a working interface.
         ammoAmount = Data.AmmoCapacity;
         //Ammo counter text
-        ammoCounter.bulletText.text = ammoAmount.ToString() + " | " + Data.AmmoCapacity.ToString();
+        ammoCounterText();
         reloading = false;
     }
 
@@ -92,10 +93,15 @@ public class Gun : MonoBehaviour
         shotDelay = true;
         ammoAmount -= 1;
         //Ammo counter text
-        ammoCounter.bulletText.text = ammoAmount.ToString() + " | " + Data.AmmoCapacity.ToString();
+        ammoCounterText();
 
         // Yield is required to pause the function
         yield return new WaitForSeconds(Data.CanShootInterval);
         shotDelay = false;
+    }
+
+    private void ammoCounterText()
+    {
+        ammoCounter.bulletText.text = ammoAmount.ToString() + " | " + Data.AmmoCapacity.ToString();
     }
 }
