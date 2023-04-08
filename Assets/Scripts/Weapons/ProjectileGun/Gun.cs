@@ -1,6 +1,6 @@
 // Copyright (c) TigardHighGDC
 // SPDX-License SPDX-License-Identifier: Apache-2.0
-
+using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +11,8 @@ public class Gun : MonoBehaviour
     public GameObject Bullet;
     public Camera Camera;
     public Transform SpawnPoint;
-    public AmmoCounter ammoCounter;
 
+    private AmmoCounter ammoCounter;
     private bool reloading = false;
     private bool shotDelay = false;
     private int ammoAmount;
@@ -22,14 +22,13 @@ public class Gun : MonoBehaviour
     {
         ammoAmount = Data.AmmoCapacity;
         audioPlayer = gameObject.GetComponent<AudioSource>();
-        // Ammo counter text
-        ammoCounterText();
+        ammoCounter = GetComponent<AmmoCounter>();
     }
 
     private void Update()
     {
+        ammoCounter.Text(Data, ammoAmount);
         Controller();
-        ammoCounterText();
     }
 
     private void Controller()
@@ -89,7 +88,6 @@ public class Gun : MonoBehaviour
     private IEnumerator Reload()
     {
         reloading = true;
-        ammoCounter.bulletText.text = "0 | " + Data.AmmoCapacity.ToString();
         audioPlayer.PlayOneShot(Data.ReloadSound, Data.ReloadVolume);
         Debug.Log("Reloading"); // TODO: Remove Debug.Log() when we have a working interface.
 
@@ -97,8 +95,6 @@ public class Gun : MonoBehaviour
         yield return new WaitForSeconds(Data.ReloadSpeed);
         Debug.Log("Done"); // TODO: Remove Debug.Log() when we have a working interface.
         ammoAmount = Data.AmmoCapacity;
-        // Ammo counter text
-        ammoCounterText();
         reloading = false;
     }
 
@@ -106,16 +102,9 @@ public class Gun : MonoBehaviour
     {
         shotDelay = true;
         ammoAmount -= 1;
-        // Ammo counter text
-        ammoCounterText();
 
         // Yield is required to pause the function
         yield return new WaitForSeconds(Data.CanShootInterval * CorruptionLevel.ShootIntervalDecrease);
         shotDelay = false;
-    }
-
-    private void ammoCounterText()
-    {
-        ammoCounter.bulletText.text = ammoAmount.ToString() + " | " + Data.AmmoCapacity.ToString();
     }
 }
