@@ -188,7 +188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1918439168085610199, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
       propertyPath: m_Name
-      value: HUD
+      value: HealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 1918439168085610283, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
       propertyPath: m_Pivot.x
@@ -284,17 +284,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
---- !u!114 &14487446 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 14487448, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
-  m_PrefabInstance: {fileID: 14487445}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 397074be6104b054c94810204ef40558, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &140529098
 GameObject:
   m_ObjectHideFlags: 0
@@ -5009,10 +4998,6 @@ PrefabInstance:
       propertyPath: sliderBar
       value: 
       objectReference: {fileID: 873731035}
-    - target: {fileID: 1279208673676593641, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
-      propertyPath: ammoCounter
-      value: 
-      objectReference: {fileID: 14487446}
     - target: {fileID: 2174337802934503333, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
       propertyPath: m_RootOrder
       value: 0
