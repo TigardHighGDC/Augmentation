@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public string Room;
+
     public void OnStartButton()
     {
-        SceneManager.LoadScene("Example Room");
+        SceneManager.LoadScene(Room);
     }
 }
