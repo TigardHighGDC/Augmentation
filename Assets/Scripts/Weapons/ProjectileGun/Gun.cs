@@ -58,12 +58,26 @@ public class Gun : MonoBehaviour
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
 
         // Plays sound effect
-        audioPlayer.PlayOneShot(Data.GunShotSound, Data.GunShotVolume);
+        if (CorruptionLevel.currentCorruption >= 50.0f)
+        {
+            // Start 12.5 -> 10.5
+            float completion = (CorruptionLevel.currentCorruption - 50.0f) / 50.0f;
+            float compression = 12f - (2f * (completion));
+            audioPlayer.PlayOneShot(AudioManipulation.BitCrusher(Data.GunShotSound, compression),
+                                    Data.GunShotVolume * (3.5f * completion + 3f));
+        }
+        else
+        {
+            audioPlayer.PlayOneShot(Data.GunShotSound, Data.GunShotVolume);
+        }
 
         // Spawn bullets
         for (int i = 0; i < Data.BulletPerTrigger; i++)
         {
-            Quaternion eulerAngle = Quaternion.Euler(0, 0, rotation + Random.Range(-Data.Spread, Data.Spread));
+            Quaternion eulerAngle =
+                Quaternion.Euler(0, 0,
+                                 rotation + Random.Range(-(Data.Spread * CorruptionLevel.AccuracyDecrease),
+                                                         (Data.Spread * CorruptionLevel.AccuracyDecrease)));
             GameObject bullet = Instantiate(Bullet, SpawnPoint.position, eulerAngle);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             bullet.GetComponent<Bullet>().Data = Data;
@@ -96,7 +110,7 @@ public class Gun : MonoBehaviour
         ammoCounterText();
 
         // Yield is required to pause the function
-        yield return new WaitForSeconds(Data.CanShootInterval);
+        yield return new WaitForSeconds(Data.CanShootInterval * CorruptionLevel.ShootIntervalDecrease);
         shotDelay = false;
     }
 
