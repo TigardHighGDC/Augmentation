@@ -48,7 +48,7 @@ public static class MapGenerator
             var layer = config.Layers[i];
             var nodesOnThisLayer = new List<Node>();
 
-            // offset of this layer to make all the nodes centered:
+            // Offset of this layer to make all the nodes centered
             var offset = layer.NodesApartDistance * config.GridWidth / 2.0f;
 
             for (int j = 0; j < config.GridWidth; j++)
