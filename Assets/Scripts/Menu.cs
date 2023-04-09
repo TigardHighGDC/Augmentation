@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +12,7 @@ public class Menu : MonoBehaviour
 
     public void OnStartButton()
     {
+        // TODO: Use static scene manager. See GH-139.
         SceneManager.LoadScene(Room);
     }
 }
