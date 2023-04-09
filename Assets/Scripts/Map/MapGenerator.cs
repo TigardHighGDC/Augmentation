@@ -10,7 +10,7 @@ public static class MapGenerator
     private static MapConfig config;
 
     // clang-format off
-    private static readonly List<NodeType> RandomNodes = new List<NodeType> {
+    private static List<NodeType> randomNodes = new List<NodeType> {
         // Contains every valid node type that can be randomly selected from
         NodeType.Mystery, 
         NodeType.Store, 
@@ -282,6 +282,6 @@ public static class MapGenerator
 
     private static NodeType GetRandomNode()
     {
-        return RandomNodes[Random.Range(0, RandomNodes.Count)];
+        return randomNodes[Random.Range(0, randomNodes.Count)];
     }
 }
