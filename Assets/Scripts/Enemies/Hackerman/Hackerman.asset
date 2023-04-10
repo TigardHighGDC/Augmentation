@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e005e145ee6c8a34284ef73113e87003, type: 3}
   m_Name: Hackerman
   m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 6900885866568021340, guid: aa3f6d9a62e716543b9129b24cdeb85e, type: 3}
   Damage: 10
   BulletSpeed: 4
   BulletPerSecond: 0.5

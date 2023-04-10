@@ -8,7 +8,6 @@ using UnityEngine;
 public abstract class EnemyAI : MonoBehaviour
 {
     public EnemyProjectileData Data;
-    public GameObject Bullet;
     public Vector3 BulletSpawn = new Vector3(0, 0, 0);
     protected GameObject player;
     protected AIPhysics aiPath;
@@ -40,7 +39,7 @@ public abstract class EnemyAI : MonoBehaviour
         Quaternion eulerAngle = Quaternion.Euler(0, 0, rotation);
 
         // Spawn bullet and provide needed values
-        GameObject bullet = Instantiate(Bullet, transform.position + BulletSpawn, eulerAngle);
+        GameObject bullet = Instantiate(Data.BulletPrefab, transform.position + BulletSpawn, eulerAngle);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         bullet.GetComponent<EnemyBullet>().Data = Data;
         rb.velocity = bullet.transform.up * Data.BulletSpeed;

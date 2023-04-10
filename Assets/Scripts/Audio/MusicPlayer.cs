@@ -46,7 +46,7 @@ public class MusicPlayer : MonoBehaviour
         }
     }
 
-    public void FadeInTransition(string music, float duration)
+    public void FadeInTransition(string music, float duration = 5.0f)
     {
         CurrentMusic = music;
 
