@@ -27,8 +27,8 @@ public class LineConnection
             return;
         }
 
-        var gradient = LineRenderer.colorGradient;
-        var colorKeys = gradient.colorKeys;
+        UnityEngine.Gradient gradient = LineRenderer.colorGradient;
+        GradientColorKey[] colorKeys = gradient.colorKeys;
 
         for (int i = 0; i < colorKeys.Length; i++)
         {

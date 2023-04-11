@@ -32,7 +32,7 @@ public class ScrollNonUI : MonoBehaviour
             return;
         }
 
-        var mousePos = MouseInWorldCoords();
+        Vector3 mousePos = MouseInWorldCoords();
         transform.position =
             new Vector3((FreezeX) ? transform.position.x : mousePos.x - pointerDisplacement.x,
                         (FreezeY) ? transform.position.y : mousePos.y - pointerDisplacement.y, transform.position.z);
@@ -53,7 +53,7 @@ public class ScrollNonUI : MonoBehaviour
 
     private Vector3 MouseInWorldCoords()
     {
-        var screenMousePos = Input.mousePosition;
+        Vector3 screenMousePos = Input.mousePosition;
         screenMousePos.z = zDisplacement;
         return mainCamera.ScreenToWorldPoint(screenMousePos);
     }
@@ -67,7 +67,7 @@ public class ScrollNonUI : MonoBehaviour
                 return;
             }
 
-            var targetX = (transform.localPosition.x < XConstraints.min) ? XConstraints.min : XConstraints.max;
+            float targetX = (transform.localPosition.x < XConstraints.min) ? XConstraints.min : XConstraints.max;
             transform.DOLocalMoveX(targetX, TweenBackDuration).SetEase(TweenBackEase);
         }
         else if (FreezeX)
@@ -77,7 +77,7 @@ public class ScrollNonUI : MonoBehaviour
                 return;
             }
 
-            var targetY = (transform.localPosition.y < YConstraints.min) ? YConstraints.min : YConstraints.max;
+            float targetY = (transform.localPosition.y < YConstraints.min) ? YConstraints.min : YConstraints.max;
             transform.DOLocalMoveY(targetY, TweenBackDuration).SetEase(TweenBackEase);
         }
     }

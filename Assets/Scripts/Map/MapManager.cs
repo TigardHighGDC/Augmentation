@@ -18,8 +18,8 @@ public class MapManager : MonoBehaviour
         // This prevents the generating of a new map until the player reaches the boss
         if (PlayerPrefs.HasKey("Map") && !GenerateNewMapOnStart)
         {
-            var mapJson = PlayerPrefs.GetString("Map");
-            var map = JsonConvert.DeserializeObject<Map>(mapJson);
+            string mapJson = PlayerPrefs.GetString("Map");
+            Map map = JsonConvert.DeserializeObject<Map>(mapJson);
 
             if (map == null || map.Path.Any(p => p.Equals(map.GetBossNode().Point)))
             {
@@ -39,7 +39,7 @@ public class MapManager : MonoBehaviour
 
     public void GenerateNewMap()
     {
-        var map = MapGenerator.GetMap(Config);
+        Map map = MapGenerator.GetMap(Config);
         CurrentMap = map;
         Debug.Log(map.ToJson());
         View.ShowMap(map);
@@ -52,7 +52,7 @@ public class MapManager : MonoBehaviour
             return;
         }
 
-        var json = JsonConvert.SerializeObject(
+        string json = JsonConvert.SerializeObject(
             CurrentMap, Formatting.Indented,
             new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
         PlayerPrefs.SetString("Map", json);

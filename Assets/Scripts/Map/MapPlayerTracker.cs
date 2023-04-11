@@ -43,8 +43,8 @@ public class MapPlayerTracker : MonoBehaviour
         }
         else
         {
-            var currentPoint = MapManager.CurrentMap.Path[MapManager.CurrentMap.Path.Count - 1];
-            var currentNode = MapManager.CurrentMap.GetNode(currentPoint);
+            Point currentPoint = MapManager.CurrentMap.Path[MapManager.CurrentMap.Path.Count - 1];
+            Node currentNode = MapManager.CurrentMap.GetNode(currentPoint);
 
             if (currentNode != null && currentNode.Outgoing.Any(Point => Point.Equals(mapNode.Node.Point)))
             {

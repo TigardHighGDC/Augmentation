@@ -77,20 +77,20 @@ public class MapView : MonoBehaviour
         firstParent = new GameObject("OuterMapParent");
         mapParent = new GameObject("MapParentWithAScroll");
         mapParent.transform.SetParent(firstParent.transform);
-        var scrollNonUi = mapParent.AddComponent<ScrollNonUI>();
+        ScrollNonUI scrollNonUi = mapParent.AddComponent<ScrollNonUI>();
         scrollNonUi.FreezeX = true;
         scrollNonUi.FreezeY = false;
-        var boxCollider = mapParent.AddComponent<BoxCollider>();
+        BoxCollider boxCollider = mapParent.AddComponent<BoxCollider>();
         boxCollider.size = new Vector3(100, 100, 1);
 
         // Instantiate each node
-        foreach (var node in m.Nodes)
+        foreach (Node node in m.Nodes)
         {
             // For each node the object and blueprint must be instantiated even though they will be an exact copy in the
             // beginning
-            var mapNodeObject = Instantiate(NodePrefab, mapParent.transform);
-            var mapNode = mapNodeObject.GetComponent<MapNode>();
-            var blueprint = GetBlueprint(node.BlueprintName);
+            GameObject mapNodeObject = Instantiate(NodePrefab, mapParent.transform);
+            MapNode mapNode = mapNodeObject.GetComponent<MapNode>();
+            NodeBlueprint blueprint = GetBlueprint(node.BlueprintName);
             mapNode.SetUp(node, blueprint);
             mapNode.transform.localPosition = node.Position;
             MapNodes.Add(mapNode);
@@ -99,17 +99,17 @@ public class MapView : MonoBehaviour
         // Draw the paths between nodes
         if (LinePrefab != null)
         {
-            foreach (var node in MapNodes)
+            foreach (MapNode node in MapNodes)
             {
-                foreach (var connection in node.Node.Outgoing)
+                foreach (Point connection in node.Node.Outgoing)
                 {
-                    var to = GetNode(connection);
-                    var lineObject = Instantiate(LinePrefab, mapParent.transform);
-                    var lineRenderer = lineObject.GetComponent<LineRenderer>();
-                    var fromPoint = node.transform.position +
+                    MapNode to = GetNode(connection);
+                    GameObject lineObject = Instantiate(LinePrefab, mapParent.transform);
+                    LineRenderer lineRenderer = lineObject.GetComponent<LineRenderer>();
+                    Vector3 fromPoint = node.transform.position +
                                     (to.transform.position - node.transform.position).normalized * OffsetFromNodes;
 
-                    var toPoint = to.transform.position +
+                    Vector3 toPoint = to.transform.position +
                                   (node.transform.position - to.transform.position).normalized * OffsetFromNodes;
 
                     lineObject.transform.position = fromPoint;
@@ -129,10 +129,10 @@ public class MapView : MonoBehaviour
         }
 
         // Add the scroll element to the map
-        var span = MapManager.CurrentMap.DistanceBetweenFirstAndLastLayers();
-        var bossNode = MapNodes.FirstOrDefault(node => node.Node.NodeType == NodeType.Boss);
+        float span = MapManager.CurrentMap.DistanceBetweenFirstAndLastLayers();
+        MapNode bossNode = MapNodes.FirstOrDefault(node => node.Node.NodeType == NodeType.Boss);
         firstParent.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, 0.0f);
-        var offset = OrientationOffset;
+        float offset = OrientationOffset;
 
         if (scrollNonUi != null)
         {
@@ -147,12 +147,12 @@ public class MapView : MonoBehaviour
 
         if (Background != null)
         {
-            var backgroundObject = new GameObject("Background");
+            GameObject backgroundObject = new GameObject("Background");
             backgroundObject.transform.SetParent(mapParent.transform);
             backgroundObject.transform.localPosition =
                 new Vector3(bossNode.transform.localPosition.x, span / 2.0f, 0.0f);
             backgroundObject.transform.localRotation = Quaternion.identity;
-            var sr = backgroundObject.AddComponent<SpriteRenderer>();
+            SpriteRenderer sr = backgroundObject.AddComponent<SpriteRenderer>();
             sr.color = BackgroundColor;
             sr.drawMode = SpriteDrawMode.Sliced;
             sr.sprite = Background;
@@ -162,7 +162,7 @@ public class MapView : MonoBehaviour
 
     public void SetAttainableNodes()
     {
-        foreach (var node in MapNodes)
+        foreach (MapNode node in MapNodes)
         {
             node.SetState(NodeStates.Locked);
         }
@@ -170,16 +170,16 @@ public class MapView : MonoBehaviour
         if (MapManager.CurrentMap.Path.Count == 0)
         {
             // Each node in the first layer is attainable
-            foreach (var node in MapNodes.Where(n => n.Node.Point.Y == 0))
+            foreach (MapNode node in MapNodes.Where(n => n.Node.Point.Y == 0))
             {
                 node.SetState(NodeStates.Attainable);
             }
         }
         else
         {
-            foreach (var point in MapManager.CurrentMap.Path)
+            foreach (Point point in MapManager.CurrentMap.Path)
             {
-                var mapNode = GetNode(point);
+                MapNode mapNode = GetNode(point);
 
                 if (mapNode != null)
                 {
@@ -187,12 +187,12 @@ public class MapView : MonoBehaviour
                 }
             }
 
-            var currentPoint = MapManager.CurrentMap.Path[MapManager.CurrentMap.Path.Count - 1];
-            var currentNode = MapManager.CurrentMap.GetNode(currentPoint);
+            Point currentPoint = MapManager.CurrentMap.Path[MapManager.CurrentMap.Path.Count - 1];
+            Node currentNode = MapManager.CurrentMap.GetNode(currentPoint);
 
-            foreach (var point in currentNode.Outgoing)
+            foreach (Point point in currentNode.Outgoing)
             {
-                var mapNode = GetNode(point);
+                MapNode mapNode = GetNode(point);
 
                 if (mapNode != null)
                 {
@@ -204,7 +204,7 @@ public class MapView : MonoBehaviour
 
     public void SetLineColors()
     {
-        foreach (var connection in lineConnections)
+        foreach (LineConnection connection in lineConnections)
         {
             connection.SetColor(LineLockedColor);
         }
@@ -214,12 +214,12 @@ public class MapView : MonoBehaviour
             return;
         }
 
-        var currentPoint = MapManager.CurrentMap.Path[MapManager.CurrentMap.Path.Count - 1];
-        var currentNode = MapManager.CurrentMap.GetNode(currentPoint);
+        Point currentPoint = MapManager.CurrentMap.Path[MapManager.CurrentMap.Path.Count - 1];
+        Node currentNode = MapManager.CurrentMap.GetNode(currentPoint);
 
-        foreach (var point in currentNode.Outgoing)
+        foreach (Point point in currentNode.Outgoing)
         {
-            var lineConnection = lineConnections.FirstOrDefault(conn => conn.From.Node == currentNode &&
+            LineConnection lineConnection = lineConnections.FirstOrDefault(conn => conn.From.Node == currentNode &&
                                                                         conn.To.Node.Point.Equals(point));
             lineConnection?.SetColor(LineVisitedColor);
         }
@@ -227,11 +227,11 @@ public class MapView : MonoBehaviour
         if (MapManager.CurrentMap.Path.Count <= 1)
             return;
 
-        for (var i = 0; i < MapManager.CurrentMap.Path.Count - 1; i++)
+        for (int i = 0; i < MapManager.CurrentMap.Path.Count - 1; i++)
         {
-            var current = MapManager.CurrentMap.Path[i];
-            var next = MapManager.CurrentMap.Path[i + 1];
-            var lineConnection = lineConnections.FirstOrDefault(conn => conn.From.Node.Point.Equals(current) &&
+            Point current = MapManager.CurrentMap.Path[i];
+            Point next = MapManager.CurrentMap.Path[i + 1];
+            LineConnection lineConnection = lineConnections.FirstOrDefault(conn => conn.From.Node.Point.Equals(current) &&
                                                                         conn.To.Node.Point.Equals(next));
             lineConnection?.SetColor(LineVisitedColor);
         }
@@ -249,13 +249,13 @@ public class MapView : MonoBehaviour
 
     private NodeBlueprint GetBlueprint(NodeType type)
     {
-        var config = GetConfig(MapManager.CurrentMap.ConfigName);
+        MapConfig config = GetConfig(MapManager.CurrentMap.ConfigName);
         return config.NodeBlueprints.FirstOrDefault(n => n.NodeType == type);
     }
 
     private NodeBlueprint GetBlueprint(string blueprintName)
     {
-        var config = GetConfig(MapManager.CurrentMap.ConfigName);
+        MapConfig config = GetConfig(MapManager.CurrentMap.ConfigName);
         return config.NodeBlueprints.FirstOrDefault(n => n.name == blueprintName);
     }
 }
