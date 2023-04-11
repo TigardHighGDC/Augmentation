@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class HackermanAI : EnemyAI
 {
+    public AudioClip ShootSound;
+    
     private bool canShoot = true;
 
     private void Update()
@@ -20,6 +22,7 @@ public class HackermanAI : EnemyAI
     private IEnumerator BeginFiring()
     {
         canShoot = false;
+        audioSource.PlayOneShot(ShootSound);
         Fire();
         yield return new WaitForSeconds(Data.BulletPerSecond);
         canShoot = true;

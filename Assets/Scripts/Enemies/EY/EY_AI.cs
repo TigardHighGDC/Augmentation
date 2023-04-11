@@ -16,6 +16,9 @@ public class EY_AI : EnemyAI
     public float TooCloseBeginChase;
     public float TooCloseEndChase;
 
+    public AudioClip LockOnSound;
+    public AudioClip ShootSound;
+
     private bool chase = false;
     private bool tooCloseChase = false;
     private bool canShoot = true;
@@ -76,8 +79,10 @@ public class EY_AI : EnemyAI
         canShoot = false;
         laser.DrawLine = false;
         yield return new WaitForSeconds(3f);
+        audioSource.PlayOneShot(LockOnSound);
         laser.DrawLine = true;
         yield return new WaitForSeconds(2f);
+        audioSource.PlayOneShot(ShootSound);
         laser.DrawLine = false;
         canShoot = true;
         Fire();

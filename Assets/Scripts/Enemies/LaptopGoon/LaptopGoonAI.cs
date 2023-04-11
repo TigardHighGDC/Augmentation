@@ -11,6 +11,7 @@ public class LaptopGoonAI : EnemyAI
     public float DangerDistance;
     public float FollowDistance;
     public float RunAwayDistance;
+    public AudioClip ShootSound;
 
     private bool runAway = false;
     private bool canFire = true;
@@ -83,6 +84,7 @@ public class LaptopGoonAI : EnemyAI
     {
         canFire = false;
         Fire();
+        audioSource.PlayOneShot(ShootSound);
         yield return new WaitForSeconds(Data.BulletPerSecond);
         canFire = true;
     }

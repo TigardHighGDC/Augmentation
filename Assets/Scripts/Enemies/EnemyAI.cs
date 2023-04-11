@@ -9,14 +9,19 @@ public abstract class EnemyAI : MonoBehaviour
 {
     public EnemyProjectileData Data;
     public Vector3 BulletSpawn = new Vector3(0, 0, 0);
+    public float Volume = 1.0f;
+
+    protected AudioSource audioSource;
     protected GameObject player;
     protected AIPhysics aiPath;
     protected Rigidbody2D rb;
     protected Animator anim;
 
-    private void Start()
+    public virtual void Start()
     {
         player = GameObject.FindWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = Volume;
         aiPath = GetComponent<AIPhysics>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
