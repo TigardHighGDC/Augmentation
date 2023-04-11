@@ -107,10 +107,10 @@ public class MapView : MonoBehaviour
                     GameObject lineObject = Instantiate(LinePrefab, mapParent.transform);
                     LineRenderer lineRenderer = lineObject.GetComponent<LineRenderer>();
                     Vector3 fromPoint = node.transform.position +
-                                    (to.transform.position - node.transform.position).normalized * OffsetFromNodes;
+                                        (to.transform.position - node.transform.position).normalized * OffsetFromNodes;
 
                     Vector3 toPoint = to.transform.position +
-                                  (node.transform.position - to.transform.position).normalized * OffsetFromNodes;
+                                      (node.transform.position - to.transform.position).normalized * OffsetFromNodes;
 
                     lineObject.transform.position = fromPoint;
                     lineRenderer.useWorldSpace = false;
@@ -220,7 +220,7 @@ public class MapView : MonoBehaviour
         foreach (Point point in currentNode.Outgoing)
         {
             LineConnection lineConnection = lineConnections.FirstOrDefault(conn => conn.From.Node == currentNode &&
-                                                                        conn.To.Node.Point.Equals(point));
+                                                                                   conn.To.Node.Point.Equals(point));
             lineConnection?.SetColor(LineVisitedColor);
         }
 
@@ -231,8 +231,8 @@ public class MapView : MonoBehaviour
         {
             Point current = MapManager.CurrentMap.Path[i];
             Point next = MapManager.CurrentMap.Path[i + 1];
-            LineConnection lineConnection = lineConnections.FirstOrDefault(conn => conn.From.Node.Point.Equals(current) &&
-                                                                        conn.To.Node.Point.Equals(next));
+            LineConnection lineConnection = lineConnections.FirstOrDefault(
+                conn => conn.From.Node.Point.Equals(current) && conn.To.Node.Point.Equals(next));
             lineConnection?.SetColor(LineVisitedColor);
         }
     }

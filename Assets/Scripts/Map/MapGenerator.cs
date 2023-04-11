@@ -69,7 +69,7 @@ public static class MapGenerator
         paths = new List<List<Point>>();
         int numOfStartingNodes = config.numOfStartingNodes.GetValue();
         int numOfPreBossNodes = config.numOfPreBossNodes.GetValue();
-        
+
         List<int> candidateXs = new List<int>();
 
         for (int i = 0; i < config.GridWidth; i++)
@@ -180,7 +180,8 @@ public static class MapGenerator
             }
         }
 
-        List<Node> nodesList = nodes.SelectMany(n => n).Where(n => n.Incoming.Count > 0 || n.Outgoing.Count > 0).ToList();
+        List<Node> nodesList =
+            nodes.SelectMany(n => n).Where(n => n.Incoming.Count > 0 || n.Outgoing.Count > 0).ToList();
         string bossNodeName = config.NodeBlueprints.Where(b => b.NodeType == NodeType.Boss).ToList().Random().name;
 
         return new Map(conf.name, bossNodeName, nodesList, new List<Point>());
