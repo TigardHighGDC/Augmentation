@@ -8,7 +8,7 @@ using UnityEngine;
 public class HackermanAI : EnemyAI
 {
     public AudioClip ShootSound;
-    
+
     private bool canShoot = true;
 
     private void Update()
