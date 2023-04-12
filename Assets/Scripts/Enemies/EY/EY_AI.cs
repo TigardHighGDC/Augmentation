@@ -25,7 +25,7 @@ public class EY_AI : EnemyAI
 
     private void Update()
     {
-        if (BeginChase + 5f > DistanceBetweenPlayer() && canShoot)
+        if (BeginChase + 5.0f > DistanceBetweenPlayer() && canShoot)
         {
             StartCoroutine(BeginShot());
         }
@@ -52,24 +52,21 @@ public class EY_AI : EnemyAI
         {
             tooCloseChase = false;
         }
+        else if (TooCloseBeginChase > distance)
+        {
+            tooCloseChase = true;
+            aiPath.IsStopped = false;
+        }
+        else if (BeginChase < distance)
+        {
+            chase = true;
+            aiPath.IsStopped = false;
+        }
         else
         {
-            if (TooCloseBeginChase > distance)
-            {
-                tooCloseChase = true;
-                aiPath.IsStopped = false;
-            }
-            else if (BeginChase < distance)
-            {
-                chase = true;
-                aiPath.IsStopped = false;
-            }
-            else
-            {
-                chase = false;
-                tooCloseChase = false;
-                aiPath.IsStopped = true;
-            }
+            chase = false;
+            tooCloseChase = false;
+            aiPath.IsStopped = true;
         }
     }
 
@@ -78,10 +75,12 @@ public class EY_AI : EnemyAI
         // Attack separated in phases
         canShoot = false;
         laser.DrawLine = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.0f);
+
         audioSource.PlayOneShot(LockOnSound);
         laser.DrawLine = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.0f);
+
         audioSource.PlayOneShot(ShootSound);
         laser.DrawLine = false;
         canShoot = true;
