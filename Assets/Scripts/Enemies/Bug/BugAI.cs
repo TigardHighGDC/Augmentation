@@ -21,18 +21,16 @@ public class BugAI : EnemyAI
         audioSource.PlayOneShot(BeginMoveSound);
     }
 
-    private void MovementAnimation()
-    {
-        anim.speed = (Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) / 2;
-    }
-
     private void Update()
     {
-        MovementAnimation();
+        // Movement animation
+        anim.speed = (Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) / 2;
+
         if (!audioSource.isPlaying)
         {
             audioSource.PlayOneShot(LoopMoveSound);
         }
+
         if (aiPath.direction[0] >= 0.5)
         {
             transform.localScale = new Vector3(1, transform.localScale[1], transform.localScale[2]);
