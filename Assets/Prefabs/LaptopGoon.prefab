@@ -247,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 52be6870ad0dd2f4a84138acabac9467, type: 2}
   BulletSpawn: {x: 0, y: 0, z: 0}
-  Volume: 0.8
+  Volume: 1
   DangerDistance: 8
   FollowDistance: 16
   RunAwayDistance: 14

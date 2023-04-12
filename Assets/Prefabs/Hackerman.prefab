@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 2883086518401042165}
   - component: {fileID: 1949978074}
   - component: {fileID: 7213197424977455307}
+  - component: {fileID: 8041777982110557340}
   m_Layer: 0
   m_Name: Hackerman
   m_TagString: Enemy
@@ -1011,3 +1012,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8041777982110557340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883086518401042189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff22756ff7a4a6468277a5ceffbef87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 10
+  ResetHitSpeed: 1
