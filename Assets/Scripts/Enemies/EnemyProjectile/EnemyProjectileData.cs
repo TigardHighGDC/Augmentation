@@ -9,6 +9,7 @@ using UnityEngine;
 public class EnemyProjectileData : ScriptableObject
 {
     [Header("Stats")]
+    public GameObject BulletPrefab;
     public float Damage;
     public float BulletSpeed;
     public float BulletPerSecond;
