@@ -1,6 +1,7 @@
 // Copyright (c) TigardHighGDC
 // SPDX-License SPDX-License-Identifier: Apache-2.0
 
+using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class Gun : MonoBehaviour
     public Camera Camera;
     public Transform SpawnPoint;
 
+    private AmmoCounter ammoCounter;
     private bool reloading = false;
     private bool shotDelay = false;
     private int ammoAmount;
@@ -21,10 +23,12 @@ public class Gun : MonoBehaviour
     {
         ammoAmount = Data.AmmoCapacity;
         audioPlayer = gameObject.GetComponent<AudioSource>();
+        ammoCounter = GetComponent<AmmoCounter>();
     }
 
     private void Update()
     {
+        ammoCounter.Text(Data, ammoAmount);
         Controller();
     }
 
