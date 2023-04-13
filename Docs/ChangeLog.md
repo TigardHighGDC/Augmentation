@@ -18,6 +18,7 @@ A bi-weekly log of project changes separated by two week sprints.
 
 - New Features:
   - Basic UI added [#138](https://github.com/TigardHighGDC/Augmentation/pull/138).
+  - Item event manager added [#156](https://github.com/TigardHighGDC/Augmentation/pull/156).
 - Enhancements:
   - Added audio to enemies [#145](https://github.com/TigardHighGDC/Augmentation/pull/145).
   - Updated enemy projectile sprites [#145](https://github.com/TigardHighGDC/Augmentation/pull/145).
