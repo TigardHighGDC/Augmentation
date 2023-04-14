@@ -6,13 +6,34 @@ A bi-weekly log of project changes separated by two week sprints.
 
 | Date | Sprint |
 | - | - |
-| [3/3/2023 - 3/16/2023](#332023---3162023) | 5 |
+| [3/14/2023 - 4/6/2023](#3142023---462023) | 6 |
+| [3/3/2023 - 3/14/2023](#332023---3142023) | 5 |
 | [2/8/2023 3/2/2023](#2082023---3022023) | 4 |
 | [1/17/2023 - 2/7/2023](#1172023---2072023) | 3 |
 | [1/4/2023 - 1/16/2023](#1042023---1162023) | 2 |
 | [12/6/2022 - 1/3/2023](#12062022---1032023) | 1 |
 
-## 3/3/2023 - 3/16/2023 (Sprint #5)
+## 3/14/2023 - 4/6/2023 (Sprint #6)
+
+- New Features:
+  - Added corruption display with new corruption eye UI [#121](https://github.com/TigardHighGDC/Augmentation/pull/121).
+  - Implemented corruption stat changes [#125](https://github.com/TigardHighGDC/Augmentation/pull/125).
+  - Implemented corruption auto changes [#125](https://github.com/TigardHighGDC/Augmentation/pull/125).
+  - Added `Door.cs` for cross level movement [#123](https://github.com/TigardHighGDC/Augmentation/pull/123).
+  - Added new gun sounds [#132](https://github.com/TigardHighGDC/Augmentation/pull/132).
+  - Added music player that works with scene transitioning [#134](https://github.com/TigardHighGDC/Augmentation/pull/134).
+  - Added URP Lighting [#136](https://github.com/TigardHighGDC/Augmentation/pull/136).
+  - Added the procedurally generated level map [#141](https://github.com/TigardHighGDC/Augmentation/pull/141).
+- Enhancements:
+  - Basic variable renaming for improved readability [#120](https://github.com/TigardHighGDC/Augmentation/pull/120).
+  - Bullets now have the ability to pierce enemies [#127](https://github.com/TigardHighGDC/Augmentation/pull/127).
+  - Bullets now destroy themselves when they hit a wall [#130](https://github.com/TigardHighGDC/Augmentation/pull/130).
+- Bug Fixes:
+  - Changed `AudioManipulation.cs` to return a new audio file instead of modifying the original [#125](https://github.com/TigardHighGDC/Augmentation/pull/125).
+  - Updated `Bug.prefab`, a fix from [#114](https://github.com/TigardHighGDC/Augmentation/pull/114) [#119](https://github.com/TigardHighGDC/Augmentation/pull/119).
+  - `LaptopGoon.prefab` merge fix [#140](https://github.com/TigardHighGDC/Augmentation/pull/140).
+
+## 3/3/2023 - 3/14/2023 (Sprint #5)
 
 - New Features:
   - Updated Unity to version `2021.3.20f1` [#96](https://github.com/TigardHighGDC/Augmentation/pull/96).

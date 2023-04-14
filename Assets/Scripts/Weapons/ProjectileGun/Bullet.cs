@@ -10,19 +10,37 @@ public class Bullet : MonoBehaviour
     [HideInInspector]
     public WeaponData Data;
 
+    private int remainingPierce;
+
     private void Start()
     {
         Invoke("DestroyBullet", Data.DespawnTime);
+        remainingPierce = Data.BulletPierce;
     }
 
     private void OnTriggerEnter2D(Collider2D collide)
     {
-        if (collide.gameObject.tag != "Bullet")
+        switch (collide.gameObject.tag)
         {
+        case "Enemy":
             NonPlayerHealth nonPlayerHealth = collide.gameObject.GetComponent<NonPlayerHealth>();
-            collide.GetComponent<Rigidbody2D>().AddForce(transform.up * Data.Knockback, ForceMode2D.Impulse);
+            collide.GetComponent<Rigidbody2D>().AddForce(
+                transform.up * (Data.Knockback * CorruptionLevel.KnockbackIncrease), ForceMode2D.Impulse);
             nonPlayerHealth.Damage(Data.Damage);
+
+            // Calls current bullet hit modifiers
+            ItemHandling.BulletHit?.Invoke();
+            remainingPierce--;
+
+            if (remainingPierce <= 0)
+            {
+                DestroyBullet();
+            }
+
+            break;
+        case "Wall":
             DestroyBullet();
+            break;
         }
     }
 

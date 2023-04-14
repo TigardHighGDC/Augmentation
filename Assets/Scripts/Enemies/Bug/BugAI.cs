@@ -7,14 +7,30 @@ using UnityEngine;
 
 public class BugAI : EnemyAI
 {
-    private void MovementAnimation()
+    public AudioClip BeginMoveSound;
+    public AudioClip LoopMoveSound;
+
+    public override void Start()
     {
-        anim.speed = (Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) / 2;
+        player = GameObject.FindWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = Volume;
+        aiPath = GetComponent<AIPhysics>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        audioSource.PlayOneShot(BeginMoveSound);
     }
 
     private void Update()
     {
-        MovementAnimation();
+        // Movement animation
+        anim.speed = (Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) / 2;
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(LoopMoveSound);
+        }
+
         if (aiPath.direction[0] >= 0.5)
         {
             transform.localScale = new Vector3(1, transform.localScale[1], transform.localScale[2]);
