@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e005e145ee6c8a34284ef73113e87003, type: 3}
   m_Name: LaptopGoon
   m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 6900885866568021340, guid: 3ba2d1017b8fffb40b4af2b7756c61a5, type: 3}
   Damage: 20
   BulletSpeed: 5
   BulletPerSecond: 2

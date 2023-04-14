@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e005e145ee6c8a34284ef73113e87003, type: 3}
   m_Name: EY
   m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 6900885866568021340, guid: 724dbcd4eef5a784a8784701a0b36e56, type: 3}
   Damage: 50
   BulletSpeed: 30
   BulletPerSecond: 0
