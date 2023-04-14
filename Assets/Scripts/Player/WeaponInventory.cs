@@ -155,7 +155,8 @@ public class WeaponInventory : MonoBehaviour
 
         Debug.Log("Changing weapon to " + Weapons[newWeaponIndex].WeaponName); // TODO: Remove debug log
 
-        if (currentWeaponIndex != -1) {
+        if (currentWeaponIndex != -1)
+        {
             weaponAmmoMap[Weapons[currentWeaponIndex].WeaponName] = GetComponent<Gun>().AmmoAmount;
         }
 
