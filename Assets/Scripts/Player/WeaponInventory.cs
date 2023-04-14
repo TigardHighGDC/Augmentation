@@ -14,7 +14,7 @@ public class WeaponInventory : MonoBehaviour
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
     private double allowedWeaponSwitchTime = 0.25;
-    private Dictionary<string, int> weaponAmmoMap = new Dictionary<string, int>();
+    private List<int> weaponAmmoAmounts = new List<int>();
 
     enum StartingLoadout
     {
@@ -157,12 +157,12 @@ public class WeaponInventory : MonoBehaviour
 
         if (currentWeaponIndex != -1)
         {
-            weaponAmmoMap[Weapons[currentWeaponIndex].WeaponName] = GetComponent<Gun>().AmmoAmount;
+            weaponAmmoAmounts[currentWeaponIndex] = GetComponent<Gun>().AmmoAmount;
         }
 
         Gun gun = GetComponent<Gun>();
         gun.Data = Weapons[newWeaponIndex];
-        gun.AmmoAmount = weaponAmmoMap[Weapons[newWeaponIndex].WeaponName];
+        gun.AmmoAmount = weaponAmmoAmounts[newWeaponIndex];
         currentWeaponIndex = newWeaponIndex;
     }
 
@@ -171,7 +171,7 @@ public class WeaponInventory : MonoBehaviour
         if (state == State.NO_WEAPONS || state == State.HAS_WEAPONS)
         {
             Weapons.Add(weapon);
-            weaponAmmoMap.Add(weapon.WeaponName, weapon.AmmoCapacity);
+            weaponAmmoAmounts.Add(weapon.AmmoCapacity);
 
             if (state == State.NO_WEAPONS)
             {
@@ -208,7 +208,7 @@ public class WeaponInventory : MonoBehaviour
         }
 
         Weapons.RemoveAt(weaponIndex);
-        weaponAmmoMap.Remove(Weapons[weaponIndex].WeaponName);
+        weaponAmmoAmounts.RemoveAt(weaponIndex);
         ChangeWeapon(0, true);
     }
 }
