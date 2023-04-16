@@ -22,6 +22,7 @@ A bi-weekly log of project changes separated by two week sprints.
 - Enhancements:
   - Added audio to enemies [#145](https://github.com/TigardHighGDC/Augmentation/pull/145).
   - Updated enemy projectile sprites [#145](https://github.com/TigardHighGDC/Augmentation/pull/145).
+  - Initial rooms created & added scene switching to the map [#157](https://github.com/TigardHighGDC/Augmentation/pull/157).
 
 ## 3/14/2023 - 4/6/2023 (Sprint #6)
 
