@@ -3,6 +3,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Malee.List;
 using UnityEngine;
 using UnityEditor;
 
@@ -10,6 +11,14 @@ public class WeaponInventory : MonoBehaviour
 {
     public List<WeaponData> Weapons;
     public int MaxWeapons = 3;
+
+    [System.Serializable]
+    public class ListOfGunData : ReorderableArray<WeaponData>
+    {
+    }
+
+    [Reorderable]
+    public ListOfGunData GunData;
 
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
@@ -22,7 +31,7 @@ public class WeaponInventory : MonoBehaviour
         ALL
     }
 
-    private StartingLoadout startingLoadout = StartingLoadout.ALL; // For testing purposes.
+    private StartingLoadout startingLoadout = StartingLoadout.PISTOL; // For testing purposes.
 
     enum State
     {
@@ -62,7 +71,21 @@ public class WeaponInventory : MonoBehaviour
         if (startingLoadout == StartingLoadout.PISTOL)
         {
             // Add pistol to inventory.
-            WeaponData pistol = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Pistol.asset");
+            WeaponData pistol = null;
+
+            for (int i = 0; i < GunData.Count; i++)
+            {
+                if (GunData[i].WeaponName == "Pistol")
+                {
+                    pistol = GunData[i];
+                    break;
+                }
+            }
+
+            if (pistol == null)
+            {
+                Assert.Boolean(false, "Pistol not found in GunData list.");
+            }
 
             AddWeapon(pistol);
             ChangeWeapon(0);
