@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapPlayerTracker : MonoBehaviour
 {
@@ -74,18 +75,32 @@ public class MapPlayerTracker : MonoBehaviour
         switch (mapNode.Node.NodeType)
         {
         case NodeType.MinorEnemy:
+            // TODO: Use static scene manager. See GH-139.
+            SceneManager.LoadScene("Basic Enemies");
             break;
         case NodeType.EliteEnemy:
+            // TODO: Use static scene manager. See GH-139.
+            SceneManager.LoadScene("Elite Enemies");
             break;
         case NodeType.RestSite:
+            // TODO: Use static scene manager. See GH-139.
+            SceneManager.LoadScene("Rest Site");
             break;
         case NodeType.Treasure:
+            // TODO: Use static scene manager. See GH-139.
+            SceneManager.LoadScene("Treasure");
             break;
         case NodeType.Store:
+            // TODO: Use static scene manager. See GH-139.
+            SceneManager.LoadScene("Store");
             break;
         case NodeType.Boss:
+            // TODO: Use static scene manager. See GH-139.
+            SceneManager.LoadScene("Boss");
             break;
         case NodeType.Mystery:
+            // TODO: Remove this node type.
+            Assert.Boolean(false, "Mystery node type is not supported");
             break;
         default:
             Assert.Boolean(false, "Unknown NodeType: " + mapNode.Node.NodeType);
