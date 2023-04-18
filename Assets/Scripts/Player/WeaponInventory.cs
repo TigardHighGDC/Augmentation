@@ -9,31 +9,22 @@ using UnityEditor;
 
 public class WeaponInventory : MonoBehaviour
 {
-    public List<WeaponData> Weapons;
     public int MaxWeapons = 3;
 
-    [System.Serializable]
-    public class ListOfGunData : ReorderableArray<WeaponData>
+    [Reorderable]
+    public ListOfWeapons Weapons;
+
+    [System.Serializable, HideInInspector]
+    public class ListOfWeapons : ReorderableArray<WeaponData>
     {
     }
-
-    [Reorderable]
-    public ListOfGunData GunData;
 
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
     private double allowedWeaponSwitchTime = 0.25;
     private List<int> weaponAmmoAmounts = new List<int>();
 
-    enum StartingLoadout
-    {
-        PISTOL,
-        ALL
-    }
-
-    private StartingLoadout startingLoadout = StartingLoadout.PISTOL; // For testing purposes.
-
-    enum State
+    private enum State
     {
         NO_WEAPONS,
         HAS_WEAPONS,
@@ -59,52 +50,22 @@ public class WeaponInventory : MonoBehaviour
 
     private void Start()
     {
-        state = State.NO_WEAPONS;
-
         if (Weapons.Count > 0)
         {
             // Starting weapons were custom set.
+            Assert.Boolean(Weapons.Count <= MaxWeapons, "Too many starting weapons.");
+
+            foreach (WeaponData weapon in Weapons)
+            {
+                weaponAmmoAmounts.Add(weapon.AmmoCapacity);
+            }
+
             state = State.HAS_WEAPONS;
-            ChangeWeapon(0);
-        }
-
-        if (startingLoadout == StartingLoadout.PISTOL)
-        {
-            // Add pistol to inventory.
-            WeaponData pistol = null;
-
-            for (int i = 0; i < GunData.Count; i++)
-            {
-                if (GunData[i].WeaponName == "Pistol")
-                {
-                    pistol = GunData[i];
-                    break;
-                }
-            }
-
-            if (pistol == null)
-            {
-                Assert.Boolean(false, "Pistol not found in GunData list.");
-            }
-
-            AddWeapon(pistol);
-            ChangeWeapon(0);
-        }
-        else if (startingLoadout == StartingLoadout.ALL)
-        {
-            // Add all weapons to inventory.
-            // All being a relative term as this is only for testing.
-            WeaponData pistol = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Pistol.asset");
-            WeaponData shotgun = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Shotgun.asset");
-            WeaponData sniper = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Sniper.asset");
-
-            AddWeapon(pistol);
-            AddWeapon(shotgun);
-            AddWeapon(sniper);
             ChangeWeapon(0);
         }
         else
         {
+            // No starting weapons.
             state = State.NO_WEAPONS;
         }
     }
@@ -128,7 +89,7 @@ public class WeaponInventory : MonoBehaviour
         }
 
         // Switch weapons with scroll wheel.
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0.0f)
         {
             // Wrap around to the first weapon if we're at the end of the list.
             if (currentWeaponIndex == Weapons.Count - 1)
@@ -142,7 +103,7 @@ public class WeaponInventory : MonoBehaviour
 
             lastWeaponSwitchTime = Time.time;
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0.0f)
         {
             if (currentWeaponIndex == 0)
             {
@@ -176,17 +137,22 @@ public class WeaponInventory : MonoBehaviour
 
         Assert.Boolean(newWeaponIndex < Weapons.Count);
 
-        Debug.Log("Changing weapon to " + Weapons[newWeaponIndex].WeaponName); // TODO: Remove debug log
+        // Debug.Log("Changing weapon to " + Weapons[newWeaponIndex].WeaponName); // TODO: Remove debug log
+
+        Gun gun = GetComponent<Gun>();
 
         if (currentWeaponIndex != -1)
         {
-            weaponAmmoAmounts[currentWeaponIndex] = GetComponent<Gun>().AmmoAmount;
+            weaponAmmoAmounts[currentWeaponIndex] = gun.AmmoAmount;
         }
 
-        Gun gun = GetComponent<Gun>();
         gun.Data = Weapons[newWeaponIndex];
         gun.AmmoAmount = weaponAmmoAmounts[newWeaponIndex];
         currentWeaponIndex = newWeaponIndex;
+        // Gun gun = GetComponent<Gun>();
+        // gun.Data = Weapons[newWeaponIndex];
+        // gun.AmmoAmount = weaponAmmoAmounts[newWeaponIndex];
+        // currentWeaponIndex = newWeaponIndex;
     }
 
     public void AddWeapon(WeaponData weapon)

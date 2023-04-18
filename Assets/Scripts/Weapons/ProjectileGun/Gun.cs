@@ -16,6 +16,7 @@ public class Gun : MonoBehaviour
     [HideInInspector]
     public int AmmoAmount;
 
+    private AmmoCounter ammoCounter;
     private bool reloading = false;
     private bool shotDelay = false;
     private AudioSource audioPlayer;
@@ -29,7 +30,7 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
-        ammoCounter.Text(Data, ammoAmount);
+        ammoCounter.Text(Data, AmmoAmount);
         Controller();
     }
 
