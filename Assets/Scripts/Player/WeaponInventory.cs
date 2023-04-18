@@ -137,8 +137,6 @@ public class WeaponInventory : MonoBehaviour
 
         Assert.Boolean(newWeaponIndex < Weapons.Count);
 
-        // Debug.Log("Changing weapon to " + Weapons[newWeaponIndex].WeaponName); // TODO: Remove debug log
-
         Gun gun = GetComponent<Gun>();
 
         if (currentWeaponIndex != -1)
@@ -149,10 +147,6 @@ public class WeaponInventory : MonoBehaviour
         gun.Data = Weapons[newWeaponIndex];
         gun.AmmoAmount = weaponAmmoAmounts[newWeaponIndex];
         currentWeaponIndex = newWeaponIndex;
-        // Gun gun = GetComponent<Gun>();
-        // gun.Data = Weapons[newWeaponIndex];
-        // gun.AmmoAmount = weaponAmmoAmounts[newWeaponIndex];
-        // currentWeaponIndex = newWeaponIndex;
     }
 
     public void AddWeapon(WeaponData weapon)
