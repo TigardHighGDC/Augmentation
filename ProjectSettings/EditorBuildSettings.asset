@@ -11,4 +11,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lighting Room.unity
     guid: b22997b3b6c3b4a478e9524eafce4ac1
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 42ead479060aca84da546023a501ebe8
+  - enabled: 1
+    path: Assets/Scenes/Level Map.unity
+    guid: f8fd3f36ebfc38b4392fd41cb8b2a932
+  - enabled: 1
+    path: Assets/Scenes/Basic Enemies.unity
+    guid: 3db7948c2e9dd1849a9b7cce42ca5517
+  - enabled: 1
+    path: Assets/Scenes/Boss.unity
+    guid: 66276c604a61908468503569d2fbae94
+  - enabled: 1
+    path: Assets/Scenes/Elite Enemies.unity
+    guid: 44bd1bee5b2aad54aaab3e118f0c64b4
+  - enabled: 1
+    path: Assets/Scenes/Rest Site.unity
+    guid: 8b8b3bee9f690b64d8aa1df43b5ae682
+  - enabled: 1
+    path: Assets/Scenes/Store.unity
+    guid: 03950e4e8ff64dc4cb8a85c9beaeac1a
+  - enabled: 1
+    path: Assets/Scenes/Treasure.unity
+    guid: 703df4195c288c649ac946d1b651a5cb
   m_configObjects: {}

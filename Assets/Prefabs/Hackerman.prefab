@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: b13d19a611f21474480d20b22a948215, type: 2}
   BulletSpawn: {x: 0, y: 0, z: 0}
-  Volume: 0.25
+  Volume: 0.35
   ShootSound: {fileID: 8300000, guid: 11114e1084e12b4458241cbe310c6664, type: 3}
 --- !u!114 &1949978074
 MonoBehaviour:
