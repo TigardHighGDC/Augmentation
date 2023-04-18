@@ -7,8 +7,7 @@ public class ItemType : MonoBehaviour
     public string Name;
 
     [Header("Event")]
-    public bool Activate;
-    public bool DestroyItem;
+    public bool DestroyItem = false;
     public ItemUse ItemPurpose;
 
     [Header("Description")]

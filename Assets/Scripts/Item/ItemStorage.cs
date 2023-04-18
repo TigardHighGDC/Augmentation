@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class ItemStorage : MonoBehaviour
 {
-    public static ItemType Fragmentation;
-    public static ItemType Weapon;
-    public static List<GameObject> ItemList = new List<GameObject>();
+    public static GameObject Fragmentation = null;
+    // public static GameObject Weapon = null;
+    // public static List<GameObject> ItemList = new List<GameObject>();
 
-    public void AddItemList(GameObject item)
-    {
-        ItemList.Add(item);
-        item.GetComponent<ItemType>().Activate = true;
-    }
-
-    public void ReplaceItem(GameObject oldItem, GameObject newItem)
+    public static GameObject ReplaceItem(GameObject newItem, GameObject oldItem = null)
     {
         if (oldItem != null)
         {
-            ItemType oldData  = oldItem.GetComponent<ItemType>();
-            oldData.DestroyItem = true;
+            DeleteItem(oldItem);
         }
 
-        ItemType newData  = newItem.GetComponent<ItemType>();
-        newData.Activate = true;
+        GameObject created = Instantiate(newItem);
+
+        return created;
+    }
+
+    public static GameObject DeleteItem(GameObject oldItem)
+    {
+        oldItem.GetComponent<ItemType>().DestroyItem = true;
+        return null;
     }
 }
