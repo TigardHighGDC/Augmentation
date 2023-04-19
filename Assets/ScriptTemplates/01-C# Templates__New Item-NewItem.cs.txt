@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class #SCRIPTNAME# : MonoBehaviour
-{
+{	
     private ItemType itemType;
 
     void Start()
     {
         // Apply stat and event changes here.
+
         itemType = GetComponent<ItemType>();
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()

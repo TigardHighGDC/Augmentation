@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8598319088905888392}
   - component: {fileID: -6280122061370568019}
+  - component: {fileID: 1429494438657054965}
   m_Layer: 0
   m_Name: Fragmentation1
   m_TagString: Untagged
@@ -45,7 +46,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Test1
+  Image: {fileID: 0}
+  Text: {fileID: 0}
   DestroyItem: 0
   ItemPurpose: 1
   ItemStats: Says Test1
   Lore: Nothing
+--- !u!114 &1429494438657054965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4726011452220409743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa036500737587f49bb36af4957fe504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test: []
