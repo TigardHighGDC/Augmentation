@@ -12,6 +12,8 @@ public class Gun : MonoBehaviour
     public GameObject Bullet;
     public Camera Camera;
     public Transform SpawnPoint;
+    public Transform HandPosition;
+    public GameObject WeaponImage;
 
     private AmmoCounter ammoCounter;
     private bool reloading = false;
@@ -29,7 +31,9 @@ public class Gun : MonoBehaviour
     private void Update()
     {
         ammoCounter.Text(Data, ammoAmount);
+        RenderWeapon();
         Controller();
+        PointPlayerToMouse();
     }
 
     private void Controller()
@@ -86,15 +90,28 @@ public class Gun : MonoBehaviour
         }
     }
 
+    private void PointPlayerToMouse()
+    {
+        Vector3 mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 relativePoint = transform.position - mousePosition;
+        transform.localScale =
+            new Vector3(Mathf.Sign(relativePoint[0]), transform.localScale[1], transform.localScale[2]);
+    }
+
+    private void RenderWeapon()
+    {
+        WeaponImage.GetComponent<SpriteRenderer>().sprite = Data.Image;
+        SpawnPoint.localPosition = new Vector3(Data.WeaponLength, 0, 0);
+        HandPosition.localPosition = Data.HandPosition;
+    }
+
     private IEnumerator Reload()
     {
         reloading = true;
         audioPlayer.PlayOneShot(Data.ReloadSound, Data.ReloadVolume);
-        Debug.Log("Reloading"); // TODO: Remove Debug.Log() when we have a working interface.
 
         // Yield is required to pause the function
         yield return new WaitForSeconds(Data.ReloadSpeed);
-        Debug.Log("Done"); // TODO: Remove Debug.Log() when we have a working interface.
         ammoAmount = Data.AmmoCapacity;
         reloading = false;
     }
