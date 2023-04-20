@@ -9,6 +9,7 @@ using UnityEngine;
 public class WeaponData : ScriptableObject
 {
     [Header("Stats")]
+    public string WeaponName;
     public float Damage;
     public float Size;
     public float ReloadSpeed;
