@@ -8,9 +8,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Weapon", menuName = "ScriptableObject/WeaponData")]
 public class WeaponData : ScriptableObject
 {
+    public Sprite Image;
+    public Vector3 HandPosition;
+
     [Header("Stats")]
     public string WeaponName;
     public float Damage;
+    public float WeaponLength;
     public float Size;
     public float ReloadSpeed;
     public float BulletSpeed;

@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0105a0956d55806448d62a1d87062f14, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 7db8a03870b8aec478a28c2c6945c01e, type: 3}
+  HandPosition: {x: -0.3, y: 1.25, z: 0}
   WeaponName: Pistol
   Damage: 10
+  WeaponLength: 1.25
   Size: 1
   ReloadSpeed: 1
   BulletSpeed: 12
