@@ -15,23 +15,25 @@ public class Gun : MonoBehaviour
     public Transform HandPosition;
     public GameObject WeaponImage;
 
+    [HideInInspector]
+    public int AmmoAmount;
+
     private AmmoCounter ammoCounter;
     private bool reloading = false;
     private bool shotDelay = false;
-    private int ammoAmount;
     private AudioSource audioPlayer;
 
     private void Start()
     {
-        ammoAmount = Data.AmmoCapacity;
+        AmmoAmount = Data.AmmoCapacity;
         audioPlayer = gameObject.GetComponent<AudioSource>();
         ammoCounter = GetComponent<AmmoCounter>();
     }
 
     private void Update()
     {
-        ammoCounter.Text(Data, ammoAmount);
         RenderWeapon();
+        ammoCounter.Text(Data, AmmoAmount);
         Controller();
         PointPlayerToMouse();
     }
@@ -43,12 +45,12 @@ public class Gun : MonoBehaviour
             StartCoroutine((Reload()));
         }
 
-        if (!reloading && !shotDelay && ammoAmount > 0 && Input.GetButton("Fire1"))
+        if (!reloading && !shotDelay && AmmoAmount > 0 && Input.GetButton("Fire1"))
         {
             Fire();
             StartCoroutine(CanShoot());
         }
-        else if (Data.AutoReload && !reloading && ammoAmount <= 0)
+        else if (Data.AutoReload && !reloading && AmmoAmount <= 0)
         {
             StartCoroutine((Reload()));
         }
@@ -112,14 +114,14 @@ public class Gun : MonoBehaviour
 
         // Yield is required to pause the function
         yield return new WaitForSeconds(Data.ReloadSpeed);
-        ammoAmount = Data.AmmoCapacity;
+        AmmoAmount = Data.AmmoCapacity;
         reloading = false;
     }
 
     private IEnumerator CanShoot()
     {
         shotDelay = true;
-        ammoAmount -= 1;
+        AmmoAmount -= 1;
 
         // Yield is required to pause the function
         yield return new WaitForSeconds(Data.CanShootInterval * CorruptionLevel.ShootIntervalDecrease);

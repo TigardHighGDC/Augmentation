@@ -12,6 +12,7 @@ public class WeaponData : ScriptableObject
     public Vector3 HandPosition;
 
     [Header("Stats")]
+    public string WeaponName;
     public float Damage;
     public float WeaponLength;
     public float Size;
