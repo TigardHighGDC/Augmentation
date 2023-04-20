@@ -24,6 +24,8 @@ A bi-weekly log of project changes separated by two week sprints.
   - Updated enemy projectile sprites [#145](https://github.com/TigardHighGDC/Augmentation/pull/145).
   - Initial rooms created & added scene switching to the map [#157](https://github.com/TigardHighGDC/Augmentation/pull/157).
   - Updated Hackerman enemy volume [#158](https://github.com/TigardHighGDC/Augmentation/pull/158).
+- Bug Fixes:
+  - Fixed weapon inventory not properly tracking the amount of ammo in each weapon [#128](https://github.com/TigardHighGDC/Augmentation/pull/128).
 
 ## 3/14/2023 - 4/6/2023 (Sprint #6)
 
