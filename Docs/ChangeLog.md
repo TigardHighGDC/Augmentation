@@ -23,6 +23,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Added audio to enemies [#145](https://github.com/TigardHighGDC/Augmentation/pull/145).
   - Updated enemy projectile sprites [#145](https://github.com/TigardHighGDC/Augmentation/pull/145).
   - Initial rooms created & added scene switching to the map [#157](https://github.com/TigardHighGDC/Augmentation/pull/157).
+  - Moved gun object closer to player to allow for aiming at very close enemies [#167](https://github.com/TigardHighGDC/Augmentation/pull/167).
   - Updated Hackerman enemy volume [#158](https://github.com/TigardHighGDC/Augmentation/pull/158).
   - Added player animations [#165](https://github.com/TigardHighGDC/Augmentation/pull/165).
   - Added gun images [#165](https://github.com/TigardHighGDC/Augmentation/pull/165).
