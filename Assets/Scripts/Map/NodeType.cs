@@ -5,9 +5,6 @@ public enum NodeType
 {
     MinorEnemy,
     EliteEnemy,
-    RestSite,
-    Treasure,
     Store,
     Boss,
-    Mystery
 }

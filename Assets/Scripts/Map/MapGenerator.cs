@@ -11,12 +11,11 @@ public static class MapGenerator
 
     // clang-format off
     private static List<NodeType> randomNodes = new List<NodeType> {
-        // Contains every valid node type that can be randomly selected from
-        NodeType.Mystery, 
+        // Contains every valid node type that can be randomly selected from.
+        // Note that these are not the only nodes that can be selected from,
+        // but rather only the nodes that can be randomized to in each layer.
+        NodeType.MinorEnemy,
         NodeType.Store, 
-        NodeType.Treasure, 
-        NodeType.MinorEnemy, 
-        NodeType.RestSite
     };
     // clang-format on
 
