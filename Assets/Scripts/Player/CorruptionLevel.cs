@@ -9,6 +9,7 @@ public class CorruptionLevel : MonoBehaviour
 {
     public static bool FragmentationLock = false;
     public static float KnockbackIncrease;
+    public static float PlayerSpeedIncrease;
     public static float AccuracyDecrease;
     public static float ShootIntervalDecrease;
     public static float corruptionMax = 100f;
@@ -36,6 +37,7 @@ public class CorruptionLevel : MonoBehaviour
         KnockbackIncrease = 1.0f + PercentageIncrease(0.65f);
         AccuracyDecrease = 1.0f + PercentageIncrease(1.2f);
         ShootIntervalDecrease = 1.0f - PercentageIncrease(0.5f);
+        PlayerSpeedIncrease = 1.0f + PercentageIncrease(0.75f);
     }
     
     private void FragmentationController()

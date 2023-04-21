@@ -11,24 +11,35 @@ public class PlayerMovement : MonoBehaviour
     private float y;
     private Rigidbody2D rb;
     private Vector2 direction;
+    private Animator anim;
 
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
-
-        if (x != 0)
-        {
-            transform.localScale = new Vector3(-1 * x, transform.localScale[1], transform.localScale[2]);
-        }
+        PlayerMovementAnimation(x, y);
 
         direction = new Vector2(x, y);
         direction.Normalize();
-        rb.velocity = direction * Speed;
+        rb.velocity = direction * Speed * CorruptionLevel.PlayerSpeedIncrease;
+    }
+
+    private void PlayerMovementAnimation(float x, float y)
+    {
+        if (x != 0 || y != 0)
+        {
+            anim.speed = CorruptionLevel.PlayerSpeedIncrease;
+            anim.Play("PlayerMove");
+        }
+        else
+        {
+            anim.Play("Idle");
+        }
     }
 }

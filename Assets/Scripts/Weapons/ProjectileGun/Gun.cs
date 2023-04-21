@@ -12,24 +12,30 @@ public class Gun : MonoBehaviour
     public GameObject Bullet;
     public Camera Camera;
     public Transform SpawnPoint;
+    public Transform HandPosition;
+    public GameObject WeaponImage;
+
+    [HideInInspector]
+    public int AmmoAmount;
 
     private AmmoCounter ammoCounter;
     private bool reloading = false;
     private bool shotDelay = false;
-    private int ammoAmount;
     private AudioSource audioPlayer;
 
     private void Start()
     {
-        ammoAmount = Data.AmmoCapacity;
+        AmmoAmount = Data.AmmoCapacity;
         audioPlayer = gameObject.GetComponent<AudioSource>();
         ammoCounter = GetComponent<AmmoCounter>();
     }
 
     private void Update()
     {
-        ammoCounter.Text(Data, ammoAmount);
+        RenderWeapon();
+        ammoCounter.Text(Data, AmmoAmount);
         Controller();
+        PointPlayerToMouse();
     }
 
     private void Controller()
@@ -39,12 +45,12 @@ public class Gun : MonoBehaviour
             StartCoroutine((Reload()));
         }
 
-        if (!reloading && !shotDelay && ammoAmount > 0 && Input.GetButton("Fire1"))
+        if (!reloading && !shotDelay && AmmoAmount > 0 && Input.GetButton("Fire1"))
         {
             Fire();
             StartCoroutine(CanShoot());
         }
-        else if (Data.AutoReload && !reloading && ammoAmount <= 0)
+        else if (Data.AutoReload && !reloading && AmmoAmount <= 0)
         {
             StartCoroutine((Reload()));
         }
@@ -86,23 +92,36 @@ public class Gun : MonoBehaviour
         }
     }
 
+    private void PointPlayerToMouse()
+    {
+        Vector3 mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 relativePoint = transform.position - mousePosition;
+        transform.localScale =
+            new Vector3(Mathf.Sign(relativePoint[0]), transform.localScale[1], transform.localScale[2]);
+    }
+
+    private void RenderWeapon()
+    {
+        WeaponImage.GetComponent<SpriteRenderer>().sprite = Data.Image;
+        SpawnPoint.localPosition = new Vector3(Data.WeaponLength, 0, 0);
+        HandPosition.localPosition = Data.HandPosition;
+    }
+
     private IEnumerator Reload()
     {
         reloading = true;
         audioPlayer.PlayOneShot(Data.ReloadSound, Data.ReloadVolume);
-        Debug.Log("Reloading"); // TODO: Remove Debug.Log() when we have a working interface.
 
         // Yield is required to pause the function
         yield return new WaitForSeconds(Data.ReloadSpeed);
-        Debug.Log("Done"); // TODO: Remove Debug.Log() when we have a working interface.
-        ammoAmount = Data.AmmoCapacity;
+        AmmoAmount = Data.AmmoCapacity;
         reloading = false;
     }
 
     private IEnumerator CanShoot()
     {
         shotDelay = true;
-        ammoAmount -= 1;
+        AmmoAmount -= 1;
 
         // Yield is required to pause the function
         yield return new WaitForSeconds(Data.CanShootInterval * CorruptionLevel.ShootIntervalDecrease);

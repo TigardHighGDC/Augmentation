@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6eddfcdfb16c742aee51950dee6125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LockAfterSelecting: 0
+  LockAfterSelecting: 1
   EnterNodeDelay: 1
   MapManager: {fileID: 2121929464142756406}
   View: {fileID: 2121929463137184058}
@@ -199,4 +199,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 1f5ff8fe8b6749d4c9b8e60005649be4, type: 2}
   View: {fileID: 2121929463137184058}
-  GenerateNewMapOnStart: 1
+  GenerateNewMapOnStart: 0
