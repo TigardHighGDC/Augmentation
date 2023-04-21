@@ -16,7 +16,7 @@ MonoBehaviour:
   HandPosition: {x: -0.3, y: 1, z: 0}
   WeaponName: Shotgun
   Damage: 3
-  WeaponLength: 2.5
+  WeaponLength: 2
   Size: 1
   ReloadSpeed: 1.5
   BulletSpeed: 12

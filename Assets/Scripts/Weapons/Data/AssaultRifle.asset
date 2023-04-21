@@ -16,7 +16,7 @@ MonoBehaviour:
   HandPosition: {x: -0.3, y: 1, z: 0}
   WeaponName: Assult Rifle
   Damage: 10
-  WeaponLength: 2.5
+  WeaponLength: 1.5
   Size: 0.8
   ReloadSpeed: 1.5
   BulletSpeed: 15
