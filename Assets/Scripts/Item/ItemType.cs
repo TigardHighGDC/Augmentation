@@ -7,7 +7,7 @@ public class ItemType : MonoBehaviour
     public string Name;
     public Sprite Image;
     public Sprite Text;
-    
+
     [Header("Event")]
     public bool DestroyItem = false;
     public ItemUse ItemPurpose;
@@ -16,8 +16,9 @@ public class ItemType : MonoBehaviour
     public string ItemStats;
     public string Lore;
 
-    public enum ItemUse {
-        Weapon, 
+    public enum ItemUse
+    {
+        Weapon,
         Fragmentation,
         Pickupable
     }

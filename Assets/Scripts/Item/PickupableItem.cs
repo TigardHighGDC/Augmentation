@@ -19,7 +19,6 @@ public class PickupableItem : MonoBehaviour
         }
         else if (Item != null)
         {
-            Debug.Log(Item);
             spriteRender.sprite = Item.GetComponent<ItemType>().Image;
         }
         else

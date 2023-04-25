@@ -138,7 +138,7 @@ public class WeaponInventory : MonoBehaviour
         }
     }
 
-    private void ChangeWeapon(int newWeaponIndex, bool force = false, bool validAmmo = true)
+    private void ChangeWeapon(int newWeaponIndex, bool force = false, bool removed = true)
     {
         if (state == State.NO_WEAPONS)
         {
@@ -157,7 +157,7 @@ public class WeaponInventory : MonoBehaviour
 
         Gun gun = GetComponent<Gun>();
 
-        if (currentWeaponIndex != -1 && Weapons.Count > currentWeaponIndex && validAmmo)
+        if (currentWeaponIndex != -1 && Weapons.Count > currentWeaponIndex && !removed)
         {
             weaponAmmoAmounts[currentWeaponIndex] = gun.AmmoAmount;
         }
@@ -203,7 +203,6 @@ public class WeaponInventory : MonoBehaviour
 
     private void RemoveWeapon(int weaponIndex)
     {
-        Debug.Log(weaponIndex);
         if (state == State.NO_WEAPONS || Weapons.Count == 1)
         {
             return;
@@ -220,10 +219,12 @@ public class WeaponInventory : MonoBehaviour
             state = State.NO_WEAPONS;
         }
 
-        PickupableItem dropData = Instantiate(Pickupable, gameObject.transform.position, new Quaternion(0, 0, 0, 0)).GetComponent<PickupableItem>();
+        PickupableItem dropData = Instantiate(Pickupable, gameObject.transform.position, new Quaternion(0, 0, 0, 0))
+                                      .GetComponent<PickupableItem>();
         dropData.Weapon = Weapons[weaponIndex];
         dropData.WeaponEffect = weaponItems[weaponIndex];
-        
+
+        weaponItems.RemoveAt(weaponIndex);
         Weapons.RemoveAt(weaponIndex);
         weaponAmmoAmounts.RemoveAt(weaponIndex);
         ChangeWeapon(0, true, false);

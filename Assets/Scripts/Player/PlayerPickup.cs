@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPickup : MonoBehaviour
 {
     public float pickupRange = 4.0f;
+    public GameObject UIParent;
+    public GameObject ItemUI;
+
     private GameObject currentItem;
     private float itemDistance;
 
@@ -17,7 +21,7 @@ public class PlayerPickup : MonoBehaviour
             float distance = Vector3.Distance(transform.position, item.transform.position);
 
             if (distance < itemDistance)
-            {  
+            {
                 itemDistance = distance;
                 currentItem = item;
             }
@@ -28,7 +32,7 @@ public class PlayerPickup : MonoBehaviour
             Destroy(currentItem);
         }
     }
-    
+
     private void Pickup(PickupableItem pickup)
     {
         if (pickup.Weapon != null)
@@ -37,6 +41,9 @@ public class PlayerPickup : MonoBehaviour
         }
         else if (pickup.Item != null)
         {
+            GameObject itemUI = Instantiate(ItemUI, UIParent.transform);
+            itemUI.GetComponent<RectTransform>().anchoredPosition += ItemStorage.ItemUIPosition();
+            itemUI.GetComponent<Image>().sprite = pickup.Item.GetComponent<ItemType>().Image;
             ItemStorage.ItemList.Add(ItemStorage.ReplaceItem(pickup.Item));
         }
     }

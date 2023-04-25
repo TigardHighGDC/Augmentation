@@ -39,10 +39,11 @@ public class CorruptionLevel : MonoBehaviour
         ShootIntervalDecrease = 1.0f - PercentageIncrease(0.5f);
         PlayerSpeedIncrease = 1.0f + PercentageIncrease(0.75f);
     }
-    
+
     private void FragmentationController()
     {
-        // Adds fragmentation when the player reaches level 80. It can no longer be removed when going below 80 if the player reaches max corruption.
+        // Adds fragmentation when the player reaches level 80. It can no longer be removed when going below 80 if the
+        // player reaches max corruption.
         if (!FragmentationLock)
         {
             if (currentCorruption == 100.0f)
@@ -61,8 +62,6 @@ public class CorruptionLevel : MonoBehaviour
             {
                 ItemStorage.DeleteItem(ItemStorage.Fragmentation);
             }
-
-            
         }
     }
 
