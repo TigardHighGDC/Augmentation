@@ -5,8 +5,8 @@ using UnityEngine;
 public class ItemStorage : MonoBehaviour
 {
     public static GameObject Fragmentation = null;
-    // public static GameObject Weapon = null;
-    // public static List<GameObject> ItemList = new List<GameObject>();
+    public static GameObject Weapon = null;
+    public static List<GameObject> ItemList = new List<GameObject>();
 
     public static GameObject ReplaceItem(GameObject newItem, GameObject oldItem = null)
     {

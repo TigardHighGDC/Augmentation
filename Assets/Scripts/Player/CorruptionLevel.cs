@@ -60,7 +60,6 @@ public class CorruptionLevel : MonoBehaviour
             if (currentCorruption < 80.0f && ItemStorage.Fragmentation != null)
             {
                 ItemStorage.DeleteItem(ItemStorage.Fragmentation);
-                Debug.Log(ItemStorage.Fragmentation.GetComponent<ItemType>().DestroyItem);
             }
 
             

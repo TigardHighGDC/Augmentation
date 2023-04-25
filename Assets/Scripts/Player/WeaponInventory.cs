@@ -10,6 +10,8 @@ using UnityEditor;
 public class WeaponInventory : MonoBehaviour
 {
     public int MaxWeapons = 3;
+    public Gun playerGun;
+    public GameObject Pickupable;
 
     [Reorderable]
     public ListOfWeapons Weapons;
@@ -23,6 +25,7 @@ public class WeaponInventory : MonoBehaviour
     private double lastWeaponSwitchTime = 0.0;
     private double allowedWeaponSwitchTime = 0.25;
     private List<int> weaponAmmoAmounts = new List<int>();
+    private List<GameObject> weaponItems = new List<GameObject>();
 
     private enum State
     {
@@ -50,6 +53,7 @@ public class WeaponInventory : MonoBehaviour
 
     private void Start()
     {
+        playerGun.GetComponent<Gun>();
         if (Weapons.Count > 0)
         {
             // Starting weapons were custom set.
@@ -58,6 +62,7 @@ public class WeaponInventory : MonoBehaviour
             foreach (WeaponData weapon in Weapons)
             {
                 weaponAmmoAmounts.Add(weapon.AmmoCapacity);
+                SelectItem();
             }
 
             state = State.HAS_WEAPONS;
@@ -75,6 +80,15 @@ public class WeaponInventory : MonoBehaviour
         if (state == State.NO_WEAPONS || Time.time - lastWeaponSwitchTime < allowedWeaponSwitchTime)
         {
             return;
+        }
+
+        if (ItemStorage.Weapon == null && CorruptionLevel.currentCorruption >= 50f)
+        {
+            ItemStorage.Weapon = ItemStorage.ReplaceItem(weaponItems[currentWeaponIndex]);
+        }
+        else if (ItemStorage.Weapon != null && CorruptionLevel.currentCorruption < 50f)
+        {
+            ItemStorage.Weapon = ItemStorage.DeleteItem(ItemStorage.Weapon);
         }
 
         // Switch weapons with keybinds.
@@ -124,7 +138,7 @@ public class WeaponInventory : MonoBehaviour
         }
     }
 
-    private void ChangeWeapon(int newWeaponIndex, bool force = false)
+    private void ChangeWeapon(int newWeaponIndex, bool force = false, bool validAmmo = true)
     {
         if (state == State.NO_WEAPONS)
         {
@@ -134,27 +148,42 @@ public class WeaponInventory : MonoBehaviour
         {
             return;
         }
+        else if (playerGun.reloading)
+        {
+            return;
+        }
 
         Assert.Boolean(newWeaponIndex < Weapons.Count);
 
         Gun gun = GetComponent<Gun>();
 
-        if (currentWeaponIndex != -1)
+        if (currentWeaponIndex != -1 && Weapons.Count > currentWeaponIndex && validAmmo)
         {
             weaponAmmoAmounts[currentWeaponIndex] = gun.AmmoAmount;
         }
-
+        if (CorruptionLevel.currentCorruption >= 50f)
+        {
+            ItemStorage.Weapon = ItemStorage.ReplaceItem(weaponItems[newWeaponIndex], ItemStorage.Weapon);
+        }
         gun.Data = Weapons[newWeaponIndex];
         gun.AmmoAmount = weaponAmmoAmounts[newWeaponIndex];
         currentWeaponIndex = newWeaponIndex;
     }
 
-    public void AddWeapon(WeaponData weapon)
+    public void AddWeapon(WeaponData weapon, GameObject effect = null)
     {
         if (state == State.NO_WEAPONS || state == State.HAS_WEAPONS)
         {
             Weapons.Add(weapon);
             weaponAmmoAmounts.Add(weapon.AmmoCapacity);
+            if (effect == null)
+            {
+                SelectItem();
+            }
+            else
+            {
+                weaponItems.Add(effect);
+            }
 
             if (state == State.NO_WEAPONS)
             {
@@ -174,7 +203,8 @@ public class WeaponInventory : MonoBehaviour
 
     private void RemoveWeapon(int weaponIndex)
     {
-        if (state == State.NO_WEAPONS)
+        Debug.Log(weaponIndex);
+        if (state == State.NO_WEAPONS || Weapons.Count == 1)
         {
             return;
         }
@@ -190,8 +220,19 @@ public class WeaponInventory : MonoBehaviour
             state = State.NO_WEAPONS;
         }
 
+        PickupableItem dropData = Instantiate(Pickupable, gameObject.transform.position, new Quaternion(0, 0, 0, 0)).GetComponent<PickupableItem>();
+        dropData.Weapon = Weapons[weaponIndex];
+        dropData.WeaponEffect = weaponItems[weaponIndex];
+        
         Weapons.RemoveAt(weaponIndex);
         weaponAmmoAmounts.RemoveAt(weaponIndex);
-        ChangeWeapon(0, true);
+        ChangeWeapon(0, true, false);
+    }
+
+    private void SelectItem()
+    {
+        GameObject[] choices = Resources.LoadAll<GameObject>("Item/Weapon");
+        int random = Random.Range(0, choices.Length);
+        weaponItems.Add(choices[random]);
     }
 }

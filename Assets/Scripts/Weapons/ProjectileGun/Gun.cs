@@ -15,11 +15,10 @@ public class Gun : MonoBehaviour
     public Transform HandPosition;
     public GameObject WeaponImage;
 
-    [HideInInspector]
-    public int AmmoAmount;
+    [HideInInspector] public int AmmoAmount;
+    [HideInInspector] public bool reloading = false;
 
     private AmmoCounter ammoCounter;
-    private bool reloading = false;
     private bool shotDelay = false;
     private AudioSource audioPlayer;
 
