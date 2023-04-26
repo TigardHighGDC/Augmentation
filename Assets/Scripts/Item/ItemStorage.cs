@@ -13,7 +13,6 @@ public class ItemStorage : MonoBehaviour
     private static int uiMax = 8;
     private static int seperatedDistance = 35;
 
-
     public static GameObject ReplaceItem(GameObject newItem, GameObject oldItem = null)
     {
         if (oldItem != null)
