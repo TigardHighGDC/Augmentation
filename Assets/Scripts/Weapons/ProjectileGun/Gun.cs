@@ -8,6 +8,18 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    //Variables changeable by items
+    // public static float C_Damage = 1f;
+    // public static float C_Size = 1f;
+    // public static float C_ReloadSpeed = 1f;
+    // public static float C_BulletSpeed = 1;;
+    // public static int C_BulletPierce = 1;
+    // public static float C_CanShootInterval = 1f;
+    // public static int C_BulletPerTrigger = 1; 
+    // public static int C_AmmoCapacity = 1;
+    // public static float C_Spread = 1f;
+    // public static float C_Knockback = 1f;
+
     public WeaponData Data;
     public GameObject Bullet;
     public Camera Camera;
@@ -15,10 +27,8 @@ public class Gun : MonoBehaviour
     public Transform HandPosition;
     public GameObject WeaponImage;
 
-    [HideInInspector]
-    public int AmmoAmount;
-    [HideInInspector]
-    public bool reloading = false;
+    [HideInInspector] public int AmmoAmount;
+    [HideInInspector] public bool reloading = false;
 
     private AmmoCounter ammoCounter;
     private bool shotDelay = false;

@@ -138,7 +138,7 @@ public class WeaponInventory : MonoBehaviour
         }
     }
 
-    private void ChangeWeapon(int newWeaponIndex, bool force = false, bool removed = true)
+    private void ChangeWeapon(int newWeaponIndex, bool force = false, bool removed = false)
     {
         if (state == State.NO_WEAPONS)
         {
@@ -227,7 +227,7 @@ public class WeaponInventory : MonoBehaviour
         weaponItems.RemoveAt(weaponIndex);
         Weapons.RemoveAt(weaponIndex);
         weaponAmmoAmounts.RemoveAt(weaponIndex);
-        ChangeWeapon(0, true, false);
+        ChangeWeapon(0, true, true);
     }
 
     private void SelectItem()
