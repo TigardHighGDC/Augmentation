@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Overclock : MonoBehaviour
-{	
+{
     private ItemType itemType;
 
     private void Start()

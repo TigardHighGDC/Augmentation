@@ -10,7 +10,6 @@ using UnityEditor;
 public class WeaponInventory : MonoBehaviour
 {
     public int MaxWeapons = 3;
-    public Gun PlayerGun;
     public GameObject Pickupable;
 
     [Reorderable]
@@ -21,11 +20,12 @@ public class WeaponInventory : MonoBehaviour
     {
     }
 
+    private Gun playerGun;
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
     private double allowedWeaponSwitchTime = 0.25;
-    private List<int> weaponAmmoAmounts = new List<int>();
-    private List<GameObject> weaponItems = new List<GameObject>();
+    private static List<int> weaponAmmoAmounts = new List<int>();
+    private static List<GameObject> weaponItems = new List<GameObject>();
 
     private enum State
     {
@@ -53,7 +53,7 @@ public class WeaponInventory : MonoBehaviour
 
     private void Start()
     {
-        PlayerGun = GetComponent<Gun>();
+        playerGun = GetComponent<Gun>();
         if (Weapons.Count > 0)
         {
             // Starting weapons were custom set.
@@ -132,7 +132,7 @@ public class WeaponInventory : MonoBehaviour
         }
 
         // Drop weapon.
-        if (Input.GetKeyDown(KeyCode.Q) && !PlayerGun.reloading)
+        if (Input.GetKeyDown(KeyCode.Q) && !playerGun.reloading)
         {
             RemoveWeapon(currentWeaponIndex);
         }
@@ -148,7 +148,7 @@ public class WeaponInventory : MonoBehaviour
         {
             return;
         }
-        else if (PlayerGun.reloading)
+        else if (playerGun.reloading)
         {
             return;
         }

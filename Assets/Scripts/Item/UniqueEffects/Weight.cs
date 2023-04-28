@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weight : MonoBehaviour
-{	
+{
     private ItemType itemType;
 
     private void Start()
@@ -16,7 +16,7 @@ public class Weight : MonoBehaviour
 
     private void Update()
     {
-        
+
         if (itemType.DestroyItem)
         {
             Gun.C_BulletSpeed /= 0.5f;

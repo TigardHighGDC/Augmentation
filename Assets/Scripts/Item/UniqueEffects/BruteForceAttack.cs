@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BruteForceAttack : MonoBehaviour
-{	
+{
     private ItemType itemType;
     private Gun gun;
     private void Start()

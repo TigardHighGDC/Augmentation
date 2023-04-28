@@ -137,7 +137,8 @@ public class Gun : MonoBehaviour
         AmmoAmount -= C_AmmoUsage;
 
         // Yield is required to pause the function
-        yield return new WaitForSeconds(Data.CanShootInterval * CorruptionLevel.ShootIntervalDecrease * C_CanShootInterval);
+        yield return new WaitForSeconds(Data.CanShootInterval * CorruptionLevel.ShootIntervalDecrease *
+                                        C_CanShootInterval);
         shotDelay = false;
     }
 }
