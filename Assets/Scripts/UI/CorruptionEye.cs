@@ -27,8 +27,8 @@ public class CorruptionEye : MonoBehaviour
     private int ClosestIndex(float current, float maxSize)
     {
         float percentage = current / maxSize;
-        // TODO: Image to show max corruption
-        int index = (int)Mathf.Floor(percentage * eyeList.Length);
+        int index = (int)Mathf.Floor(percentage * (eyeList.Length - 1));
+        Debug.Log(index);
         return index;
     }
 }
