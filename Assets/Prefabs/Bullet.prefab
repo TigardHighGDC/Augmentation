@@ -122,6 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 0}
+  PlayerHitSFX: {fileID: 8300000, guid: b7db7354e1a042e4f8348d1072913ee9, type: 3}
+  EnemyHitSFX: {fileID: 8300000, guid: 9b41d0dbe9f041741b866c2b191cec1e, type: 3}
 --- !u!58 &3556215575375450405
 CircleCollider2D:
   m_ObjectHideFlags: 0
