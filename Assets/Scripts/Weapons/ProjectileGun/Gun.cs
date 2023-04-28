@@ -39,7 +39,7 @@ public class Gun : MonoBehaviour
             StartCoroutine((Reload()));
         }
 
-        if (!reloading && !shotDelay && ammoAmount > 0 && Input.GetButton("Fire1"))
+        if (!reloading && !shotDelay && !PauseMenu.GameIsPaused && ammoAmount > 0 && Input.GetButton("Fire1"))
         {
             Fire();
             StartCoroutine(CanShoot());
