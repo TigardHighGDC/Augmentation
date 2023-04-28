@@ -10,7 +10,8 @@ public class ItemStorage : MonoBehaviour
     public static GameObject Fragmentation = null;
     public static GameObject Weapon = null;
     public static List<GameObject> ItemList = new List<GameObject>();
-
+    
+    // Position for item placement on screen
     private static int uiX = 0;
     private static int uiY = 0;
     private static int uiMax = 8;
