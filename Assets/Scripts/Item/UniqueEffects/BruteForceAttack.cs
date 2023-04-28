@@ -9,6 +9,7 @@ public class BruteForceAttack : MonoBehaviour
 {
     private ItemType itemType;
     private Gun gun;
+
     private void Start()
     {
         gun = GameObject.FindGameObjectWithTag("Player").GetComponent<Gun>();

@@ -10,12 +10,12 @@ public class PickupableItem : MonoBehaviour
 
     public WeaponData Weapon = null;
     public GameObject WeaponEffect = null;
-
     public GameObject Item = null;
 
-    void Start()
+    private void Start()
     {
         SpriteRenderer spriteRender = GetComponent<SpriteRenderer>();
+
         if (Weapon != null)
         {
             spriteRender.sprite = Weapon.Image;
@@ -26,7 +26,7 @@ public class PickupableItem : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Pickupable hasn't been assigned value");
+            Debug.LogError("Pickupable hasn't been assigned value"); // TODO: Remove Debug.Log
         }
     }
 }

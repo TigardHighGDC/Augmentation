@@ -15,10 +15,11 @@ public class PlayerPickup : MonoBehaviour
     private GameObject currentItem;
     private float itemDistance;
 
-    void Update()
+    private void Update()
     {
         itemDistance = 99999f;
         currentItem = null;
+
         foreach (GameObject item in GameObject.FindGameObjectsWithTag("Pickupable"))
         {
             float distance = Vector3.Distance(transform.position, item.transform.position);
@@ -29,6 +30,7 @@ public class PlayerPickup : MonoBehaviour
                 currentItem = item;
             }
         }
+
         if (currentItem != null && itemDistance <= pickupRange && Input.GetKeyDown(KeyCode.F))
         {
             Pickup(currentItem.GetComponent<PickupableItem>());

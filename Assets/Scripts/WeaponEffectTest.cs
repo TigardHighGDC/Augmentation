@@ -9,7 +9,7 @@ public class WeaponEffectTest : MonoBehaviour
 {
     private ItemType itemType;
 
-    void Start()
+    private void Start()
     {
         // Apply stat and event changes here.
 
@@ -17,7 +17,7 @@ public class WeaponEffectTest : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Update()
+    private void Update()
     {
         // Add gameplay changes here.
 

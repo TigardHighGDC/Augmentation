@@ -54,6 +54,7 @@ public class WeaponInventory : MonoBehaviour
     private void Start()
     {
         playerGun = GetComponent<Gun>();
+
         if (Weapons.Count > 0)
         {
             // Starting weapons were custom set.
@@ -140,15 +141,11 @@ public class WeaponInventory : MonoBehaviour
 
     private void ChangeWeapon(int newWeaponIndex, bool force = false, bool removed = false)
     {
-        if (state == State.NO_WEAPONS)
+        if (state == State.NO_WEAPONS || playerGun.reloading)
         {
             return;
         }
         else if (newWeaponIndex == currentWeaponIndex && !force)
-        {
-            return;
-        }
-        else if (playerGun.reloading)
         {
             return;
         }
@@ -161,10 +158,12 @@ public class WeaponInventory : MonoBehaviour
         {
             weaponAmmoAmounts[currentWeaponIndex] = gun.AmmoAmount;
         }
-        if (CorruptionLevel.currentCorruption >= 50f)
+
+        if (CorruptionLevel.currentCorruption >= 50.0f)
         {
             ItemStorage.Weapon = ItemStorage.ReplaceItem(weaponItems[newWeaponIndex], ItemStorage.Weapon);
         }
+
         gun.Data = Weapons[newWeaponIndex];
         gun.AmmoAmount = weaponAmmoAmounts[newWeaponIndex];
         currentWeaponIndex = newWeaponIndex;
@@ -176,6 +175,7 @@ public class WeaponInventory : MonoBehaviour
         {
             Weapons.Add(weapon);
             weaponAmmoAmounts.Add(weapon.AmmoCapacity);
+
             if (effect == null)
             {
                 SelectItem();
