@@ -17,7 +17,7 @@ MonoBehaviour:
   WeaponName: Shotgun
   Damage: 3
   WeaponLength: 2
-  Size: 1
+  Size: 0.5
   ReloadSpeed: 1.5
   BulletSpeed: 12
   BulletPierce: 1
