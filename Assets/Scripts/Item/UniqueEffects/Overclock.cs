@@ -2,25 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class #SCRIPTNAME# : MonoBehaviour
+public class Overclock : MonoBehaviour
 {	
     private ItemType itemType;
 
     private void Start()
     {
-        // Apply stat and event changes here.
-
+        Gun.C_BulletPerTrigger *= 2;
+        Gun.C_AmmoUsage *= 3;
         itemType = GetComponent<ItemType>();
         DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
     {
-        // Add gameplay changes here.
-        
         if (itemType.DestroyItem)
         {
-            // Remove stat and event changes here.
+            Gun.C_BulletPerTrigger /= 2;
+            Gun.C_AmmoUsage /= 3;
             Destroy(gameObject);
         }
     }

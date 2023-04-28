@@ -7,6 +7,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    // Variables changeable by items
+    public static float C_Damage = 1f;
+    public static int C_BulletPierce = 1;
+    public static float C_Knockback = 1f;
+
     [HideInInspector]
     public WeaponData Data;
 
@@ -25,14 +30,14 @@ public class Bullet : MonoBehaviour
         case "Enemy":
             NonPlayerHealth nonPlayerHealth = collide.gameObject.GetComponent<NonPlayerHealth>();
             collide.GetComponent<Rigidbody2D>().AddForce(
-                transform.up * (Data.Knockback * CorruptionLevel.KnockbackIncrease), ForceMode2D.Impulse);
-            nonPlayerHealth.Damage(Data.Damage);
+                transform.up * (Data.Knockback * CorruptionLevel.KnockbackIncrease * C_Knockback), ForceMode2D.Impulse);
+            nonPlayerHealth.Damage(Data.Damage * C_Damage);
 
             // Calls current bullet hit modifiers
             ItemHandling.BulletHit?.Invoke();
             remainingPierce--;
 
-            if (remainingPierce <= 0)
+            if (remainingPierce * C_BulletPierce <= 0)
             {
                 DestroyBullet();
             }

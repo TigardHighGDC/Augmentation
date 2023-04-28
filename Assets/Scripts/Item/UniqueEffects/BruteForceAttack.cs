@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class #SCRIPTNAME# : MonoBehaviour
+public class BruteForceAttack : MonoBehaviour
 {	
     private ItemType itemType;
-
+    private Gun gun;
     private void Start()
     {
-        // Apply stat and event changes here.
-
+        gun = GameObject.FindGameObjectWithTag("Player").GetComponent<Gun>();
+        Gun.C_Spread *= 2;
         itemType = GetComponent<ItemType>();
         DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
     {
-        // Add gameplay changes here.
-        
+        gun.AmmoAmount = gun.Data.AmmoCapacity * Gun.C_AmmoCapacity;
+
         if (itemType.DestroyItem)
         {
-            // Remove stat and event changes here.
+            Gun.C_Spread /= 2;
             Destroy(gameObject);
         }
     }
