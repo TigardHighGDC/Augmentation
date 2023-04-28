@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class CorruptionLevel : MonoBehaviour
 {
+    // Fragmentation can no longer be removed or changed
     public static bool FragmentationLock = false;
     public static float KnockbackIncrease;
     public static float PlayerSpeedIncrease;
