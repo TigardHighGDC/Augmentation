@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.5
+  MaxSpeed: 35
   UpdatePathRate: 0.5
   direction: {x: 0, y: 0}
 --- !u!70 &2883086518401042190

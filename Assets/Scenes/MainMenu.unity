@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414ab6dd9b9c3ac498a0d4a9b0438548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Room: Lighting Room
+  Room: Elite Enemies
 --- !u!1 &786525240
 GameObject:
   m_ObjectHideFlags: 0
