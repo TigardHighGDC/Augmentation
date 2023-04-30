@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class CorruptionLevel : MonoBehaviour
 {
+    // Fragmentation can no longer be removed or changed
+    public static bool FragmentationLock = false;
     public static float KnockbackIncrease;
     public static float PlayerSpeedIncrease;
     public static float AccuracyDecrease;
@@ -39,8 +41,34 @@ public class CorruptionLevel : MonoBehaviour
         PlayerSpeedIncrease = 1.0f + PercentageIncrease(0.75f);
     }
 
+    private void FragmentationController()
+    {
+        // Adds fragmentation when the player reaches level 80. It can no longer be removed when going below 80 if the
+        // player reaches max corruption.
+        if (!FragmentationLock)
+        {
+            if (currentCorruption == 100.0f)
+            {
+                FragmentationLock = true;
+            }
+
+            if (currentCorruption >= 80.0f && ItemStorage.Fragmentation == null)
+            {
+                GameObject[] fragmentationArray = Resources.LoadAll<GameObject>("Item/Fragmentation");
+                int random = Random.Range(0, fragmentationArray.Length);
+                ItemStorage.Fragmentation = ItemStorage.ReplaceItem(fragmentationArray[random]);
+            }
+
+            if (currentCorruption < 80.0f && ItemStorage.Fragmentation != null)
+            {
+                ItemStorage.DeleteItem(ItemStorage.Fragmentation);
+            }
+        }
+    }
+
     private void Update()
     {
         UpdateEffects();
+        FragmentationController();
     }
 }

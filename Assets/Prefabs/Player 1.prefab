@@ -470,6 +470,8 @@ GameObject:
   - component: {fileID: 1179279060}
   - component: {fileID: 14152484}
   - component: {fileID: 6189127872834566192}
+  - component: {fileID: 702607524}
+  - component: {fileID: 702607546}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -599,6 +601,8 @@ MonoBehaviour:
   SpawnPoint: {fileID: 2134485480305730153}
   HandPosition: {fileID: 7409417427249029079}
   WeaponImage: {fileID: 1016820399601010681}
+  AmmoAmount: 0
+  reloading: 0
 --- !u!82 &86342178822363722
 AudioSource:
   m_ObjectHideFlags: 0
@@ -750,8 +754,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812fb073d4fd3c14593fbb378b75e090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weapons: []
-  MaxWeapons: 3
+  MaxWeapons: 5
+  Pickupable: {fileID: 1145120673999412928, guid: 9c1fbdfe681243d4d961caf528ea13a9, type: 3}
+  Weapons:
+    array:
+    - {fileID: 11400000, guid: a18bccf47773fd34c8715c1dbdb97f52, type: 2}
+    - {fileID: 11400000, guid: 622b6880c4f9bf84684f20474f0c599a, type: 2}
+    - {fileID: 11400000, guid: c3111fb56c038cf4890b61ab799989e5, type: 2}
+    - {fileID: 11400000, guid: 4532e38c302d7bc4cba21c24e8e4d4a8, type: 2}
 --- !u!114 &1179279060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1114,3 +1124,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &702607524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8589533937859444998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae267eb208c9f14ca865cc6ee4dd14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &702607546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8589533937859444998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916426696fc334441ad117add8a22e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupRange: 3
+  UIParent: {fileID: 0}
+  ItemUI: {fileID: 4258351137849350630, guid: e39e1b12e27cf1847a0e4852bb82be2c, type: 3}
