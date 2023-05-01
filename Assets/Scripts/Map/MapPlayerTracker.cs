@@ -86,6 +86,10 @@ public class MapPlayerTracker : MonoBehaviour
             // TODO: Use static scene manager. See GH-139.
             SceneManager.LoadScene("Store");
             break;
+        case NodeType.CorruptionRemover:
+            // TODO: Use static scene manager. See GH-139.
+            SceneManager.LoadScene("Corruption Scene");
+            break;
         case NodeType.Boss:
             // TODO: Use static scene manager. See GH-139.
             SceneManager.LoadScene("Boss");
