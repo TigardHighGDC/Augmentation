@@ -28,7 +28,7 @@ public class CorruptionEye : MonoBehaviour
     {
         float percentage = current / maxSize;
         int index = (int)Mathf.Floor(percentage * (eyeList.Length - 1));
-        Debug.Log(index);
+        Debug.Log(index); // TODO: Remove Debug.Log
         return index;
     }
 }
