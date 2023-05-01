@@ -298,7 +298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2121929464142756406, guid: b6feba055a48b82419710cfd027fc5ce, type: 3}
       propertyPath: GenerateNewMapOnStart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6feba055a48b82419710cfd027fc5ce, type: 3}

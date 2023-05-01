@@ -5,6 +5,7 @@ public enum NodeType
 {
     MinorEnemy,
     EliteEnemy,
+    CorruptionRemover,
     Store,
-    Boss,
+    Boss
 }

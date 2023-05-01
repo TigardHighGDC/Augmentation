@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NodeBlueprints:
   - {fileID: 11400000, guid: 7b4769774bd1e5f41b33b8da8230428b, type: 2}
-  - {fileID: 11400000, guid: 3a0f1689a9825d84caa5ceb0553ef866, type: 2}
   - {fileID: 11400000, guid: dc19b660a7d9bad49a7ef04bae939a5c, type: 2}
-  - {fileID: 11400000, guid: 5a3afc3fca4ff3d428da16b195019245, type: 2}
-  - {fileID: 11400000, guid: 16b75a6c51eaedf4cb330678b32387dd, type: 2}
   - {fileID: 11400000, guid: c889bc3756cf8e9448a84db19aad81f5, type: 2}
+  - {fileID: 11400000, guid: 5378093489e3acc449e2ca0e89a0b66a, type: 2}
+  - {fileID: 11400000, guid: f0b0b252205db434086776f6b30f233c, type: 2}
   MinPreBossNodes: 4
   MaxPreBossNodes: 5
   MinStartingNodes: 3
@@ -80,15 +79,15 @@ MonoBehaviour:
       NodesApartDistance: 2
       RandomizePosition: 0.496
       RandomizeNodes: 0.109
-    - NodeType: 0
-      MinDistanceFromPreviousLayer: 2
-      MaxDistanceFromPreviousLayer: 3
-      NodesApartDistance: 2
-      RandomizePosition: 0.496
-      RandomizeNodes: 0.109
     - NodeType: 3
       MinDistanceFromPreviousLayer: 2
       MaxDistanceFromPreviousLayer: 3
       NodesApartDistance: 2
       RandomizePosition: 0.496
-      RandomizeNodes: 0.109
+      RandomizeNodes: 0
+    - NodeType: 4
+      MinDistanceFromPreviousLayer: 2
+      MaxDistanceFromPreviousLayer: 3
+      NodesApartDistance: 2
+      RandomizePosition: 0.496
+      RandomizeNodes: 0

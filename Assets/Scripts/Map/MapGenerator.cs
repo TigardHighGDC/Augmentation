@@ -16,6 +16,8 @@ public static class MapGenerator
         // but rather only the nodes that can be randomized to in each layer.
         NodeType.MinorEnemy,
         NodeType.Store, 
+        NodeType.EliteEnemy,
+        NodeType.CorruptionRemover
     };
     // clang-format on
 
