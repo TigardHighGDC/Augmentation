@@ -17,7 +17,7 @@ MonoBehaviour:
   WeaponName: Sniper
   Damage: 50
   WeaponLength: 2.5
-  Size: 1
+  Size: 2
   ReloadSpeed: 2
   BulletSpeed: 25
   BulletPierce: 5

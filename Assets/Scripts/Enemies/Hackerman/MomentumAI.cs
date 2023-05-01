@@ -9,6 +9,7 @@ using Pathfinding;
 public class MomentumAI : MonoBehaviour
 {
     public float Speed;
+    public float MaxSpeed;
     public float UpdatePathRate = 0.5f;
     [HideInInspector]
     public Vector2 direction = new Vector2(0, 0);
@@ -27,7 +28,7 @@ public class MomentumAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0f, UpdatePathRate);
+        InvokeRepeating("UpdatePath", 0.0f, UpdatePathRate);
     }
 
     private void FixedUpdate()
@@ -56,6 +57,15 @@ public class MomentumAI : MonoBehaviour
 
         direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         rb.AddForce(direction * Speed, ForceMode2D.Impulse);
+
+        // Lowers the speed if it goes over the max
+        float totalSpeed = Mathf.Abs(rb.velocity[0]) + Mathf.Abs(rb.velocity[1]);
+
+        if (totalSpeed > MaxSpeed)
+        {
+            float limit = totalSpeed / MaxSpeed;
+            rb.velocity = new Vector2(rb.velocity[0] / limit, rb.velocity[1] / limit);
+        }
     }
 
     private void UpdatePath()

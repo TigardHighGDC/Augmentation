@@ -8,6 +8,18 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    // Variables changeable by items
+    public static float C_Size = 1f;
+    public static float C_ReloadSpeed = 1f;
+    public static float C_BulletSpeed = 1;
+    public static float C_CanShootInterval = 1f;
+    public static int C_BulletPerTrigger = 1;
+    public static int C_AmmoCapacity = 1;
+    public static float C_Spread = 1f;
+    public static int C_AmmoUsage = 1;
+
+    //  public static float C_Knockback = 1f;
+
     public WeaponData Data;
     public GameObject Bullet;
     public Camera Camera;
@@ -17,15 +29,16 @@ public class Gun : MonoBehaviour
 
     [HideInInspector]
     public int AmmoAmount;
+    [HideInInspector]
+    public bool reloading = false;
 
     private AmmoCounter ammoCounter;
-    private bool reloading = false;
     private bool shotDelay = false;
     private AudioSource audioPlayer;
 
     private void Start()
     {
-        AmmoAmount = Data.AmmoCapacity;
+        AmmoAmount = Data.AmmoCapacity * C_AmmoCapacity;
         audioPlayer = gameObject.GetComponent<AudioSource>();
         ammoCounter = GetComponent<AmmoCounter>();
     }
@@ -78,17 +91,17 @@ public class Gun : MonoBehaviour
         }
 
         // Spawn bullets
-        for (int i = 0; i < Data.BulletPerTrigger; i++)
+        for (int i = 0; i < Data.BulletPerTrigger * C_BulletPerTrigger; i++)
         {
             Quaternion eulerAngle =
                 Quaternion.Euler(0, 0,
-                                 rotation + Random.Range(-(Data.Spread * CorruptionLevel.AccuracyDecrease),
-                                                         (Data.Spread * CorruptionLevel.AccuracyDecrease)));
+                                 rotation + Random.Range(-(Data.Spread * C_Spread * CorruptionLevel.AccuracyDecrease),
+                                                         (Data.Spread * C_Spread * CorruptionLevel.AccuracyDecrease)));
             GameObject bullet = Instantiate(Bullet, SpawnPoint.position, eulerAngle);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             bullet.GetComponent<Bullet>().Data = Data;
-            bullet.transform.localScale = new Vector3(Data.Size, Data.Size, 1);
-            rb.velocity = bullet.transform.up * Data.BulletSpeed;
+            bullet.transform.localScale = new Vector3(Data.Size * C_Size, Data.Size * C_Size, 1);
+            rb.velocity = bullet.transform.up * Data.BulletSpeed * C_BulletSpeed;
         }
     }
 
@@ -113,18 +126,19 @@ public class Gun : MonoBehaviour
         audioPlayer.PlayOneShot(Data.ReloadSound, Data.ReloadVolume);
 
         // Yield is required to pause the function
-        yield return new WaitForSeconds(Data.ReloadSpeed);
-        AmmoAmount = Data.AmmoCapacity;
+        yield return new WaitForSeconds(Data.ReloadSpeed * C_ReloadSpeed);
+        AmmoAmount = Data.AmmoCapacity * C_AmmoCapacity;
         reloading = false;
     }
 
     private IEnumerator CanShoot()
     {
         shotDelay = true;
-        AmmoAmount -= 1;
+        AmmoAmount -= C_AmmoUsage;
 
         // Yield is required to pause the function
-        yield return new WaitForSeconds(Data.CanShootInterval * CorruptionLevel.ShootIntervalDecrease);
+        yield return new WaitForSeconds(Data.CanShootInterval * CorruptionLevel.ShootIntervalDecrease *
+                                        C_CanShootInterval);
         shotDelay = false;
     }
 }
