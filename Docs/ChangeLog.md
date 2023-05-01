@@ -6,6 +6,7 @@ A bi-weekly log of project changes separated by two week sprints.
 
 | Date | Sprint |
 | - | - |
+| [4/27/2023 - 5/11/2023](#4272023---5112023) | 8 |
 | [4/6/2023 - 4/20/2023](#462023---4202023) | 7 |
 | [3/14/2023 - 4/6/2023](#3142023---462023) | 6 |
 | [3/3/2023 - 3/14/2023](#332023---3142023) | 5 |
@@ -13,6 +14,11 @@ A bi-weekly log of project changes separated by two week sprints.
 | [1/17/2023 - 2/7/2023](#1172023---2072023) | 3 |
 | [1/4/2023 - 1/16/2023](#1042023---1162023) | 2 |
 | [12/6/2022 - 1/3/2023](#12062022---1032023) | 1 |
+
+## 4/27/2023 - 5/11/2023 (Sprint #8)
+
+- Enhancements:
+  - Fully added our art into the game [#172](https://github.com/TigardHighGDC/Augmentation/pull/172).
 
 ## 4/6/2023 - 4/20/2023 (Sprint #7)
 
