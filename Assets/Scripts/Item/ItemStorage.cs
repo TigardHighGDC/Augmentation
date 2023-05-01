@@ -39,11 +39,13 @@ public class ItemStorage : MonoBehaviour
     {
         Vector2 addedPosition = new Vector2(uiX * seperatedDistance, uiY * seperatedDistance * -1);
         uiX += 1;
+
         if (uiX >= uiMax)
         {
             uiX = 0;
             uiY += 1;
         }
+
         return addedPosition;
     }
 }

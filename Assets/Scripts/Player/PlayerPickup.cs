@@ -17,7 +17,7 @@ public class PlayerPickup : MonoBehaviour
 
     private void Update()
     {
-        itemDistance = 99999f;
+        itemDistance = 99999.0f;
         currentItem = null;
 
         foreach (GameObject item in GameObject.FindGameObjectsWithTag("Pickupable"))

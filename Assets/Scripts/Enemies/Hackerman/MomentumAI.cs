@@ -28,7 +28,7 @@ public class MomentumAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0f, UpdatePathRate);
+        InvokeRepeating("UpdatePath", 0.0f, UpdatePathRate);
     }
 
     private void FixedUpdate()
@@ -60,6 +60,7 @@ public class MomentumAI : MonoBehaviour
 
         // Lowers the speed if it goes over the max
         float totalSpeed = Mathf.Abs(rb.velocity[0]) + Mathf.Abs(rb.velocity[1]);
+
         if (totalSpeed > MaxSpeed)
         {
             float limit = totalSpeed / MaxSpeed;
