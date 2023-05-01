@@ -17,6 +17,8 @@ A bi-weekly log of project changes separated by two week sprints.
 
 ## 4/27/2023 - 5/11/2023 (Sprint #8)
 
+- New Features:
+  - Implemented item system [#171](https://github.com/TigardHighGDC/Augmentation/pull/171).
 - Enhancements:
   - Fully added our art into the game [#172](https://github.com/TigardHighGDC/Augmentation/pull/172).
 
