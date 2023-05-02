@@ -11,11 +11,12 @@ public class LookAtMouse : MonoBehaviour
 
     private void Update()
     {
-        if(!PauseMenu.GameIsPaused)
+        if (!PauseMenu.GameIsPaused)
         {
             Vector3 mousePosition = Camera.ScreenToWorldPoint(Input.mousePosition);
             Vector3 relativePoint = transform.position - mousePosition;
-            transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90);
+            transform.rotation =
+                Quaternion.Euler(0, 0, Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90);
         }
     }
 }

@@ -40,8 +40,6 @@ public class SettingsMenu : MonoBehaviour
         soundFXMixer.SetFloat("enemyVolume", enemyVolume);
     }
 
-
-
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
