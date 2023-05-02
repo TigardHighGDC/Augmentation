@@ -6,17 +6,24 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
     public GameObject DialoguePanel;
     public TextMeshProUGUI DialogueText;
+    public TextMeshProUGUI SpeakerText;
+    public GameObject PortraitImage;
+
+    public List<DialogueProfile> DialogueProfiles;
 
     [Range(0.01f, 0.1f)]
     public float TextSpeed = 0.04f;
 
     [HideInInspector]
-    public bool DialogueIsActive;
+    public bool DialogueIsActive { get; private set; }
+
+    private Animator layoutAnimator;
 
     private Story currentStory;
     private Coroutine displayLineCoroutine;
@@ -32,6 +39,9 @@ public class DialogueManager : MonoBehaviour
         KeyCode.KeypadEnter 
     };
     // clang-format on
+
+    private const string speakerTag = "speaker";
+    private const string layoutTag = "layout";
 
     private void Awake()
     {
@@ -52,6 +62,7 @@ public class DialogueManager : MonoBehaviour
     {
         DialoguePanel.SetActive(false);
         DialogueIsActive = false;
+        layoutAnimator = DialoguePanel.GetComponent<Animator>();
     }
 
     private void Update()
@@ -81,9 +92,16 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogue(TextAsset inkJSON)
     {
+
         currentStory = new Story(inkJSON.text);
         DialogueIsActive = true;
         DialoguePanel.SetActive(true);
+
+        // Set things to their defaults.
+        SpeakerText.text = "";
+        PortraitImage.GetComponent<Image>().sprite = null;
+        SpeakerText.text = "????";
+        layoutAnimator.Play("right");
 
         ContinueStory();
     }
@@ -111,10 +129,39 @@ public class DialogueManager : MonoBehaviour
             }
 
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
+            HandleTags(currentStory.currentTags);
         }
         else
         {
             ExitDialogue();
+        }
+    }
+
+    private void HandleTags(List<string> tags)
+    {
+        foreach (string tag in tags)
+        {
+            string[] splitTag = tag.Split(':');
+            Assert.Boolean(splitTag.Length == 2, "Invalid tag: " + tag);
+
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            switch (tagKey)
+            {
+            case speakerTag:
+                DialogueProfile profile = DialogueProfiles.Find(x => x.Name == tagValue);
+                Assert.Boolean(profile != null, "Invalid speaker: " + tagValue);
+                SpeakerText.text = profile.Name;
+                PortraitImage.GetComponent<Image>().sprite = profile.Portrait;
+                break;
+            case layoutTag:
+                layoutAnimator.Play(tagValue);
+                break;
+            default:
+                Assert.Boolean(false, "Invalid tag: " + tag);
+                break; // Will never reach.
+            }
         }
     }
 
