@@ -21,6 +21,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Implemented item system [#171](https://github.com/TigardHighGDC/Augmentation/pull/171).
 - Enhancements:
   - Fully added our art into the game [#172](https://github.com/TigardHighGDC/Augmentation/pull/172).
+  - Updated the level map icons with our own assets [#168](https://github.com/TigardHighGDC/Augmentation/pull/168).
 - Bug Fixes:
   - Fixed a problem with the weapon inventory not tracking the amount of ammo in each weapon after the weapon was dropped [#171](https://github.com/TigardHighGDC/Augmentation/pull/171).
 
