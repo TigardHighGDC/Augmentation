@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Wall
   - Pickupable
+  - Music Player
   layers:
   - Default
   - TransparentFX

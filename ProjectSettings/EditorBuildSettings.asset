@@ -33,6 +33,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Store.unity
     guid: 03950e4e8ff64dc4cb8a85c9beaeac1a
   - enabled: 0
-    path: Assets/Scenes/Treasure.unity
+    path: Assets/Scenes/LoadingBar.unity
     guid: 703df4195c288c649ac946d1b651a5cb
   m_configObjects: {}
