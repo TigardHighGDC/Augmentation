@@ -20,6 +20,12 @@ public class MusicPlayer : MonoBehaviour
 
     private void Start()
     {
+        // Removes duplicates
+        if (GameObject.FindGameObjectsWithTag("Music Player").Length != 1)
+        {
+            Destroy(gameObject);
+        }
+
         DontDestroyOnLoad(gameObject);
 
         source = GetComponent<AudioSource>();
@@ -37,7 +43,10 @@ public class MusicPlayer : MonoBehaviour
         }
         else
         {
-            MusicEndsIn = source.clip.length - source.time;
+            if (source.clip != null)
+            {
+               MusicEndsIn = source.clip.length - source.time; 
+            }
         }
 
         if (MusicEndsIn <= 5.0f && !transitioning)
