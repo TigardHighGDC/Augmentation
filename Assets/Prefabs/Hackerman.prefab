@@ -125,11 +125,11 @@ GameObject:
   - component: {fileID: 2883086518401042160}
   - component: {fileID: 2883086518401042191}
   - component: {fileID: 2883086518401042190}
-  - component: {fileID: 2883086518401042164}
   - component: {fileID: 2883086518401042165}
   - component: {fileID: 1949978074}
   - component: {fileID: 7213197424977455307}
   - component: {fileID: 8041777982110557340}
+  - component: {fileID: -4369401480088986307}
   m_Layer: 0
   m_Name: Hackerman
   m_TagString: Enemy
@@ -286,20 +286,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &2883086518401042164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2883086518401042189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6cc37bb2c5788a45b2279457cc0d6d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 50
-  InvincibilityTimer: 0
 --- !u!114 &2883086518401042165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,3 +1013,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 10
   ResetHitSpeed: 1
+--- !u!114 &-4369401480088986307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883086518401042189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb34f301f3b77f4da66796c47164bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 50
+  InvincibilityTimer: 0
+  corruptionStrength: 10
