@@ -82,25 +82,17 @@ public class MapPlayerTracker : MonoBehaviour
             // TODO: Use static scene manager. See GH-139.
             SceneManager.LoadScene("Elite Enemies");
             break;
-        case NodeType.RestSite:
-            // TODO: Use static scene manager. See GH-139.
-            SceneManager.LoadScene("Rest Site");
-            break;
-        case NodeType.Treasure:
-            // TODO: Use static scene manager. See GH-139.
-            SceneManager.LoadScene("Treasure");
-            break;
         case NodeType.Store:
             // TODO: Use static scene manager. See GH-139.
             SceneManager.LoadScene("Store");
             break;
+        case NodeType.CorruptionRemover:
+            // TODO: Use static scene manager. See GH-139.
+            SceneManager.LoadScene("Corruption Scene");
+            break;
         case NodeType.Boss:
             // TODO: Use static scene manager. See GH-139.
             SceneManager.LoadScene("Boss");
-            break;
-        case NodeType.Mystery:
-            // TODO: Remove this node type.
-            Assert.Boolean(false, "Mystery node type is not supported");
             break;
         default:
             Assert.Boolean(false, "Unknown NodeType: " + mapNode.Node.NodeType);
