@@ -12,8 +12,7 @@ public class EnemyHealth : NonPlayerHealth
 
     public override void Death()
     {
-        GameObject player = GameObject.FindWithTag("Player");
-        player.GetComponent<CorruptionLevel>().Add(corruptionStrength);
+        CorruptionLevel.Add(corruptionStrength);
         Destroy(gameObject);
     }
 }

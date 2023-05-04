@@ -16,7 +16,7 @@ MonoBehaviour:
   HandPosition: {x: -0.3, y: 1, z: 0}
   WeaponName: Shotgun
   Damage: 3
-  WeaponLength: 2
+  WeaponLength: 1.5
   Size: 0.5
   ReloadSpeed: 1.5
   BulletSpeed: 12
@@ -25,7 +25,7 @@ MonoBehaviour:
   BulletPerTrigger: 12
   AmmoCapacity: 4
   Spread: 20
-  Knockback: 5
+  Knockback: 4
   DespawnTime: 1
   AutoReload: 1
   GunShotSound: {fileID: 8300000, guid: 67e75d93ebc078141b4500b439026373, type: 3}

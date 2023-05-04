@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Boss.unity
     guid: 66276c604a61908468503569d2fbae94
   - enabled: 0
-    path: Assets/Scenes/Rest Site.unity
+    path: Assets/Scenes/CorruptionWell.unity
     guid: 8b8b3bee9f690b64d8aa1df43b5ae682
   - enabled: 0
     path: Assets/Scenes/Store.unity
