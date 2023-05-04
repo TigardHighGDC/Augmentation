@@ -8,7 +8,7 @@ public class LoadingBarRoom : MonoBehaviour
     public float MaxTime = 30.0f;
     private Slider slider;
     private bool endLoading = false;
-    
+
     private void Start()
     {
         slider = GetComponent<Slider>();

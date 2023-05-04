@@ -45,7 +45,7 @@ public class MusicPlayer : MonoBehaviour
         {
             if (source.clip != null)
             {
-               MusicEndsIn = source.clip.length - source.time; 
+                MusicEndsIn = source.clip.length - source.time;
             }
         }
 

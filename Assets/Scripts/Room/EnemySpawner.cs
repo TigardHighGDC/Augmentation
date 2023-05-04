@@ -7,8 +7,8 @@ public class EnemySpawner : MonoBehaviour
 {
     public Tilemap TileMap;
     public RoomType Room;
-    public List<GameObject> BasicEnemies; 
-    public List<GameObject> EliteEnemies; 
+    public List<GameObject> BasicEnemies;
+    public List<GameObject> EliteEnemies;
     public static bool LoadingBarFinished = false;
 
     private float ambushProbability = 0.1f;
@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     {
         // Removes corruption in exchange for possible enemy ambush
         CorruptionLevel.Add(-15.0f);
-        
+
         if (Random.value <= ambushProbability)
         {
             SpawnGroup(8, 1);
@@ -46,27 +46,27 @@ public class EnemySpawner : MonoBehaviour
         int eliteEnemiesSpawn;
         switch (Room)
         {
-            case RoomType.Basic:
-                basicEnemiesSpawn = 4 + Random.Range(-1, 2);
-                eliteEnemiesSpawn = 1;
-                SpawnGroup(basicEnemiesSpawn, eliteEnemiesSpawn); 
-                break;
+        case RoomType.Basic:
+            basicEnemiesSpawn = 4 + Random.Range(-1, 2);
+            eliteEnemiesSpawn = 1;
+            SpawnGroup(basicEnemiesSpawn, eliteEnemiesSpawn);
+            break;
 
-            case RoomType.Elite:
-                basicEnemiesSpawn = 6 + Random.Range(-1, 2);
-                eliteEnemiesSpawn = 2 + Random.Range(0, 1);
-                SpawnGroup(basicEnemiesSpawn, eliteEnemiesSpawn); 
-                break;
-            
-            case RoomType.LoadingBar:
-                InvokeRepeating("LoadingBarEnemySpawn", 0, 2.5f);
-                break;
+        case RoomType.Elite:
+            basicEnemiesSpawn = 6 + Random.Range(-1, 2);
+            eliteEnemiesSpawn = 2 + Random.Range(0, 1);
+            SpawnGroup(basicEnemiesSpawn, eliteEnemiesSpawn);
+            break;
+
+        case RoomType.LoadingBar:
+            InvokeRepeating("LoadingBarEnemySpawn", 0, 2.5f);
+            break;
         }
     }
-    
+
     private void SpawnGroup(int basicEnemiesSpawn, int eliteEnemiesSpawn)
     {
-       for (int i = 0; i < basicEnemiesSpawn; i++)
+        for (int i = 0; i < basicEnemiesSpawn; i++)
         {
             int random = Random.Range(0, BasicEnemies.Count);
             SpawnEnemy(BasicEnemies[random]);
@@ -76,7 +76,7 @@ public class EnemySpawner : MonoBehaviour
         {
             int random = Random.Range(0, EliteEnemies.Count);
             SpawnEnemy(EliteEnemies[random]);
-        } 
+        }
     }
 
     private void LoadingBarEnemySpawn()
@@ -109,7 +109,7 @@ public class EnemySpawner : MonoBehaviour
         }
         LoadingBarFinished = false;
     }
-    
+
     public enum RoomType
     {
         Basic,

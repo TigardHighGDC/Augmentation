@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CorruptionWellSelector : MonoBehaviour
 {
-    private void OnTriggerStay2D(Collider2D collide) 
+    private void OnTriggerStay2D(Collider2D collide)
     {
         if (collide.tag == "Player" && Input.GetKeyDown(KeyCode.F))
         {
