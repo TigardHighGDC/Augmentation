@@ -25,6 +25,10 @@ public class EnemyBullet : MonoBehaviour
             playerHealth.Damage(Data.Damage);
             DestroyBullet();
         }
+        else if (collide.gameObject.tag == "Wall")
+        {
+            DestroyBullet();
+        }
     }
 
     // DestroyBullet() is called in the invoke function

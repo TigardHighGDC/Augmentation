@@ -754,7 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812fb073d4fd3c14593fbb378b75e090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxWeapons: 5
+  MaxWeapons: 4
   Pickupable: {fileID: 1145120673999412928, guid: 9c1fbdfe681243d4d961caf528ea13a9, type: 3}
   Weapons:
     array:
