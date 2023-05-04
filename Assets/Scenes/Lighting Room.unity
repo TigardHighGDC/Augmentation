@@ -4181,6 +4181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hackerman
       objectReference: {fileID: 0}
+    - target: {fileID: 2883086518401042191, guid: a611f228335d7484f9b380bd364aa6e6, type: 3}
+      propertyPath: MaxSpeed
+      value: 35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a611f228335d7484f9b380bd364aa6e6, type: 3}
 --- !u!114 &702607533 stripped

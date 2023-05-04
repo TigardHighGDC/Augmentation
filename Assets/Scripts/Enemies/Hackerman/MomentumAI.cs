@@ -28,7 +28,7 @@ public class MomentumAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0f, UpdatePathRate);
+        InvokeRepeating("UpdatePath", 0.0f, UpdatePathRate);
     }
 
     private void FixedUpdate()

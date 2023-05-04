@@ -8,9 +8,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     // Variables changeable by items
-    public static float C_Damage = 1f;
+    public static float C_Damage = 1.0f;
     public static int C_BulletPierce = 1;
-    public static float C_Knockback = 1f;
+    public static float C_Knockback = 1.0f;
 
     [HideInInspector]
     public WeaponData Data;

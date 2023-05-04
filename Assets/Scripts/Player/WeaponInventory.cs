@@ -83,11 +83,11 @@ public class WeaponInventory : MonoBehaviour
             return;
         }
 
-        if (ItemStorage.Weapon == null && CorruptionLevel.currentCorruption >= 50f)
+        if (ItemStorage.Weapon == null && CorruptionLevel.currentCorruption >= 50.0f)
         {
             ItemStorage.Weapon = ItemStorage.ReplaceItem(weaponItems[currentWeaponIndex]);
         }
-        else if (ItemStorage.Weapon != null && CorruptionLevel.currentCorruption < 50f)
+        else if (ItemStorage.Weapon != null && CorruptionLevel.currentCorruption < 50.0f)
         {
             ItemStorage.Weapon = ItemStorage.DeleteItem(ItemStorage.Weapon);
         }

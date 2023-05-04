@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class PickupableItem : MonoBehaviour
 {
-
     public WeaponData Weapon = null;
     public GameObject WeaponEffect = null;
     public GameObject Item = null;

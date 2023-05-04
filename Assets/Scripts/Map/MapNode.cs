@@ -163,6 +163,6 @@ public class MapNode : MonoBehaviour
         const float fillDuration = 0.3f;
         VisitedCircleImage.fillAmount = 0;
 
-        DOTween.To(() => VisitedCircleImage.fillAmount, x => VisitedCircleImage.fillAmount = x, 1f, fillDuration);
+        DOTween.To(() => VisitedCircleImage.fillAmount, x => VisitedCircleImage.fillAmount = x, 1.0f, fillDuration);
     }
 }
