@@ -15,10 +15,12 @@ public class Bullet : MonoBehaviour
     [HideInInspector]
     public WeaponData Data;
 
+    private Rigidbody2D rb;
     private int remainingPierce;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         Invoke("DestroyBullet", Data.DespawnTime);
         remainingPierce = Data.BulletPierce;
     }
@@ -47,6 +49,11 @@ public class Bullet : MonoBehaviour
             DestroyBullet();
             break;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collide)
+    {
+
     }
 
     // DestroyBullet() is called in the invoke function

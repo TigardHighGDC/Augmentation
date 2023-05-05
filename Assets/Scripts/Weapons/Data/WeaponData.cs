@@ -26,6 +26,7 @@ public class WeaponData : ScriptableObject
     public float Knockback;
     public float DespawnTime;
     public bool AutoReload;
+    public bool BulletBounce;
 
     [Header("SoundFX")]
     public AudioClip GunShotSound;
