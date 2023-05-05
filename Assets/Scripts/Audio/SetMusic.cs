@@ -7,7 +7,7 @@ public class SetMusic : MonoBehaviour
     public string musicType;
 
     MusicPlayer musicPlayer;
-    
+
     private void Start()
     {
         musicPlayer = GameObject.FindGameObjectWithTag("Music Player").GetComponent<MusicPlayer>();
