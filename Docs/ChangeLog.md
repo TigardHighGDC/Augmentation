@@ -6,12 +6,29 @@ A bi-weekly log of project changes separated by two week sprints.
 
 | Date | Sprint |
 | - | - |
+| [4/6/2023 - 4/20/2023](#462023---4202023) | 7 |
 | [3/14/2023 - 4/6/2023](#3142023---462023) | 6 |
 | [3/3/2023 - 3/14/2023](#332023---3142023) | 5 |
 | [2/8/2023 3/2/2023](#2082023---3022023) | 4 |
 | [1/17/2023 - 2/7/2023](#1172023---2072023) | 3 |
 | [1/4/2023 - 1/16/2023](#1042023---1162023) | 2 |
 | [12/6/2022 - 1/3/2023](#12062022---1032023) | 1 |
+
+## 4/6/2023 - 4/20/2023 (Sprint #7)
+
+- New Features:
+  - Basic UI added [#138](https://github.com/TigardHighGDC/Augmentation/pull/138).
+  - Item event manager added [#156](https://github.com/TigardHighGDC/Augmentation/pull/156).
+- Enhancements:
+  - Added audio to enemies [#145](https://github.com/TigardHighGDC/Augmentation/pull/145).
+  - Updated enemy projectile sprites [#145](https://github.com/TigardHighGDC/Augmentation/pull/145).
+  - Initial rooms created & added scene switching to the map [#157](https://github.com/TigardHighGDC/Augmentation/pull/157).
+  - Moved gun object closer to player to allow for aiming at very close enemies [#167](https://github.com/TigardHighGDC/Augmentation/pull/167).
+  - Updated Hackerman enemy volume [#158](https://github.com/TigardHighGDC/Augmentation/pull/158).
+  - Added player animations [#165](https://github.com/TigardHighGDC/Augmentation/pull/165).
+  - Added gun images [#165](https://github.com/TigardHighGDC/Augmentation/pull/165).
+- Bug Fixes:
+  - Fixed weapon inventory not properly tracking the amount of ammo in each weapon [#128](https://github.com/TigardHighGDC/Augmentation/pull/128).
 
 ## 3/14/2023 - 4/6/2023 (Sprint #6)
 
