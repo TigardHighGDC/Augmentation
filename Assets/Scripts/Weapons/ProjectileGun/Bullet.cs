@@ -44,16 +44,32 @@ public class Bullet : MonoBehaviour
                 DestroyBullet();
             }
 
+            BounceBullet(collide);
+
             break;
         case "Wall":
-            DestroyBullet();
+            if (!Data.BulletBounce)
+            {
+                DestroyBullet();
+            }
+            else
+            {
+                remainingPierce--;
+
+                if (remainingPierce * C_BulletPierce <= 0)
+                {
+                    DestroyBullet();
+                }
+
+                BounceBullet(collide);
+            }
             break;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collide)
+    private void BounceBullet(Collider2D collide)
     {
-
+        rb.velocity = Vector3.Reflect(rb.velocity, collide.transform.up);
     }
 
     // DestroyBullet() is called in the invoke function

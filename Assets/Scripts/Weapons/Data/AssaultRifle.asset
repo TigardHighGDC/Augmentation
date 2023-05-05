@@ -20,7 +20,7 @@ MonoBehaviour:
   Size: 0.8
   ReloadSpeed: 1.5
   BulletSpeed: 15
-  BulletPierce: 1
+  BulletPierce: 5
   CanShootInterval: 0.2
   BulletPerTrigger: 1
   AmmoCapacity: 30
@@ -28,6 +28,7 @@ MonoBehaviour:
   Knockback: 10
   DespawnTime: 20
   AutoReload: 1
+  BulletBounce: 1
   GunShotSound: {fileID: 8300000, guid: cbe96cbac711adf42b16d8dc590392cb, type: 3}
   GunShotVolume: 0.8
   ReloadSound: {fileID: 8300000, guid: c6fed905f24597845926e242909e9546, type: 3}
