@@ -11,7 +11,12 @@ public class CorruptionWellSelector : MonoBehaviour
             EnemySpawner spawn = GetComponent<EnemySpawner>();
             AudioSource audio = GetComponent<AudioSource>();
             audio.Play();
-            spawn.Ambush();
+
+            if (spawn.Ambush())
+            {
+                MusicPlayer playerMusic = GameObject.FindGameObjectWithTag("Music Player").GetComponent<MusicPlayer>();
+                playerMusic.SuddenTransition("Enemy Room", "Enemy Transition");
+            }
         }
     }
 }

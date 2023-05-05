@@ -85,7 +85,7 @@ MonoBehaviour:
       NodesApartDistance: 2
       RandomizePosition: 0.496
       RandomizeNodes: 0
-    - NodeType: 4
+    - NodeType: 5
       MinDistanceFromPreviousLayer: 2
       MaxDistanceFromPreviousLayer: 3
       NodesApartDistance: 2

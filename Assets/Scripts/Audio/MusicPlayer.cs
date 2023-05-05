@@ -18,14 +18,16 @@ public class MusicPlayer : MonoBehaviour
     private AudioClip[] peaceful;
     private bool transitioning = false;
 
-    private void Start()
+    private void Awake()
     {
         // Removes duplicates
         if (GameObject.FindGameObjectsWithTag("Music Player").Length != 1)
         {
             Destroy(gameObject);
         }
-
+    }
+    private void Start()
+    {
         DontDestroyOnLoad(gameObject);
 
         source = GetComponent<AudioSource>();
@@ -51,11 +53,11 @@ public class MusicPlayer : MonoBehaviour
 
         if (MusicEndsIn <= 5.0f && !transitioning)
         {
-            FadeInTransition(CurrentMusic, 5.0f);
+            FadeInTransition(CurrentMusic);
         }
     }
 
-    public void FadeInTransition(string music, float duration = 5.0f)
+    public void FadeInTransition(string music, float duration = 2.5f)
     {
         CurrentMusic = music;
 

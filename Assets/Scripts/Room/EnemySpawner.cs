@@ -11,15 +11,18 @@ public class EnemySpawner : MonoBehaviour
     public List<GameObject> EliteEnemies;
     public static bool LoadingBarFinished = false;
 
+    private float playerSpawnRadius = 5.0f;
     private float ambushProbability = 0.1f;
+    private GameObject player;
 
     private void Awake()
     {
         LoadingBarFinished = false;
+        player = GameObject.FindGameObjectWithTag("Player");
         InitializeEnemies();
     }
 
-    public void Ambush()
+    public bool Ambush()
     {
         // Removes corruption in exchange for possible enemy ambush
         CorruptionLevel.Add(-15.0f);
@@ -27,8 +30,10 @@ public class EnemySpawner : MonoBehaviour
         if (Random.value <= ambushProbability)
         {
             SpawnGroup(8, 1);
+            return true;
         }
         ambushProbability *= 2;
+        return false;
     }
 
     private void SpawnEnemy(GameObject enemy)
@@ -37,6 +42,14 @@ public class EnemySpawner : MonoBehaviour
         int xPosition = Random.Range(boundary.xMin + 1, boundary.xMax - 1);
         int yPosition = Random.Range(boundary.yMin + 1, boundary.yMax - 1);
         Vector3Int position = new Vector3Int(xPosition, yPosition, 0);
+
+        // Recaculate spawn position if too close to player.
+        while (Vector3.Distance(player.transform.position, position) < playerSpawnRadius)
+        {
+            xPosition = Random.Range(boundary.xMin + 1, boundary.xMax - 1);
+            yPosition = Random.Range(boundary.yMin + 1, boundary.yMax - 1);
+            position = new Vector3Int(xPosition, yPosition, 0);
+        }
         Instantiate(enemy, (Vector3)position, Quaternion.identity);
     }
 

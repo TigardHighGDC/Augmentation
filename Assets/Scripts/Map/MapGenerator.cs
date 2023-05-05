@@ -17,7 +17,7 @@ public static class MapGenerator
         NodeType.MinorEnemy,
         NodeType.Store, 
         NodeType.EliteEnemy,
-        NodeType.CorruptionRemover
+        NodeType.CorruptionWell
     };
     // clang-format on
 
