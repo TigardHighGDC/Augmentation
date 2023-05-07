@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,39 +8,35 @@ using UnityEngine.Audio;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public AudioMixer mainMixer;
-
-    public AudioMixer bulletMixer;
-
-    public AudioMixer musicMixer;
-
-    public AudioMixer soundFXMixer;
-
-    public AudioMixer enemyMixer;
+    public AudioMixer MainMixer;
+    public AudioMixer BulletMixer;
+    public AudioMixer MusicMixer;
+    public AudioMixer SoundFXMixer;
+    public AudioMixer EnemyMixer;
 
     public void SetVolume(float volume)
     {
-        mainMixer.SetFloat("volume", volume);
+        MainMixer.SetFloat("volume", volume);
     }
 
     public void SetMusicVolume(float musicVolume)
     {
-        musicMixer.SetFloat("musicVolume", musicVolume);
+        MusicMixer.SetFloat("musicVolume", musicVolume);
     }
 
     public void SetBulletVolume(float bulletVolume)
     {
-        bulletMixer.SetFloat("bulletVolume", bulletVolume);
+        BulletMixer.SetFloat("bulletVolume", bulletVolume);
     }
 
     public void SetSoundFXVolume(float soundFXVolume)
     {
-        soundFXMixer.SetFloat("soundFXVolume", soundFXVolume);
+        SoundFXMixer.SetFloat("soundFXVolume", soundFXVolume);
     }
 
     public void SetEnemyVolume(float enemyVolume)
     {
-        soundFXMixer.SetFloat("enemyVolume", enemyVolume);
+        SoundFXMixer.SetFloat("enemyVolume", enemyVolume);
     }
 
     public void SetFullscreen(bool isFullscreen)

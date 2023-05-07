@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +32,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 1.0f;
         GameIsPaused = false;
     }
 
@@ -48,13 +51,14 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0.0f;
         GameIsPaused = true;
     }
 
     public void LoadMenu()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1.0f;
+        // TODO: Use static scene manager. See GH-139.
         SceneManager.LoadScene("MainMenu");
     }
 }
