@@ -10,9 +10,17 @@ public class Menu : MonoBehaviour
 {
     public string Room;
 
+    private AsyncSceneLoader roomLoader;
+
+    private void Start()
+    {
+        AsyncSceneLoader roomLoader = gameObject.AddComponent<AsyncSceneLoader>();
+        roomLoader.Initialize(Room, false);
+    }
+
     public void OnStartButton()
     {
         // TODO: Use static scene manager. See GH-139.
-        SceneManager.LoadScene(Room);
+        roomLoader.ActivateScene();
     }
 }
