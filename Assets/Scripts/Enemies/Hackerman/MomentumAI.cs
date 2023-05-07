@@ -60,6 +60,7 @@ public class MomentumAI : MonoBehaviour
 
         // Lowers the speed if it goes over the max
         float totalSpeed = Mathf.Abs(rb.velocity[0]) + Mathf.Abs(rb.velocity[1]);
+
         if (totalSpeed > MaxSpeed)
         {
             float limit = totalSpeed / MaxSpeed;

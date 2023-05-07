@@ -16,7 +16,7 @@ public class ItemStorage : MonoBehaviour
     private static int uiX = 0;
     private static int uiY = 0;
     private static int uiMax = 8;
-    private static int seperatedDistance = 35;
+    private static int separatedDistance = 35;
 
     public static GameObject ReplaceItem(GameObject newItem, GameObject oldItem = null)
     {
@@ -38,13 +38,15 @@ public class ItemStorage : MonoBehaviour
 
     public static Vector2 ItemUIPosition()
     {
-        Vector2 addedPosition = new Vector2(uiX * seperatedDistance, uiY * seperatedDistance * -1);
+        Vector2 addedPosition = new Vector2(uiX * separatedDistance, uiY * separatedDistance * -1);
         uiX += 1;
+
         if (uiX >= uiMax)
         {
             uiX = 0;
             uiY += 1;
         }
+
         return addedPosition;
     }
 }

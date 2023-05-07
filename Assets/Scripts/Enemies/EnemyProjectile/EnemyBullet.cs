@@ -13,7 +13,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void Start()
     {
-        Invoke("DestroyBullet", 20f);
+        Invoke("DestroyBullet", 20.0f);
     }
 
     private void OnTriggerEnter2D(Collider2D collide)

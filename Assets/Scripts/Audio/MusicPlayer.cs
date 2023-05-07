@@ -26,6 +26,7 @@ public class MusicPlayer : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -101,7 +102,7 @@ public class MusicPlayer : MonoBehaviour
             yield return null;
         }
 
-        source.volume = 1f;
+        source.volume = 1.0f;
         Play(CurrentMusic);
         transitioning = false;
     }

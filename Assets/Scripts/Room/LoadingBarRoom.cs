@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +9,7 @@ using UnityEngine.UI;
 public class LoadingBarRoom : MonoBehaviour
 {
     public float MaxTime = 30.0f;
+
     private Slider slider;
     private bool endLoading = false;
 
@@ -27,6 +31,7 @@ public class LoadingBarRoom : MonoBehaviour
     private void SliderIncrease()
     {
         slider.value -= Time.deltaTime;
+
         if (slider.value <= 0.0f)
         {
             endLoading = true;

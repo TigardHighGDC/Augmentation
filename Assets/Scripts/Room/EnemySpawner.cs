@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,6 +35,7 @@ public class EnemySpawner : MonoBehaviour
             SpawnGroup(8, 1);
             return true;
         }
+
         ambushProbability *= 2;
         return false;
     }
@@ -43,13 +47,14 @@ public class EnemySpawner : MonoBehaviour
         int yPosition = Random.Range(boundary.yMin + 1, boundary.yMax - 1);
         Vector3Int position = new Vector3Int(xPosition, yPosition, 0);
 
-        // Recaculate spawn position if too close to player.
+        // Recalculate spawn position if too close to player.
         while (Vector3.Distance(player.transform.position, position) < playerSpawnRadius)
         {
             xPosition = Random.Range(boundary.xMin + 1, boundary.xMax - 1);
             yPosition = Random.Range(boundary.yMin + 1, boundary.yMax - 1);
             position = new Vector3Int(xPosition, yPosition, 0);
         }
+
         Instantiate(enemy, (Vector3)position, Quaternion.identity);
     }
 
@@ -116,10 +121,12 @@ public class EnemySpawner : MonoBehaviour
     private void EndLoadingBarEnemies()
     {
         CancelInvoke("LoadingBarEnemySpawn");
+
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
             Destroy(enemy);
         }
+
         LoadingBarFinished = false;
     }
 
