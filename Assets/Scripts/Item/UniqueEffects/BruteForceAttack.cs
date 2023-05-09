@@ -12,7 +12,6 @@ public class BruteForceAttack : MonoBehaviour
 
     private void Start()
     {
-        gun = GameObject.FindGameObjectWithTag("Player").GetComponent<Gun>();
         Gun.C_Spread *= 2;
         itemType = GetComponent<ItemType>();
         DontDestroyOnLoad(gameObject);
@@ -20,6 +19,7 @@ public class BruteForceAttack : MonoBehaviour
 
     private void Update()
     {
+        gun = GameObject.FindGameObjectWithTag("Player").GetComponent<Gun>();
         gun.AmmoAmount = gun.Data.AmmoCapacity * Gun.C_AmmoCapacity;
 
         if (itemType.DestroyItem)

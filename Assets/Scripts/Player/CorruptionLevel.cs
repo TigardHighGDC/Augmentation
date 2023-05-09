@@ -16,7 +16,7 @@ public class CorruptionLevel : MonoBehaviour
     public static float corruptionMax = 100.0f;
     public static float currentCorruption = 0.0f;
 
-    public void Add(float increase)
+    public static void Add(float increase)
     {
         currentCorruption = Mathf.Min(corruptionMax, currentCorruption + increase);
         currentCorruption = Mathf.Max(currentCorruption, 0.0f);

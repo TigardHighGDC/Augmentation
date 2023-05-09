@@ -11,6 +11,7 @@ public class NonPlayerHealth : MonoBehaviour
     public float InvincibilityTimer;
 
     private float remainingInvincibilityTime;
+    private bool dying = false;
 
     // set timer to timer :P
     private void Start()
@@ -35,8 +36,9 @@ public class NonPlayerHealth : MonoBehaviour
             remainingInvincibilityTime = InvincibilityTimer;
         }
 
-        if (Health <= 0f)
+        if (Health <= 0.0f && !dying)
         {
+            dying = true;
             Death();
         }
     }

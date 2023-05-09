@@ -303,7 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 20
   InvincibilityTimer: 0
-  corruptionStrength: 1
+  corruptionStrength: 2
 --- !u!114 &-1119845651491644574
 MonoBehaviour:
   m_ObjectHideFlags: 0

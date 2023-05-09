@@ -18,6 +18,15 @@ public class MusicPlayer : MonoBehaviour
     private AudioClip[] peaceful;
     private bool transitioning = false;
 
+    private void Awake()
+    {
+        // Removes duplicates
+        if (GameObject.FindGameObjectsWithTag("Music Player").Length != 1)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -37,16 +46,19 @@ public class MusicPlayer : MonoBehaviour
         }
         else
         {
-            MusicEndsIn = source.clip.length - source.time;
+            if (source.clip != null)
+            {
+                MusicEndsIn = source.clip.length - source.time;
+            }
         }
 
         if (MusicEndsIn <= 5.0f && !transitioning)
         {
-            FadeInTransition(CurrentMusic, 5.0f);
+            FadeInTransition(CurrentMusic);
         }
     }
 
-    public void FadeInTransition(string music, float duration = 5.0f)
+    public void FadeInTransition(string music, float duration = 2.5f)
     {
         CurrentMusic = music;
 
@@ -90,7 +102,7 @@ public class MusicPlayer : MonoBehaviour
             yield return null;
         }
 
-        source.volume = 1f;
+        source.volume = 1.0f;
         Play(CurrentMusic);
         transitioning = false;
     }
