@@ -19,6 +19,8 @@ A bi-weekly log of project changes separated by two week sprints.
 
 - New Features:
   - Implemented item system [#171](https://github.com/TigardHighGDC/Augmentation/pull/171).
+  - Added full room gameplay [#180](https://github.com/TigardHighGDC/Augmentation/pull/180).
+  - Now maintains certain game actions across rooms [#180](https://github.com/TigardHighGDC/Augmentation/pull/180).
 - Enhancements:
   - Fully added our art into the game [#172](https://github.com/TigardHighGDC/Augmentation/pull/172).
   - Updated the level map icons with our own assets [#168](https://github.com/TigardHighGDC/Augmentation/pull/168).
