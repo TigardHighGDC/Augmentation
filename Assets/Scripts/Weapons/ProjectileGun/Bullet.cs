@@ -15,10 +15,12 @@ public class Bullet : MonoBehaviour
     [HideInInspector]
     public WeaponData Data;
 
+    private Rigidbody2D rb;
     private int remainingPierce;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         Invoke("DestroyBullet", Data.DespawnTime);
         remainingPierce = Data.BulletPierce;
     }
@@ -42,11 +44,32 @@ public class Bullet : MonoBehaviour
                 DestroyBullet();
             }
 
+            BounceBullet(collide);
+
             break;
         case "Wall":
-            DestroyBullet();
+            if (!Data.BulletBounce)
+            {
+                DestroyBullet();
+            }
+            else
+            {
+                remainingPierce--;
+
+                if (remainingPierce * C_BulletPierce <= 0)
+                {
+                    DestroyBullet();
+                }
+
+                BounceBullet(collide);
+            }
             break;
         }
+    }
+
+    private void BounceBullet(Collider2D collide)
+    {
+        rb.velocity = Vector3.Reflect(rb.velocity, collide.transform.up);
     }
 
     // DestroyBullet() is called in the invoke function

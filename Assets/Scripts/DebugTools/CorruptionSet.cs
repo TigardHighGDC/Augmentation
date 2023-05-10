@@ -14,12 +14,11 @@ public class CorruptionSet : MonoBehaviour
 
     private void Start()
     {
-        corruption = GetComponent<CorruptionLevel>();
-        corruption.Add(corruptionAdd);
+        CorruptionLevel.Add(corruptionAdd);
     }
 
     private void Update()
     {
-        corruption.Add(corruptionIncreaseInterval * Time.deltaTime);
+        CorruptionLevel.Add(corruptionIncreaseInterval * Time.deltaTime);
     }
 }

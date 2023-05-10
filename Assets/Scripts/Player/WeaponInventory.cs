@@ -12,14 +12,10 @@ public class WeaponInventory : MonoBehaviour
     public int MaxWeapons = 3;
     public GameObject Pickupable;
 
-    [Reorderable]
-    public ListOfWeapons Weapons;
+    public List<WeaponData> NewWeapons;
+    private static List<WeaponData> Weapons = new List<WeaponData>();
 
-    [System.Serializable, HideInInspector]
-    public class ListOfWeapons : ReorderableArray<WeaponData>
-    {
-    }
-
+    private bool hasAddedWeapons = false;
     private Gun playerGun;
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
@@ -53,15 +49,22 @@ public class WeaponInventory : MonoBehaviour
 
     private void Start()
     {
+        if (hasAddedWeapons)
+        {
+            return;
+        }
+
+        hasAddedWeapons = true;
         playerGun = GetComponent<Gun>();
 
-        if (Weapons.Count > 0)
+        if (NewWeapons.Count > 0)
         {
             // Starting weapons were custom set.
-            Assert.Boolean(Weapons.Count <= MaxWeapons, "Too many starting weapons.");
+            Assert.Boolean(NewWeapons.Count <= MaxWeapons, "Too many starting weapons.");
 
-            foreach (WeaponData weapon in Weapons)
+            foreach (WeaponData weapon in NewWeapons)
             {
+                Weapons.Add(weapon);
                 weaponAmmoAmounts.Add(weapon.AmmoCapacity);
                 SelectItem();
             }

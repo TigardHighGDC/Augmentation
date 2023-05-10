@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Server Boss
   m_EditorClassIdentifier: 
   Sprite: {fileID: 21300000, guid: f5cae735aa6072148bef31bb93e52423, type: 3}
-  NodeType: 4
+  NodeType: 5

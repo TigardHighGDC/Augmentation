@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
 
 public class Menu : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.HasKey("Map"))
+        {
+            PlayerPrefs.DeleteKey("Map");
+        }
+    
         AsyncSceneLoader.GetInstance().LoadScene(Room, false);
     }
 

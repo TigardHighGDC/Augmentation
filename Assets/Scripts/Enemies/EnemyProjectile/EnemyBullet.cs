@@ -13,7 +13,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void Start()
     {
-        Invoke("DestroyBullet", 20f);
+        Invoke("DestroyBullet", 20.0f);
     }
 
     private void OnTriggerEnter2D(Collider2D collide)
@@ -23,6 +23,10 @@ public class EnemyBullet : MonoBehaviour
             hit = true;
             PlayerHealth playerHealth = collide.gameObject.GetComponent<PlayerHealth>();
             playerHealth.Damage(Data.Damage);
+            DestroyBullet();
+        }
+        else if (collide.gameObject.tag == "Wall")
+        {
             DestroyBullet();
         }
     }
