@@ -7,47 +7,49 @@ using UnityEngine.SceneManagement;
 
 public class AsyncSceneLoader : MonoBehaviour
 {
-    public bool IsLoaded { get; private set; }
+    private static AsyncSceneLoader instance;
 
+    private string nextSceneName;
     private AsyncOperation asyncLoad;
-    private bool activateOnLoad;
 
-    private bool isInitialized = false;
-
-    public void Initialize(string sceneName, bool activateOnLoad = true)
+    private void Awake()
     {
-        this.activateOnLoad = activateOnLoad;
-
-        StartCoroutine(LoadScene(sceneName));
-        isInitialized = true;
-    }
-
-    public void ActivateScene()
-    {
-        if (!isInitialized)
+        if (instance != null)
         {
-            Assert.Boolean(false, "AsyncSceneLoader not initialized.");
-            return;
+            Assert.Boolean(false, "AsyncSceneLoader already exists. There can only be one AsyncSceneLoader.");
         }
 
+        instance = this;
+    }
+
+    public static AsyncSceneLoader GetInstance()
+    {
+        return instance;
+    }
+
+    public void LoadScene(string sceneName, bool switchImmediately = true)
+    {
+        nextSceneName = sceneName;
+        StartCoroutine(LoadSceneAsync(switchImmediately));
+    }
+
+    public void SwitchToNextScene()
+    {
         asyncLoad.allowSceneActivation = true;
     }
 
-    private IEnumerator LoadScene(string sceneName)
+    private IEnumerator LoadSceneAsync(bool switchImmediately)
     {
-        asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-        asyncLoad.allowSceneActivation = false;
+        asyncLoad = SceneManager.LoadSceneAsync(nextSceneName);
 
+        if (!switchImmediately)
+        {
+            asyncLoad.allowSceneActivation = false;
+        }
+        
         while (!asyncLoad.isDone)
         {
             yield return null;
-        }
-
-        IsLoaded = true;
-
-        if (activateOnLoad)
-        {
-            ActivateScene();
         }
     }
 }
