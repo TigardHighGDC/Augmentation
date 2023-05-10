@@ -46,7 +46,7 @@ public class AsyncSceneLoader : MonoBehaviour
         {
             asyncLoad.allowSceneActivation = false;
         }
-        
+
         while (!asyncLoad.isDone)
         {
             yield return null;

@@ -17,7 +17,7 @@ public class Menu : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("Map");
         }
-    
+
         AsyncSceneLoader.GetInstance().LoadScene(Room, false);
     }
 

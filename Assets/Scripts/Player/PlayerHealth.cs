@@ -48,7 +48,6 @@ public class PlayerHealth : MonoBehaviour
     // Handles changes when the player dies
     private void Death()
     {
-        // TODO: Use static scene manager. See GH-139.
-        SceneManager.LoadScene("MainMenu");
+        AsyncSceneLoader.GetInstance().LoadScene("MainMenu");
     }
 }
