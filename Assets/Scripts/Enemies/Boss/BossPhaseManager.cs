@@ -39,6 +39,7 @@ public class BossPhaseManager : MonoBehaviour
             ShouldDestroyBullets = false;
         }
 
+        // Spawns bullets based off of boss phase
         switch (CurrentPhase)
         {
             case Phases.Ignoring:
@@ -53,6 +54,7 @@ public class BossPhaseManager : MonoBehaviour
                 break;
             case Phases.Bargaining:
                 StartCoroutine(BossBullets.BargainingPhase());
+                StopCoroutine(BossBullets.AngerPhaseSecondaryAttack());
                 break;
             case Phases.Depression:
                 StartCoroutine(BossBullets.DepressionPhase());
@@ -99,6 +101,7 @@ public class BossPhaseManager : MonoBehaviour
         }
     }
 
+
     public enum Phases
     {
         Ignoring,
@@ -107,5 +110,20 @@ public class BossPhaseManager : MonoBehaviour
         Bargaining,
         Depression,
         Acceptance
+    }
+
+    private void OnCollisionEnter2D(Collision2D collider) 
+    {
+        // Bullets during acceptance phase damages boss
+        if (CurrentPhase != Phases.Acceptance)
+        {
+            return;
+        }
+
+        if (TryGetComponent<EnemyBullet>(out EnemyBullet bullet))
+        {
+            enemyHealth.Health -= 15.0f;
+            Destroy(collider.gameObject);
+        }
     }
 }
