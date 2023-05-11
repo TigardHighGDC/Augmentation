@@ -8,27 +8,13 @@ public class BossBulletPattern : MonoBehaviour
     public EnemyProjectileData FastBulletData;
     public EnemyProjectileData DieBulletData;
 
-    private GameObject player;
-    private bool IsAttacking = false;
+    [HideInInspector] public bool IsAttacking = false;
 
+    private GameObject player;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
-    }
-
-    private void Update()
-    {
-        if (!IsAttacking)
-        {
-            //StartCoroutine(IgnoringPhase());
-            //StartCoroutine(DenialPhase());
-            //StartCoroutine(BargainingPhase());
-           // StartCoroutine(AngerPhase(Random.Range(-10, 6)));
-           //StartCoroutine(DepressionPhase());
-           //DepressionPhaseSecondaryAttack();
-           StartCoroutine(AcceptancePhase());
-        }
     }
 
     public void SpawnBullet(Vector3 position, float rotation, EnemyProjectileData Data)
@@ -171,6 +157,15 @@ public class BossBulletPattern : MonoBehaviour
         SpawnBullet(new Vector3(xPosition, yPosition, 0), rotation, SlowBulletData);
         yield return new WaitForSeconds(0.35f);
         IsAttacking = false;
+    }
+
+    private void DestroyAllBullets()
+    {
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+        foreach (GameObject bullet in bullets)
+        {
+            Destroy(bullet);
+        }
     }
         
 

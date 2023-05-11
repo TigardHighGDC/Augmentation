@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DieBullet
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 6900885866568021340, guid: 8107b3af199b38349b5f902de4d3e48d, type: 3}
-  Damage: 5
+  Damage: 2.5
   BulletSpeed: 15
   BulletPerSecond: 0

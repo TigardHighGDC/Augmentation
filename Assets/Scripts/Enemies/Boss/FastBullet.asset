@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FastBullet
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 6900885866568021340, guid: ebaa14c455996d14892437349d0dec09, type: 3}
-  Damage: 10
+  Damage: 5
   BulletSpeed: 20
   BulletPerSecond: 0

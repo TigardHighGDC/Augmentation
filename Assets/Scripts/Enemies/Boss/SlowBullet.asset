@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SlowBullet
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 6900885866568021340, guid: 73326954b2414074b8474116665f6578, type: 3}
-  Damage: 10
+  Damage: 2.5
   BulletSpeed: 10
   BulletPerSecond: 0
