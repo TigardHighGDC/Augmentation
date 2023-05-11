@@ -121,6 +121,7 @@ public class BossPhaseManager : MonoBehaviour
         if (collider.gameObject.TryGetComponent<EnemyBullet>(out EnemyBullet bullet))
         {
             enemyHealth.Health -= 15.0f;
+            Destroy(collider.gameObject);
         }
     }
 }
