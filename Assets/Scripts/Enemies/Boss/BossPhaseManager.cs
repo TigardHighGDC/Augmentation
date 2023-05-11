@@ -54,7 +54,6 @@ public class BossPhaseManager : MonoBehaviour
                 break;
             case Phases.Bargaining:
                 StartCoroutine(BossBullets.BargainingPhase());
-                StopCoroutine(BossBullets.AngerPhaseSecondaryAttack());
                 break;
             case Phases.Depression:
                 StartCoroutine(BossBullets.DepressionPhase());
@@ -112,18 +111,17 @@ public class BossPhaseManager : MonoBehaviour
         Acceptance
     }
 
-    private void OnCollisionEnter2D(Collision2D collider) 
+    private void OnTriggerEnter2D(Collider2D collider) 
     {
-        // Bullets during acceptance phase damages boss
+        // Bullets during the acceptance phase damages the boss
         if (CurrentPhase != Phases.Acceptance)
         {
             return;
         }
 
-        if (TryGetComponent<EnemyBullet>(out EnemyBullet bullet))
+        if (collider.gameObject.TryGetComponent<EnemyBullet>(out EnemyBullet bullet))
         {
             enemyHealth.Health -= 15.0f;
-            Destroy(collider.gameObject);
         }
     }
 }

@@ -21,7 +21,7 @@ public class BossBulletPattern : MonoBehaviour
     {
         Quaternion eulerAngle = Quaternion.Euler(0, 0, rotation);
 
-        // Spawn bullet and provide needed values
+        // Spawn bullets using given position and rotation
         GameObject bullet = Instantiate(Data.BulletPrefab, position, eulerAngle);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         bullet.GetComponent<EnemyBullet>().Data = Data;
@@ -91,6 +91,10 @@ public class BossBulletPattern : MonoBehaviour
             for (int bulletAngle = -3; bulletAngle < 4; bulletAngle++)
             {
                 SpawnBullet(new Vector3(0, -40, 0), bulletAngle * 15f, FastBulletData);
+                if (BossPhaseManager.CurrentPhase != BossPhaseManager.Phases.Anger)
+                {
+                    yield break;
+                }
                 yield return new WaitForSeconds(1.0f);
             }
             yield return new WaitForSeconds(2.3f);
@@ -122,7 +126,6 @@ public class BossBulletPattern : MonoBehaviour
         int randomBulletLoss = Random.Range(0, 11);
         for (int i = 0; i < 17; i++)
         {
-            Debug.Log(i);
             if (i < randomBulletLoss || i > randomBulletLoss + 6)
             {
                 SpawnBullet(new Vector3(i * 1.5f - 12, 0, 0), 180, SlowBulletData);
@@ -152,22 +155,12 @@ public class BossBulletPattern : MonoBehaviour
 
         Vector3 bulletPosition = new Vector3(xPosition, yPosition, 0);
         Vector3 relativePoint =  bulletPosition - transform.position;
-        float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90 + Random.Range(-10.0f, 10.0f);
+        float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90 + Random.Range(-20.0f, 20.0f);
 
         SpawnBullet(new Vector3(xPosition, yPosition, 0), rotation, SlowBulletData);
-        yield return new WaitForSeconds(0.35f);
+        yield return new WaitForSeconds(0.3f);
         IsAttacking = false;
-    }
-
-    private void DestroyAllBullets()
-    {
-        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
-        foreach (GameObject bullet in bullets)
-        {
-            Destroy(bullet);
-        }
-    }
-        
+    }        
 
     private Dictionary<int, int[]> dieDictionary = new Dictionary<int, int[]>()
     {
