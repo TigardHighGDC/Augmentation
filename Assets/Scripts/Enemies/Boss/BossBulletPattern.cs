@@ -8,7 +8,8 @@ public class BossBulletPattern : MonoBehaviour
     public EnemyProjectileData FastBulletData;
     public EnemyProjectileData DieBulletData;
 
-    [HideInInspector] public bool IsAttacking = false;
+    [HideInInspector]
+    public bool IsAttacking = false;
 
     private GameObject player;
 
@@ -58,15 +59,15 @@ public class BossBulletPattern : MonoBehaviour
     public void DenialPhase()
     {
         Vector3 randomPoint = new Vector3(-7 + (Random.Range(0, 8)), 0, 0);
-        Vector3 relativePoint =  randomPoint - player.transform.position;
+        Vector3 relativePoint = randomPoint - player.transform.position;
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
-        
+
         for (int bulletAngle = -1; bulletAngle < 2; bulletAngle++)
         {
             SpawnBullet(randomPoint, rotation + (bulletAngle * 22.5f), FastBulletData);
         }
     }
-    
+
     public IEnumerator AngerPhase(float spawnPoint)
     {
         IsAttacking = true;
@@ -117,7 +118,6 @@ public class BossBulletPattern : MonoBehaviour
             SpawnBullet(new Vector3(-12 + randomDistance + (between * 8), 0, 0), 180, SlowBulletData);
         }
         IsAttacking = false;
-
     }
 
     public IEnumerator DepressionPhase()
@@ -131,16 +131,16 @@ public class BossBulletPattern : MonoBehaviour
                 SpawnBullet(new Vector3(i * 1.5f - 12, 0, 0), 180, SlowBulletData);
             }
         }
-         yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(2.0f);
         IsAttacking = false;
     }
 
     public void DepressionPhaseSecondaryAttack()
     {
         Vector3 randomPoint = new Vector3(-7 + (Random.Range(0, 8)), -30, 0);
-        Vector3 relativePoint =  randomPoint - player.transform.position;
+        Vector3 relativePoint = randomPoint - player.transform.position;
         float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90;
-        
+
         for (int bulletAngle = -1; bulletAngle < 2; bulletAngle++)
         {
             SpawnBullet(randomPoint, rotation + (bulletAngle * 22.5f), FastBulletData);
@@ -154,48 +154,56 @@ public class BossBulletPattern : MonoBehaviour
         int yPosition = Random.Range(-32, -25);
 
         Vector3 bulletPosition = new Vector3(xPosition, yPosition, 0);
-        Vector3 relativePoint =  bulletPosition - transform.position;
-        float rotation = Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90 + Random.Range(-20.0f, 20.0f);
+        Vector3 relativePoint = bulletPosition - transform.position;
+        float rotation =
+            Mathf.Atan2(relativePoint.y, relativePoint.x) * Mathf.Rad2Deg + 90 + Random.Range(-20.0f, 20.0f);
 
         SpawnBullet(new Vector3(xPosition, yPosition, 0), rotation, SlowBulletData);
         yield return new WaitForSeconds(0.3f);
         IsAttacking = false;
-    }        
+    }
 
-    private Dictionary<int, int[]> dieDictionary = new Dictionary<int, int[]>()
-    {
-        {0, new int[]{0, 1, 2, 3, 4, 5}},
-        {1, new int[]{0}},
-        {2, new int[]{0}},
-        {3, new int[]{0}},
-        {4, new int[]{0, 1, 2, 3, 4, 5}},
-        {5, new int[]{0}},
-        {6, new int[]{0}},
-        {7, new int[]{0}},
-        {8, new int[]{0, 1, 2, 3, 4, 5}},
-        {9, new int[]{}},
-        {10, new int[]{}},
-        {11, new int[]{0, 1, 2, 3, 4, 5,}},
-        {12, new int[]{2, 3}},
-        {13, new int[]{2, 3}},
-        {14, new int[]{2, 3}},
-        {15, new int[]{2, 3}},
-        {16, new int[]{2, 3}},
-        {17, new int[]{2, 3}},
-        {18, new int[]{2, 3}},
-        {19, new int[]{0, 1, 2, 3, 4, 5}},
-        {20, new int[]{}},
-        {21, new int[]{}},
-        {22, new int[]{0, 1, 2, 3}},
-        {23, new int[]{0, 4}},
-        {24, new int[]{0, 5}},
-        {25, new int[]{0, 5}},
-        {26, new int[]{0, 5}},
-        {27, new int[]{0, 5}},
-        {28, new int[]{0, 5}},
-        {29, new int[]{0, 5}},
-        {30, new int[]{0, 4}},
-        {31, new int[]{0, 1, 2, 3}}
-        
-    };
+    private Dictionary<int, int[]> dieDictionary =
+        new Dictionary<int, int[]>() { { 0, new int[] { 0, 1, 2, 3, 4, 5 } },
+                                       { 1, new int[] { 0 } },
+                                       { 2, new int[] { 0 } },
+                                       { 3, new int[] { 0 } },
+                                       { 4, new int[] { 0, 1, 2, 3, 4, 5 } },
+                                       { 5, new int[] { 0 } },
+                                       { 6, new int[] { 0 } },
+                                       { 7, new int[] { 0 } },
+                                       { 8, new int[] { 0, 1, 2, 3, 4, 5 } },
+                                       { 9, new int[] {} },
+                                       { 10, new int[] {} },
+                                       { 11,
+                                         new int[] {
+                                             0,
+                                             1,
+                                             2,
+                                             3,
+                                             4,
+                                             5,
+                                         } },
+                                       { 12, new int[] { 2, 3 } },
+                                       { 13, new int[] { 2, 3 } },
+                                       { 14, new int[] { 2, 3 } },
+                                       { 15, new int[] { 2, 3 } },
+                                       { 16, new int[] { 2, 3 } },
+                                       { 17, new int[] { 2, 3 } },
+                                       { 18, new int[] { 2, 3 } },
+                                       { 19, new int[] { 0, 1, 2, 3, 4, 5 } },
+                                       { 20, new int[] {} },
+                                       { 21, new int[] {} },
+                                       { 22, new int[] { 0, 1, 2, 3 } },
+                                       { 23, new int[] { 0, 4 } },
+                                       { 24, new int[] { 0, 5 } },
+                                       { 25, new int[] { 0, 5 } },
+                                       { 26, new int[] { 0, 5 } },
+                                       { 27, new int[] { 0, 5 } },
+                                       { 28, new int[] { 0, 5 } },
+                                       { 29, new int[] { 0, 5 } },
+                                       { 30, new int[] { 0, 4 } },
+                                       { 31, new int[] { 0, 1, 2, 3 } }
+
+        };
 }

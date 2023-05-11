@@ -42,26 +42,26 @@ public class BossPhaseManager : MonoBehaviour
         // Spawns bullets based off of boss phase
         switch (CurrentPhase)
         {
-            case Phases.Ignoring:
-                StartCoroutine(BossBullets.IgnoringPhase());
-                break;
-            case Phases.Denial:
-                StartCoroutine(BossBullets.IgnoringPhase());
-                BossBullets.DenialPhase();
-                break;
-            case Phases.Anger:
-                StartCoroutine(BossBullets.AngerPhase(Random.Range(-10, 6)));
-                break;
-            case Phases.Bargaining:
-                StartCoroutine(BossBullets.BargainingPhase());
-                break;
-            case Phases.Depression:
-                StartCoroutine(BossBullets.DepressionPhase());
-                BossBullets.DepressionPhaseSecondaryAttack();
-                break;
-            case Phases.Acceptance: 
-                StartCoroutine(BossBullets.AcceptancePhase());
-                break;
+        case Phases.Ignoring:
+            StartCoroutine(BossBullets.IgnoringPhase());
+            break;
+        case Phases.Denial:
+            StartCoroutine(BossBullets.IgnoringPhase());
+            BossBullets.DenialPhase();
+            break;
+        case Phases.Anger:
+            StartCoroutine(BossBullets.AngerPhase(Random.Range(-10, 6)));
+            break;
+        case Phases.Bargaining:
+            StartCoroutine(BossBullets.BargainingPhase());
+            break;
+        case Phases.Depression:
+            StartCoroutine(BossBullets.DepressionPhase());
+            BossBullets.DepressionPhaseSecondaryAttack();
+            break;
+        case Phases.Acceptance:
+            StartCoroutine(BossBullets.AcceptancePhase());
+            break;
         }
     }
 
@@ -70,24 +70,24 @@ public class BossPhaseManager : MonoBehaviour
         int phaseIndex = (int)Mathf.Ceil((enemyHealth.Health - addedEndHealth) / healthChunck);
         switch (phaseIndex)
         {
-            case 5:
-                CurrentPhase = Phases.Ignoring;
-                break;
-            case 4:
-                CurrentPhase = Phases.Denial;
-                break;
-            case 3:
-                CurrentPhase = Phases.Anger;
-                break;
-            case 2:
-                CurrentPhase = Phases.Bargaining;
-                break;
-            case 1:
-                CurrentPhase = Phases.Depression;
-                break;
-            default:
-                CurrentPhase = Phases.Acceptance;
-                break;
+        case 5:
+            CurrentPhase = Phases.Ignoring;
+            break;
+        case 4:
+            CurrentPhase = Phases.Denial;
+            break;
+        case 3:
+            CurrentPhase = Phases.Anger;
+            break;
+        case 2:
+            CurrentPhase = Phases.Bargaining;
+            break;
+        case 1:
+            CurrentPhase = Phases.Depression;
+            break;
+        default:
+            CurrentPhase = Phases.Acceptance;
+            break;
         }
     }
 
@@ -100,7 +100,6 @@ public class BossPhaseManager : MonoBehaviour
         }
     }
 
-
     public enum Phases
     {
         Ignoring,
@@ -111,7 +110,7 @@ public class BossPhaseManager : MonoBehaviour
         Acceptance
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) 
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         // Bullets during the acceptance phase damages the boss
         if (CurrentPhase != Phases.Acceptance)

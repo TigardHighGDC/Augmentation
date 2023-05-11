@@ -45,7 +45,7 @@ public class MusicPlayer : MonoBehaviour
             if (BossPhaseManager.CurrentPhase != BossPhaseManager.PreviousPhase)
             {
                 FadeInTransition(CurrentMusic);
-            } 
+            }
             return;
         }
         if (!source.isPlaying)
@@ -163,22 +163,21 @@ public class MusicPlayer : MonoBehaviour
     {
         switch (BossPhaseManager.CurrentPhase)
         {
-            case BossPhaseManager.Phases.Ignoring:
-                return 0;
-            case BossPhaseManager.Phases.Denial:   
-                return 1;
-            case BossPhaseManager.Phases.Anger:
-                return 2;
-            case BossPhaseManager.Phases.Bargaining:
-                return 3;
-            case BossPhaseManager.Phases.Depression:
-                return 4;
-            case BossPhaseManager.Phases.Acceptance:
-                return 5;
-            default:
-                Debug.LogError("Invalid phase");
-                return 0;
+        case BossPhaseManager.Phases.Ignoring:
+            return 0;
+        case BossPhaseManager.Phases.Denial:
+            return 1;
+        case BossPhaseManager.Phases.Anger:
+            return 2;
+        case BossPhaseManager.Phases.Bargaining:
+            return 3;
+        case BossPhaseManager.Phases.Depression:
+            return 4;
+        case BossPhaseManager.Phases.Acceptance:
+            return 5;
+        default:
+            Debug.LogError("Invalid phase");
+            return 0;
         }
     }
-
 }

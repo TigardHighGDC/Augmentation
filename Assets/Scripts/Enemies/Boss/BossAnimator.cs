@@ -16,26 +16,26 @@ public class BossAnimator : MonoBehaviour
     {
         switch (BossPhaseManager.CurrentPhase)
         {
-            case BossPhaseManager.Phases.Ignoring:
-                anim.Play("Ignoring");
-                break;
-            case BossPhaseManager.Phases.Denial:
-                anim.Play("Denial");
-                break;
-            case BossPhaseManager.Phases.Anger:
-                anim.Play("Anger");
-                break;
-            case BossPhaseManager.Phases.Bargaining:
-                anim.Play("Bargaining");
-                break;
-            case BossPhaseManager.Phases.Depression:
-                anim.Play("Depression");
-                break;
-            case BossPhaseManager.Phases.Acceptance:    
-                anim.Play("Acceptance");
-                break;
-            default:
-                break;
+        case BossPhaseManager.Phases.Ignoring:
+            anim.Play("Ignoring");
+            break;
+        case BossPhaseManager.Phases.Denial:
+            anim.Play("Denial");
+            break;
+        case BossPhaseManager.Phases.Anger:
+            anim.Play("Anger");
+            break;
+        case BossPhaseManager.Phases.Bargaining:
+            anim.Play("Bargaining");
+            break;
+        case BossPhaseManager.Phases.Depression:
+            anim.Play("Depression");
+            break;
+        case BossPhaseManager.Phases.Acceptance:
+            anim.Play("Acceptance");
+            break;
+        default:
+            break;
         }
     }
 }
