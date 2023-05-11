@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class BossPhaseManager : MonoBehaviour
 {
-    public static Phases CurrentPhase;
+    public static Phases CurrentPhase = Phases.Anger;
     public static Phases PreviousPhase;
 
+    private BossDialogueManager bossDialogueManager;
     private EnemyHealth enemyHealth;
     private BossBulletPattern BossBullets;
-    private bool ShouldDestroyBullets = false;
+    private bool shouldDestroyBullets = false;
 
     private void Start()
     {
         enemyHealth = GetComponent<EnemyHealth>();
         BossBullets = GetComponent<BossBulletPattern>();
+        bossDialogueManager = GetComponent<BossDialogueManager>();
         SetPhase();
     }
 
@@ -25,7 +27,7 @@ public class BossPhaseManager : MonoBehaviour
 
         if (PreviousPhase != CurrentPhase)
         {
-            ShouldDestroyBullets = true;
+            shouldDestroyBullets = true;
         }
 
         if (BossBullets.IsAttacking)
@@ -33,10 +35,17 @@ public class BossPhaseManager : MonoBehaviour
             return;
         }
 
-        if (ShouldDestroyBullets)
+        if (shouldDestroyBullets && !DialogueManager.GetInstance().DialogueIsActive)
         {
+            Debug.Log("Start Dialogue");
             DestroyAllBullets();
-            ShouldDestroyBullets = false;
+            bossDialogueManager.BeginBossDialogue();
+            shouldDestroyBullets = false;
+        }
+
+        if (DialogueManager.GetInstance().DialogueIsActive)
+        {
+            return;
         }
 
         // Spawns bullets based off of boss phase

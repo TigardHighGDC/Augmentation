@@ -184,6 +184,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfcf136467d15c4285fd587ee9ddefa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &60448375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60448360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b0e22c25585d04ea2871efb27e808d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IgnoringText: {fileID: 4900000, guid: feb3677754498d94d9684555be2bcc32, type: 3}
+  DenialText: {fileID: 4900000, guid: feb3677754498d94d9684555be2bcc32, type: 3}
+  AngerText: {fileID: 0}
+  BargainingText: {fileID: 0}
+  DepressionText: {fileID: 0}
+  AcceptanceText: {fileID: 0}
 --- !u!1 &529887530 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8589533937859444998, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
@@ -482,10 +500,26 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3104593836863182720, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
+      propertyPath: m_text
+      value: Megaserver
+      objectReference: {fileID: 0}
     - target: {fileID: 3939616397217202801, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8911375162598958761, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d0ae4793326717949b1bda20d8e6e796, type: 3}
+    - target: {fileID: 9057644131090450124, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
+      propertyPath: DialogueProfiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9057644131090450124, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
+      propertyPath: DialogueProfiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 57ec0a6738848ef43aaf99420b62ac25, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
 --- !u!114 &596243493 stripped
