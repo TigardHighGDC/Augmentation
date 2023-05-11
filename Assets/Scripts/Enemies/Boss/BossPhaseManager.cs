@@ -11,14 +11,14 @@ public class BossPhaseManager : MonoBehaviour
     private BossBulletPattern BossBullets;
     private bool ShouldDestroyBullets = false;
 
-    void Start()
+    private void Start()
     {
         enemyHealth = GetComponent<EnemyHealth>();
         BossBullets = GetComponent<BossBulletPattern>();
         SetPhase();
     }
 
-    void Update()
+    private void Update()
     {
         PreviousPhase = CurrentPhase;
         SetPhase();

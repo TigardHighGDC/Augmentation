@@ -32,7 +32,7 @@ public class MusicPlayer : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         source = GetComponent<AudioSource>();
-        boss = Resources.LoadAll<AudioClip>("Music/Boss");
+        boss = Resources.LoadAll<AudioClip>("Music/BossMusic");
         enemyRoom = Resources.LoadAll<AudioClip>("Music/EnemyRoom");
         menu = Resources.LoadAll<AudioClip>("Music/Menu");
         peaceful = Resources.LoadAll<AudioClip>("Music/Peaceful");
