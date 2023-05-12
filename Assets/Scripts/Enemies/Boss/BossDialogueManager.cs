@@ -19,7 +19,6 @@ public class BossDialogueManager : MonoBehaviour
         if (!DialogueManager.GetInstance().DialogueIsActive && !DialogueManager.GetInstance().DialogueIsActive)
         {
             SetInkJSONPhase();
-            Debug.Log(InkJSON);
             DialogueManager.GetInstance().EnterDialogue(InkJSON);
         }
     }
@@ -28,24 +27,24 @@ public class BossDialogueManager : MonoBehaviour
     {
         switch (BossPhaseManager.CurrentPhase)
         {
-            case BossPhaseManager.Phases.Ignoring:
-                InkJSON = IgnoringText;
-                break;
-            case BossPhaseManager.Phases.Denial:
-                InkJSON = DenialText;
-                break;
-            case BossPhaseManager.Phases.Anger:
-                InkJSON = AngerText;
-                break;
-            case BossPhaseManager.Phases.Bargaining:
-                InkJSON = BargainingText;
-                break;
-            case BossPhaseManager.Phases.Depression:
-                InkJSON = DepressionText;
-                break;
-            case BossPhaseManager.Phases.Acceptance:
-                InkJSON = AcceptanceText;
-                break;
+        case BossPhaseManager.Phases.Ignoring:
+            InkJSON = IgnoringText;
+            break;
+        case BossPhaseManager.Phases.Denial:
+            InkJSON = DenialText;
+            break;
+        case BossPhaseManager.Phases.Anger:
+            InkJSON = AngerText;
+            break;
+        case BossPhaseManager.Phases.Bargaining:
+            InkJSON = BargainingText;
+            break;
+        case BossPhaseManager.Phases.Depression:
+            InkJSON = DepressionText;
+            break;
+        case BossPhaseManager.Phases.Acceptance:
+            InkJSON = AcceptanceText;
+            break;
         }
     }
 }

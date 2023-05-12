@@ -83,7 +83,7 @@ public class Gun : MonoBehaviour
             float completion = (CorruptionLevel.currentCorruption - 50.0f) / 50.0f;
             float compression = 12f - (2f * (completion));
             audioPlayer.PlayOneShot(AudioManipulation.BitCrusher(Data.GunShotSound, compression),
-                                    Data.GunShotVolume * (3.5f * completion + 3f));
+                                    Data.GunShotVolume * (3.0f * completion + 2.5f));
         }
         else
         {
