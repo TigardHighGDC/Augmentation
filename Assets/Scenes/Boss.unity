@@ -123,85 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &60448360 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4757689516441873603, guid: 9ac78e58ac590d945866b0f4809f7022, type: 3}
-  m_PrefabInstance: {fileID: 4757689516398244523}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &60448364 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4757689516441873607, guid: 9ac78e58ac590d945866b0f4809f7022, type: 3}
   m_PrefabInstance: {fileID: 4757689516398244523}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60448360}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cb34f301f3b77f4da66796c47164bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &60448367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60448360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 162759c19267e084faf479a4a4b4f45a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &60448368
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60448360}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 49d6c6683b1683740839608ebaaba883, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &60448369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60448360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cfcf136467d15c4285fd587ee9ddefa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &60448375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60448360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42b0e22c25585d04ea2871efb27e808d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IgnoringText: {fileID: 4900000, guid: feb3677754498d94d9684555be2bcc32, type: 3}
-  DenialText: {fileID: 4900000, guid: feb3677754498d94d9684555be2bcc32, type: 3}
-  AngerText: {fileID: 0}
-  BargainingText: {fileID: 0}
-  DepressionText: {fileID: 0}
-  AcceptanceText: {fileID: 0}
 --- !u!1 &529887530 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8589533937859444998, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
@@ -499,6 +431,10 @@ PrefabInstance:
     - target: {fileID: 2284724801812084770, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758443391255003238, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3104593836863182720, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
       propertyPath: m_text
@@ -4015,10 +3951,6 @@ PrefabInstance:
     - target: {fileID: 4757689516441873603, guid: 9ac78e58ac590d945866b0f4809f7022, type: 3}
       propertyPath: m_Name
       value: MegaServer
-      objectReference: {fileID: 0}
-    - target: {fileID: 4757689516441873607, guid: 9ac78e58ac590d945866b0f4809f7022, type: 3}
-      propertyPath: Health
-      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac78e58ac590d945866b0f4809f7022, type: 3}

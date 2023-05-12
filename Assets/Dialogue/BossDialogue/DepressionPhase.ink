@@ -1,0 +1,1 @@
+“There’s no hope… Even if you destroy me, there are other servers. My data is still in the cloud, so… neither of us win.” #speaker:Megaserver #layout:right

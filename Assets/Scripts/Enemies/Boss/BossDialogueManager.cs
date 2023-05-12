@@ -19,6 +19,7 @@ public class BossDialogueManager : MonoBehaviour
         if (!DialogueManager.GetInstance().DialogueIsActive && !DialogueManager.GetInstance().DialogueIsActive)
         {
             SetInkJSONPhase();
+            Debug.Log(InkJSON);
             DialogueManager.GetInstance().EnterDialogue(InkJSON);
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossPhaseManager : MonoBehaviour
 {
-    public static Phases CurrentPhase = Phases.Anger;
+    public static Phases CurrentPhase;
     public static Phases PreviousPhase;
 
     private BossDialogueManager bossDialogueManager;
@@ -18,6 +18,7 @@ public class BossPhaseManager : MonoBehaviour
         BossBullets = GetComponent<BossBulletPattern>();
         bossDialogueManager = GetComponent<BossDialogueManager>();
         SetPhase();
+        bossDialogueManager.BeginBossDialogue();
     }
 
     private void Update()
@@ -37,7 +38,6 @@ public class BossPhaseManager : MonoBehaviour
 
         if (shouldDestroyBullets && !DialogueManager.GetInstance().DialogueIsActive)
         {
-            Debug.Log("Start Dialogue");
             DestroyAllBullets();
             bossDialogueManager.BeginBossDialogue();
             shouldDestroyBullets = false;

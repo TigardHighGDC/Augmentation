@@ -14,6 +14,10 @@ GameObject:
   - component: {fileID: 4757689516441873607}
   - component: {fileID: 4757689516441873606}
   - component: {fileID: 4757689516441873605}
+  - component: {fileID: 60448368}
+  - component: {fileID: 60448367}
+  - component: {fileID: 60448369}
+  - component: {fileID: 60448375}
   m_Layer: 0
   m_Name: MegaServer
   m_TagString: Enemy
@@ -103,6 +107,7 @@ MonoBehaviour:
   SlowBulletData: {fileID: 11400000, guid: 5587d7729f1030d4c992fabe980c3141, type: 2}
   FastBulletData: {fileID: 11400000, guid: 974a0f97d8864dc478aef2676441949b, type: 2}
   DieBulletData: {fileID: 11400000, guid: 4c37db515c2a9984eb03813513b1c083, type: 2}
+  IsAttacking: 0
 --- !u!114 &4757689516441873607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,3 +170,66 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &60448368
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757689516441873603}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 49d6c6683b1683740839608ebaaba883, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &60448367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757689516441873603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162759c19267e084faf479a4a4b4f45a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &60448369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757689516441873603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cfcf136467d15c4285fd587ee9ddefa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &60448375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757689516441873603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b0e22c25585d04ea2871efb27e808d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IgnoringText: {fileID: 4900000, guid: feb3677754498d94d9684555be2bcc32, type: 3}
+  DenialText: {fileID: 4900000, guid: a5df403b10f703a49b533035f241929a, type: 3}
+  AngerText: {fileID: 4900000, guid: 09898d9abe955a644b230730239d9204, type: 3}
+  BargainingText: {fileID: 4900000, guid: 033d4a3ea64012f4e851295db0c5e6b7, type: 3}
+  DepressionText: {fileID: 4900000, guid: a5958049c85a7134588a33754bce60e4, type: 3}
+  AcceptanceText: {fileID: 4900000, guid: a822b21ac6b740b49926c6c4a34951dc, type: 3}
