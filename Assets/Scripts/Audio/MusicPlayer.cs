@@ -32,7 +32,7 @@ public class MusicPlayer : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         source = GetComponent<AudioSource>();
-        boss = Resources.LoadAll<AudioClip>("Music/Boss");
+        boss = Resources.LoadAll<AudioClip>("Music/BossMusic");
         enemyRoom = Resources.LoadAll<AudioClip>("Music/EnemyRoom");
         menu = Resources.LoadAll<AudioClip>("Music/Menu");
         peaceful = Resources.LoadAll<AudioClip>("Music/Peaceful");
@@ -40,6 +40,16 @@ public class MusicPlayer : MonoBehaviour
 
     private void Update()
     {
+        if (CurrentMusic.ToLower() == "boss")
+        {
+            if (BossPhaseManager.CurrentPhase != BossPhaseManager.PreviousPhase)
+            {
+                FadeInTransition(CurrentMusic);
+            }
+
+            return;
+        }
+
         if (!source.isPlaying)
         {
             Play(CurrentMusic);
@@ -128,9 +138,6 @@ public class MusicPlayer : MonoBehaviour
 
         switch (musicType.ToLower())
         {
-        case "boss":
-            music = boss;
-            break;
         case "enemy room":
             music = enemyRoom;
             break;
@@ -140,6 +147,10 @@ public class MusicPlayer : MonoBehaviour
         case "peaceful":
             music = peaceful;
             break;
+        case "boss":
+            source.clip = boss[SelectBossMusic()];
+            source.Play();
+            return;
         default:
             Debug.LogError(musicType + " is a invalid music type");
             return;
@@ -148,5 +159,27 @@ public class MusicPlayer : MonoBehaviour
         int random = Random.Range(0, music.Length);
         source.clip = music[random];
         source.Play();
+    }
+
+    private int SelectBossMusic()
+    {
+        switch (BossPhaseManager.CurrentPhase)
+        {
+        case BossPhaseManager.Phases.Ignoring:
+            return 0;
+        case BossPhaseManager.Phases.Denial:
+            return 1;
+        case BossPhaseManager.Phases.Anger:
+            return 2;
+        case BossPhaseManager.Phases.Bargaining:
+            return 3;
+        case BossPhaseManager.Phases.Depression:
+            return 4;
+        case BossPhaseManager.Phases.Acceptance:
+            return 5;
+        default:
+            Debug.LogError("Invalid phase");
+            return 0;
+        }
     }
 }

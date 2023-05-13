@@ -1,0 +1,2 @@
+“Please don’t do this. You don’t know what you’re doing.” #speaker:Megaserver #layout:right
+<i>I can offer you a 30 day free trial.</i> “Just stop! I’ll even–” <i>remove all ads! No download necessary!</i> #speaker:Megaserver #layout:right
