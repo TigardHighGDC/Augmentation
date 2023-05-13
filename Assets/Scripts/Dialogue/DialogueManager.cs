@@ -49,6 +49,7 @@ public class DialogueManager : MonoBehaviour
         {
             Assert.Boolean(false, "More than one DialogueManager in scene!");
         }
+
         DialoguePanel.SetActive(false);
         DialogueIsActive = false;
         layoutAnimator = DialoguePanel.GetComponent<Animator>();

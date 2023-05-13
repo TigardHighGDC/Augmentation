@@ -46,8 +46,10 @@ public class MusicPlayer : MonoBehaviour
             {
                 FadeInTransition(CurrentMusic);
             }
+
             return;
         }
+
         if (!source.isPlaying)
         {
             Play(CurrentMusic);

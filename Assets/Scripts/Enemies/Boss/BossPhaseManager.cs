@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -74,9 +77,10 @@ public class BossPhaseManager : MonoBehaviour
         }
     }
 
-    private void SetPhase(float healthChunck = 1500.0f, float addedEndHealth = 2500f)
+    private void SetPhase(float healthChunck = 1500.0f, float addedEndHealth = 2500.0f)
     {
         int phaseIndex = (int)Mathf.Ceil((enemyHealth.Health - addedEndHealth) / healthChunck);
+
         switch (phaseIndex)
         {
         case 5:
@@ -103,6 +107,7 @@ public class BossPhaseManager : MonoBehaviour
     private void DestroyAllBullets()
     {
         GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+
         foreach (GameObject bullet in bullets)
         {
             Destroy(bullet);

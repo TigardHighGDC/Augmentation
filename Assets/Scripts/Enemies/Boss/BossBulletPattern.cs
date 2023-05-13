@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,9 +35,11 @@ public class BossBulletPattern : MonoBehaviour
     public IEnumerator IgnoringPhase()
     {
         IsAttacking = true;
+
         for (int i = 0; i < 4; i++)
         {
             yield return new WaitForSeconds(0.15f);
+
             for (int bulletAmount = 0; bulletAmount < 6; bulletAmount++)
             {
                 SpawnBullet(new Vector3(-10 + (bulletAmount * 4), 0, 0), 180, SlowBulletData);
@@ -46,6 +51,7 @@ public class BossBulletPattern : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             yield return new WaitForSeconds(0.15f);
+
             for (int bulletAmount = 0; bulletAmount < 7; bulletAmount++)
             {
                 SpawnBullet(new Vector3(-12 + (bulletAmount * 4), 0, 0), 180, SlowBulletData);
@@ -79,8 +85,10 @@ public class BossBulletPattern : MonoBehaviour
                 Vector3 newSpawn = new Vector3(spawnPoint + (dieDictionary[i][u] * 1.0f), 0, 0);
                 SpawnBullet(newSpawn, 180, DieBulletData);
             }
+
             yield return new WaitForSeconds(0.075f);
         }
+
         yield return new WaitForSeconds(1.0f);
         IsAttacking = false;
     }
@@ -92,12 +100,15 @@ public class BossBulletPattern : MonoBehaviour
             for (int bulletAngle = -3; bulletAngle < 4; bulletAngle++)
             {
                 SpawnBullet(new Vector3(0, -40, 0), bulletAngle * 15f, FastBulletData);
+
                 if (BossPhaseManager.CurrentPhase != BossPhaseManager.Phases.Anger)
                 {
                     yield break;
                 }
+
                 yield return new WaitForSeconds(1.0f);
             }
+
             yield return new WaitForSeconds(2.3f);
         }
     }
@@ -105,6 +116,7 @@ public class BossBulletPattern : MonoBehaviour
     public IEnumerator BargainingPhase()
     {
         IsAttacking = true;
+
         for (int i = 0; i < 3; i++)
         {
             yield return new WaitForSeconds(0.15f);
@@ -117,6 +129,7 @@ public class BossBulletPattern : MonoBehaviour
             float randomDistance = Random.Range(1.0f, 7.0f);
             SpawnBullet(new Vector3(-12 + randomDistance + (between * 8), 0, 0), 180, SlowBulletData);
         }
+
         IsAttacking = false;
     }
 
@@ -124,6 +137,7 @@ public class BossBulletPattern : MonoBehaviour
     {
         IsAttacking = true;
         int randomBulletLoss = Random.Range(0, 11);
+
         for (int i = 0; i < 17; i++)
         {
             if (i < randomBulletLoss || i > randomBulletLoss + 6)
@@ -131,6 +145,7 @@ public class BossBulletPattern : MonoBehaviour
                 SpawnBullet(new Vector3(i * 1.5f - 12, 0, 0), 180, SlowBulletData);
             }
         }
+
         yield return new WaitForSeconds(2.0f);
         IsAttacking = false;
     }
@@ -163,47 +178,40 @@ public class BossBulletPattern : MonoBehaviour
         IsAttacking = false;
     }
 
-    private Dictionary<int, int[]> dieDictionary =
-        new Dictionary<int, int[]>() { { 0, new int[] { 0, 1, 2, 3, 4, 5 } },
-                                       { 1, new int[] { 0 } },
-                                       { 2, new int[] { 0 } },
-                                       { 3, new int[] { 0 } },
-                                       { 4, new int[] { 0, 1, 2, 3, 4, 5 } },
-                                       { 5, new int[] { 0 } },
-                                       { 6, new int[] { 0 } },
-                                       { 7, new int[] { 0 } },
-                                       { 8, new int[] { 0, 1, 2, 3, 4, 5 } },
-                                       { 9, new int[] {} },
-                                       { 10, new int[] {} },
-                                       { 11,
-                                         new int[] {
-                                             0,
-                                             1,
-                                             2,
-                                             3,
-                                             4,
-                                             5,
-                                         } },
-                                       { 12, new int[] { 2, 3 } },
-                                       { 13, new int[] { 2, 3 } },
-                                       { 14, new int[] { 2, 3 } },
-                                       { 15, new int[] { 2, 3 } },
-                                       { 16, new int[] { 2, 3 } },
-                                       { 17, new int[] { 2, 3 } },
-                                       { 18, new int[] { 2, 3 } },
-                                       { 19, new int[] { 0, 1, 2, 3, 4, 5 } },
-                                       { 20, new int[] {} },
-                                       { 21, new int[] {} },
-                                       { 22, new int[] { 0, 1, 2, 3 } },
-                                       { 23, new int[] { 0, 4 } },
-                                       { 24, new int[] { 0, 5 } },
-                                       { 25, new int[] { 0, 5 } },
-                                       { 26, new int[] { 0, 5 } },
-                                       { 27, new int[] { 0, 5 } },
-                                       { 28, new int[] { 0, 5 } },
-                                       { 29, new int[] { 0, 5 } },
-                                       { 30, new int[] { 0, 4 } },
-                                       { 31, new int[] { 0, 1, 2, 3 } }
-
-        };
+    // clang-format off
+    private Dictionary<int, int[]> dieDictionary = new Dictionary<int, int[]>() {
+        { 0, new int[] { 0, 1, 2, 3, 4, 5 } },
+        { 1, new int[] { 0 } },
+        { 2, new int[] { 0 } },
+        { 3, new int[] { 0 } },
+        { 4, new int[] { 0, 1, 2, 3, 4, 5 } },
+        { 5, new int[] { 0 } },
+        { 6, new int[] { 0 } },
+        { 7, new int[] { 0 } },
+        { 8, new int[] { 0, 1, 2, 3, 4, 5 } },
+        { 9, new int[] {} },
+        { 10, new int[] {} },
+        { 11, new int[] { 0, 1, 2, 3, 4, 5} },
+        { 12, new int[] { 2, 3 } },
+        { 13, new int[] { 2, 3 } },
+        { 14, new int[] { 2, 3 } },
+        { 15, new int[] { 2, 3 } },
+        { 16, new int[] { 2, 3 } },
+        { 17, new int[] { 2, 3 } },
+        { 18, new int[] { 2, 3 } },
+        { 19, new int[] { 0, 1, 2, 3, 4, 5 } },
+        { 20, new int[] {} },
+        { 21, new int[] {} },
+        { 22, new int[] { 0, 1, 2, 3 } },
+        { 23, new int[] { 0, 4 } },
+        { 24, new int[] { 0, 5 } },
+        { 25, new int[] { 0, 5 } },
+        { 26, new int[] { 0, 5 } },
+        { 27, new int[] { 0, 5 } },
+        { 28, new int[] { 0, 5 } },
+        { 29, new int[] { 0, 5 } },
+        { 30, new int[] { 0, 4 } },
+        { 31, new int[] { 0, 1, 2, 3 } }
+    };
+    // clang-format on
 }
