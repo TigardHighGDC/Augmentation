@@ -8,8 +8,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Weapon", menuName = "ScriptableObject/WeaponData")]
 public class WeaponData : ScriptableObject
 {
+    public Sprite Image;
+    public Vector3 HandPosition;
+
     [Header("Stats")]
+    public string WeaponName;
     public float Damage;
+    public float WeaponLength;
     public float Size;
     public float ReloadSpeed;
     public float BulletSpeed;
@@ -21,6 +26,7 @@ public class WeaponData : ScriptableObject
     public float Knockback;
     public float DespawnTime;
     public bool AutoReload;
+    public bool BulletBounce;
 
     [Header("SoundFX")]
     public AudioClip GunShotSound;

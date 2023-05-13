@@ -75,32 +75,22 @@ public class MapPlayerTracker : MonoBehaviour
         switch (mapNode.Node.NodeType)
         {
         case NodeType.MinorEnemy:
-            // TODO: Use static scene manager. See GH-139.
-            SceneManager.LoadScene("Basic Enemies");
+            AsyncSceneLoader.GetInstance().LoadScene("Basic Enemies");
             break;
         case NodeType.EliteEnemy:
-            // TODO: Use static scene manager. See GH-139.
-            SceneManager.LoadScene("Elite Enemies");
-            break;
-        case NodeType.RestSite:
-            // TODO: Use static scene manager. See GH-139.
-            SceneManager.LoadScene("Rest Site");
-            break;
-        case NodeType.Treasure:
-            // TODO: Use static scene manager. See GH-139.
-            SceneManager.LoadScene("Treasure");
+            AsyncSceneLoader.GetInstance().LoadScene("Elite Enemies");
             break;
         case NodeType.Store:
-            // TODO: Use static scene manager. See GH-139.
-            SceneManager.LoadScene("Store");
+            AsyncSceneLoader.GetInstance().LoadScene("Store");
+            break;
+        case NodeType.CorruptionWell:
+            AsyncSceneLoader.GetInstance().LoadScene("CorruptionWell");
+            break;
+        case NodeType.LoadingBar:
+            AsyncSceneLoader.GetInstance().LoadScene("LoadingBar");
             break;
         case NodeType.Boss:
-            // TODO: Use static scene manager. See GH-139.
-            SceneManager.LoadScene("Boss");
-            break;
-        case NodeType.Mystery:
-            // TODO: Remove this node type.
-            Assert.Boolean(false, "Mystery node type is not supported");
+            AsyncSceneLoader.GetInstance().LoadScene("Boss");
             break;
         default:
             Assert.Boolean(false, "Unknown NodeType: " + mapNode.Node.NodeType);

@@ -29,12 +29,16 @@ public class Door : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        AsyncSceneLoader.GetInstance().LoadScene(SceneToLoad, false);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!IsLocked)
         {
-            Debug.Log("Starting to load scene: " + SceneToLoad);
-            StartCoroutine(LoadSceneAsync());
+            AsyncSceneLoader.GetInstance().SwitchToNextScene();
         }
     }
 
@@ -48,15 +52,5 @@ public class Door : MonoBehaviour
     {
         IsLocked = true;
         spriteRenderer.sprite = LockedSprite;
-    }
-
-    private IEnumerator LoadSceneAsync()
-    {
-        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(SceneToLoad);
-
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
     }
 }

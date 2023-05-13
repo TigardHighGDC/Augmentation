@@ -3,27 +3,27 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Malee.List;
 using UnityEngine;
 using UnityEditor;
 
 public class WeaponInventory : MonoBehaviour
 {
-    public List<WeaponData> Weapons;
     public int MaxWeapons = 3;
+    public GameObject Pickupable;
 
+    public List<WeaponData> NewWeapons;
+    private static List<WeaponData> Weapons = new List<WeaponData>();
+
+    private bool hasAddedWeapons = false;
+    private Gun playerGun;
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
-    private double allowedWeaponSwitchTime = 1.0;
+    private double allowedWeaponSwitchTime = 0.25;
+    private static List<int> weaponAmmoAmounts = new List<int>();
+    private static List<GameObject> weaponItems = new List<GameObject>();
 
-    enum StartingLoadout
-    {
-        PISTOL,
-        ALL
-    }
-
-    private StartingLoadout startingLoadout = StartingLoadout.ALL; // For testing purposes.
-
-    enum State
+    private enum State
     {
         NO_WEAPONS,
         HAS_WEAPONS,
@@ -49,38 +49,32 @@ public class WeaponInventory : MonoBehaviour
 
     private void Start()
     {
-        state = State.NO_WEAPONS;
+        if (hasAddedWeapons)
+        {
+            return;
+        }
 
-        if (Weapons.Count > 0)
+        hasAddedWeapons = true;
+        playerGun = GetComponent<Gun>();
+
+        if (NewWeapons.Count > 0)
         {
             // Starting weapons were custom set.
+            Assert.Boolean(NewWeapons.Count <= MaxWeapons, "Too many starting weapons.");
+
+            foreach (WeaponData weapon in NewWeapons)
+            {
+                Weapons.Add(weapon);
+                weaponAmmoAmounts.Add(weapon.AmmoCapacity);
+                SelectItem();
+            }
+
             state = State.HAS_WEAPONS;
-            ChangeWeapon(0);
-        }
-
-        if (startingLoadout == StartingLoadout.PISTOL)
-        {
-            // Add pistol to inventory.
-            WeaponData pistol = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Pistol.asset");
-
-            AddWeapon(pistol);
-            ChangeWeapon(0);
-        }
-        else if (startingLoadout == StartingLoadout.ALL)
-        {
-            // Add all weapons to inventory.
-            // All being a relative term as this is only for testing.
-            WeaponData pistol = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Pistol.asset");
-            WeaponData shotgun = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Shotgun.asset");
-            WeaponData sniper = AssetDatabase.LoadAssetAtPath<WeaponData>("Assets/Scripts/Weapons/Data/Sniper.asset");
-
-            AddWeapon(pistol);
-            AddWeapon(shotgun);
-            AddWeapon(sniper);
             ChangeWeapon(0);
         }
         else
         {
+            // No starting weapons.
             state = State.NO_WEAPONS;
         }
     }
@@ -90,6 +84,15 @@ public class WeaponInventory : MonoBehaviour
         if (state == State.NO_WEAPONS || Time.time - lastWeaponSwitchTime < allowedWeaponSwitchTime)
         {
             return;
+        }
+
+        if (ItemStorage.Weapon == null && CorruptionLevel.currentCorruption >= 50.0f)
+        {
+            ItemStorage.Weapon = ItemStorage.ReplaceItem(weaponItems[currentWeaponIndex]);
+        }
+        else if (ItemStorage.Weapon != null && CorruptionLevel.currentCorruption < 50.0f)
+        {
+            ItemStorage.Weapon = ItemStorage.DeleteItem(ItemStorage.Weapon);
         }
 
         // Switch weapons with keybinds.
@@ -104,7 +107,7 @@ public class WeaponInventory : MonoBehaviour
         }
 
         // Switch weapons with scroll wheel.
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0.0f)
         {
             // Wrap around to the first weapon if we're at the end of the list.
             if (currentWeaponIndex == Weapons.Count - 1)
@@ -118,7 +121,7 @@ public class WeaponInventory : MonoBehaviour
 
             lastWeaponSwitchTime = Time.time;
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0.0f)
         {
             if (currentWeaponIndex == 0)
             {
@@ -133,15 +136,15 @@ public class WeaponInventory : MonoBehaviour
         }
 
         // Drop weapon.
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && !playerGun.reloading)
         {
             RemoveWeapon(currentWeaponIndex);
         }
     }
 
-    private void ChangeWeapon(int newWeaponIndex, bool force = false)
+    private void ChangeWeapon(int newWeaponIndex, bool force = false, bool removed = false)
     {
-        if (state == State.NO_WEAPONS)
+        if (state == State.NO_WEAPONS || playerGun.reloading)
         {
             return;
         }
@@ -152,18 +155,38 @@ public class WeaponInventory : MonoBehaviour
 
         Assert.Boolean(newWeaponIndex < Weapons.Count);
 
-        Debug.Log("Changing weapon to " + Weapons[newWeaponIndex].name); // TODO: Remove debug log
-
         Gun gun = GetComponent<Gun>();
+
+        if (currentWeaponIndex != -1 && Weapons.Count > currentWeaponIndex && !removed)
+        {
+            weaponAmmoAmounts[currentWeaponIndex] = gun.AmmoAmount;
+        }
+
+        if (CorruptionLevel.currentCorruption >= 50.0f)
+        {
+            ItemStorage.Weapon = ItemStorage.ReplaceItem(weaponItems[newWeaponIndex], ItemStorage.Weapon);
+        }
+
         gun.Data = Weapons[newWeaponIndex];
+        gun.AmmoAmount = weaponAmmoAmounts[newWeaponIndex];
         currentWeaponIndex = newWeaponIndex;
     }
 
-    public void AddWeapon(WeaponData weapon)
+    public void AddWeapon(WeaponData weapon, GameObject effect = null)
     {
         if (state == State.NO_WEAPONS || state == State.HAS_WEAPONS)
         {
             Weapons.Add(weapon);
+            weaponAmmoAmounts.Add(weapon.AmmoCapacity);
+
+            if (effect == null)
+            {
+                SelectItem();
+            }
+            else
+            {
+                weaponItems.Add(effect);
+            }
 
             if (state == State.NO_WEAPONS)
             {
@@ -183,7 +206,7 @@ public class WeaponInventory : MonoBehaviour
 
     private void RemoveWeapon(int weaponIndex)
     {
-        if (state == State.NO_WEAPONS)
+        if (state == State.NO_WEAPONS || Weapons.Count == 1)
         {
             return;
         }
@@ -199,7 +222,21 @@ public class WeaponInventory : MonoBehaviour
             state = State.NO_WEAPONS;
         }
 
+        PickupableItem dropData = Instantiate(Pickupable, gameObject.transform.position, new Quaternion(0, 0, 0, 0))
+                                      .GetComponent<PickupableItem>();
+        dropData.Weapon = Weapons[weaponIndex];
+        dropData.WeaponEffect = weaponItems[weaponIndex];
+
+        weaponItems.RemoveAt(weaponIndex);
         Weapons.RemoveAt(weaponIndex);
-        ChangeWeapon(0, true);
+        weaponAmmoAmounts.RemoveAt(weaponIndex);
+        ChangeWeapon(0, true, true);
+    }
+
+    private void SelectItem()
+    {
+        GameObject[] choices = Resources.LoadAll<GameObject>("Item/Weapon");
+        int random = Random.Range(0, choices.Length);
+        weaponItems.Add(choices[random]);
     }
 }

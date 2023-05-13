@@ -7,6 +7,8 @@ TagManager:
   - Bullet
   - Enemy
   - Wall
+  - Pickupable
+  - Music Player
   layers:
   - Default
   - TransparentFX

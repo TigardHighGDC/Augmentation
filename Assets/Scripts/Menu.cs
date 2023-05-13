@@ -5,14 +5,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
 
 public class Menu : MonoBehaviour
 {
     public string Room;
 
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("Map"))
+        {
+            PlayerPrefs.DeleteKey("Map");
+        }
+
+        AsyncSceneLoader.GetInstance().LoadScene(Room, false);
+    }
+
     public void OnStartButton()
     {
-        // TODO: Use static scene manager. See GH-139.
-        SceneManager.LoadScene(Room);
+        AsyncSceneLoader.GetInstance().SwitchToNextScene();
     }
 }
