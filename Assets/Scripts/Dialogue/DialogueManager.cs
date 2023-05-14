@@ -50,19 +50,16 @@ public class DialogueManager : MonoBehaviour
             Assert.Boolean(false, "More than one DialogueManager in scene!");
         }
 
+        DialoguePanel.SetActive(false);
+        DialogueIsActive = false;
+        layoutAnimator = DialoguePanel.GetComponent<Animator>();
+
         instance = this;
     }
 
     public static DialogueManager GetInstance()
     {
         return instance;
-    }
-
-    private void Start()
-    {
-        DialoguePanel.SetActive(false);
-        DialogueIsActive = false;
-        layoutAnimator = DialoguePanel.GetComponent<Animator>();
     }
 
     private void Update()

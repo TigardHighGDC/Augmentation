@@ -11,14 +11,18 @@ public class Menu : MonoBehaviour
 {
     public string Room;
 
-    public void OnStartButton()
+    private void Start()
     {
         if (PlayerPrefs.HasKey("Map"))
         {
             PlayerPrefs.DeleteKey("Map");
         }
 
-        // TODO: Use static scene manager. See GH-139.
-        SceneManager.LoadScene(Room);
+        AsyncSceneLoader.GetInstance().LoadScene(Room, false);
+    }
+
+    public void OnStartButton()
+    {
+        AsyncSceneLoader.GetInstance().SwitchToNextScene();
     }
 }

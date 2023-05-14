@@ -28,6 +28,7 @@ MonoBehaviour:
   Knockback: 20
   DespawnTime: 2
   AutoReload: 1
+  BulletBounce: 0
   GunShotSound: {fileID: 8300000, guid: 56acccf981ef4664aa444778b40b61b3, type: 3}
   GunShotVolume: 0.8
   ReloadSound: {fileID: 8300000, guid: 0a1c588072789af42920dc10aa6d1b04, type: 3}

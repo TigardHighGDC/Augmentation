@@ -38,7 +38,7 @@ public class CorruptionLevel : MonoBehaviour
         KnockbackIncrease = 1.0f + PercentageIncrease(0.65f);
         AccuracyDecrease = 1.0f + PercentageIncrease(1.2f);
         ShootIntervalDecrease = 1.0f - PercentageIncrease(0.5f);
-        PlayerSpeedIncrease = 1.0f + PercentageIncrease(0.75f);
+        PlayerSpeedIncrease = 1.0f + PercentageIncrease(0.5f);
     }
 
     private void FragmentationController()

@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd87ece3e488cfa4e85350deff3460a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 6
 --- !u!50 &6924194263458031725
 Rigidbody2D:
   serializedVersion: 4
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26ec27b78f6aae48a6fa5c84726159f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 150
   InvincibilityTimer: 0
   sliderBar: {fileID: 0}
 --- !u!114 &8191980732911157799
