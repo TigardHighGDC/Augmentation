@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     // Variables changeable by items
     public static float C_Damage = 1.0f;
     public static int C_BulletPierce = 1;
+    public static int C_BulletBounce = 0;
     public static float C_Knockback = 1.0f;
 
     [HideInInspector]
@@ -17,12 +18,14 @@ public class Bullet : MonoBehaviour
 
     private Rigidbody2D rb;
     private int remainingPierce;
+    private int remainingBounce;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Invoke("DestroyBullet", Data.DespawnTime);
-        remainingPierce = Data.BulletPierce;
+        remainingPierce = Data.BulletPierce * C_BulletPierce;
+        remainingBounce = C_BulletBounce;
     }
 
     private void OnTriggerEnter2D(Collider2D collide)
@@ -34,34 +37,23 @@ public class Bullet : MonoBehaviour
             collide.GetComponent<Rigidbody2D>().AddForce(
                 transform.up * (Data.Knockback * CorruptionLevel.KnockbackIncrease * C_Knockback), ForceMode2D.Impulse);
             nonPlayerHealth.Damage(Data.Damage * C_Damage);
-
-            // Calls current bullet hit modifiers
-            ItemHandling.BulletHit?.Invoke();
             remainingPierce--;
 
-            if (remainingPierce * C_BulletPierce <= 0)
+            if (remainingPierce <= 0)
             {
                 DestroyBullet();
             }
-
-            BounceBullet(collide);
-
+            
             break;
         case "Wall":
-            if (!Data.BulletBounce)
+            if (remainingBounce > 0)
             {
-                DestroyBullet();
+                remainingBounce--;
+                BounceBullet(collide);
             }
             else
             {
-                remainingPierce--;
-
-                if (remainingPierce * C_BulletPierce <= 0)
-                {
-                    DestroyBullet();
-                }
-
-                BounceBullet(collide);
+                DestroyBullet();
             }
             break;
         }
