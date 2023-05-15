@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class LoadingBarRoom : MonoBehaviour
 {
     public float MaxTime = 30.0f;
+    public Vector3 WeaponSpawnPosition;
 
     private Slider slider;
     private bool endLoading = false;
@@ -35,6 +36,9 @@ public class LoadingBarRoom : MonoBehaviour
         if (slider.value <= 0.0f)
         {
             endLoading = true;
+            GameObject[] weapons = Resources.LoadAll<GameObject>("PickupableWeapon");
+            Instantiate(weapons[Random.Range(0, weapons.Length)], WeaponSpawnPosition, Quaternion.identity);
+
             EnemySpawner.LoadingBarFinished = true;
             slider.value = 0.0f;
         }

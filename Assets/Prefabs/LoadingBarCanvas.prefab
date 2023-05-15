@@ -421,3 +421,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxTime: 30
+  WeaponSpawnPosition: {x: 1.5, y: -6, z: 0}
