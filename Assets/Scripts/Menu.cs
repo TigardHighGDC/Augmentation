@@ -13,16 +13,18 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey("Map"))
-        {
-            PlayerPrefs.DeleteKey("Map");
-        }
-
         AsyncSceneLoader.GetInstance().LoadScene(Room, false);
     }
 
-    public void OnStartButton()
+    public void OnContinueButton()
     {
+        AsyncSceneLoader.GetInstance().SwitchToNextScene();
+    }
+
+    public void OnNewGameButton()
+    {
+        PlayerPrefs.DeleteKey("PlayerStats");
+        PlayerPrefs.DeleteKey("Map");
         AsyncSceneLoader.GetInstance().SwitchToNextScene();
     }
 }

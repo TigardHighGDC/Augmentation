@@ -14,6 +14,16 @@ public class PlayerHealth : MonoBehaviour
 
     private float remainingInvincibilityTime;
 
+    private void Awake()
+    {
+        PlayerStats playerStats = PlayerStatManager.GetInstance().PlayerStats;
+
+        if (playerStats != null)
+        {
+            Health = playerStats.MaxHealth;
+        }
+    }
+
     // set timer to timer :P
     private void Start()
     {

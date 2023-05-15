@@ -7,6 +7,30 @@ using Newtonsoft.Json;
 
 public class PlayerStatManager : MonoBehaviour
 {
+    public PlayerStats PlayerStats;
+
+    private static PlayerStatManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+        if (PlayerStats == null)
+        {
+            PlayerStats = GetPlayerStats();
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public static PlayerStatManager GetInstance()
+    {
+        return instance;
+    }
+
     public static void SavePlayerStats(PlayerStats playerStats)
     {
         string json = JsonConvert.SerializeObject(
@@ -16,7 +40,7 @@ public class PlayerStatManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public static PlayerStats GetPlayerStats()
+    private static PlayerStats GetPlayerStats()
     {
         if (!PlayerPrefs.HasKey("PlayerStats"))
         {

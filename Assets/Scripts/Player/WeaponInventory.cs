@@ -47,6 +47,16 @@ public class WeaponInventory : MonoBehaviour
     };
     // clang-format on
 
+    private void Awake()
+    {
+        PlayerStats playerStats = PlayerStatManager.GetInstance().PlayerStats;
+
+        if (playerStats != null)
+        {
+            NewWeapons = playerStats.StartingWeapons;
+        }
+    }
+
     private void Start()
     {
         if (hasAddedWeapons)
