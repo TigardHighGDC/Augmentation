@@ -38,6 +38,11 @@ public class AsyncSceneLoader : MonoBehaviour
         asyncLoad.allowSceneActivation = true;
     }
 
+    public void Unload()
+    {
+        asyncLoad = SceneManager.UnloadSceneAsync(nextSceneName);
+    }
+
     private IEnumerator LoadSceneAsync(bool switchImmediately)
     {
         asyncLoad = SceneManager.LoadSceneAsync(nextSceneName);
