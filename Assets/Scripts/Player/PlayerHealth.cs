@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public static float MaxHealth = 150f;
+    public static bool CanDie = true;
+
     [HideInInspector] public float Health;
     public float InvincibilityTimer;
     public SliderBarScript sliderBar;
@@ -40,6 +42,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void Damage(float damageAmount)
     {
+        ItemHandling.PlayerHit?.Invoke();
+
         if (remainingInvincibilityTime <= 0)
         {
             Health -= damageAmount;
@@ -47,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
             sliderBar.SetHealth(Health);
         }
 
-        if (Health <= 0 && !dying)
+        if (Health <= 0 && !dying && CanDie)
         {
             dying = true;
             Death();
@@ -55,7 +59,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // Handles changes when the player dies
-    private void Death()
+    public void Death()
     {
         AsyncSceneLoader.GetInstance().Unload();
         SceneManager.LoadScene("MainMenu");

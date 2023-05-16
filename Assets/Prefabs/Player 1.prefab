@@ -1029,7 +1029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916426696fc334441ad117add8a22e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupRange: 3
   UIParent: {fileID: 0}
   ItemUI: {fileID: 4258351137849350630, guid: e39e1b12e27cf1847a0e4852bb82be2c, type: 3}
 --- !u!1001 &5340368890341665137
