@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
+[System.Serializable]
 public class PlayerStats
 {
     public float MaxHealth;

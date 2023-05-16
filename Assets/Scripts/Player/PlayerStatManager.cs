@@ -7,7 +7,9 @@ using Newtonsoft.Json;
 
 public class PlayerStatManager : MonoBehaviour
 {
+    [HideInInspector]
     public PlayerStats PlayerStats;
+    public PlayerStats DefaultPlayerStats;
 
     private static PlayerStatManager instance;
 
@@ -21,6 +23,11 @@ public class PlayerStatManager : MonoBehaviour
         if (PlayerStats == null)
         {
             PlayerStats = GetPlayerStats();
+        }
+
+        if (PlayerStats == null)
+        {
+            PlayerStats = DefaultPlayerStats;
         }
 
         DontDestroyOnLoad(gameObject);
