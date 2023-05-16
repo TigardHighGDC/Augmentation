@@ -128,6 +128,7 @@ public class Gun : MonoBehaviour
         // Yield is required to pause the function
         yield return new WaitForSeconds(Data.ReloadSpeed * C_ReloadSpeed);
         AmmoAmount = Data.AmmoCapacity * C_AmmoCapacity;
+        ItemHandling.PlayerGunReload?.Invoke(gameObject);
         reloading = false;
     }
 
