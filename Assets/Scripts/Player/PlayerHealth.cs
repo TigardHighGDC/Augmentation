@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public SliderBarScript sliderBar;
 
     private float remainingInvincibilityTime;
+    private bool dying = false;
 
     // set timer to timer :P
     private void Start()
@@ -39,8 +40,9 @@ public class PlayerHealth : MonoBehaviour
             sliderBar.SetHealth(Health);
         }
 
-        if (Health <= 0)
+        if (Health <= 0 && !dying)
         {
+            dying = true;
             Death();
         }
     }
@@ -48,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
     // Handles changes when the player dies
     private void Death()
     {
-        AsyncSceneLoader.GetInstance().LoadScene("MainMenu");
+        AsyncSceneLoader.GetInstance().Unload();
+        SceneManager.LoadScene("MainMenu");
     }
 }
