@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float Health;
+    public static float MaxHealth = 150f;
+    [HideInInspector] public float Health;
     public float InvincibilityTimer;
     public SliderBarScript sliderBar;
 
@@ -18,7 +19,9 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         remainingInvincibilityTime = InvincibilityTimer;
-        sliderBar.SetMaxHealth(Health);
+        Health = MaxHealth;
+        sliderBar.SetMaxHealth(MaxHealth);
+        sliderBar.SetHealth(Health);
     }
 
     private void Update()
@@ -28,6 +31,10 @@ public class PlayerHealth : MonoBehaviour
         {
             remainingInvincibilityTime -= Time.deltaTime;
         }
+
+        // Changes the max health encase of an item change
+        sliderBar.SetMaxHealth(MaxHealth);
+        Health = Mathf.Min(MaxHealth, Health);
     }
 
     public void Damage(float damageAmount)

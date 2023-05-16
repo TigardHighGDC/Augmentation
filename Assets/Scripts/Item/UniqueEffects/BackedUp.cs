@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BackedUp : MonoBehaviour
+{	
+    private ItemType itemType;
+
+    private void Start()
+    {
+        // Apply stat and event changes here.
+
+        itemType = GetComponent<ItemType>();
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        // Add gameplay changes here.
+        
+        if (itemType.DestroyItem)
+        {
+            // Remove stat and event changes here.
+            Destroy(gameObject);
+        }
+    }
+}

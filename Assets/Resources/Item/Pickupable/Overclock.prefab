@@ -106,6 +106,6 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 5c82ec4ed28413f4ca32811ecbf5ed31, type: 3}
   Text: {fileID: 0}
   DestroyItem: 0
-  ItemPurpose: 0
+  ItemPurpose: 2
   ItemStats: Fire double bullets but consume 3x ammo
-  Lore: 
+  Cost: 25

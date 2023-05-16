@@ -56,7 +56,7 @@ MonoBehaviour:
   DestroyItem: 0
   ItemPurpose: 2
   ItemStats: Increases damage to 20%, but decreases accuracy by 35%
-  Lore: 
+  Cost: 10
 --- !u!114 &-8617587971812056946
 MonoBehaviour:
   m_ObjectHideFlags: 0

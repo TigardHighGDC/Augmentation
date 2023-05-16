@@ -17,7 +17,8 @@ public class ItemType : MonoBehaviour
 
     [Header("Description")]
     public string ItemStats;
-    public string Lore;
+
+    public float Cost = 0.0f;
 
     public enum ItemUse
     {

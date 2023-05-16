@@ -51,7 +51,7 @@ MonoBehaviour:
   DestroyItem: 0
   ItemPurpose: 2
   ItemStats: Bullets ricochet but can damage player, +1
-  Lore: 
+  Cost: 35
 --- !u!114 &1285434496822189384
 MonoBehaviour:
   m_ObjectHideFlags: 0

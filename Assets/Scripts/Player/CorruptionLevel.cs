@@ -22,6 +22,13 @@ public class CorruptionLevel : MonoBehaviour
         currentCorruption = Mathf.Max(currentCorruption, 0.0f);
     }
 
+    public static void FragmentationReset()
+    {
+        GameObject[] fragmentationArray = Resources.LoadAll<GameObject>("Item/Fragmentation");
+        int random = Random.Range(0, fragmentationArray.Length);
+        ItemStorage.Fragmentation = ItemStorage.ReplaceItem(fragmentationArray[random]);
+    }
+
     public float GetLevel()
     {
         return currentCorruption;
