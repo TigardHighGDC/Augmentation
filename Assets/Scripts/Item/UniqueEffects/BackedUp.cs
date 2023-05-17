@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BackedUp : MonoBehaviour
-{	
+{
     private ItemType itemType;
 
     private void Start()
@@ -21,11 +21,11 @@ public class BackedUp : MonoBehaviour
             CorruptionLevel.FragmentationReset();
             CorruptionLevel.Add(10000f);
             playerHealth.Health = PlayerHealth.MaxHealth;
-            
+
             PlayerHealth.CanDie = true;
             Destroy(gameObject);
         }
-        
+
         if (itemType.DestroyItem)
         {
             PlayerHealth.CanDie = true;

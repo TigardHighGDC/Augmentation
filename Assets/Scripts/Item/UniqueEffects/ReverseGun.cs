@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ReverseGun : MonoBehaviour
-{	
+{
     private ItemType itemType;
 
     private void Start()
@@ -14,7 +14,7 @@ public class ReverseGun : MonoBehaviour
     }
 
     private void Update()
-    {   
+    {
         if (itemType.DestroyItem)
         {
             Bullet.C_BulletBounce -= 1;

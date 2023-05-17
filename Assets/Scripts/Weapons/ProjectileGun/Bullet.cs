@@ -14,8 +14,10 @@ public class Bullet : MonoBehaviour
     public static float C_Knockback = 1.0f;
     public static bool C_DamgeOverRangeActive = false;
 
-    [HideInInspector] public WeaponData Data;
-    [HideInInspector] public float BulletTravel = 0.0f;
+    [HideInInspector]
+    public WeaponData Data;
+    [HideInInspector]
+    public float BulletTravel = 0.0f;
 
     private Rigidbody2D rb;
     private int remainingPierce;
@@ -44,7 +46,7 @@ public class Bullet : MonoBehaviour
             {
                 DestroyBullet();
             }
-            
+
             break;
         case "Wall":
             if (remainingBounce > 0)
@@ -60,7 +62,7 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
         BulletTravel += rb.velocity.magnitude * Time.deltaTime;
     }
@@ -69,7 +71,6 @@ public class Bullet : MonoBehaviour
     {
         rb.velocity = Vector3.Reflect(rb.velocity, collide.transform.up);
     }
-    
 
     // Increases bullet damage depending on how far it has traveled
     private float DamageOverRange()

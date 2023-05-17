@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DiceGun : MonoBehaviour
-{	
+{
     private ItemType itemType;
 
     private void Start()
@@ -29,6 +29,5 @@ public class DiceGun : MonoBehaviour
         int maxAmmo = playerGun.Data.AmmoCapacity * Gun.C_AmmoCapacity;
         int random = Random.Range(0, maxAmmo * 2 + 1);
         playerGun.AmmoAmount = random;
-
     }
 }

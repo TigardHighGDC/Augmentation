@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ReverseGunExtreme : MonoBehaviour
-{	
+{
     private ItemType itemType;
 
     private void Start()
@@ -15,7 +15,7 @@ public class ReverseGunExtreme : MonoBehaviour
     }
 
     private void Update()
-    {   
+    {
         if (itemType.DestroyItem)
         {
             Gun.C_BulletSpeed /= 1.5f;

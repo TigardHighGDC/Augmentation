@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SupersonicBullet : MonoBehaviour
-{	
+{
     private ItemType itemType;
 
     private void Start()

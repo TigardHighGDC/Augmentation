@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ZipBomb : MonoBehaviour
-{	
+{
     private ItemType itemType;
 
     private void Start()
@@ -18,7 +18,7 @@ public class ZipBomb : MonoBehaviour
     {
         PlayerHealth playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
         playerHealth.Health = PlayerHealth.MaxHealth;
-        
+
         if (itemType.DestroyItem)
         {
             ItemHandling.PlayerHit -= RandomDeath;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UnexplainableBug : MonoBehaviour
-{	
+{
     private ItemType itemType;
 
     private void Start()
@@ -16,7 +16,8 @@ public class UnexplainableBug : MonoBehaviour
     private void Update()
     {
         PlayerHealth playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
-        playerHealth.Health = (CorruptionLevel.currentCorruption / CorruptionLevel.currentCorruption) * PlayerHealth.MaxHealth;
+        playerHealth.Health =
+            (CorruptionLevel.currentCorruption / CorruptionLevel.currentCorruption) * PlayerHealth.MaxHealth;
 
         if (itemType.DestroyItem)
         {

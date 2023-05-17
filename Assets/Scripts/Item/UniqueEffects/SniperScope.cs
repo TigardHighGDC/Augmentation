@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SniperScope : MonoBehaviour
-{	
+{
     private ItemType itemType;
 
     private void Start()
@@ -15,7 +15,7 @@ public class SniperScope : MonoBehaviour
     }
 
     private void Update()
-    {   
+    {
         if (itemType.DestroyItem)
         {
             Bullet.C_DamgeOverRangeActive = false;

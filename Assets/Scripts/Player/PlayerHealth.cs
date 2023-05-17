@@ -12,7 +12,8 @@ public class PlayerHealth : MonoBehaviour
     public static bool CanDie = true;
     public static bool Invincibility = false;
 
-    [HideInInspector] public float Health;
+    [HideInInspector]
+    public float Health;
     public SliderBarScript sliderBar;
 
     private float remainingInvincibilityTime;
