@@ -16,7 +16,7 @@ public class BackedUp : MonoBehaviour
     private void Update()
     {
         PlayerHealth playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
-        if (playerHealth.Health <= 0)
+        if (playerHealth.Health <= 3.0f)
         {
             CorruptionLevel.FragmentationReset();
             CorruptionLevel.Add(10000f);

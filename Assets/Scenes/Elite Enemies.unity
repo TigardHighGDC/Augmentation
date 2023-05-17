@@ -3087,6 +3087,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1160879113
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 650614909417828722, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 650614909417828722, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7895999
+      objectReference: {fileID: 0}
+    - target: {fileID: 650614909417828722, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.754943
+      objectReference: {fileID: 0}
+    - target: {fileID: 650614909417828722, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.030741839
+      objectReference: {fileID: 0}
+    - target: {fileID: 650614909417828722, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 650614909417828722, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650614909417828722, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650614909417828722, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650614909417828722, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650614909417828722, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650614909417828722, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 650614909417828723, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
+      propertyPath: m_Name
+      value: SupersonicBullet
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 72b29c32e91eaf04190701d91ee8bced, type: 3}
 --- !u!114 &1440254967 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8682662485285273308, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}

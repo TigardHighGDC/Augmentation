@@ -11,9 +11,11 @@ public class ItemHandling : MonoBehaviour
 
     public delegate void GameObjectEventHandler(GameObject value);
 
+    public delegate void FloatEventHandler(float value);
+
     public static BasicEventHandler BulletHit;
 
-    public static BasicEventHandler PlayerHit;
-
     public static GameObjectEventHandler PlayerGunReload;
+
+    public static FloatEventHandler PlayerHit;
 }

@@ -10,44 +10,29 @@ public class PlayerHealth : MonoBehaviour
 {
     public static float MaxHealth = 150f;
     public static bool CanDie = true;
+    public static bool Invincibility = false;
 
     [HideInInspector] public float Health;
-    public float InvincibilityTimer;
     public SliderBarScript sliderBar;
 
     private float remainingInvincibilityTime;
     private bool dying = false;
 
-    // set timer to timer :P
-    private void Start()
-    {
-        remainingInvincibilityTime = InvincibilityTimer;
-        Health = MaxHealth;
-        sliderBar.SetMaxHealth(MaxHealth);
-        sliderBar.SetHealth(Health);
-    }
-
     private void Update()
     {
-        // Update remaining invincibility time
-        if (remainingInvincibilityTime <= InvincibilityTimer && remainingInvincibilityTime > 0)
-        {
-            remainingInvincibilityTime -= Time.deltaTime;
-        }
-
         // Changes the max health encase of an item change
         sliderBar.SetMaxHealth(MaxHealth);
+        sliderBar.SetHealth(Health);
         Health = Mathf.Min(MaxHealth, Health);
     }
 
     public void Damage(float damageAmount)
     {
-        ItemHandling.PlayerHit?.Invoke();
+        ItemHandling.PlayerHit?.Invoke(damageAmount);
 
-        if (remainingInvincibilityTime <= 0)
+        if (!Invincibility)
         {
             Health -= damageAmount;
-            remainingInvincibilityTime = InvincibilityTimer;
             sliderBar.SetHealth(Health);
         }
 
