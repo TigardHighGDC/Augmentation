@@ -196,4 +196,5 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom
+  margin-bottom: 40px;
+}
