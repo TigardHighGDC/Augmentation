@@ -198,3 +198,9 @@ body {
   justify-content: center;
   margin-bottom: 40px;
 }
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
