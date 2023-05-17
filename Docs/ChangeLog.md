@@ -28,6 +28,8 @@ A bi-weekly log of project changes separated by two week sprints.
   - Updated the level map icons with our own assets [#168](https://github.com/TigardHighGDC/Augmentation/pull/168).
   - Added bullet bounce weapon effect [#178](https://github.com/TigardHighGDC/Augmentation/pull/178).
   - Now loads scenes asynchronously [#181](https://github.com/TigardHighGDC/Augmentation/pull/181).
+- Documentation:
+  - Created a block diagram for the map generation algorithm [#188](https://github.com/TigardHighGDC/Augmentation/pull/188).
 - Bug Fixes:
   - Fixed a problem with the weapon inventory not tracking the amount of ammo in each weapon after the weapon was dropped [#171](https://github.com/TigardHighGDC/Augmentation/pull/171).
   - Fixed a bug where the scene would not switch back to the main menu after player death [#187](https://github.com/TigardHighGDC/Augmentation/pull/187).
