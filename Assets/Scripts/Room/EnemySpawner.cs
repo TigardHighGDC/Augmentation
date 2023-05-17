@@ -65,14 +65,14 @@ public class EnemySpawner : MonoBehaviour
         switch (Room)
         {
         case RoomType.Basic:
-            basicEnemiesSpawn = 4 + Random.Range(-1, 2);
+            basicEnemiesSpawn = 5;
             eliteEnemiesSpawn = 1;
             SpawnGroup(basicEnemiesSpawn, eliteEnemiesSpawn);
             break;
 
         case RoomType.Elite:
-            basicEnemiesSpawn = 6 + Random.Range(-1, 2);
-            eliteEnemiesSpawn = 2 + Random.Range(0, 1);
+            basicEnemiesSpawn = 7;
+            eliteEnemiesSpawn = 2;
             SpawnGroup(basicEnemiesSpawn, eliteEnemiesSpawn);
             break;
 

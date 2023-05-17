@@ -50,7 +50,8 @@ MonoBehaviour:
   Text: {fileID: 0}
   DestroyItem: 0
   ItemPurpose: 0
-  ItemStats: 'Bullets ricochet but can damage player, 2+ ricochet, 50% increase speed '
+  ItemStats: 'Bullets ricochet but can damage the player, 2+ ricochet, 50% increase
+    speed '
   Cost: 0
 --- !u!114 &1191039551061837121
 MonoBehaviour:

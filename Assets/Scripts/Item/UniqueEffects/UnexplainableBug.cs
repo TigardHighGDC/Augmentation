@@ -10,6 +10,7 @@ public class UnexplainableBug : MonoBehaviour
     {
         itemType = GetComponent<ItemType>();
         ItemHandling.PlayerHit += DealDamageToCorruption;
+        PlayerHealth.Invincibility = true;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -21,6 +22,7 @@ public class UnexplainableBug : MonoBehaviour
 
         if (itemType.DestroyItem)
         {
+            PlayerHealth.Invincibility = false;
             ItemHandling.PlayerHit -= DealDamageToCorruption;
             Destroy(gameObject);
         }
@@ -28,6 +30,6 @@ public class UnexplainableBug : MonoBehaviour
 
     private void DealDamageToCorruption(float damage)
     {
-        CorruptionLevel.currentCorruption -= damage;
+        CorruptionLevel.Add(-damage);
     }
 }

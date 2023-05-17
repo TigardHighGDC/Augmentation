@@ -9,7 +9,6 @@ public class ItemType : MonoBehaviour
 {
     public string Name;
     public Sprite Image;
-    public Sprite Text;
 
     [Header("Event")]
     public bool DestroyItem = false;
