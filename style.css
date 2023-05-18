@@ -1,8 +1,200 @@
 /* Copyright (c) TigardHighGDC
 SPDX-License SPDX-License-Identifier: Apache-2.0 */
 
-@import "https://cdn.jsdelivr.net/npm/@primer/css@20.5.0/dist/primer.min.css";
+@font-face {
+  font-family: "TitleFont";
+  src: url(TypefaceMarioWorldPixelFilledRegular-rgVMx.ttf) format("truetype");
+}
 
-.clear-underline {
+@font-face {
+  font-family: "PixelFont";
+  src: url(PixeloidSans-JR6qo.ttf) format("truetype");
+}
+
+body {
+  background-color: #2e2e2e;
+}
+
+.title {
+  font-family: "TitleFont", sans-serif;
+  font-size: 75px;
+  text-align: center;
+  background: rgb(42,108,122);
+  background: radial-gradient(circle, rgba(42,108,122,1) 10%, rgba(145,0,68,1) 42%, rgba(249,0,61,1) 69%, rgba(249,0,61,1) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin:0;
+}
+
+.navbar ul {
+  list-style:none;
+  background:#2e2e2e;
+  padding: 0;
+  margin: 0;
+  text-align:center;
+}
+
+.navbar li {
+  display: inline-block;
+}
+
+.navbar a{
   text-decoration: none;
+  color: #fff;
+  width:75px;
+  display:block;
+  padding: 40px 35px;
+  font-size: 18px;
+  font-family: "PixelFont", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+.navbar a:hover{
+  background:#2a6c7a;
+}
+
+.navbar img {
+  float: left;
+  margin-top: -15px; /* add this line */
+  margin-bottom: 50px;
+  padding-left: 20px;
+  height: 135px;
+  width: 135px;
+}
+
+
+.team_about-header {
+  text-align: center;
+  color: #7BB3C0;
+}
+
+.team_about-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin: 20px 0;
+}
+
+.team_about-subheader {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  width: 100%;
+}
+
+.team_about-card {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #C5E6EF;
+  transition: all 0.3s ease;
+}
+
+.team_about-card:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 5);
+}
+
+.team_about-card-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.team_about-card-name {
+  text-align:center;
+  margin: 0;
+  font-size: 1.2rem;
+  font-family:"PixelFont", sans-serif;
+}
+
+.team_about-card-role {
+  text-align:center;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.team_about-card-description {
+  font-family: "Comic Sans MS", sans-serif;
+  text-align:center;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  height: 100px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.team_about-card-contact {
+  text-align:center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+
+.team_about-card-contact li {
+  text-align:center;
+  margin-bottom: 5px;
+  font-style:italic;
+}
+
+.concept-section {
+  font-family: "Comic Sans MS", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #C5E6EF;
+}
+
+.concept-title {
+  font-family: "PixelFont", sans-serif;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #C5E6EF;
+}
+
+.concept-subtitle {
+  font-family: "PixelFont", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #C5E6EF;
+}
+
+.concept-subheading {
+  font-family: "PixelFont", sans-serif;
+  font-size: 32px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.concept-description {
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.concept-list {
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+.concept-list li {
+  margin-bottom: 10px;
+}
+
+.concept-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
 }
