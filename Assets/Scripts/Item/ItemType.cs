@@ -9,7 +9,6 @@ public class ItemType : MonoBehaviour
 {
     public string Name;
     public Sprite Image;
-    public Sprite Text;
 
     [Header("Event")]
     public bool DestroyItem = false;
@@ -17,7 +16,8 @@ public class ItemType : MonoBehaviour
 
     [Header("Description")]
     public string ItemStats;
-    public string Lore;
+
+    public float Cost = 0.0f;
 
     public enum ItemUse
     {

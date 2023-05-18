@@ -2886,6 +2886,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
+--- !u!1 &1114553729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1918439168085610199, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
+  m_PrefabInstance: {fileID: 1114553728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1144680525
 GameObject:
   m_ObjectHideFlags: 0
@@ -3104,30 +3109,10 @@ PrefabInstance:
       propertyPath: AmmoText
       value: 
       objectReference: {fileID: 1440254967}
-    - target: {fileID: 1993521923, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
-      propertyPath: MaxWeapons
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1993521923, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
-      propertyPath: Weapons.array.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1993521923, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
-      propertyPath: Weapons.array.Array.data[0]
+    - target: {fileID: 702607546, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
+      propertyPath: UIParent
       value: 
-      objectReference: {fileID: 11400000, guid: a18bccf47773fd34c8715c1dbdb97f52, type: 2}
-    - target: {fileID: 1993521923, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
-      propertyPath: Weapons.array.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 622b6880c4f9bf84684f20474f0c599a, type: 2}
-    - target: {fileID: 1993521923, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
-      propertyPath: Weapons.array.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: c3111fb56c038cf4890b61ab799989e5, type: 2}
-    - target: {fileID: 1993521923, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
-      propertyPath: Weapons.array.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4532e38c302d7bc4cba21c24e8e4d4a8, type: 2}
+      objectReference: {fileID: 1114553729}
     - target: {fileID: 382574295197922506, guid: 3e6dc5e41ae1abc4d901f22ed4aa6058, type: 3}
       propertyPath: sliderBar
       value: 

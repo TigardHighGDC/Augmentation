@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TileMap: {fileID: 0}
-  Enemy: 1
+  Room: 1
   BasicEnemies:
   - {fileID: 5694345433127791792, guid: 72936f93b23f70a4190692bb870b5e5f, type: 3}
   - {fileID: 15184874389256742, guid: 6f95ff7e446630b46b109e529511b67d, type: 3}
