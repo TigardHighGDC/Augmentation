@@ -50,4 +50,4 @@ MonoBehaviour:
   DefaultPlayerStats:
     MaxHealth: 150
     StartingWeapons:
-    - {fileID: 11400000, guid: 622b6880c4f9bf84684f20474f0c599a, type: 2}
+    - {fileID: 11400000, guid: a18bccf47773fd34c8715c1dbdb97f52, type: 2}

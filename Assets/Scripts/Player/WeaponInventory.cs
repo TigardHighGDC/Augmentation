@@ -49,6 +49,8 @@ public class WeaponInventory : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Current weapons: " + Weapons.Count);
+
         if (hasAddedWeapons)
         {
             return;
@@ -62,6 +64,10 @@ public class WeaponInventory : MonoBehaviour
             // Starting weapons were custom set.
             Assert.Boolean(NewWeapons.Count <= MaxWeapons, "Too many starting weapons.");
 
+            Weapons.Clear();
+            weaponAmmoAmounts.Clear();
+            weaponItems.Clear();
+
             foreach (WeaponData weapon in NewWeapons)
             {
                 Weapons.Add(weapon);
@@ -70,15 +76,24 @@ public class WeaponInventory : MonoBehaviour
             }
 
             state = State.HAS_WEAPONS;
-            ChangeWeapon(0);
         }
         else
         {
             // No starting weapons.
             state = State.NO_WEAPONS;
         }
+
+        if (Weapons.Count > 0)
+        {
+            ChangeWeapon(0);
+        }
+
+        foreach (var weapon in Weapons)
+        {
+            Debug.Log("Weapon: " + weapon.WeaponName);
+        }
     }
-    
+
     private void Update()
     {
         if (state == State.NO_WEAPONS || Time.time - lastWeaponSwitchTime < allowedWeaponSwitchTime)
@@ -170,6 +185,7 @@ public class WeaponInventory : MonoBehaviour
         gun.Data = Weapons[newWeaponIndex];
         gun.AmmoAmount = weaponAmmoAmounts[newWeaponIndex];
         currentWeaponIndex = newWeaponIndex;
+        Debug.Log("Changed to weapon " + Weapons[newWeaponIndex].WeaponName);
     }
 
     public void AddWeapon(WeaponData weapon, GameObject effect = null)
