@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
     public static bool LoadingBarFinished = false;
 
     private float playerSpawnRadius = 5.0f;
-    private float ambushProbability = 0.1f;
+    private float ambushProbability = 20;
     private GameObject player;
 
     private void Awake()
@@ -29,10 +29,11 @@ public class EnemySpawner : MonoBehaviour
     {
         // Removes corruption in exchange for possible enemy ambush
         CorruptionLevel.Add(-15.0f);
+        Debug.Log("ambush");
 
-        if (Random.value <= ambushProbability)
+        if (Random.Range(0, 101) <= ambushProbability)
         {
-            SpawnGroup(6, 2);
+            SpawnGroup(4, 2);
             return true;
         }
 
@@ -78,6 +79,8 @@ public class EnemySpawner : MonoBehaviour
 
         case RoomType.LoadingBar:
             InvokeRepeating("LoadingBarEnemySpawn", 0, 2.5f);
+            break;
+        default:
             break;
         }
     }

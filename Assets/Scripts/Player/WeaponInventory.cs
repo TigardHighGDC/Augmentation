@@ -15,7 +15,7 @@ public class WeaponInventory : MonoBehaviour
     public List<WeaponData> NewWeapons;
     private static List<WeaponData> Weapons = new List<WeaponData>();
 
-    private bool hasAddedWeapons = false;
+    private static bool hasAddedWeapons = false;
     private Gun playerGun;
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
