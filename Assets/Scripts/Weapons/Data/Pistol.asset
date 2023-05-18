@@ -25,7 +25,7 @@ MonoBehaviour:
   BulletPerTrigger: 1
   AmmoCapacity: 6
   Spread: 10
-  Knockback: 20
+  Knockback: 25
   DespawnTime: 2
   AutoReload: 1
   BulletBounce: 0

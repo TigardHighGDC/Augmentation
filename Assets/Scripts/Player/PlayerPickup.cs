@@ -51,7 +51,6 @@ public class PlayerPickup : MonoBehaviour
         if (currentItem != null && itemDistance <= pickupRange && Input.GetKeyDown(KeyCode.F))
         {
             Pickup(currentItem.GetComponent<PickupableItem>());
-            Destroy(currentItem);
         }
     }
 
@@ -61,26 +60,29 @@ public class PlayerPickup : MonoBehaviour
         {
             gameObject.GetComponent<WeaponInventory>().AddWeapon(pickup.Weapon, pickup.WeaponEffect);
         }
-        else if (pickup.Item != null)
+        else if (pickup.Item != null && pickup.Item.GetComponent<ItemType>().Cost <= CorruptionLevel.currentCorruption)
         {
+            CorruptionLevel.Add(-pickup.Item.GetComponent<ItemType>().Cost);
             GameObject itemUI = Instantiate(ItemUI, UIParent.transform);
             itemUI.GetComponent<RectTransform>().anchoredPosition += ItemStorage.ItemUIPosition();
             itemUI.GetComponent<Image>().sprite = pickup.Item.GetComponent<ItemType>().Image;
             ItemStorage.ItemList.Add(ItemStorage.ReplaceItem(pickup.Item));
+            ItemStorage.ItemPosition.Add(pickup.Item.GetComponent<ItemType>().Index);
+            Destroy(currentItem);
         }
     }
 
     private void DisplayDescription()
     {
         PickupableItem itemPickup = currentItem.GetComponent<PickupableItem>();
-        if (itemPickup.Item != null)
+        if (itemPickup != null && itemPickup.Item != null)
         {
             ItemType itemType = itemPickup.Item.GetComponent<ItemType>();
             RectTransform descriptionPosition = itemDescription.GetComponent<RectTransform>();
             descriptionPosition.anchoredPosition = currentItem.transform.position + new Vector3(0.0f, -2.0f, 0.0f);
             foreach (TextMeshProUGUI textUI in itemDescription.GetComponentsInChildren<TextMeshProUGUI>())
             {
-                textUI.text = $"{itemType.Name}: {itemType.ItemStats}";
+                textUI.text = $"Cost: {itemType.Cost}, {itemType.Name}: {itemType.ItemStats}";
             }
         }
     }

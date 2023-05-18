@@ -47,11 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Sniper Scope
   Image: {fileID: 21300000, guid: a43a8fac1a9c0bc4db09884ac1494b8e, type: 3}
-  Text: {fileID: 0}
   DestroyItem: 0
   ItemPurpose: 2
   ItemStats: More damage at longer range, but less damage close up1
   Cost: 20
+  Index: 4
 --- !u!114 &5649498529645750997
 MonoBehaviour:
   m_ObjectHideFlags: 0

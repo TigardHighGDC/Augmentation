@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e195040d02fd8224b9f70d0087d6983f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsLocked: 1
-  LockedSprite: {fileID: 21300000, guid: 05476d361c1f18b4abbedc98c9509c1f, type: 3}
-  UnlockedSprite: {fileID: 21300000, guid: 9b0a72e25575de04b9d5c12a625550e0, type: 3}
+  LockedSprite: {fileID: 21300000, guid: e195040d02fd8224b9f70d0087d6983f, type: 3}
+  UnlockedSprite: {fileID: 21300000, guid: ab24753fe845cd645affa63f0d10b0bb, type: 3}
   SceneToLoad: Level Map
 --- !u!114 &8369838331063653014
 MonoBehaviour:
@@ -128,16 +128,16 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0000009536743, y: -0.5827503}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.9196491, y: 3.810913}
   m_EdgeRadius: 0

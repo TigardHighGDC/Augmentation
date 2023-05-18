@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (Random.value <= ambushProbability)
         {
-            SpawnGroup(8, 1);
+            SpawnGroup(6, 2);
             return true;
         }
 

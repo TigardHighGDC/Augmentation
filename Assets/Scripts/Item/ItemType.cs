@@ -19,6 +19,8 @@ public class ItemType : MonoBehaviour
 
     public float Cost = 0.0f;
 
+    public int Index = 0;
+
     public enum ItemUse
     {
         Weapon,
