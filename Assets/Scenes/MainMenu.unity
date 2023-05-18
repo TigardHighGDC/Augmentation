@@ -1526,5 +1526,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerStats
       objectReference: {fileID: 0}
+    - target: {fileID: 4789057121056509013, guid: cf3febe9684a86c498ea517a72ac5a60, type: 3}
+      propertyPath: DefaultPlayerStats.StartingWeapons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789057121056509013, guid: cf3febe9684a86c498ea517a72ac5a60, type: 3}
+      propertyPath: DefaultPlayerStats.StartingWeapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 622b6880c4f9bf84684f20474f0c599a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf3febe9684a86c498ea517a72ac5a60, type: 3}

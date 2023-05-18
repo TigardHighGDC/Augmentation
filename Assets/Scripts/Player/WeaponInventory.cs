@@ -49,8 +49,6 @@ public class WeaponInventory : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Current weapons: " + Weapons.Count);
-
         if (hasAddedWeapons)
         {
             return;
@@ -86,11 +84,6 @@ public class WeaponInventory : MonoBehaviour
         if (Weapons.Count > 0)
         {
             ChangeWeapon(0);
-        }
-
-        foreach (var weapon in Weapons)
-        {
-            Debug.Log("Weapon: " + weapon.WeaponName);
         }
     }
 
@@ -159,7 +152,7 @@ public class WeaponInventory : MonoBehaviour
 
     private void ChangeWeapon(int newWeaponIndex, bool force = false, bool removed = false)
     {
-        if (state == State.NO_WEAPONS || playerGun.reloading)
+        if (Weapons.Count < 1 || playerGun.reloading)
         {
             return;
         }
@@ -185,7 +178,6 @@ public class WeaponInventory : MonoBehaviour
         gun.Data = Weapons[newWeaponIndex];
         gun.AmmoAmount = weaponAmmoAmounts[newWeaponIndex];
         currentWeaponIndex = newWeaponIndex;
-        Debug.Log("Changed to weapon " + Weapons[newWeaponIndex].WeaponName);
     }
 
     public void AddWeapon(WeaponData weapon, GameObject effect = null)

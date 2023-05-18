@@ -19,6 +19,8 @@ public class PlayerStatManager : MonoBehaviour
         {
             PlayerStats = DefaultPlayerStats;
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -53,5 +55,10 @@ public class PlayerStatManager : MonoBehaviour
         }
 
         return playerStats;
+    }
+
+    private void OnApplicationQuit()
+    {
+        SavePlayerStats(PlayerStats);
     }
 }
