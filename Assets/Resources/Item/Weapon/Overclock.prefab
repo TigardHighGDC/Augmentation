@@ -108,4 +108,4 @@ MonoBehaviour:
   DestroyItem: 0
   ItemPurpose: 0
   ItemStats: Fire double bullets but consume 3x ammo
-  Lore: 
+  Cost: 0
