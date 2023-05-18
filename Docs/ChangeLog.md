@@ -23,6 +23,9 @@ A bi-weekly log of project changes separated by two week sprints.
   - Now maintains certain game actions across rooms [#180](https://github.com/TigardHighGDC/Augmentation/pull/180).
   - Created a NPC text box similar to animal crossing [#169](https://github.com/TigardHighGDC/Augmentation/pull/169).
   - Boss fight with bullet patterns implemented [#183](https://github.com/TigardHighGDC/Augmentation/pull/183).
+  - Created items from our design doc [#193](https://github.com/TigardHighGDC/Augmentation/pull/193).
+  - Created pop-up UI for item descriptions [#193](https://github.com/TigardHighGDC/Augmentation/pull/193).
+  - Created loading bar room [#193](https://github.com/TigardHighGDC/Augmentation/pull/193).
 - Enhancements:
   - Fully added our art into the game [#172](https://github.com/TigardHighGDC/Augmentation/pull/172).
   - Updated the level map icons with our own assets [#168](https://github.com/TigardHighGDC/Augmentation/pull/168).
