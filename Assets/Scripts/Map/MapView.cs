@@ -94,6 +94,7 @@ public class MapView : MonoBehaviour
             mapNode.SetUp(node, blueprint);
             mapNode.transform.localPosition = node.Position;
             MapNodes.Add(mapNode);
+            mapNode.transform.localScale = new Vector3(blueprint.Scale, blueprint.Scale, 1.0f);
         }
 
         // Draw the paths between nodes

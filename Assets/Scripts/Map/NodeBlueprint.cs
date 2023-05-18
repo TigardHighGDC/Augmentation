@@ -8,4 +8,5 @@ public class NodeBlueprint : ScriptableObject
 {
     public Sprite Sprite;
     public NodeType NodeType;
+    public float Scale = 1.0f;
 }
