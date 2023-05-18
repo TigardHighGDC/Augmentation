@@ -105,6 +105,21 @@ public class Bullet : MonoBehaviour
     // DestroyBullet() is called in the invoke function
     private void DestroyBullet()
     {
+        if (Data.BulletExplosion)
+        {
+            GameObject explosion = Instantiate(Data.ExplosionEffect, transform.position, Quaternion.identity);
+            Destroy(explosion, 0.25f);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, Data.ExplosionRadius);
+
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.gameObject.tag == "Enemy")
+                {
+                    collider.GetComponent<NonPlayerHealth>().Damage(Data.Damage * C_Damage);
+                }
+            }
+        }
+
         Destroy(gameObject);
     }
 }
