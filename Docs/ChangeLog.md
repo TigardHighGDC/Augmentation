@@ -26,6 +26,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Created items from our design doc [#193](https://github.com/TigardHighGDC/Augmentation/pull/193).
   - Created pop-up UI for item descriptions [#193](https://github.com/TigardHighGDC/Augmentation/pull/193).
   - Created loading bar room [#193](https://github.com/TigardHighGDC/Augmentation/pull/193).
+  - Added the ability to save player state in addition to map state [#184](https://github.com/TigardHighGDC/Augmentation/pull/184).
 - Enhancements:
   - Fully added our art into the game [#172](https://github.com/TigardHighGDC/Augmentation/pull/172).
   - Updated the level map icons with our own assets [#168](https://github.com/TigardHighGDC/Augmentation/pull/168).
