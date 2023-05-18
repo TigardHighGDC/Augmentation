@@ -64,21 +64,21 @@ public class EnemySpawner : MonoBehaviour
         int eliteEnemiesSpawn;
         switch (Room)
         {
-        case RoomType.Basic:
-            basicEnemiesSpawn = 5;
-            eliteEnemiesSpawn = 1;
-            SpawnGroup(basicEnemiesSpawn, eliteEnemiesSpawn);
-            break;
+            case RoomType.Basic:
+                basicEnemiesSpawn = 5;
+                eliteEnemiesSpawn = 1;
+                SpawnGroup(basicEnemiesSpawn, eliteEnemiesSpawn);
+                break;
 
-        case RoomType.Elite:
-            basicEnemiesSpawn = 7;
-            eliteEnemiesSpawn = 2;
-            SpawnGroup(basicEnemiesSpawn, eliteEnemiesSpawn);
-            break;
+            case RoomType.Elite:
+                basicEnemiesSpawn = 7;
+                eliteEnemiesSpawn = 2;
+                SpawnGroup(basicEnemiesSpawn, eliteEnemiesSpawn);
+                break;
 
-        case RoomType.LoadingBar:
-            InvokeRepeating("LoadingBarEnemySpawn", 0, 2.5f);
-            break;
+            case RoomType.LoadingBar:
+                InvokeRepeating("LoadingBarEnemySpawn", 0, 2.5f);
+                break;
         }
     }
 

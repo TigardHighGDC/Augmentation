@@ -146,18 +146,18 @@ public class DialogueManager : MonoBehaviour
 
             switch (tagKey)
             {
-            case speakerTag:
-                DialogueProfile profile = DialogueProfiles.Find(x => x.Name == tagValue);
-                Assert.Boolean(profile != null, "Invalid speaker: " + tagValue);
-                SpeakerText.text = profile.Name;
-                PortraitImage.GetComponent<Image>().sprite = profile.Portrait;
-                break;
-            case layoutTag:
-                layoutAnimator.Play(tagValue);
-                break;
-            default:
-                Assert.Boolean(false, "Invalid tag: " + tag);
-                break; // Will never reach.
+                case speakerTag:
+                    DialogueProfile profile = DialogueProfiles.Find(x => x.Name == tagValue);
+                    Assert.Boolean(profile != null, "Invalid speaker: " + tagValue);
+                    SpeakerText.text = profile.Name;
+                    PortraitImage.GetComponent<Image>().sprite = profile.Portrait;
+                    break;
+                case layoutTag:
+                    layoutAnimator.Play(tagValue);
+                    break;
+                default:
+                    Assert.Boolean(false, "Invalid tag: " + tag);
+                    break; // Will never reach.
             }
         }
     }
