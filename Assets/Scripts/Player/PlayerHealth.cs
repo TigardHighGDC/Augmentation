@@ -23,13 +23,6 @@ public class PlayerHealth : MonoBehaviour
     // set timer to timer :P
     private void Start()
     {
-        PlayerStats playerStats = PlayerStatManager.GetInstance().PlayerStats;
-
-        if (playerStats != null)
-        {
-            Health = playerStats.MaxHealth;
-        }
-
         remainingInvincibilityTime = InvincibilityTimer;
         sliderBar.SetMaxHealth(Health);
     }

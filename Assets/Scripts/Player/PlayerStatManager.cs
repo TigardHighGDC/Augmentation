@@ -11,31 +11,21 @@ public class PlayerStatManager : MonoBehaviour
     public PlayerStats PlayerStats;
     public PlayerStats DefaultPlayerStats;
 
-    private static PlayerStatManager instance;
-
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-
-        if (PlayerStats == null)
-        {
-            PlayerStats = GetPlayerStats();
-        }
+        PlayerStats = GetPlayerStats();
 
         if (PlayerStats == null)
         {
             PlayerStats = DefaultPlayerStats;
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
-    public static PlayerStatManager GetInstance()
+    private void Start()
     {
-        return instance;
+        GameObject player = GameObject.Find("Player 1");
+        player.GetComponent<PlayerHealth>().Health = PlayerStats.MaxHealth;
+        player.GetComponent<WeaponInventory>().NewWeapons = PlayerStats.StartingWeapons;
     }
 
     public static void SavePlayerStats(PlayerStats playerStats)
