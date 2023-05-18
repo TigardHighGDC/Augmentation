@@ -62,6 +62,10 @@ public class WeaponInventory : MonoBehaviour
             // Starting weapons were custom set.
             Assert.Boolean(NewWeapons.Count <= MaxWeapons, "Too many starting weapons.");
 
+            Weapons.Clear();
+            weaponAmmoAmounts.Clear();
+            weaponItems.Clear();
+
             foreach (WeaponData weapon in NewWeapons)
             {
                 Weapons.Add(weapon);
@@ -70,12 +74,16 @@ public class WeaponInventory : MonoBehaviour
             }
 
             state = State.HAS_WEAPONS;
-            ChangeWeapon(0);
         }
         else
         {
             // No starting weapons.
             state = State.NO_WEAPONS;
+        }
+
+        if (Weapons.Count > 0)
+        {
+            ChangeWeapon(0);
         }
     }
 
@@ -144,7 +152,7 @@ public class WeaponInventory : MonoBehaviour
 
     private void ChangeWeapon(int newWeaponIndex, bool force = false, bool removed = false)
     {
-        if (state == State.NO_WEAPONS || playerGun.reloading)
+        if (Weapons.Count < 1 || playerGun.reloading)
         {
             return;
         }

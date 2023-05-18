@@ -19,6 +19,14 @@ public class PlayerHealth : MonoBehaviour
     private float remainingInvincibilityTime;
     private bool dying = false;
 
+    private void Start()
+    {
+        if (sliderBar != null)
+        {
+            sliderBar.SetMaxHealth(Health);
+        }
+    }
+
     private void Update()
     {
         // Changes the max health encase of an item change

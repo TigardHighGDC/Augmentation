@@ -638,11 +638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxWeapons: 4
   Pickupable: {fileID: 1145120673999412928, guid: 9c1fbdfe681243d4d961caf528ea13a9, type: 3}
-  NewWeapons:
-  - {fileID: 11400000, guid: 622b6880c4f9bf84684f20474f0c599a, type: 2}
-  - {fileID: 11400000, guid: c3111fb56c038cf4890b61ab799989e5, type: 2}
-  - {fileID: 11400000, guid: 4532e38c302d7bc4cba21c24e8e4d4a8, type: 2}
-  - {fileID: 11400000, guid: a18bccf47773fd34c8715c1dbdb97f52, type: 2}
+  NewWeapons: []
 --- !u!114 &1179279060
 MonoBehaviour:
   m_ObjectHideFlags: 0
