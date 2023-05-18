@@ -31,6 +31,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Updated the level map icons with our own assets [#168](https://github.com/TigardHighGDC/Augmentation/pull/168).
   - Added bullet bounce weapon effect [#178](https://github.com/TigardHighGDC/Augmentation/pull/178).
   - Now loads scenes asynchronously [#181](https://github.com/TigardHighGDC/Augmentation/pull/181).
+  - Updated our formatting standards for `switch` statements [#195](https://github.com/TigardHighGDC/Augmentation/pull/195).
 - Documentation:
   - Created a block diagram for the map generation algorithm [#188](https://github.com/TigardHighGDC/Augmentation/pull/188).
   - Updated our team website with playable WebGL game and team information [#190](https://github.com/TigardHighGDC/Augmentation/pull/190).
