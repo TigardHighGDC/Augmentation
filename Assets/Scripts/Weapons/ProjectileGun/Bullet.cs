@@ -59,6 +59,16 @@ public class Bullet : MonoBehaviour
                 DestroyBullet();
             }
             break;
+        case "Player":
+            PlayerHealth PlayerHealth = collide.gameObject.GetComponent<PlayerHealth>();
+            PlayerHealth.Damage(Data.Damage * C_Damage * DamageOverRange());
+            remainingPierce--;
+
+            if (remainingPierce <= 0)
+            {
+                DestroyBullet();
+            }
+            break;
         }
     }
 
@@ -75,7 +85,7 @@ public class Bullet : MonoBehaviour
     // Increases bullet damage depending on how far it has traveled
     private float DamageOverRange()
     {
-        if (C_DamgeOverRangeActive)
+        if (!C_DamgeOverRangeActive)
         {
             return 1.0f;
         }

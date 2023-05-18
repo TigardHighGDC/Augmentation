@@ -43,15 +43,15 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnEnemy(GameObject enemy)
     {
         BoundsInt boundary = TileMap.cellBounds;
-        int xPosition = Random.Range(boundary.xMin + 1, boundary.xMax - 1);
-        int yPosition = Random.Range(boundary.yMin + 1, boundary.yMax - 1);
+        int xPosition = Random.Range(boundary.xMin + 2, boundary.xMax - 2);
+        int yPosition = Random.Range(boundary.yMin + 2, boundary.yMax - 2);
         Vector3Int position = new Vector3Int(xPosition, yPosition, 0);
 
         // Recalculate spawn position if too close to player.
         while (Vector3.Distance(player.transform.position, position) < playerSpawnRadius)
         {
-            xPosition = Random.Range(boundary.xMin + 1, boundary.xMax - 1);
-            yPosition = Random.Range(boundary.yMin + 1, boundary.yMax - 1);
+            xPosition = Random.Range(boundary.xMin + 2, boundary.xMax - 2);
+            yPosition = Random.Range(boundary.yMin + 2, boundary.yMax - 2);
             position = new Vector3Int(xPosition, yPosition, 0);
         }
 

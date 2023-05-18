@@ -10,9 +10,24 @@ public class HackermanAI : EnemyAI
     public AudioClip ShootSound;
 
     private bool canShoot = true;
+    
+    private bool wasPaused = true;
 
     private void Update()
     {
+        if (PauseMenu.GameIsPaused)
+        {
+            wasPaused = true;
+            audioSource.Pause();
+            return;
+        } 
+
+        if (wasPaused)
+        {
+            audioSource.Play();
+            wasPaused = false;
+        }
+
         if (canShoot)
         {
             StartCoroutine(BeginFiring());
@@ -22,7 +37,8 @@ public class HackermanAI : EnemyAI
     private IEnumerator BeginFiring()
     {
         canShoot = false;
-        audioSource.PlayOneShot(ShootSound);
+        audioSource.clip = ShootSound;
+        audioSource.Play();
         Fire();
         yield return new WaitForSeconds(Data.BulletPerSecond);
         canShoot = true;

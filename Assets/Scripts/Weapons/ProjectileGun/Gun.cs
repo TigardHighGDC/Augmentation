@@ -45,6 +45,10 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.GameIsPaused)
+        {
+            return;
+        }
         RenderWeapon();
         ammoCounter.Text(Data, AmmoAmount);
         Controller();
@@ -58,7 +62,7 @@ public class Gun : MonoBehaviour
             StartCoroutine((Reload()));
         }
 
-        if (!reloading && !shotDelay && !PauseMenu.GameIsPaused && AmmoAmount > 0 && Input.GetButton("Fire1"))
+        if (!reloading && !shotDelay  && AmmoAmount > 0 && Input.GetButton("Fire1"))
         {
             Fire();
             StartCoroutine(CanShoot());

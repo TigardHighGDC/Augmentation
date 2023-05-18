@@ -9,7 +9,7 @@ using TMPro;
 
 public class PlayerPickup : MonoBehaviour
 {
-    public GameObject UIParent;
+    public static GameObject UIParent;
     public GameObject ItemUI;
 
     private float pickupRange = 6.5f;
@@ -20,11 +20,20 @@ public class PlayerPickup : MonoBehaviour
     private void Start()
     {
         GameObject prefabUI = Resources.Load<GameObject>("Item/ItemDescriptionCanvas");
+        if (UIParent == null)
+        {
+            UIParent = Instantiate(Resources.Load<GameObject>("ItemUI"), Vector3.zero, Quaternion.identity);
+        }
         itemDescription = Instantiate(prefabUI, Vector3.zero, Quaternion.identity);
     }
 
     private void Update()
     {
+        if (PauseMenu.GameIsPaused)
+        {
+            return;
+        }
+        
         itemDistance = 99999.0f;
         currentItem = null;
 
@@ -38,7 +47,7 @@ public class PlayerPickup : MonoBehaviour
                 currentItem = item;
             }
         }
-        if (itemDistance <= pickupRange)
+        if (itemDistance <= pickupRange && currentItem.GetComponent<PickupableItem>().Item != null)
         {
             itemDescription.SetActive(true);
             DisplayDescription();

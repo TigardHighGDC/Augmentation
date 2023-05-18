@@ -13,7 +13,7 @@ public class OverlayInformationController : MonoBehaviour
     private void Update()
     {
         SelectEffect();
-        if (Input.GetKey(KeyCode.I) && EffectGameObject != null)
+        if (Input.GetKey(KeyCode.I) && EffectGameObject != null && !PauseMenu.GameIsPaused)
         {
             EnableText(true);
             GetSetChildText();
