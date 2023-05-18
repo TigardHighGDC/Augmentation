@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +8,10 @@ using UnityEngine;
 public class Overload : MonoBehaviour
 {
     private ItemType itemType;
-    // Increases damage to 20%, but decreases accuracy by 35%
+
+    // Increases damage by 20%, but decreases accuracy by 35%
     private void Start()
     {
-
         itemType = GetComponent<ItemType>();
         DontDestroyOnLoad(gameObject);
     }

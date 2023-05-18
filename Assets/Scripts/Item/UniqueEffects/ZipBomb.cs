@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,6 +35,7 @@ public class ZipBomb : MonoBehaviour
     private void RandomDeath(float empty)
     {
         int random = Random.Range(0, 101);
+
         if (random <= 1)
         {
             PlayerHealth playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
