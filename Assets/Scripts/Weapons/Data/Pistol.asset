@@ -29,6 +29,9 @@ MonoBehaviour:
   DespawnTime: 2
   AutoReload: 1
   BulletBounce: 0
+  BulletExplosion: 1
+  ExplosionRadius: 2
+  ExplosionEffect: {fileID: 1694557223095340867, guid: 6598c37f7f2164748b6cd16d0b572e6f, type: 3}
   GunShotSound: {fileID: 8300000, guid: 56acccf981ef4664aa444778b40b61b3, type: 3}
   GunShotVolume: 0.8
   ReloadSound: {fileID: 8300000, guid: 0a1c588072789af42920dc10aa6d1b04, type: 3}
