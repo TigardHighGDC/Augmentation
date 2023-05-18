@@ -11,6 +11,7 @@ public class PlaceShopItems : MonoBehaviour
 
     private void Start()
     {
+        int count = 0;
         GameObject[] Items = Resources.LoadAll<GameObject>("Item/Pickupable");
         foreach (Vector3 placement in Placements)
         {
@@ -19,15 +20,21 @@ public class PlaceShopItems : MonoBehaviour
                 Debug.Log("break");
                 break;
             }
-            int random = Random.Range(0, newItems.Count + ItemStorage.ItemPosition.Count);
+            int random = Random.Range(0, Items.Length);
             while (newItems.Contains(random) || ItemStorage.ItemPosition.Contains(random))
             {
-                random = Random.Range(0, newItems.Count + ItemStorage.ItemPosition.Count);
+                Debug.Log(random);
+                random = Random.Range(0, Items.Length);
+                count += 1;
+                if (count >= 100)
+                {
+                    Debug.Log("break");
+                    break;
+                }
             }
             GameObject newPickup = Instantiate(Pickupable, placement, Quaternion.identity);
             newPickup.GetComponent<PickupableItem>().Item = Items[random];
             newItems.Add(Items[random].GetComponent<ItemType>().Index);
         }
     }
-
 }
