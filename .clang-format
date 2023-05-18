@@ -8,3 +8,4 @@ IndentWidth: 4
 AccessModifierOffset: -4
 ColumnLimit: 120
 AllowShortFunctionsOnASingleLine: None
+IndentCaseLabels: true
