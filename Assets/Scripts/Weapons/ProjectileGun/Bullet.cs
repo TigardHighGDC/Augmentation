@@ -35,40 +35,41 @@ public class Bullet : MonoBehaviour
     {
         switch (collide.gameObject.tag)
         {
-        case "Enemy":
-            NonPlayerHealth nonPlayerHealth = collide.gameObject.GetComponent<NonPlayerHealth>();
-            collide.GetComponent<Rigidbody2D>().AddForce(
-                transform.up * (Data.Knockback * CorruptionLevel.KnockbackIncrease * C_Knockback), ForceMode2D.Impulse);
-            nonPlayerHealth.Damage(Data.Damage * C_Damage * DamageOverRange());
-            remainingPierce--;
+            case "Enemy":
+                NonPlayerHealth nonPlayerHealth = collide.gameObject.GetComponent<NonPlayerHealth>();
+                collide.GetComponent<Rigidbody2D>().AddForce(
+                    transform.up * (Data.Knockback * CorruptionLevel.KnockbackIncrease * C_Knockback),
+                    ForceMode2D.Impulse);
+                nonPlayerHealth.Damage(Data.Damage * C_Damage * DamageOverRange());
+                remainingPierce--;
 
-            if (remainingPierce <= 0)
-            {
-                DestroyBullet();
-            }
+                if (remainingPierce <= 0)
+                {
+                    DestroyBullet();
+                }
 
-            break;
-        case "Wall":
-            if (remainingBounce > 0)
-            {
-                remainingBounce--;
-                BounceBullet(collide);
-            }
-            else
-            {
-                DestroyBullet();
-            }
-            break;
-        case "Player":
-            PlayerHealth PlayerHealth = collide.gameObject.GetComponent<PlayerHealth>();
-            PlayerHealth.Damage(Data.Damage * C_Damage * DamageOverRange());
-            remainingPierce--;
+                break;
+            case "Wall":
+                if (remainingBounce > 0)
+                {
+                    remainingBounce--;
+                    BounceBullet(collide);
+                }
+                else
+                {
+                    DestroyBullet();
+                }
+                break;
+            case "Player":
+                PlayerHealth PlayerHealth = collide.gameObject.GetComponent<PlayerHealth>();
+                PlayerHealth.Damage(Data.Damage * C_Damage * DamageOverRange());
+                remainingPierce--;
 
-            if (remainingPierce <= 0)
-            {
-                DestroyBullet();
-            }
-            break;
+                if (remainingPierce <= 0)
+                {
+                    DestroyBullet();
+                }
+                break;
         }
     }
 

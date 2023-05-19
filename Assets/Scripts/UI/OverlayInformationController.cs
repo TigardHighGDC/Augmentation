@@ -46,12 +46,12 @@ public class OverlayInformationController : MonoBehaviour
     {
         switch (Effect)
         {
-        case EffectType.Fragmentation:
-            EffectGameObject = ItemStorage.Fragmentation;
-            break;
-        case EffectType.Weapon:
-            EffectGameObject = ItemStorage.Weapon;
-            break;
+            case EffectType.Fragmentation:
+                EffectGameObject = ItemStorage.Fragmentation;
+                break;
+            case EffectType.Weapon:
+                EffectGameObject = ItemStorage.Weapon;
+                break;
         }
     }
 
