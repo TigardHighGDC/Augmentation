@@ -29,8 +29,8 @@ public class EnemySpawner : MonoBehaviour
     {
         // Removes corruption in exchange for possible enemy ambush
         CorruptionLevel.Add(-15.0f);
-
-        if (Random.Range(0, 101) <= ambushProbability)
+        int random = Random.Range(0, 101);
+        if (random <= ambushProbability)
         {
             SpawnGroup(4, 2);
             return true;
@@ -77,7 +77,7 @@ public class EnemySpawner : MonoBehaviour
                 break;
 
             case RoomType.LoadingBar:
-                InvokeRepeating("LoadingBarEnemySpawn", 0, 2.5f);
+                InvokeRepeating("LoadingBarEnemySpawn", 0, 3.0f);
                 break;
             default:
                 break;
