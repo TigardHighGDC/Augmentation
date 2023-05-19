@@ -35,7 +35,6 @@ public class ZipBomb : MonoBehaviour
     private void RandomDeath(float empty)
     {
         int random = Random.Range(0, 101);
-
         if (random <= 1)
         {
             PlayerHealth playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();

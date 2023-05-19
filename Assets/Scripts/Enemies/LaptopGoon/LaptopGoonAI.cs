@@ -15,9 +15,23 @@ public class LaptopGoonAI : EnemyAI
 
     private bool runAway = false;
     private bool canFire = true;
+    private bool wasPaused = true;
 
     private void Update()
     {
+        if (PauseMenu.GameIsPaused)
+        {
+            wasPaused = true;
+            audioSource.Pause();
+            return;
+        }
+
+        if (wasPaused)
+        {
+            audioSource.Play();
+            wasPaused = false;
+        }
+
         if (!runAway && canFire)
         {
             StartCoroutine(CanFire());
@@ -84,7 +98,8 @@ public class LaptopGoonAI : EnemyAI
     {
         canFire = false;
         Fire();
-        audioSource.PlayOneShot(ShootSound);
+        audioSource.clip = ShootSound;
+        audioSource.Play();
         yield return new WaitForSeconds(Data.BulletPerSecond);
         canFire = true;
     }

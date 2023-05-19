@@ -36,7 +36,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!IsLocked)
+        if (!IsLocked && collision.tag == "Player")
         {
             AsyncSceneLoader.GetInstance().SwitchToNextScene();
         }

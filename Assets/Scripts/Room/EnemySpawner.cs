@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
     public static bool LoadingBarFinished = false;
 
     private float playerSpawnRadius = 5.0f;
-    private float ambushProbability = 0.1f;
+    private float ambushProbability = 20;
     private GameObject player;
 
     private void Awake()
@@ -30,9 +30,9 @@ public class EnemySpawner : MonoBehaviour
         // Removes corruption in exchange for possible enemy ambush
         CorruptionLevel.Add(-15.0f);
 
-        if (Random.value <= ambushProbability)
+        if (Random.Range(0, 101) <= ambushProbability)
         {
-            SpawnGroup(8, 1);
+            SpawnGroup(4, 2);
             return true;
         }
 
@@ -43,15 +43,15 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnEnemy(GameObject enemy)
     {
         BoundsInt boundary = TileMap.cellBounds;
-        int xPosition = Random.Range(boundary.xMin + 1, boundary.xMax - 1);
-        int yPosition = Random.Range(boundary.yMin + 1, boundary.yMax - 1);
+        int xPosition = Random.Range(boundary.xMin + 2, boundary.xMax - 2);
+        int yPosition = Random.Range(boundary.yMin + 2, boundary.yMax - 2);
         Vector3Int position = new Vector3Int(xPosition, yPosition, 0);
 
         // Recalculate spawn position if too close to player.
         while (Vector3.Distance(player.transform.position, position) < playerSpawnRadius)
         {
-            xPosition = Random.Range(boundary.xMin + 1, boundary.xMax - 1);
-            yPosition = Random.Range(boundary.yMin + 1, boundary.yMax - 1);
+            xPosition = Random.Range(boundary.xMin + 2, boundary.xMax - 2);
+            yPosition = Random.Range(boundary.yMin + 2, boundary.yMax - 2);
             position = new Vector3Int(xPosition, yPosition, 0);
         }
 
@@ -78,6 +78,8 @@ public class EnemySpawner : MonoBehaviour
 
             case RoomType.LoadingBar:
                 InvokeRepeating("LoadingBarEnemySpawn", 0, 2.5f);
+                break;
+            default:
                 break;
         }
     }
