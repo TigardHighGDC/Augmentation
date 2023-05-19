@@ -44,7 +44,7 @@ public class WeaponInventory : MonoBehaviour
         playerGun = GetComponent<Gun>();
         PlayerStats playerStats = PlayerStatManager.Instance.PlayerStats;
 
-        if (playerStats.StartingWeapons.Count > 0  && !hasRun)
+        if (playerStats.StartingWeapons.Count > 0 && !hasRun)
         {
             hasRun = true;
             Reset();
