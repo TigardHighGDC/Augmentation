@@ -73,6 +73,11 @@ public class WeaponInventory : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.GameIsPaused)
+        {
+            return;
+        }
+
         if (Weapons.Count < 1 || Time.time - lastWeaponSwitchTime < allowedWeaponSwitchTime)
         {
             return;
@@ -128,7 +133,7 @@ public class WeaponInventory : MonoBehaviour
         }
 
         // Drop weapon.
-        if (Input.GetKeyDown(KeyCode.Q) && !playerGun.reloading)
+        if (Input.GetKeyDown(KeyCode.Q) && !playerGun.reloading && Weapons.Count > 1)
         {
             RemoveWeapon(currentWeaponIndex);
         }

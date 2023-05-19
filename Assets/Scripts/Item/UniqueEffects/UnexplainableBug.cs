@@ -34,5 +34,7 @@ public class UnexplainableBug : MonoBehaviour
     private void DealDamageToCorruption(float damage)
     {
         CorruptionLevel.Add(-damage);
+        PlayerHealth playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
+        playerHealth.Damage(0);
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Pickupable
   - Music Player
+  - Item UI
   layers:
   - Default
   - TransparentFX

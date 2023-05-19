@@ -777,10 +777,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 6389477873837047514}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: -50
-  m_MaxValue: 20
+  m_MinValue: -20
+  m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: -5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -893,11 +893,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e4f4de704cfeae448ea18537b3f3af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMixer: {fileID: 24100000, guid: 6077fc2d8191678408682071159805f7, type: 2}
-  bulletMixer: {fileID: 24100000, guid: 6077fc2d8191678408682071159805f7, type: 2}
-  musicMixer: {fileID: 24100000, guid: 6077fc2d8191678408682071159805f7, type: 2}
-  soundFXMixer: {fileID: 24100000, guid: 6077fc2d8191678408682071159805f7, type: 2}
-  enemyMixer: {fileID: 24100000, guid: 6077fc2d8191678408682071159805f7, type: 2}
+  MainMixer: {fileID: 24100000, guid: 6077fc2d8191678408682071159805f7, type: 2}
+  BulletMixer: {fileID: 24100000, guid: 6077fc2d8191678408682071159805f7, type: 2}
+  MusicMixer: {fileID: 24100000, guid: 6077fc2d8191678408682071159805f7, type: 2}
+  SoundFXMixer: {fileID: 24100000, guid: 6077fc2d8191678408682071159805f7, type: 2}
+  EnemyMixer: {fileID: 24100000, guid: 6077fc2d8191678408682071159805f7, type: 2}
 --- !u!1 &6389477872233201553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,10 +1618,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 6389477872541833740}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: -50
-  m_MaxValue: 20
+  m_MinValue: -20
+  m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: -5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1797,10 +1797,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 6389477872038600328}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: -50
-  m_MaxValue: 20
+  m_MinValue: -20
+  m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: -5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1980,10 +1980,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 6389477871835734201}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: -50
-  m_MaxValue: 20
+  m_MinValue: -20
+  m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: -5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2393,10 +2393,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 6389477873398429112}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: -50
-  m_MaxValue: 20
+  m_MinValue: -20
+  m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: -5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
