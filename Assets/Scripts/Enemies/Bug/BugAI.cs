@@ -19,16 +19,22 @@ public class BugAI : EnemyAI
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         audioSource.PlayOneShot(BeginMoveSound);
+        audioSource.clip = LoopMoveSound;
     }
 
     private void Update()
     {
+        if (PauseMenu.GameIsPaused)
+        {
+            audioSource.Pause();
+            return;
+        }
         // Movement animation
         anim.speed = (Mathf.Abs(aiPath.direction[0]) + Mathf.Abs(aiPath.direction[1])) / 2;
 
         if (!audioSource.isPlaying)
         {
-            audioSource.PlayOneShot(LoopMoveSound);
+            audioSource.Play();
         }
 
         if (aiPath.direction[0] >= 0.5)

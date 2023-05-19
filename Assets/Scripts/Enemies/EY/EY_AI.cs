@@ -22,9 +22,23 @@ public class EY_AI : EnemyAI
     private bool chase = false;
     private bool tooCloseChase = false;
     private bool canShoot = true;
+    private bool wasPaused = true;
 
     private void Update()
     {
+        if (PauseMenu.GameIsPaused)
+        {
+            wasPaused = true;
+            audioSource.Pause();
+            return;
+        }
+
+        if (wasPaused)
+        {
+            audioSource.Play();
+            wasPaused = false;
+        }
+
         if (BeginChase + 5.0f > DistanceBetweenPlayer() && canShoot)
         {
             StartCoroutine(BeginShot());
@@ -77,11 +91,13 @@ public class EY_AI : EnemyAI
         laser.DrawLine = false;
         yield return new WaitForSeconds(3.0f);
 
-        audioSource.PlayOneShot(LockOnSound);
+        audioSource.clip = LockOnSound;
+        audioSource.Play();
         laser.DrawLine = true;
         yield return new WaitForSeconds(2.0f);
 
-        audioSource.PlayOneShot(ShootSound);
+        audioSource.clip = ShootSound;
+        audioSource.Play();
         laser.DrawLine = false;
         canShoot = true;
         Fire();

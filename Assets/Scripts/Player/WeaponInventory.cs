@@ -66,6 +66,11 @@ public class WeaponInventory : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.GameIsPaused)
+        {
+            return;
+        }
+
         if (Weapons.Count < 1 || Time.time - lastWeaponSwitchTime < allowedWeaponSwitchTime)
         {
             return;

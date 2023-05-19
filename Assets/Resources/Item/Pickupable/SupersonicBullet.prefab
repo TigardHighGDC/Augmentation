@@ -47,11 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Supersonic Bullet
   Image: {fileID: 21300000, guid: 1e942ccefa2de4342a0a5a31978919b1, type: 3}
-  Text: {fileID: 0}
   DestroyItem: 0
   ItemPurpose: 2
   ItemStats: 2+ Piercing, 50% Increase projectile speed
   Cost: 15
+  Index: 5
 --- !u!114 &5548311163090204583
 MonoBehaviour:
   m_ObjectHideFlags: 0
