@@ -79,6 +79,7 @@ public class PlayerPickup : MonoBehaviour
         if (pickup.Weapon != null)
         {
             gameObject.GetComponent<WeaponInventory>().AddWeapon(pickup.Weapon, pickup.WeaponEffect);
+            Destroy(currentItem);
         }
         else if (pickup.Item != null && pickup.Item.GetComponent<ItemType>().Cost <= CorruptionLevel.currentCorruption)
         {
