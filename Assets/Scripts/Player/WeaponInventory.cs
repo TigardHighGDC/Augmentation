@@ -126,7 +126,7 @@ public class WeaponInventory : MonoBehaviour
         }
 
         // Drop weapon.
-        if (Input.GetKeyDown(KeyCode.Q) && !playerGun.reloading)
+        if (Input.GetKeyDown(KeyCode.Q) && !playerGun.reloading && Weapons.Count > 1)
         {
             RemoveWeapon(currentWeaponIndex);
         }
