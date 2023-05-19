@@ -15,7 +15,6 @@ public class WeaponInventory : MonoBehaviour
     public List<WeaponData> NewWeapons;
     private static List<WeaponData> Weapons = new List<WeaponData>();
 
-    private bool hasAddedWeapons = false;
     private Gun playerGun;
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
@@ -40,12 +39,6 @@ public class WeaponInventory : MonoBehaviour
 
     private void Start()
     {
-        if (hasAddedWeapons)
-        {
-            return;
-        }
-
-        hasAddedWeapons = true;
         playerGun = GetComponent<Gun>();
 
         if (NewWeapons.Count > 0)
