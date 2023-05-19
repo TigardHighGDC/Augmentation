@@ -31,7 +31,7 @@ public class EY_AI : EnemyAI
             wasPaused = true;
             audioSource.Pause();
             return;
-        } 
+        }
 
         if (wasPaused)
         {

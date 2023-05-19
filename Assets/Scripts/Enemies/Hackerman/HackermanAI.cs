@@ -10,7 +10,7 @@ public class HackermanAI : EnemyAI
     public AudioClip ShootSound;
 
     private bool canShoot = true;
-    
+
     private bool wasPaused = true;
 
     private void Update()
@@ -20,7 +20,7 @@ public class HackermanAI : EnemyAI
             wasPaused = true;
             audioSource.Pause();
             return;
-        } 
+        }
 
         if (wasPaused)
         {

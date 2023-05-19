@@ -31,9 +31,10 @@ public class PlayerPickup : MonoBehaviour
     {
         if (PauseMenu.GameIsPaused)
         {
+            itemDescription.SetActive(false);
             return;
         }
-        
+
         itemDistance = 99999.0f;
         currentItem = null;
 

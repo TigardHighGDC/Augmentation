@@ -24,7 +24,7 @@ public class LaptopGoonAI : EnemyAI
             wasPaused = true;
             audioSource.Pause();
             return;
-        } 
+        }
 
         if (wasPaused)
         {
