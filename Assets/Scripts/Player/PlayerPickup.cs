@@ -58,16 +58,6 @@ public class PlayerPickup : MonoBehaviour
             itemDescription.SetActive(false);
         }
 
-        if (itemDistance <= pickupRange)
-        {
-            itemDescription.SetActive(true);
-            DisplayDescription();
-        }
-        else
-        {
-            itemDescription.SetActive(false);
-        }
-
         if (currentItem != null && itemDistance <= pickupRange && Input.GetKeyDown(KeyCode.F))
         {
             Pickup(currentItem.GetComponent<PickupableItem>());
@@ -79,6 +69,7 @@ public class PlayerPickup : MonoBehaviour
         if (pickup.Weapon != null)
         {
             gameObject.GetComponent<WeaponInventory>().AddWeapon(pickup.Weapon, pickup.WeaponEffect);
+            Destroy(currentItem);
         }
         else if (pickup.Item != null && pickup.Item.GetComponent<ItemType>().Cost <= CorruptionLevel.currentCorruption)
         {
