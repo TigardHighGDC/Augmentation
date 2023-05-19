@@ -106,20 +106,4 @@ public class PlayerPickup : MonoBehaviour
             }
         }
     }
-
-    private void DisplayDescription()
-    {
-        PickupableItem itemPickup = currentItem.GetComponent<PickupableItem>();
-        if (itemPickup.Item != null)
-        {
-            ItemType itemType = itemPickup.Item.GetComponent<ItemType>();
-            RectTransform descriptionPosition = itemDescription.GetComponent<RectTransform>();
-            descriptionPosition.anchoredPosition = currentItem.transform.position + new Vector3(0.0f, -2.0f, 0.0f);
-
-            foreach (TextMeshProUGUI textUI in itemDescription.GetComponentsInChildren<TextMeshProUGUI>())
-            {
-                textUI.text = $"{itemType.Name}: {itemType.ItemStats}";
-            }
-        }
-    }
 }
