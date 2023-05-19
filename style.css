@@ -198,3 +198,8 @@ body {
   justify-content: center;
   margin-bottom: 40px;
 }
+
+.concept-image {
+  height:100px;
+  width: 100px;
+}
