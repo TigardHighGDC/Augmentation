@@ -35,6 +35,7 @@ A bi-weekly log of project changes separated by two week sprints.
   - Now loads scenes asynchronously [#181](https://github.com/TigardHighGDC/Augmentation/pull/181).
   - Updated our formatting standards for `switch` statements [#195](https://github.com/TigardHighGDC/Augmentation/pull/195).
   - Added loading bar room to map generation [#196](https://github.com/TigardHighGDC/Augmentation/pull/196).
+  - Updated assets and improved gameplay [#197](https://github.com/TigardHighGDC/Augmentation/pull/197).
 - Documentation:
   - Created a block diagram for the map generation algorithm [#188](https://github.com/TigardHighGDC/Augmentation/pull/188).
   - Updated our team website with playable WebGL game and team information [#190](https://github.com/TigardHighGDC/Augmentation/pull/190).
