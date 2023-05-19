@@ -20,6 +20,9 @@ public class AssetStore : MonoBehaviour
     private bool hasBought = false;
     private PlayerStats playerStats;
 
+    private float healthIncrease = 50.0f;
+    private float maxHealthCap = 300.0f;
+
     private void Start()
     {
         playerStats = PlayerStatManager.Instance.PlayerStats;
@@ -34,10 +37,10 @@ public class AssetStore : MonoBehaviour
     {
         Debug.Log("Health Upgrade Button Pressed");
 
-        if (playerStats.Money >= HealthUpgradeCost)
+        if (playerStats.Money >= HealthUpgradeCost && playerStats.MaxHealth + healthIncrease < maxHealthCap)
         {
             playerStats.Money -= HealthUpgradeCost;
-            playerStats.MaxHealth += 50.0f;
+            playerStats.MaxHealth += healthIncrease;
             hasBought = true;
             Debug.Log("Health Upgraded");
         }

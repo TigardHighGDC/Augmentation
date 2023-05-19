@@ -10,14 +10,12 @@ public class PlayerStats
     public float MaxHealth;
     public List<string> StartingWeapons;
     public int Money;
-    public int BossDefeats;
 
     public PlayerStats()
     {
         MaxHealth = 150.0f;
         StartingWeapons = new List<string>();
         Money = 99999;
-        BossDefeats = 0;
     }
 
     public string ToJson()

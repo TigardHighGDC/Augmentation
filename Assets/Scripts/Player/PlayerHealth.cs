@@ -63,6 +63,6 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<WeaponInventory>().Reset();
         PlayerPrefs.DeleteKey("Map");
         AsyncSceneLoader.GetInstance().Unload();
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("DeathScreen");
     }
 }
