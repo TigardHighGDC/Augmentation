@@ -41,7 +41,6 @@ public class MapManager : MonoBehaviour
     {
         Map map = MapGenerator.GetMap(Config);
         CurrentMap = map;
-        Debug.Log(map.ToJson());
         View.ShowMap(map);
     }
 

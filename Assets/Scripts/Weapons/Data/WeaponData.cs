@@ -28,6 +28,11 @@ public class WeaponData : ScriptableObject
     public bool AutoReload;
     public bool BulletBounce;
 
+    [Header("Bullet Explosion")]
+    public bool BulletExplosion = false;
+    public float ExplosionRadius;
+    public GameObject ExplosionEffect;
+
     [Header("SoundFX")]
     public AudioClip GunShotSound;
     public float GunShotVolume;

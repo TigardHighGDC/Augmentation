@@ -1,3 +1,6 @@
+// Copyright (c) TigardHighGDC
+// SPDX-License SPDX-License-Identifier: Apache-2.0
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +11,6 @@ public class DiceGun : MonoBehaviour
 
     private void Start()
     {
-
         itemType = GetComponent<ItemType>();
         DontDestroyOnLoad(gameObject);
         ItemHandling.PlayerGunReload += DiceGunEvent;

@@ -29,7 +29,6 @@ public class EnemySpawner : MonoBehaviour
     {
         // Removes corruption in exchange for possible enemy ambush
         CorruptionLevel.Add(-15.0f);
-        Debug.Log("ambush");
 
         if (Random.Range(0, 101) <= ambushProbability)
         {

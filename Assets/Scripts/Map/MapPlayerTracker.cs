@@ -74,27 +74,27 @@ public class MapPlayerTracker : MonoBehaviour
     {
         switch (mapNode.Node.NodeType)
         {
-        case NodeType.MinorEnemy:
-            AsyncSceneLoader.GetInstance().LoadScene("Basic Enemies");
-            break;
-        case NodeType.EliteEnemy:
-            AsyncSceneLoader.GetInstance().LoadScene("Elite Enemies");
-            break;
-        case NodeType.Store:
-            AsyncSceneLoader.GetInstance().LoadScene("Store");
-            break;
-        case NodeType.CorruptionWell:
-            AsyncSceneLoader.GetInstance().LoadScene("CorruptionWell");
-            break;
-        case NodeType.LoadingBar:
-            AsyncSceneLoader.GetInstance().LoadScene("LoadingBar");
-            break;
-        case NodeType.Boss:
-            AsyncSceneLoader.GetInstance().LoadScene("Boss");
-            break;
-        default:
-            Assert.Boolean(false, "Unknown NodeType: " + mapNode.Node.NodeType);
-            break; // Will not be reached
+            case NodeType.MinorEnemy:
+                AsyncSceneLoader.GetInstance().LoadScene("Basic Enemies");
+                break;
+            case NodeType.EliteEnemy:
+                AsyncSceneLoader.GetInstance().LoadScene("Elite Enemies");
+                break;
+            case NodeType.Store:
+                AsyncSceneLoader.GetInstance().LoadScene("Store");
+                break;
+            case NodeType.CorruptionWell:
+                AsyncSceneLoader.GetInstance().LoadScene("CorruptionWell");
+                break;
+            case NodeType.LoadingBar:
+                AsyncSceneLoader.GetInstance().LoadScene("LoadingBar");
+                break;
+            case NodeType.Boss:
+                AsyncSceneLoader.GetInstance().LoadScene("Boss");
+                break;
+            default:
+                Assert.Boolean(false, "Unknown NodeType: " + mapNode.Node.NodeType);
+                break; // Will not be reached
         }
     }
 }

@@ -58,6 +58,16 @@ public class PlayerPickup : MonoBehaviour
             itemDescription.SetActive(false);
         }
 
+        if (itemDistance <= pickupRange)
+        {
+            itemDescription.SetActive(true);
+            DisplayDescription();
+        }
+        else
+        {
+            itemDescription.SetActive(false);
+        }
+
         if (currentItem != null && itemDistance <= pickupRange && Input.GetKeyDown(KeyCode.F))
         {
             Pickup(currentItem.GetComponent<PickupableItem>());
@@ -93,6 +103,22 @@ public class PlayerPickup : MonoBehaviour
             foreach (TextMeshProUGUI textUI in itemDescription.GetComponentsInChildren<TextMeshProUGUI>())
             {
                 textUI.text = $"Cost: {itemType.Cost}, {itemType.Name}: {itemType.ItemStats}";
+            }
+        }
+    }
+
+    private void DisplayDescription()
+    {
+        PickupableItem itemPickup = currentItem.GetComponent<PickupableItem>();
+        if (itemPickup.Item != null)
+        {
+            ItemType itemType = itemPickup.Item.GetComponent<ItemType>();
+            RectTransform descriptionPosition = itemDescription.GetComponent<RectTransform>();
+            descriptionPosition.anchoredPosition = currentItem.transform.position + new Vector3(0.0f, -2.0f, 0.0f);
+
+            foreach (TextMeshProUGUI textUI in itemDescription.GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                textUI.text = $"{itemType.Name}: {itemType.ItemStats}";
             }
         }
     }

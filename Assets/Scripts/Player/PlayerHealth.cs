@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public static float MaxHealth = 150f;
+    public static float MaxHealth = 150.0f;
     public static bool CanDie = true;
     public static bool Invincibility = false;
 
