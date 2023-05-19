@@ -55,7 +55,8 @@ public static class MapGenerator
 
             for (int j = 0; j < config.GridWidth; j++)
             {
-                NodeType nodeType = Random.Range(0.0f, 1.0f) < layer.RandomizeNodes ? GetRandomNode() : layer.NodeType;
+                float random = Random.Range(0.0f, 1.0f);
+                NodeType nodeType = random < layer.RandomizeNodes ? GetRandomNode() : layer.NodeType;
                 string blueprintName = config.NodeBlueprints.Where(b => b.NodeType == nodeType).ToList().Random().name;
                 Node node = new Node(nodeType, blueprintName, new Point(j, i)) {
                     Position = new Vector2(-offset + j * layer.NodesApartDistance, GetDistanceToLayer(i))
@@ -225,8 +226,8 @@ public static class MapGenerator
         {
             return new Point(config.GridWidth / 2, y);
         }
-
-        return (Random.Range(0, 2) == 0) ? new Point(config.GridWidth / 2, y) : new Point(config.GridWidth / 2 - 1, y);
+        int random = Random.Range(0, 2);
+        return (random == 0) ? new Point(config.GridWidth / 2, y) : new Point(config.GridWidth / 2 - 1, y);
     }
 
     // Generates a random path bottom up
@@ -286,6 +287,7 @@ public static class MapGenerator
 
     private static NodeType GetRandomNode()
     {
-        return randomNodes[Random.Range(0, randomNodes.Count)];
+        int random = Random.Range(0, randomNodes.Count);
+        return randomNodes[Random.Range(0, random)];
     }
 }

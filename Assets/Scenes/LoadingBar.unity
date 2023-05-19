@@ -2973,6 +2973,103 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &873118189
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6389477872296004154, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_Name
+      value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
 --- !u!1 &941560784
 GameObject:
   m_ObjectHideFlags: 0
@@ -3183,8 +3280,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8369838331063653014, guid: 1f28e8773ffb6014da2770ac4a4c9fe9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f28e8773ffb6014da2770ac4a4c9fe9, type: 3}
+--- !u!1 &1303199049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8369838331063653002, guid: 1f28e8773ffb6014da2770ac4a4c9fe9, type: 3}
+  m_PrefabInstance: {fileID: 1303199048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1303199050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303199049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb42b1c3c55874f4d9607550851ed0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadingBarRoom: {fileID: 1068056367970595859}
 --- !u!1001 &1353963169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3603,3 +3719,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9ae2547259aead4abe9948a6dea88b7, type: 3}
+--- !u!114 &1068056367970595859 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1068056368988542695, guid: a9ae2547259aead4abe9948a6dea88b7, type: 3}
+  m_PrefabInstance: {fileID: 1068056367970595858}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63764c89cdf1fe64986c9a2ea6e37850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
