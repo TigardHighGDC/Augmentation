@@ -3260,8 +3260,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8369838331063653014, guid: 1f28e8773ffb6014da2770ac4a4c9fe9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1f28e8773ffb6014da2770ac4a4c9fe9, type: 3}
+--- !u!1 &1303199049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8369838331063653002, guid: 1f28e8773ffb6014da2770ac4a4c9fe9, type: 3}
+  m_PrefabInstance: {fileID: 1303199048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1303199050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303199049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb42b1c3c55874f4d9607550851ed0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadingBarRoom: {fileID: 1068056367970595859}
 --- !u!1001 &1353963169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3680,3 +3699,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9ae2547259aead4abe9948a6dea88b7, type: 3}
+--- !u!114 &1068056367970595859 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1068056368988542695, guid: a9ae2547259aead4abe9948a6dea88b7, type: 3}
+  m_PrefabInstance: {fileID: 1068056367970595858}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63764c89cdf1fe64986c9a2ea6e37850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -58,16 +58,6 @@ public class PlayerPickup : MonoBehaviour
             itemDescription.SetActive(false);
         }
 
-        if (itemDistance <= pickupRange)
-        {
-            itemDescription.SetActive(true);
-            DisplayDescription();
-        }
-        else
-        {
-            itemDescription.SetActive(false);
-        }
-
         if (currentItem != null && itemDistance <= pickupRange && Input.GetKeyDown(KeyCode.F))
         {
             Pickup(currentItem.GetComponent<PickupableItem>());

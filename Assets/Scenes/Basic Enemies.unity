@@ -1830,14 +1830,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6389477872109836128, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389477872109836128, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
-      propertyPath: m_MaxValue
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 6389477872296004154, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -1925,38 +1917,6 @@ PrefabInstance:
     - target: {fileID: 6389477872296004294, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389477872435175783, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389477872435175783, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
-      propertyPath: m_MaxValue
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389477872583916461, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389477872583916461, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
-      propertyPath: m_MaxValue
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389477872893881163, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389477872893881163, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
-      propertyPath: m_MaxValue
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389477873095687904, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389477873095687904, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}
-      propertyPath: m_MaxValue
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0b8778184edeb94eb46abfb07ef8bc3, type: 3}

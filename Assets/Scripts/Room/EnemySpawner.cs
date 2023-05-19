@@ -71,7 +71,7 @@ public class EnemySpawner : MonoBehaviour
                 break;
 
             case RoomType.Elite:
-                basicEnemiesSpawn = 7;
+                basicEnemiesSpawn = 10;
                 eliteEnemiesSpawn = 2;
                 SpawnGroup(basicEnemiesSpawn, eliteEnemiesSpawn);
                 break;
