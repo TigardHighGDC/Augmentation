@@ -21,10 +21,15 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        MaxHealth = PlayerStatManager.Instance.PlayerStats.MaxHealth;
+
         if (sliderBar != null)
         {
             sliderBar.SetMaxHealth(Health);
         }
+
+        Health = MaxHealth;
+        Debug.Log("PlayerHealth: " + Health); // TODO: Remove debug.log
     }
 
     private void Update()
@@ -55,6 +60,8 @@ public class PlayerHealth : MonoBehaviour
     // Handles changes when the player dies
     public void Death()
     {
+        GetComponent<WeaponInventory>().Reset();
+        PlayerPrefs.DeleteKey("Map");
         AsyncSceneLoader.GetInstance().Unload();
         SceneManager.LoadScene("MainMenu");
     }

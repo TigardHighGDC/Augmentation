@@ -5,18 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
-[System.Serializable]
 public class PlayerStats
 {
-    public float MaxHealth = 150.0f;
-    public List<WeaponData> StartingWeapons;
-    public int Money = 0;
-    public int BossDefeats = 0;
+    public float MaxHealth;
+    public List<string> StartingWeapons;
+    public int Money;
+    public int BossDefeats;
 
-    public PlayerStats(float maxHealth, List<WeaponData> startingWeapons)
+    public PlayerStats()
     {
-        MaxHealth = maxHealth;
-        StartingWeapons = startingWeapons;
+        MaxHealth = 150.0f;
+        StartingWeapons = new List<string>();
+        Money = 99999;
+        BossDefeats = 0;
     }
 
     public string ToJson()

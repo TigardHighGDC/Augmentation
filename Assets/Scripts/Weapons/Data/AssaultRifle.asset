@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 7cd2ee6899a2afb46bbc52c0eb178c24, type: 3}
   HandPosition: {x: -0.3, y: 1, z: 0}
-  WeaponName: Assult Rifle
+  WeaponName: Assault Rifle
   Damage: 10
   WeaponLength: 1.5
   Size: 0.8
@@ -29,6 +29,9 @@ MonoBehaviour:
   DespawnTime: 20
   AutoReload: 1
   BulletBounce: 1
+  BulletExplosion: 0
+  ExplosionRadius: 0
+  ExplosionEffect: {fileID: 1694557223095340867, guid: 6598c37f7f2164748b6cd16d0b572e6f, type: 3}
   GunShotSound: {fileID: 8300000, guid: cbe96cbac711adf42b16d8dc590392cb, type: 3}
   GunShotVolume: 0.8
   ReloadSound: {fileID: 8300000, guid: c6fed905f24597845926e242909e9546, type: 3}

@@ -9,28 +9,20 @@ using UnityEditor;
 
 public class WeaponInventory : MonoBehaviour
 {
+    public List<WeaponData> AvailableWeapons;
     public int MaxWeapons = 3;
     public GameObject Pickupable;
 
     public List<WeaponData> NewWeapons;
     private static List<WeaponData> Weapons = new List<WeaponData>();
 
-    private bool hasAddedWeapons = false;
     private Gun playerGun;
+    private bool hasRun = false;
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
     private double allowedWeaponSwitchTime = 0.25;
     private static List<int> weaponAmmoAmounts = new List<int>();
     private static List<GameObject> weaponItems = new List<GameObject>();
-
-    private enum State
-    {
-        NO_WEAPONS,
-        HAS_WEAPONS,
-        FULL_INVENTORY
-    }
-
-    private State state;
 
     // clang-format off
     private Dictionary<int, KeyCode> weaponSwitchMap = new Dictionary<int, KeyCode> { 
@@ -49,36 +41,28 @@ public class WeaponInventory : MonoBehaviour
 
     private void Start()
     {
-        if (hasAddedWeapons)
-        {
-            return;
-        }
-
-        hasAddedWeapons = true;
         playerGun = GetComponent<Gun>();
+        PlayerStats playerStats = PlayerStatManager.Instance.PlayerStats;
 
-        if (NewWeapons.Count > 0)
+        if (playerStats.StartingWeapons.Count > 0  && !hasRun)
         {
-            // Starting weapons were custom set.
-            Assert.Boolean(NewWeapons.Count <= MaxWeapons, "Too many starting weapons.");
+            hasRun = true;
+            Reset();
 
-            Weapons.Clear();
-            weaponAmmoAmounts.Clear();
-            weaponItems.Clear();
-
-            foreach (WeaponData weapon in NewWeapons)
+            foreach (string weaponName in playerStats.StartingWeapons)
             {
+                WeaponData weapon = AvailableWeapons.Find(w => w.WeaponName == weaponName);
                 Weapons.Add(weapon);
                 weaponAmmoAmounts.Add(weapon.AmmoCapacity);
                 SelectItem();
             }
-
-            state = State.HAS_WEAPONS;
         }
         else
         {
-            // No starting weapons.
-            state = State.NO_WEAPONS;
+            WeaponData pistol = AvailableWeapons.Find(w => w.WeaponName == "Pistol");
+            Weapons.Add(pistol);
+            weaponAmmoAmounts.Add(pistol.AmmoCapacity);
+            SelectItem();
         }
 
         if (Weapons.Count > 0)
@@ -89,7 +73,7 @@ public class WeaponInventory : MonoBehaviour
 
     private void Update()
     {
-        if (state == State.NO_WEAPONS || Time.time - lastWeaponSwitchTime < allowedWeaponSwitchTime)
+        if (Weapons.Count < 1 || Time.time - lastWeaponSwitchTime < allowedWeaponSwitchTime)
         {
             return;
         }
@@ -150,6 +134,14 @@ public class WeaponInventory : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        Weapons.Clear();
+        weaponAmmoAmounts.Clear();
+        weaponItems.Clear();
+        currentWeaponIndex = -1;
+    }
+
     private void ChangeWeapon(int newWeaponIndex, bool force = false, bool removed = false)
     {
         if (Weapons.Count < 1 || playerGun.reloading)
@@ -182,7 +174,7 @@ public class WeaponInventory : MonoBehaviour
 
     public void AddWeapon(WeaponData weapon, GameObject effect = null)
     {
-        if (state == State.NO_WEAPONS || state == State.HAS_WEAPONS)
+        if (Weapons.Count < MaxWeapons)
         {
             Weapons.Add(weapon);
             weaponAmmoAmounts.Add(weapon.AmmoCapacity);
@@ -195,15 +187,6 @@ public class WeaponInventory : MonoBehaviour
             {
                 weaponItems.Add(effect);
             }
-
-            if (state == State.NO_WEAPONS)
-            {
-                state = State.HAS_WEAPONS;
-            }
-            else if (state == State.HAS_WEAPONS && Weapons.Count == MaxWeapons)
-            {
-                state = State.FULL_INVENTORY;
-            }
         }
         else
         {
@@ -214,21 +197,12 @@ public class WeaponInventory : MonoBehaviour
 
     private void RemoveWeapon(int weaponIndex)
     {
-        if (state == State.NO_WEAPONS || Weapons.Count == 1)
+        if (Weapons.Count <= 1)
         {
             return;
         }
 
         Assert.Boolean(weaponIndex == currentWeaponIndex);
-
-        if (state == State.FULL_INVENTORY)
-        {
-            state = State.HAS_WEAPONS;
-        }
-        else if (state == State.HAS_WEAPONS && Weapons.Count == 1)
-        {
-            state = State.NO_WEAPONS;
-        }
 
         PickupableItem dropData = Instantiate(Pickupable, gameObject.transform.position, new Quaternion(0, 0, 0, 0))
                                       .GetComponent<PickupableItem>();
