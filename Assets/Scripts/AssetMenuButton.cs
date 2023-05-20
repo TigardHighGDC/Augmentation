@@ -3,11 +3,11 @@
 
 using UnityEngine;
 
-public class ContinueButton : MonoBehaviour
+public class AssetMenuButton : MonoBehaviour
 {
     private void Update()
     {
-        if (!PlayerPrefs.HasKey("Map"))
+        if (!PlayerPrefs.HasKey("PlayerStats"))
         {
             gameObject.SetActive(false);
         }
