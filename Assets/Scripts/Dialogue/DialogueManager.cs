@@ -89,7 +89,6 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogue(TextAsset inkJSON)
     {
-        PauseMenu.GameIsPaused = true;
         currentStory = new Story(inkJSON.text);
         DialogueIsActive = true;
         DialoguePanel.SetActive(true);

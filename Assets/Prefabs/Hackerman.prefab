@@ -1027,4 +1027,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 50
   InvincibilityTimer: 0
-  corruptionStrength: 7.5
+  corruptionStrength: 10

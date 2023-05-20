@@ -755,7 +755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   InvincibilityTimer: 0
-  corruptionStrength: 7.5
+  corruptionStrength: 10
 --- !u!70 &775661945
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

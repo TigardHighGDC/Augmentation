@@ -35,8 +35,16 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         // Changes the max health encase of an item change
-        sliderBar.SetMaxHealth(MaxHealth);
-        sliderBar.SetHealth(Health);
+        if (sliderBar != null)
+        {
+            sliderBar.SetMaxHealth(MaxHealth);
+            sliderBar.SetHealth(Health);
+        }
+        else
+        {
+            Debug.LogError("Health bar is null");
+        }
+
         Health = Mathf.Min(MaxHealth, Health);
     }
 

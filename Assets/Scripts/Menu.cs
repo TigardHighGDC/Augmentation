@@ -41,6 +41,11 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
 
+    public void OnTutorialButton()
+    {
+        AsyncSceneLoader.GetInstance().LoadScene("Tutorial");
+    }
+
     private void ResetGameData()
     {
         PlayerPrefs.DeleteKey("PlayerStats");

@@ -1534,7 +1534,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 622b6880c4f9bf84684f20474f0c599a, type: 2}
   - {fileID: 11400000, guid: c3111fb56c038cf4890b61ab799989e5, type: 2}
   - {fileID: 11400000, guid: 4532e38c302d7bc4cba21c24e8e4d4a8, type: 2}
-  HealthUpgradeCost: 100
+  HealthUpgradeCost: 10
   PistolCost: 10
   ShotgunCost: 20
   SniperCost: 30
