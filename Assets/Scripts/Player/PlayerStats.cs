@@ -15,7 +15,7 @@ public class PlayerStats
     {
         MaxHealth = 150.0f;
         StartingWeapons = new List<string>();
-        Money = 99999;
+        Money = 0;
     }
 
     public string ToJson()
