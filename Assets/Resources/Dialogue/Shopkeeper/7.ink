@@ -1,0 +1,1 @@
+“Corruption is data. Data can be sold. Corruption is money. Spend it wisely!”#speaker:Shopkeeper #layout:right

@@ -1,0 +1,1 @@
+“You got yourself a deal?”#speaker:Shopkeeper #layout:right

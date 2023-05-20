@@ -1,0 +1,1 @@
+“Sold, no matter if you want it or not”#speaker:Shopkeeper #layout:right
