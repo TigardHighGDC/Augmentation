@@ -9,22 +9,41 @@ using Newtonsoft.Json;
 
 public class Menu : MonoBehaviour
 {
-    public string Room;
-
-    private void Start()
+    public void OnNewGameButton()
     {
-        AsyncSceneLoader.GetInstance().LoadScene(Room, false);
+        ResetGameData();
+
+        PlayerStatManager.Instance.UpdateState();
+        // PlayerStatManager.Instance.UpdatePlayerState();
+
+        AsyncSceneLoader.GetInstance().LoadScene("Level Map");
     }
 
     public void OnContinueButton()
     {
-        AsyncSceneLoader.GetInstance().SwitchToNextScene();
+        // PlayerStatManager.Instance.UpdatePlayerState();
+        PlayerStatManager.Instance.UpdateState();
+        AsyncSceneLoader.GetInstance().LoadScene("Level Map");
     }
 
-    public void OnNewGameButton()
+    public void OnAssetStoreButton()
+    {
+        AsyncSceneLoader.GetInstance().LoadScene("AssetStore");
+    }
+
+    public void OnResetButton()
+    {
+        ResetGameData();
+    }
+
+    public void OnQuitButton()
+    {
+        Application.Quit();
+    }
+
+    private void ResetGameData()
     {
         PlayerPrefs.DeleteKey("PlayerStats");
         PlayerPrefs.DeleteKey("Map");
-        AsyncSceneLoader.GetInstance().SwitchToNextScene();
     }
 }

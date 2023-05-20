@@ -19,6 +19,19 @@ public class PlayerHealth : MonoBehaviour
     private float remainingInvincibilityTime;
     private bool dying = false;
 
+    private void Start()
+    {
+        MaxHealth = PlayerStatManager.Instance.PlayerStats.MaxHealth;
+
+        if (sliderBar != null)
+        {
+            sliderBar.SetMaxHealth(Health);
+        }
+
+        Health = MaxHealth;
+        Debug.Log("PlayerHealth: " + Health); // TODO: Remove debug.log
+    }
+
     private void Update()
     {
         // Changes the max health encase of an item change
@@ -47,7 +60,9 @@ public class PlayerHealth : MonoBehaviour
     // Handles changes when the player dies
     public void Death()
     {
+        GetComponent<WeaponInventory>().Reset();
+        PlayerPrefs.DeleteKey("Map");
         AsyncSceneLoader.GetInstance().Unload();
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("DeathScreen");
     }
 }

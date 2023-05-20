@@ -1122,8 +1122,20 @@ PrefabInstance:
       value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 8369838331063653003, guid: 1f28e8773ffb6014da2770ac4a4c9fe9, type: 3}
+      propertyPath: IsBossDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369838331063653003, guid: 1f28e8773ffb6014da2770ac4a4c9fe9, type: 3}
       propertyPath: SceneToLoad
-      value: MainMenu
+      value: WinScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369838331063653015, guid: 1f28e8773ffb6014da2770ac4a4c9fe9, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369838331063653015, guid: 1f28e8773ffb6014da2770ac4a4c9fe9, type: 3}
+      propertyPath: m_Offset.y
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f28e8773ffb6014da2770ac4a4c9fe9, type: 3}

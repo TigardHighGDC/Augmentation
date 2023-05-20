@@ -41,4 +41,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CorruptionWell.unity
     guid: 66d3fc0291612504cac4b8f3180184b4
+  - enabled: 1
+    path: Assets/Scenes/AssetStore.unity
+    guid: 20d2ab05674d5b6468ca84d12da71ed5
+  - enabled: 1
+    path: Assets/Scenes/DeathScreen.unity
+    guid: 150c9465a7f5d5a489e403dbd2eab14d
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: dba380ba40aaf06478cf43524ef810d8
   m_configObjects: {}

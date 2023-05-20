@@ -47,8 +47,12 @@ MonoBehaviour:
   PlayerStats:
     MaxHealth: 0
     StartingWeapons: []
+    Money: 0
+    BossDefeats: 0
   DefaultPlayerStats:
     MaxHealth: 150
     StartingWeapons:
     - {fileID: 11400000, guid: a18bccf47773fd34c8715c1dbdb97f52, type: 2}
     - {fileID: 11400000, guid: a18bccf47773fd34c8715c1dbdb97f52, type: 2}
+    Money: 9999999
+    BossDefeats: 0

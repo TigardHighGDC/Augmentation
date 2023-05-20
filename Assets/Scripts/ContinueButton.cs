@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class ContinueButton : MonoBehaviour
 {
-    private void Awake()
+    private void Update()
     {
-        if (!(PlayerPrefs.HasKey("PlayerStats") && PlayerPrefs.HasKey("Map")))
+        if (!(PlayerPrefs.HasKey("PlayerStats") || PlayerPrefs.HasKey("Map")))
         {
             gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
         }
     }
 }

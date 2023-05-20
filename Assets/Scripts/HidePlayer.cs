@@ -7,10 +7,16 @@ using UnityEngine;
 
 public class HidePlayer : MonoBehaviour
 {
-    private void Start()
+    private bool hidden = false;
+
+    private void Update()
     {
-        // Find the player game object and set it to inactive
-        GameObject player = GameObject.Find("Player 1");
-        player.SetActive(false);
+        if (!hidden)
+        {
+            // Find the player game object and set it to inactive
+            GameObject player = GameObject.Find("Player 1");
+            player.SetActive(false);
+            hidden = true;
+        }
     }
 }

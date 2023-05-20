@@ -9,6 +9,7 @@ using UnityEditor;
 
 public class WeaponInventory : MonoBehaviour
 {
+    public List<WeaponData> AvailableWeapons;
     public int MaxWeapons = 3;
     public GameObject Pickupable;
 
@@ -16,6 +17,7 @@ public class WeaponInventory : MonoBehaviour
     private static List<WeaponData> Weapons = new List<WeaponData>();
 
     private Gun playerGun;
+    private bool hasRun = false;
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
     private double allowedWeaponSwitchTime = 0.25;
@@ -40,22 +42,27 @@ public class WeaponInventory : MonoBehaviour
     private void Start()
     {
         playerGun = GetComponent<Gun>();
+        PlayerStats playerStats = PlayerStatManager.Instance.PlayerStats;
 
-        if (NewWeapons.Count > 0)
+        if (playerStats.StartingWeapons.Count > 0 && !hasRun)
         {
-            // Starting weapons were custom set.
-            Assert.Boolean(NewWeapons.Count <= MaxWeapons, "Too many starting weapons.");
+            hasRun = true;
+            Reset();
 
-            Weapons.Clear();
-            weaponAmmoAmounts.Clear();
-            weaponItems.Clear();
-
-            foreach (WeaponData weapon in NewWeapons)
+            foreach (string weaponName in playerStats.StartingWeapons)
             {
+                WeaponData weapon = AvailableWeapons.Find(w => w.WeaponName == weaponName);
                 Weapons.Add(weapon);
                 weaponAmmoAmounts.Add(weapon.AmmoCapacity);
                 SelectItem();
             }
+        }
+        else
+        {
+            WeaponData pistol = AvailableWeapons.Find(w => w.WeaponName == "Pistol");
+            Weapons.Add(pistol);
+            weaponAmmoAmounts.Add(pistol.AmmoCapacity);
+            SelectItem();
         }
 
         if (Weapons.Count > 0)
@@ -130,6 +137,14 @@ public class WeaponInventory : MonoBehaviour
         {
             RemoveWeapon(currentWeaponIndex);
         }
+    }
+
+    public void Reset()
+    {
+        Weapons.Clear();
+        weaponAmmoAmounts.Clear();
+        weaponItems.Clear();
+        currentWeaponIndex = -1;
     }
 
     private void ChangeWeapon(int newWeaponIndex, bool force = false, bool removed = false)
