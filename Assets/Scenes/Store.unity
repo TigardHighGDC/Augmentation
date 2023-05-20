@@ -230,6 +230,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9057644131090450124, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
+      propertyPath: DialogueProfiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9057644131090450124, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
+      propertyPath: DialogueProfiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e5c78a67d50b7e4faa2fc1292f43c1f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6b1b71eeb92e1c488412f49442dc17b, type: 3}
 --- !u!114 &34738034 stripped
@@ -3552,6 +3560,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1450936692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8222139562504249586, guid: c15f351772f7c75459dae1e16d8df60a, type: 3}
+  m_PrefabInstance: {fileID: 619982843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1450936696
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450936692}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4
 --- !u!1 &1457059721
 GameObject:
   m_ObjectHideFlags: 0

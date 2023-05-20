@@ -1,0 +1,1 @@
+“What’s in this shop? DEALS! DEALS! DEALS! DEALS! DEALS EVERYWHERE!”#speaker:Shopkeeper #layout:right
