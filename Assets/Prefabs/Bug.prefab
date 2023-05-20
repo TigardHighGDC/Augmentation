@@ -188,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 50
   InvincibilityTimer: 0
-  corruptionStrength: 2
+  corruptionStrength: 1.5
 --- !u!50 &5694345433127791796
 Rigidbody2D:
   serializedVersion: 4

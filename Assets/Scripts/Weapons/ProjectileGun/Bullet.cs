@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     // Variables changeable by items
     public static float C_Damage = 1.0f;
     public static int C_BulletPierce = 1;
-    public static int C_BulletBounce = 0;
+    public static int C_BulletBounce = 5;
     public static float C_Knockback = 1.0f;
     public static bool C_DamgeOverRangeActive = false;
 
@@ -49,11 +49,22 @@ public class Bullet : MonoBehaviour
                 }
 
                 break;
-            case "Wall":
+            case "VerticalWall":
                 if (remainingBounce > 0)
                 {
                     remainingBounce--;
-                    BounceBullet(collide);
+                    BounceBulletLeftRight(collide);
+                }
+                else
+                {
+                    DestroyBullet();
+                }
+                break;
+            case "HorizontalWall":
+                if (remainingBounce > 0)
+                {
+                    remainingBounce--;
+                    BounceBulletTopBottom(collide);
                 }
                 else
                 {
@@ -78,9 +89,14 @@ public class Bullet : MonoBehaviour
         BulletTravel += rb.velocity.magnitude * Time.deltaTime;
     }
 
-    private void BounceBullet(Collider2D collide)
+    private void BounceBulletTopBottom(Collider2D collide)
     {
         rb.velocity = Vector3.Reflect(rb.velocity, collide.transform.up);
+    }
+
+    private void BounceBulletLeftRight(Collider2D collide)
+    {
+        rb.velocity = Vector3.Reflect(rb.velocity, collide.transform.right);
     }
 
     // Increases bullet damage depending on how far it has traveled

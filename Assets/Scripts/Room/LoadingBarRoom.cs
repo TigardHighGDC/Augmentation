@@ -10,9 +10,9 @@ public class LoadingBarRoom : MonoBehaviour
 {
     public float MaxTime = 30.0f;
     public Vector3 WeaponSpawnPosition;
+    public bool EndLoading = false;
 
     private Slider slider;
-    private bool endLoading = false;
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class LoadingBarRoom : MonoBehaviour
 
     private void Update()
     {
-        if (!endLoading)
+        if (!EndLoading)
         {
             SliderIncrease();
         }
@@ -35,7 +35,7 @@ public class LoadingBarRoom : MonoBehaviour
 
         if (slider.value <= 0.0f)
         {
-            endLoading = true;
+            EndLoading = true;
             GameObject[] weapons = Resources.LoadAll<GameObject>("PickupableWeapon");
             Instantiate(weapons[Random.Range(0, weapons.Length)], WeaponSpawnPosition, Quaternion.identity);
 
