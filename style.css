@@ -198,3 +198,13 @@ body {
   justify-content: center;
   margin-bottom: 40px;
 }
+
+.concept-image {
+  height: 150px;
+  width: 150px;
+}
+
+.concept-image-megaserver {
+  height: 50%;
+  width: 50%;
+}
