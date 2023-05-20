@@ -20,7 +20,7 @@ MonoBehaviour:
   Size: 1
   ReloadSpeed: 1
   BulletSpeed: 12
-  BulletPierce: 5
+  BulletPierce: 1
   CanShootInterval: 0.5
   BulletPerTrigger: 1
   AmmoCapacity: 6
@@ -28,8 +28,8 @@ MonoBehaviour:
   Knockback: 25
   DespawnTime: 2
   AutoReload: 1
-  BulletBounce: 1
-  BulletExplosion: 0
+  BulletBounce: 0
+  BulletExplosion: 1
   ExplosionRadius: 2
   ExplosionEffect: {fileID: 1694557223095340867, guid: 6598c37f7f2164748b6cd16d0b572e6f, type: 3}
   GunShotSound: {fileID: 8300000, guid: 56acccf981ef4664aa444778b40b61b3, type: 3}
