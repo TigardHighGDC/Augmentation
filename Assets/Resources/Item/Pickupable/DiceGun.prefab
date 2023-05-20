@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7328137216160755565}
   m_Layer: 0
   m_Name: DiceGun
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,11 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Dice Gun
   Image: {fileID: 21300000, guid: efbe7423429eb6f4cb3ee43245e6b2e6, type: 3}
-  Text: {fileID: 0}
   DestroyItem: 0
   ItemPurpose: 2
   ItemStats: Weapon clip size changes randomly when you reload
   Cost: 25
+  Index: 0
 --- !u!114 &7328137216160755565
 MonoBehaviour:
   m_ObjectHideFlags: 0

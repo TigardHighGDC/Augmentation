@@ -49,6 +49,9 @@ public class Bullet : MonoBehaviour
                 }
 
                 break;
+            case "Wall":
+                DestroyBullet();
+                break;
             case "VerticalWall":
                 if (remainingBounce > 0)
                 {

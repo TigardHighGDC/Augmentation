@@ -47,6 +47,12 @@ public class PlayerHealth : MonoBehaviour
     // Handles changes when the player dies
     public void Death()
     {
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Item"))
+        {
+            enemy.GetComponent<ItemType>().DestroyItem = true;
+        }
+        GetComponent<WeaponInventory>().Reset();
+        PlayerPrefs.DeleteKey("Map");
         AsyncSceneLoader.GetInstance().Unload();
         SceneManager.LoadScene("MainMenu");
     }

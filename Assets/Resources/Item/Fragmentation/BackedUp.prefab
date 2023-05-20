@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8503373700497288891}
   m_Layer: 0
   m_Name: BackedUp
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,11 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Backed Up
   Image: {fileID: 21300000, guid: e5914d7994cdc2b41b3ecfd1733e6afa, type: 3}
-  Text: {fileID: 0}
   DestroyItem: 0
   ItemPurpose: 1
   ItemStats: Revive on death, but w/ maximum corruption & a new fragmentation
   Cost: 0
+  Index: 0
 --- !u!114 &-8503373700497288891
 MonoBehaviour:
   m_ObjectHideFlags: 0
