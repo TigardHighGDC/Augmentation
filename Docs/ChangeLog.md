@@ -6,6 +6,7 @@ A bi-weekly log of project changes separated by two week sprints.
 
 | Date | Sprint |
 | - | - |
+| [4/27/2023 - 5/11/2023](#4272023---5112023) | 8 |
 | [4/6/2023 - 4/20/2023](#462023---4202023) | 7 |
 | [3/14/2023 - 4/6/2023](#3142023---462023) | 6 |
 | [3/3/2023 - 3/14/2023](#332023---3142023) | 5 |
@@ -13,6 +14,34 @@ A bi-weekly log of project changes separated by two week sprints.
 | [1/17/2023 - 2/7/2023](#1172023---2072023) | 3 |
 | [1/4/2023 - 1/16/2023](#1042023---1162023) | 2 |
 | [12/6/2022 - 1/3/2023](#12062022---1032023) | 1 |
+
+## 4/27/2023 - 5/11/2023 (Sprint #8)
+
+- New Features:
+  - Implemented item system [#171](https://github.com/TigardHighGDC/Augmentation/pull/171).
+  - Added full room gameplay [#180](https://github.com/TigardHighGDC/Augmentation/pull/180).
+  - Now maintains certain game actions across rooms [#180](https://github.com/TigardHighGDC/Augmentation/pull/180).
+  - Created a NPC text box similar to animal crossing [#169](https://github.com/TigardHighGDC/Augmentation/pull/169).
+  - Boss fight with bullet patterns implemented [#183](https://github.com/TigardHighGDC/Augmentation/pull/183).
+  - Created items from our design doc [#193](https://github.com/TigardHighGDC/Augmentation/pull/193).
+  - Created pop-up UI for item descriptions [#193](https://github.com/TigardHighGDC/Augmentation/pull/193).
+  - Created loading bar room [#193](https://github.com/TigardHighGDC/Augmentation/pull/193).
+  - Added the ability to save player state in addition to map state [#184](https://github.com/TigardHighGDC/Augmentation/pull/184).
+  - Bullets now have the ability to explode on their destruction [#194](https://github.com/TigardHighGDC/Augmentation/pull/194).
+- Enhancements:
+  - Fully added our art into the game [#172](https://github.com/TigardHighGDC/Augmentation/pull/172).
+  - Updated the level map icons with our own assets [#168](https://github.com/TigardHighGDC/Augmentation/pull/168).
+  - Added bullet bounce weapon effect [#178](https://github.com/TigardHighGDC/Augmentation/pull/178).
+  - Now loads scenes asynchronously [#181](https://github.com/TigardHighGDC/Augmentation/pull/181).
+  - Updated our formatting standards for `switch` statements [#195](https://github.com/TigardHighGDC/Augmentation/pull/195).
+  - Added loading bar room to map generation [#196](https://github.com/TigardHighGDC/Augmentation/pull/196).
+  - Updated assets and improved gameplay [#197](https://github.com/TigardHighGDC/Augmentation/pull/197).
+- Documentation:
+  - Created a block diagram for the map generation algorithm [#188](https://github.com/TigardHighGDC/Augmentation/pull/188).
+  - Updated our team website with playable WebGL game and team information [#190](https://github.com/TigardHighGDC/Augmentation/pull/190).
+- Bug Fixes:
+  - Fixed a problem with the weapon inventory not tracking the amount of ammo in each weapon after the weapon was dropped [#171](https://github.com/TigardHighGDC/Augmentation/pull/171).
+  - Fixed a bug where the scene would not switch back to the main menu after player death [#187](https://github.com/TigardHighGDC/Augmentation/pull/187).
 
 ## 4/6/2023 - 4/20/2023 (Sprint #7)
 
