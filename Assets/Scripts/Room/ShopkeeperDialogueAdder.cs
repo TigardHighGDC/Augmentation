@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShopkeeperDialogueAdder : MonoBehaviour
 {
     private DialogueTrigger dialogueTrigger;
-    
+
     private void Start()
     {
         dialogueTrigger = GetComponent<DialogueTrigger>();
