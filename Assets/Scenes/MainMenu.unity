@@ -630,7 +630,7 @@ GameObject:
   - component: {fileID: 633804259}
   m_Layer: 0
   m_Name: PlayerRunTracker
-  m_TagString: Untagged
+  m_TagString: Tracker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

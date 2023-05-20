@@ -65,6 +65,7 @@ public class PlayerHealth : MonoBehaviour
             enemy.GetComponent<ItemType>().DestroyItem = true;
         }
         GetComponent<WeaponInventory>().Reset();
+        CorruptionLevel.currentCorruption = 0;
         PlayerPrefs.DeleteKey("Map");
         AsyncSceneLoader.GetInstance().Unload();
         SceneManager.LoadScene("DeathScreen");

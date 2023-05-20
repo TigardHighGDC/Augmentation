@@ -11,6 +11,9 @@ TagManager:
   - Music Player
   - Item UI
   - Item
+  - HorizontalWall
+  - VerticalWall
+  - Tracker
   layers:
   - Default
   - TransparentFX

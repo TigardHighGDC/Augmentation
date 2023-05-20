@@ -99,7 +99,7 @@ public class BossBulletPattern : MonoBehaviour
         {
             for (int bulletAngle = -3; bulletAngle < 4; bulletAngle++)
             {
-                SpawnBullet(new Vector3(0, -35, 0), bulletAngle * 15f, FastBulletData);
+                SpawnBullet(new Vector3(0, -35, 0), bulletAngle * 22.5f, FastBulletData);
 
                 if (BossPhaseManager.CurrentPhase != BossPhaseManager.Phases.Anger)
                 {

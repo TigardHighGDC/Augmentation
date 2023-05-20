@@ -1,0 +1,2 @@
+Why haven’t you put that accursed little company under yet? What’s taking so long? #speaker:Evil Grandpa #layout:left
+Attempts are continuing. So far, short selling them has only placed a minor damper on their business. #speaker:Megaserver #layout:right
