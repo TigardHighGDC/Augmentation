@@ -200,6 +200,11 @@ body {
 }
 
 .concept-image {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
+}
+
+.concept-image-megaserver {
+  height: 225px;
+  width: 150px;
 }
