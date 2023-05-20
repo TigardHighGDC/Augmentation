@@ -63,6 +63,7 @@ public class MapPlayerTracker : MonoBehaviour
         Locked = LockAfterSelecting;
         MapManager.CurrentMap.Path.Add(mapNode.Node.Point);
         MapManager.SaveMap();
+        PlayerStatManager.SavePlayerStats(PlayerStatManager.Instance.PlayerStats);
         View.SetLineColors();
         View.SetAttainableNodes();
         mapNode.ShowSwirlAnimation();

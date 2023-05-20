@@ -594,7 +594,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 150
-  InvincibilityTimer: 0
   sliderBar: {fileID: 0}
 --- !u!114 &8191980732911157799
 MonoBehaviour:
@@ -636,6 +635,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812fb073d4fd3c14593fbb378b75e090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AvailableWeapons:
+  - {fileID: 11400000, guid: a18bccf47773fd34c8715c1dbdb97f52, type: 2}
+  - {fileID: 11400000, guid: 622b6880c4f9bf84684f20474f0c599a, type: 2}
+  - {fileID: 11400000, guid: c3111fb56c038cf4890b61ab799989e5, type: 2}
+  - {fileID: 11400000, guid: 4532e38c302d7bc4cba21c24e8e4d4a8, type: 2}
   MaxWeapons: 4
   Pickupable: {fileID: 1145120673999412928, guid: 9c1fbdfe681243d4d961caf528ea13a9, type: 3}
   NewWeapons: []

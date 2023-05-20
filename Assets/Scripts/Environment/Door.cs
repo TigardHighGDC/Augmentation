@@ -12,6 +12,7 @@ public class Door : MonoBehaviour
     public Sprite LockedSprite;
     public Sprite UnlockedSprite;
     public string SceneToLoad;
+    public bool IsBossDoor = false;
 
     private SpriteRenderer spriteRenderer;
 
@@ -38,6 +39,15 @@ public class Door : MonoBehaviour
     {
         if (!IsLocked && collision.tag == "Player")
         {
+            if (!IsBossDoor)
+            {
+                RunTracker.Instance.LevelCompleted();
+            }
+            else
+            {
+                RunTracker.Instance.BossDefeated();
+            }
+
             AsyncSceneLoader.GetInstance().SwitchToNextScene();
         }
     }

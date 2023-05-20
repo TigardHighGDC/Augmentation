@@ -56,6 +56,8 @@ public class MapManager : MonoBehaviour
             new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
         PlayerPrefs.SetString("Map", json);
         PlayerPrefs.Save();
+
+        Debug.Log("Map saved"); // TODO: Remove debug.log
     }
 
     private void OnApplicationQuit()

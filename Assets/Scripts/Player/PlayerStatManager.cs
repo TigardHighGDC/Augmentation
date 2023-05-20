@@ -9,25 +9,41 @@ public class PlayerStatManager : MonoBehaviour
 {
     [HideInInspector]
     public PlayerStats PlayerStats;
-    public PlayerStats DefaultPlayerStats;
+
+    public static PlayerStatManager Instance { get; private set; }
+
+    private GameObject player;
 
     private void Awake()
     {
-        PlayerStats = GetPlayerStats();
-
-        if (PlayerStats == null)
-        {
-            PlayerStats = DefaultPlayerStats;
-        }
-
+        Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
-        GameObject player = GameObject.Find("Player 1");
-        player.GetComponent<PlayerHealth>().Health = PlayerStats.MaxHealth;
-        player.GetComponent<WeaponInventory>().NewWeapons = PlayerStats.StartingWeapons;
+        PlayerStats = GetPlayerStats();
+
+        if (PlayerStats == null)
+        {
+            PlayerStats = new PlayerStats();
+        }
+    }
+
+    // public void UpdatePlayerState()
+    // {
+    //     player.GetComponent<PlayerHealth>().Health = PlayerStats.MaxHealth;
+    //     WeaponInventory.NewWeapons = PlayerStats.StartingWeapons;
+    // }
+
+    public void UpdateState()
+    {
+        PlayerStats = GetPlayerStats();
+
+        if (PlayerStats == null)
+        {
+            PlayerStats = new PlayerStats();
+        }
     }
 
     public static void SavePlayerStats(PlayerStats playerStats)
@@ -37,6 +53,8 @@ public class PlayerStatManager : MonoBehaviour
             new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
         PlayerPrefs.SetString("PlayerStats", json);
         PlayerPrefs.Save();
+
+        Debug.Log("Player stats saved"); // TODO: Remove debug.log
     }
 
     private static PlayerStats GetPlayerStats()
