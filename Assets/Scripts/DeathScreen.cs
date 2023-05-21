@@ -25,6 +25,19 @@ public class DeathScreen : MonoBehaviour
 
     public void OnContinueButton()
     {
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Item"))
+        {
+            enemy.GetComponent<ItemType>().DestroyItem = true;
+        }
+
+        GetComponent<WeaponInventory>().Reset();
+        ItemStorage.ItemList = new List<GameObject>();
+        ItemStorage.ItemPosition = new HashSet<int>();
+        ItemStorage.ResourceItemIndex = new List<int>();
+        CorruptionLevel.currentCorruption = 0;
+        PlayerPrefs.DeleteKey("Map");
+        AsyncSceneLoader.GetInstance().Unload();
+        RunTracker.Instance.Reset();
         AsyncSceneLoader.GetInstance().LoadScene("MainMenu");
     }
 }

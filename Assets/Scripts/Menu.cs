@@ -50,5 +50,14 @@ public class Menu : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("PlayerStats");
         PlayerPrefs.DeleteKey("Map");
+
+        GameObject[] itemUiElements = GameObject.FindGameObjectsWithTag("Item UI");
+
+        foreach (GameObject itemUiElement in itemUiElements)
+        {
+            Destroy(itemUiElement);
+        }
+
+        WeaponInventory.hasRun = false;
     }
 }

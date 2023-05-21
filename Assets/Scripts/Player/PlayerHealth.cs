@@ -73,6 +73,9 @@ public class PlayerHealth : MonoBehaviour
             enemy.GetComponent<ItemType>().DestroyItem = true;
         }
         GetComponent<WeaponInventory>().Reset();
+        ItemStorage.ItemList = new List<GameObject>();
+        ItemStorage.ItemPosition = new HashSet<int>();
+        ItemStorage.ResourceItemIndex = new List<int>();
         CorruptionLevel.currentCorruption = 0;
         PlayerPrefs.DeleteKey("Map");
         AsyncSceneLoader.GetInstance().Unload();

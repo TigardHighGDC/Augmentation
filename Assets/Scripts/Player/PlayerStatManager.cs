@@ -16,8 +16,18 @@ public class PlayerStatManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Debug.LogError("PlayerStatManager already exists");
+            Destroy(gameObject);
+        }
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Start()
@@ -29,12 +39,6 @@ public class PlayerStatManager : MonoBehaviour
             PlayerStats = new PlayerStats();
         }
     }
-
-    // public void UpdatePlayerState()
-    // {
-    //     player.GetComponent<PlayerHealth>().Health = PlayerStats.MaxHealth;
-    //     WeaponInventory.NewWeapons = PlayerStats.StartingWeapons;
-    // }
 
     public void UpdateState()
     {
