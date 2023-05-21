@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     // Variables changeable by items
     public static float C_Damage = 1.0f;
     public static int C_BulletPierce = 1;
-    public static int C_BulletBounce = 5;
+    public static int C_BulletBounce = 0;
     public static float C_Knockback = 1.0f;
     public static bool C_DamgeOverRangeActive = false;
 
@@ -49,15 +49,14 @@ public class Bullet : MonoBehaviour
                 }
 
                 break;
+            case "Wall":
+                DestroyBullet();
+                break;
             case "VerticalWall":
                 if (remainingBounce > 0)
                 {
                     remainingBounce--;
                     BounceBulletLeftRight(collide);
-                }
-                else
-                {
-                    DestroyBullet();
                 }
                 break;
             case "HorizontalWall":
@@ -65,10 +64,6 @@ public class Bullet : MonoBehaviour
                 {
                     remainingBounce--;
                     BounceBulletTopBottom(collide);
-                }
-                else
-                {
-                    DestroyBullet();
                 }
                 break;
             case "Player":

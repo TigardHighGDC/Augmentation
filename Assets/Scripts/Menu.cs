@@ -41,9 +41,23 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
 
+    public void OnTutorialButton()
+    {
+        AsyncSceneLoader.GetInstance().LoadScene("Tutorial");
+    }
+
     private void ResetGameData()
     {
         PlayerPrefs.DeleteKey("PlayerStats");
         PlayerPrefs.DeleteKey("Map");
+
+        GameObject[] itemUiElements = GameObject.FindGameObjectsWithTag("Item UI");
+
+        foreach (GameObject itemUiElement in itemUiElements)
+        {
+            Destroy(itemUiElement);
+        }
+
+        WeaponInventory.hasRun = false;
     }
 }

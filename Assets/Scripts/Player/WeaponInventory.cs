@@ -9,6 +9,7 @@ using UnityEditor;
 
 public class WeaponInventory : MonoBehaviour
 {
+    public static bool hasRun = false;
     public List<WeaponData> AvailableWeapons;
     public int MaxWeapons = 3;
     public GameObject Pickupable;
@@ -17,7 +18,6 @@ public class WeaponInventory : MonoBehaviour
     private static List<WeaponData> Weapons = new List<WeaponData>();
 
     private Gun playerGun;
-    private bool hasRun = false;
     private int currentWeaponIndex = -1;
     private double lastWeaponSwitchTime = 0.0;
     private double allowedWeaponSwitchTime = 0.25;
@@ -57,7 +57,7 @@ public class WeaponInventory : MonoBehaviour
                 SelectItem();
             }
         }
-        else
+        else if (Weapons.Count < 1)
         {
             WeaponData pistol = AvailableWeapons.Find(w => w.WeaponName == "Pistol");
             Weapons.Add(pistol);

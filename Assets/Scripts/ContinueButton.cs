@@ -7,7 +7,7 @@ public class ContinueButton : MonoBehaviour
 {
     private void Update()
     {
-        if (!(PlayerPrefs.HasKey("PlayerStats") || PlayerPrefs.HasKey("Map")))
+        if (!PlayerPrefs.HasKey("Map") && !PlayerPrefs.HasKey("PlayerStats"))
         {
             gameObject.SetActive(false);
         }

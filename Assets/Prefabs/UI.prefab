@@ -1168,7 +1168,10 @@ MonoBehaviour:
   DialogueText: {fileID: 6219070455016385127}
   SpeakerText: {fileID: 3104593836863182720}
   PortraitImage: {fileID: 1700684527704362687}
-  DialogueProfiles: []
+  DialogueProfiles:
+  - {fileID: 11400000, guid: f480e9ea74a97784a9b338802392a092, type: 2}
+  - {fileID: 11400000, guid: 6df27bc1efebe1249933cbba63a63809, type: 2}
+  - {fileID: 11400000, guid: 57ec0a6738848ef43aaf99420b62ac25, type: 2}
   TextSpeed: 0.04
 --- !u!1001 &4779080847095022667
 PrefabInstance:
@@ -1177,6 +1180,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1918439168085610283}
     m_Modifications:
+    - target: {fileID: 1449076152522518060, guid: 2a606fd4b737ed340869597554e58752, type: 3}
+      propertyPath: m_margin.x
+      value: 142.2817
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449076152522518060, guid: 2a606fd4b737ed340869597554e58752, type: 3}
+      propertyPath: m_margin.z
+      value: 129.72733
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449076152522518060, guid: 2a606fd4b737ed340869597554e58752, type: 3}
+      propertyPath: m_overflowMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7171136320837297540, guid: 2a606fd4b737ed340869597554e58752, type: 3}
       propertyPath: m_Name
       value: DialoguePanel

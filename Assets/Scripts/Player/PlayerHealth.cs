@@ -35,8 +35,16 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         // Changes the max health encase of an item change
-        sliderBar.SetMaxHealth(MaxHealth);
-        sliderBar.SetHealth(Health);
+        if (sliderBar != null)
+        {
+            sliderBar.SetMaxHealth(MaxHealth);
+            sliderBar.SetHealth(Health);
+        }
+        else
+        {
+            Debug.LogError("Health bar is null");
+        }
+
         Health = Mathf.Min(MaxHealth, Health);
     }
 
@@ -60,7 +68,15 @@ public class PlayerHealth : MonoBehaviour
     // Handles changes when the player dies
     public void Death()
     {
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Item"))
+        {
+            enemy.GetComponent<ItemType>().DestroyItem = true;
+        }
         GetComponent<WeaponInventory>().Reset();
+        ItemStorage.ItemList = new List<GameObject>();
+        ItemStorage.ItemPosition = new HashSet<int>();
+        ItemStorage.ResourceItemIndex = new List<int>();
+        CorruptionLevel.currentCorruption = 0;
         PlayerPrefs.DeleteKey("Map");
         AsyncSceneLoader.GetInstance().Unload();
         SceneManager.LoadScene("DeathScreen");

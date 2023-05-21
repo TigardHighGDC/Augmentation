@@ -30,7 +30,14 @@ public class AssetStore : MonoBehaviour
 
     private void Update()
     {
-        PlayerMoneyText.text = "$" + playerStats.Money.ToString();
+        if (playerStats == null)
+        {
+            PlayerMoneyText.text = "$0";
+        }
+        else
+        {
+            PlayerMoneyText.text = "$" + playerStats.Money.ToString();
+        }
     }
 
     public void OnHealthUpgradeButton()

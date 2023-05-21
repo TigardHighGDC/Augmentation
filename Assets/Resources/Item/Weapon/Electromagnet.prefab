@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -6076688833195631783}
   m_Layer: 0
   m_Name: Electromagnet
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,12 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Electromagnet
-  Image: {fileID: 21300000, guid: 5c82ec4ed28413f4ca32811ecbf5ed31, type: 3}
-  Text: {fileID: 0}
+  Image: {fileID: 21300000, guid: 3968d51e1982de04b835795e40216850, type: 3}
   DestroyItem: 0
   ItemPurpose: 0
   ItemStats: Knockback applied to enemies is reversed (pulled toward player)
-  Lore: 
+  Cost: 0
+  Index: 0
 --- !u!114 &-6076688833195631783
 MonoBehaviour:
   m_ObjectHideFlags: 0

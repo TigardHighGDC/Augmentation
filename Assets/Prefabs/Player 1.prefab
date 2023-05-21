@@ -640,7 +640,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 622b6880c4f9bf84684f20474f0c599a, type: 2}
   - {fileID: 11400000, guid: c3111fb56c038cf4890b61ab799989e5, type: 2}
   - {fileID: 11400000, guid: 4532e38c302d7bc4cba21c24e8e4d4a8, type: 2}
-  MaxWeapons: 4
+  MaxWeapons: 9
   Pickupable: {fileID: 1145120673999412928, guid: 9c1fbdfe681243d4d961caf528ea13a9, type: 3}
   NewWeapons: []
 --- !u!114 &1179279060
@@ -1029,7 +1029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916426696fc334441ad117add8a22e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIParent: {fileID: 0}
   ItemUI: {fileID: 4258351137849350630, guid: e39e1b12e27cf1847a0e4852bb82be2c, type: 3}
 --- !u!1001 &5340368890341665137
 PrefabInstance:

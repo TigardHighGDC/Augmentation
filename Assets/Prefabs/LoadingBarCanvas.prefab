@@ -84,7 +84,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1068056367613787989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,3 +422,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxTime: 30
   WeaponSpawnPosition: {x: 1.5, y: -6, z: 0}
+  EndLoading: 0

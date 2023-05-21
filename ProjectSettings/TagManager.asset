@@ -10,8 +10,10 @@ TagManager:
   - Pickupable
   - Music Player
   - Item UI
-  - VerticalWall
+  - Item
   - HorizontalWall
+  - VerticalWall
+  - Tracker
   layers:
   - Default
   - TransparentFX

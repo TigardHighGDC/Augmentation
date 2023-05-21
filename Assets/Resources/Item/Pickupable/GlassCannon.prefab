@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1195192903779840301}
   m_Layer: 0
   m_Name: GlassCannon
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Glass Cannon
-  Image: {fileID: 21300000, guid: 5c82ec4ed28413f4ca32811ecbf5ed31, type: 3}
+  Image: {fileID: 21300000, guid: afce455134c0e2b4b814606be490eb73, type: 3}
   DestroyItem: 0
   ItemPurpose: 2
   ItemStats: 100% increase in damage, 50% less health

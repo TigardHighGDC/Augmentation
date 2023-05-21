@@ -15,7 +15,7 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 7db8a03870b8aec478a28c2c6945c01e, type: 3}
   HandPosition: {x: -0.3, y: 1.25, z: 0}
   WeaponName: Pistol
-  Damage: 10
+  Damage: 25
   WeaponLength: 1.25
   Size: 1
   ReloadSpeed: 1
@@ -29,7 +29,7 @@ MonoBehaviour:
   DespawnTime: 2
   AutoReload: 1
   BulletBounce: 0
-  BulletExplosion: 1
+  BulletExplosion: 0
   ExplosionRadius: 2
   ExplosionEffect: {fileID: 1694557223095340867, guid: 6598c37f7f2164748b6cd16d0b572e6f, type: 3}
   GunShotSound: {fileID: 8300000, guid: 56acccf981ef4664aa444778b40b61b3, type: 3}
