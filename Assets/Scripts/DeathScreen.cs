@@ -29,12 +29,20 @@ public class DeathScreen : MonoBehaviour
         {
             enemy.GetComponent<ItemType>().DestroyItem = true;
         }
-
-        GetComponent<WeaponInventory>().Reset();
+        foreach (GameObject item in GameObject.FindGameObjectsWithTag("Item UI"))
+        {
+            Destroy(item);
+        }
+        ItemStorage.uiX = 0;
+        ItemStorage.uiY = 0;
+        WeaponInventory.Reset();
         ItemStorage.ItemList = new List<GameObject>();
         ItemStorage.ItemPosition = new HashSet<int>();
         ItemStorage.ResourceItemIndex = new List<int>();
         CorruptionLevel.currentCorruption = 0;
+        ItemStorage.Weapon = null;
+        ItemStorage.Fragmentation = null;
+        CorruptionLevel.FragmentationLock = false;
         PlayerPrefs.DeleteKey("Map");
         AsyncSceneLoader.GetInstance().Unload();
         RunTracker.Instance.Reset();

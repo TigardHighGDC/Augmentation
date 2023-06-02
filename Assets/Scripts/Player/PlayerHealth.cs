@@ -68,14 +68,21 @@ public class PlayerHealth : MonoBehaviour
     // Handles changes when the player dies
     public void Death()
     {
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Item"))
+        foreach (GameObject item in GameObject.FindGameObjectsWithTag("Item"))
         {
-            enemy.GetComponent<ItemType>().DestroyItem = true;
+            item.GetComponent<ItemType>().DestroyItem = true;
         }
-        GetComponent<WeaponInventory>().Reset();
+        foreach (GameObject item in GameObject.FindGameObjectsWithTag("Item UI"))
+        {
+            Destroy(item);
+        }
+        WeaponInventory.Reset();
         ItemStorage.ItemList = new List<GameObject>();
         ItemStorage.ItemPosition = new HashSet<int>();
         ItemStorage.ResourceItemIndex = new List<int>();
+        ItemStorage.Weapon = null;
+        ItemStorage.Fragmentation = null;
+        CorruptionLevel.FragmentationLock = false;
         CorruptionLevel.currentCorruption = 0;
         PlayerPrefs.DeleteKey("Map");
         AsyncSceneLoader.GetInstance().Unload();

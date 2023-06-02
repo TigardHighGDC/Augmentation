@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4258351137849350628}
   m_Layer: 5
   m_Name: ItemInventory
-  m_TagString: Untagged
+  m_TagString: Item UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

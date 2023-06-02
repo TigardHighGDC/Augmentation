@@ -139,12 +139,11 @@ public class WeaponInventory : MonoBehaviour
         }
     }
 
-    public void Reset()
+    public static void Reset()
     {
         Weapons.Clear();
         weaponAmmoAmounts.Clear();
         weaponItems.Clear();
-        currentWeaponIndex = -1;
     }
 
     private void ChangeWeapon(int newWeaponIndex, bool force = false, bool removed = false)

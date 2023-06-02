@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650614909417828722}
   - component: {fileID: 650614909417828725}
-  - component: {fileID: 1191039551061837121}
+  - component: {fileID: -55345578585678111}
   m_Layer: 0
   m_Name: RubberBullet
   m_TagString: Item
@@ -52,7 +52,7 @@ MonoBehaviour:
   ItemStats: 50% decrease damage, 100% knockback
   Cost: 0
   Index: 0
---- !u!114 &1191039551061837121
+--- !u!114 &-55345578585678111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,6 +61,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 650614909417828723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72e48d293bb803c41add2891888abaf7, type: 3}
+  m_Script: {fileID: 11500000, guid: 4db80689445d0104389f29b86a814bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

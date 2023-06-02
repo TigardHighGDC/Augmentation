@@ -40,7 +40,14 @@ public class AsyncSceneLoader : MonoBehaviour
 
     public void Unload()
     {
-        asyncLoad = SceneManager.UnloadSceneAsync(nextSceneName);
+        try
+        {
+            asyncLoad = SceneManager.UnloadSceneAsync(nextSceneName);
+        }
+        catch
+        {
+            Debug.Log("Scene failed to unload.");
+        }
     }
 
     private IEnumerator LoadSceneAsync(bool switchImmediately)

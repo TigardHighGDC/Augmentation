@@ -14,8 +14,8 @@ public class ItemStorage : MonoBehaviour
     public static List<int> ResourceItemIndex = new List<int>();
 
     // Position for item placement on screen
-    private static int uiX = 0;
-    private static int uiY = 0;
+    public static int uiX = 0;
+    public static int uiY = 0;
     private static int uiMax = 8;
     private static int separatedDistance = 35;
 
